@@ -1,0 +1,1079 @@
+{
+  "components": {
+    "parameters": {
+      "customStatusRef": {
+        "description": "This parameter publishes with bolded label.",
+        "in": "query",
+        "name": "customStatusRef",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/customStatusRef.yaml",
+          "status": "BETA"
+        }
+      },
+      "includeRef": {
+        "description": "This referenced parameter publishes.",
+        "in": "query",
+        "name": "includeRef",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/includeRef.yaml"
+        }
+      },
+      "oddFolderParam": {
+        "description": "This parameter publishes with bolded label.",
+        "in": "query",
+        "name": "customStatusRef",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "exclude-reason": "INTERNAL",
+          "status": "BETA"
+        }
+      }
+    },
+    "schemas": {
+      "exclude": {
+        "properties": {
+          "retain": {
+            "description": "This publishes in doc.",
+            "properties": {
+              "excludeAlternators": {
+                "oneOf": [
+                  {},
+                  {},
+                  {
+                    "properties": {
+                      "marxBrother": {
+                        "description": "Choice is `harpo`.",
+                        "enum": [
+                          "harpo"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "title": "retain this harpo scenario",
+                    "type": "object"
+                  }
+                ]
+              },
+              "retainString": {
+                "description": "This boolean schema doesn't publish in doc.",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/exclude.yaml"
+        }
+      },
+      "noop": {
+        "additionalProperties": false,
+        "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+        "properties": {
+          "chico": {
+            "description": "Chico.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          },
+          "groucho": {
+            "description": "Groucho.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          },
+          "harpo": {
+            "description": "Harpo.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "groucho",
+          "chico",
+          "harpo"
+        ],
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/noop.yaml"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Exclude components, and custom syntax",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/custom-products/operation": {
+      "put": {
+        "description": "__Bot Manager__, __Kona Site Defender__ This tests custom products for an operation. Description should publish with a status label prefix with a pair of products.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-custom-products-operation"
+        },
+        "operationId": "put-custom-products-operation",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "chico": "MARX",
+                "groucho": "MARX",
+                "harpo": "MARX"
+              },
+              "schema": {
+                "additionalProperties": false,
+                "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                "properties": {
+                  "chico": {
+                    "description": "Chico.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "groucho": {
+                    "description": "Groucho.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "harpo": {
+                    "description": "Harpo.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "groucho",
+                  "chico",
+                  "harpo"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/noop.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Mark custom products",
+        "tags": [
+          "Custom Products"
+        ],
+        "x-akamai": {
+          "labels": [
+            "Bot Manager",
+            "Kona Site Defender"
+          ]
+        }
+      }
+    },
+    "/custom-status/operation": {
+      "put": {
+        "description": "__Limited availability__ This tests custom status for an operation. Description should publish with a status label prefix: __Beta__, __Deprecated__, __Limited availability__, or __Internal__.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-custom-status-operation"
+        },
+        "operationId": "put-custom-status-operation",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "chico": "MARX",
+                "groucho": "MARX",
+                "harpo": "MARX"
+              },
+              "schema": {
+                "additionalProperties": false,
+                "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                "properties": {
+                  "chico": {
+                    "description": "Chico.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "groucho": {
+                    "description": "Groucho.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "harpo": {
+                    "description": "Harpo.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "groucho",
+                  "chico",
+                  "harpo"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/noop.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Mark operation status",
+        "tags": [
+          "Custom Status"
+        ],
+        "x-akamai": {
+          "status": "LA"
+        }
+      }
+    },
+    "/custom-status/parameter/{enumPathParam}": {
+      "put": {
+        "description": "Parameter has custom status syntax, and should publish with bolded label.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-custom-status-parameter"
+        },
+        "operationId": "put-custom-status-parameter",
+        "parameters": [
+          {
+            "description": "__Deprecated__ This parameter publishes with bolded label.",
+            "in": "query",
+            "name": "customStatus",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "status": "DEPRECATED"
+            }
+          },
+          {
+            "description": "This parameter doesn't publish with a bolded label. The typo in the status value logs as an error.",
+            "in": "query",
+            "name": "customStatusUnknown",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "status": "DEPRECADED"
+            }
+          },
+          {
+            "description": "__Internal__, __Enum__ This parameter publishes with two bolded labels. Values can be `GROUCHO`, `CHICO`, or `HARPO`.",
+            "in": "query",
+            "name": "customStatusEnum",
+            "schema": {
+              "enum": [
+                "GROUCHO",
+                "HARPO",
+                "CHICO"
+              ],
+              "type": "string"
+            },
+            "x-akamai": {
+              "status": "INTERNAL"
+            }
+          },
+          {
+            "description": "__Enum__ This parameter publishes with a bolded label. Values can be `GROUCHO`, `CHICO`, or `HARPO`.",
+            "in": "query",
+            "name": "customEnum",
+            "schema": {
+              "enum": [
+                "GROUCHO",
+                "HARPO",
+                "CHICO"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "__Beta__ This parameter publishes with bolded label.",
+            "in": "query",
+            "name": "customStatusRef",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/customStatusRef.yaml",
+              "status": "BETA"
+            }
+          },
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "chico": "MARX",
+                "groucho": "MARX",
+                "harpo": "MARX"
+              },
+              "schema": {
+                "additionalProperties": false,
+                "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                "properties": {
+                  "chico": {
+                    "description": "Chico.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "groucho": {
+                    "description": "Groucho.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "harpo": {
+                    "description": "Harpo.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "groucho",
+                  "chico",
+                  "harpo"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/noop.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Custom parameter status",
+        "tags": [
+          "Custom Status"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "__Enum__ This parameter publishes with bolded __Enum__ label. Values can be `GROUCHO`, `CHICO`, or `HARPO`.",
+          "in": "path",
+          "name": "enumPathParam",
+          "required": true,
+          "schema": {
+            "enum": [
+              "GROUCHO",
+              "HARPO",
+              "CHICO"
+            ],
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/exclude/non-standard-folder": {
+      "get": {
+        "description": "Warn if an exclusion comes from a folder other than: schemas, examples, parameters, errors, headers, paths, and the root of v[1-9] folder.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-exclude-non-standard-folder"
+        },
+        "operationId": "get-exclude-non-standard-folder",
+        "parameters": [
+          {
+            "description": "__Beta__ This parameter publishes with bolded label.",
+            "in": "query",
+            "name": "customStatusRef",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "exclude-reason": "INTERNAL",
+              "status": "BETA"
+            }
+          },
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Successful response."
+          }
+        },
+        "summary": "Warn about non-standard folder",
+        "tags": [
+          "Exclude"
+        ]
+      }
+    },
+    "/exclude/operation": {
+      "get": {
+        "description": "This tests an operation exclude. This operation must publish..",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-retain-operation"
+        },
+        "operationId": "get-retain-operation",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Retain this operation",
+        "tags": [
+          "Exclude"
+        ]
+      }
+    },
+    "/exclude/operation/linked": {
+      "get": {
+        "description": "This tests an operation exclude. This operation must publish.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-retain-operation-linked"
+        },
+        "operationId": "get-retain-operation-linked",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Retain this path-linked operation",
+        "tags": [
+          "Exclude"
+        ]
+      },
+      "x-akamai": {
+        "file-path": "paths/exclude-operation-linked.yaml"
+      }
+    },
+    "/exclude/parameter": {
+      "put": {
+        "description": "This tests excluded parameters, both linked and inline. Only parameters named _include_ publish.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-exclude-parameter"
+        },
+        "operationId": "put-exclude-parameter",
+        "parameters": [
+          {
+            "description": "This parameter publishes.",
+            "in": "query",
+            "name": "includeInline",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "This parameter publishes only under `sensitive` subcommand.",
+            "in": "query",
+            "name": "excludeSensitive",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "exclude-reason": "SENSITIVE"
+            }
+          },
+          {
+            "description": "This referenced parameter publishes.",
+            "in": "query",
+            "name": "includeRef",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/includeRef.yaml"
+            }
+          },
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "chico": "MARX",
+                "groucho": "MARX",
+                "harpo": "MARX"
+              },
+              "schema": {
+                "additionalProperties": false,
+                "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                "properties": {
+                  "chico": {
+                    "description": "Chico.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "groucho": {
+                    "description": "Groucho.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "harpo": {
+                    "description": "Harpo.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "groucho",
+                  "chico",
+                  "harpo"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/noop.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Exclude parameters, schemas",
+        "tags": [
+          "Exclude"
+        ]
+      }
+    },
+    "/exclude/schemas": {
+      "put": {
+        "description": "Various sub-schemas do not publish.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-exclude-schemas"
+        },
+        "operationId": "put-exclude-schemas",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "bar": false,
+                "foo": true
+              },
+              "schema": {
+                "properties": {
+                  "retain": {
+                    "description": "This publishes in doc.",
+                    "properties": {
+                      "excludeAlternators": {
+                        "oneOf": [
+                          {},
+                          {},
+                          {
+                            "properties": {
+                              "marxBrother": {
+                                "description": "Choice is `harpo`.",
+                                "enum": [
+                                  "harpo"
+                                ],
+                                "type": "string"
+                              }
+                            },
+                            "title": "retain this harpo scenario",
+                            "type": "object"
+                          }
+                        ]
+                      },
+                      "retainString": {
+                        "description": "This boolean schema doesn't publish in doc.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/exclude.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "bar": false,
+                  "foo": true
+                },
+                "schema": {
+                  "properties": {
+                    "retain": {
+                      "description": "This publishes in doc.",
+                      "properties": {
+                        "excludeAlternators": {
+                          "oneOf": [
+                            {},
+                            {},
+                            {
+                              "properties": {
+                                "marxBrother": {
+                                  "description": "Choice is `harpo`.",
+                                  "enum": [
+                                    "harpo"
+                                  ],
+                                  "type": "string"
+                                }
+                              },
+                              "title": "retain this harpo scenario",
+                              "type": "object"
+                            }
+                          ]
+                        },
+                        "retainString": {
+                          "description": "This boolean schema doesn't publish in doc.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/exclude.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Exclude data schemas",
+        "tags": [
+          "Exclude"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "15-exclude.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "components": {
+    "schemas": {
+      "InternallyLinked": {
+        "description": "Incorrectly linked from an OpenAPI's internal `components` section.",
+        "properties": {
+          "chico": {
+            "description": "Chico description.",
+            "type": "string"
+          },
+          "groucho": {
+            "description": "Groucho description.",
+            "type": "string"
+          },
+          "harpo": {
+            "description": "Harpo description.",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "obj-additional-missing": {
+        "description": "Schema lacks `additionalProperties:false`.",
+        "properties": {
+          "chico": {
+            "description": "Chico description.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "groucho": {
+            "description": "Groucho description.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "harpo": {
+            "description": "Harpo description.",
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "groucho",
+          "harpo",
+          "chico"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Deprecated Swagger spec",
+    "version": "2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/openapi-enforcer-error": {
+      "post": {
+        "description": "__Deprecated__ Serious, blocking mismatches between schema and sample data.\nThese tests are distributed across files because they don't\nall generate as a batch. Different types of enforcer errors\ngenerate only after others are resolved, per file.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/post-openapi-enforcer-error"
+        },
+        "operationId": "post-openapi-enforcer-error",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "widgets": {
+                  "widgetId": 666,
+                  "widgetName": "Acme"
+                }
+              },
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "widgets": {
+                    "items": {
+                      "properties": {
+                        "widgetId": {
+                          "type": "integer"
+                        },
+                        "widgetName": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "widgets"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "openapi-enforcer errors",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/openapi-ref-components": {
+      "get": {
+        "description": "__Deprecated__ This OpenAPI file specs an internal `components` section, but\nall `$ref` links should resolve to external files.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-openapi-ref-components"
+        },
+        "operationId": "get-openapi-ref-components",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "description": "Incorrectly linked from an OpenAPI's internal `components` section.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico description.",
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho description.",
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo description.",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Empty response."
+          }
+        },
+        "summary": "OpenAPI file should not spec components",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/spec-external-doc": {
+      "get": {
+        "description": "__Deprecated__ Raise a `get-spec-external-doc` warning for redundantly spec'ed externalDocs",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-external-doc"
+        },
+        "operationId": "get-spec-external-doc",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Redundant externalDocs object",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/spec-path-malformed-appended-slash/": {
+      "get": {
+        "description": "__Deprecated__ Log bad path.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-path-malformed-appended-slash"
+        },
+        "operationId": "get-spec-path-malformed-appended-slash",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Endpoint path has trailing slash",
+        "tags": [
+          "Operation"
+        ]
+      }
+    },
+    "/spec-path-segment-crud/delete": {
+      "get": {
+        "description": "__Deprecated__ Log final segment.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-path-segment-crud"
+        },
+        "operationId": "get-spec-path-segment-crud",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Final segment is CRUD verb",
+        "tags": [
+          "Operation"
+        ]
+      }
+    },
+    "/spec-path-segment-malformed/mal_formed/{ignoreThisParam}/malFormed": {
+      "get": {
+        "description": "__Deprecated__ All work and no play makes Jack a dull boy.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-path-segment-malformed"
+        },
+        "operationId": "get-spec-path-segment-malformed",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Malformed static path segments",
+        "tags": [
+          "Spec"
+        ]
+      },
+      "parameters": [
+        {
+          "example": "FUBAR",
+          "in": "path",
+          "name": "ignoreThisParam",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/spec-pointer-ref": {
+      "get": {
+        "description": "__Deprecated__ This OpenAPI file specs links to a schema node as opposed to the entire file.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-pointer-refs"
+        },
+        "operationId": "get-spec-pointer-refs",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Schema lacks `additionalProperties:false`.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico description.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho description.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo description.",
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "harpo",
+                    "chico"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Empty response."
+          }
+        },
+        "summary": "OpenAPI file includes $refs to schema subparts",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/spec-referenced-path": {
+      "get": {
+        "description": "__Deprecated__ Linked from paths directory.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-referenced-path"
+        },
+        "operationId": "get-referenced-path",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Linked paths",
+        "tags": [
+          "Spec"
+        ]
+      },
+      "x-akamai": {
+        "file-path": "paths/referenced-path.yaml",
+        "path-info": "/spec-path-info-mismatch"
+      }
+    },
+    "/spec-version-malformed": {
+      "get": {
+        "description": "__Deprecated__ Log this OpenAPI file's stringified integer as warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-version-malformed"
+        },
+        "operationId": "get-spec-version-malformed",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Version should be nN string",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/unresponsive-segment/spec-path-segment-unresponsive": {
+      "get": {
+        "description": "__Deprecated__ Logs as error the `unresponsive-segment` that doesn't respond to method calls.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-path-segment-unresponsive"
+        },
+        "operationId": "get-spec-path-segment-unresponsive",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Unresponsive URL segment",
+        "tags": [
+          "Spec"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "tags": [
+    {
+      "description": "All work and no play makes Jack a dull boy.  All work and no\nplay makes Jack a dull boy.  All work and no play makes Jack a\ndull boy.  All work and no play makes Jack a dull boy.",
+      "name": "Jack"
+    },
+    {
+      "name": "Jill"
+    }
+  ],
+  "x-akamai": {
+    "file-path": "02-spec.yaml",
+    "status": "DEPRECATED"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

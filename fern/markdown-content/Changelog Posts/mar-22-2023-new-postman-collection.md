@@ -1,0 +1,12 @@
+---
+title: "Mar 22, 2023 — New Postman collection"
+slug: "mar-22-2023-new-postman-collection"
+type: ""
+createdAt: "Wed Mar 22 2023 12:10:14 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+The new EdgeWorkers Postman collection (beta) is now available! Try the API, build workflows, and stay on top of development changes.
+
+You can find a Postman button for each operation in the [EdgeWorkers API](ref:get-ids) section. Or access the full collection in [Akamai's Postman Workspace](https://www.postman.com/akamai/workspace/akamai-apis/overview).
+
+Not familiar with Postman? [Learn how to use collections](https://techdocs.akamai.com/developer/docs/postman-make-api-calls).

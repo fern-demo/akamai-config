@@ -1,0 +1,14 @@
+---
+title: "Feb 1, 2024 — Change to PMUSER_BYPASS variable behavior"
+slug: "change-to-pmuserbypass-user-variable"
+type: ""
+createdAt: "Wed Feb 14 2024 13:46:20 GMT+0000 (Coordinated Universal Time)"
+hidden: true
+---
+All EdgeWorkers PMUSER_BYPASS variables are now evaluated at the stage that corresponds to the event handler. For example, PMUSER_BYPASS_EW_CLTREQ_EVENT is now evaluated in `onClientRequest`. Previously the PMUSER_BYPASS variables were all evaluated at the `content-policy` metadata stage regardless of the event handler invoking the request. 
+
+> 📘 
+> 
+> This change occurred on January 31, 2024. You should review any rules created before this date that use the PMUSER_BYPASS variable to see if you need to make any adjustments.
+
+You can find more information about BYPASS variables in the [EdgeWorkers event model](doc:event-handler-functions) section of this guide.

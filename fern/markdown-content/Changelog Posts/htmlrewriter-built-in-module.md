@@ -1,0 +1,8 @@
+---
+title: "April 20, 2023 — html-rewriter built-in module"
+slug: "htmlrewriter-built-in-module"
+type: ""
+createdAt: "Thu Apr 20 2023 20:19:00 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+The [html-rewriter](doc:htmlrewriter) module is now available to use in your EdgeWorkers functions to consume and rewrite HTML documents. It supports use cases such as, website personalization, ad insertion, search and replace, and JavaScript templating.

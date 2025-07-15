@@ -1,0 +1,704 @@
+{
+  "components": {
+    "schemas": {
+      "lang-patterns": {
+        "description": "Regex pattern tests.",
+        "properties": {
+          "lang-alternate-plural": {
+            "description": "Lists the names of Anti-Malware software(s) that are active on the device. Tests all IP address(es) for liveness.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-capitalized-phrase": {
+            "description": "This sentence features Noun Modification Concatenation Somnambulation.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-chris-farley": {
+            "description": "The basic unit within a NetStorage instance is referred to as a \"storage group.\" Unicode string data. Ex: 'Hello World'. Once this period expires, Akamai marks the token as \"unrevoked\" and it can be used again.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-clause-dash": {
+            "description": "Indicates the type of event - aup or avc. The message downloads only if the condition fails -- data has a different `ETag` than the provided one. The range format is `min:max` \u2014 for example, `2:4`. The incoming client request's `Host` header \u2013 for example, `www.example.com`. Downstream caching refers to the caching instructions associated with objects sent with responses toward clients&mdash;browsers, mobile devices, or client proxies.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-clause-paren": {
+            "description": "This sentence has a parenthetical clause (but you knew that). This test should catch multi-word phrases, but not simple definitions of a three-letter acronym (TLA). Let's add a sentence here to put some space after that last paren. (It should also catch sentence-style parentheticals.)",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-clause-semicolon": {
+            "description": "With `APPLY_ACS_QUERY_CONVERSION`, the key is reviewed and stripped down using settings defined for `queryStringConversionKeyOrder` and `queryStringConversionExclude`; a hash of the string is also applied and used for matching at request time. A text description of the error code; returns `null` on success when the `errorCode` is `400`. Consumers should not parse the `detail` member for information; extensions are more suitable and less error-prone ways to obtain such information. Comma-separated list of options to enable; `mapDetails` enables extra mapping-related information. The IDP manually overridden; otherwise `False`.",
+            "minLength": 1,
+            "nullable": true,
+            "type": "string"
+          },
+          "lang-common-abbrev": {
+            "description": "A trailing pipe at the end of a bucket indicates that there is no _greater than the max_ bucket, i.e. in the above example if loss schema was `0|5|80|` then it would mean `0%`, `0%` to `5%`, and `5%` to `80%`. Used primarily when it may be changed, e.g. by an intermediary or cache. The Medicaid Recipient ID number, a.k.a. _Client Identification Number_. The Read-Write vs. Read-only setting for the account. This API returns a collection of reports containing the provisioned demand percentage vs actual demand percentage seen by GTM rounded off to nearest 5 min interval for each data center. The logged event of a user-performed action, for example, the creation of a test definition or test case, the removal of either, adding a note to a diff, etc. The Medicaid Recipient ID number, aka _Client Identification Number_.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-component-based": {
+            "description": "Purge enables you to push new content to the edge network. It lets you have fine-grained control over what publishes. It allows you to get your work done.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-contractions": {
+            "description": "You should not write like this, because there is no reason to. If you did not write conversationally, it is not good writing. You are not obliged to write like this, and you can not keep doing this. If you could not avoid it, or if there have not been any opportunities to avoid it, it is bad writing that is difficult to read. If you are not able to stop doing this, we are obliged to trigger an error. And we will trigger an error, even when it does not necessarily apply. If what is being expressed sounds turgid to customers, they are turned off. If you have not already been warned, you would not be surprised by these errors, and you will be well advised to rewrite a bit. But you do not need to fix the ones that were not a problem.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-duplicate-word": {
+            "description": "This word is is duplicated. It is easy to to miss these. Call it a a problem.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-hyphenated-adverb": {
+            "description": "This is an unnecessarily-hyphenated adverb that ends in _ly_.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-join-term": {
+            "description": "The user name who activated the key collection version. The selected set of host names in this configuration version. Input the complete path and file name for this file as a string.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-akamai-cc": {
+            "description": "This is referred to as the \"Id\" in the Control Center interface. Maintaining properties manually within the Akamai Control Center interface limits you to that more consolidated approach. PAPI allows you to deploy rules more efficiently.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-akamai-depr": {
+            "description": "A list of up to 20 Luna Control Center usernames of those who serve as the event's coordinators. Indicates if the API client's permissions are tied to a Luna user's permissions. Specifies the different ways you can edit an API client, including changing its owner, access rights to Luna services or resources, or deleting it. Note that `ccuParams` are only applicable for CCU OPEN clients. This doesn't delete the OPEN identity or the credentials.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-date-time": {
+            "description": "The date and time when something happened.",
+            "format": "date-time",
+            "type": "string"
+          },
+          "lang-kw-endpoint": {
+            "description": "Call GET on the `/foo/bar/{fubarId}` endpoint. Then modify the data and pass it in on a PUT call to the same endpoint.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-ghost": {
+            "description": "This refers incorrectly to a Ghost server. A common variant is GHost server, and perhaps a plain old ghost server. All of these case-insensitive variants are hinky, including GHOST.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-iso-6801": {
+            "description": "This refers incorrectly to ISO 6801.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-js": {
+            "description": "This refers incorrectly to Javascript. However, a `Content-Type` of `text/javascript;charset=UTF-8` is correct. Also lowercased javascript is incorrect.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-multiple": {
+            "description": "I went down to the store and bought milk, butter, and multiple eggs.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-provision": {
+            "description": "This sentence provisions something or other, but it's unclear what exactly is happening.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-kw-utilize": {
+            "description": "This sentence utilizes a word that's entirely unnecessary.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-link-url-display": {
+            "description": "This URL display link [https://www.google.com](https://www.google.com) triggers an error.  So does this [www.google.com](https://www.google.com) hostname link.  So does this [google.com](https://www.google.com) domain name link.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-musty": {
+            "description": "You must avoid the imperative tone in sentences like this. Avoiding the imperative tone is required, or you fail ignominiously.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-passive-voice": {
+            "description": "Passive voice may be used in this sentence.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-preposition-phrase": {
+            "description": "Too many preposition phrases chained together in a sentence cause problems of the comprehension.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-sensitive-terms": {
+            "description": "A value of `WHITELISTED` indicates you're waiting for approval from the China partner to enable your property `hostname` in China. This removes the property `hostname` from the whitelist without unmapping the edge hostname from it. Indicates if the device is blacklisted from the network. This object contains a whitelist or blacklist of domains and IP addresses to allow or block on your domain. Each string is encoded in master file format. RFC 1035 defines master file format for most record types. When you configure a `SECONDARY` zone, several Akamai nameservers known as zone transfer agents perform zone transfer requests to fetch the record data from the zone's configured master nameservers.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-slash-alternators": {
+            "description": "This and/or that could be a problem. Or perhaps it is/may be a problem.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-spell-code": {
+            "description": "This `isMispelld` word is in a camelCased literal.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-spell-text": {
+            "description": "This is an ordinary mispelld word.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-split-term": {
+            "description": "Identifies the `datacenterId` of which this datacenter is a clone. A datacenter clone is just like any other datacenter except that it inherits its `continent`, `country`, `stateOrProvince`, `city`, `latitude`, and `longitude` geographic attributes from the datacenter of which it is a clone.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-standards-body": {
+            "description": "ISO-8601 timestamp indicating when the test definition was created. ISO3166 region code the edge IP maps to. Don't use non-routable RFC-1918 addresses. The value needs to be a valid RFC1123 hostname.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-tbd": {
+            "description": "TBD.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-third-person-singular": {
+            "description": "If a user were to modify his edge configuration's cache settings, her traffic would not spike.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-weak-relation": {
+            "description": "The list of parameter objects associated with the method. The unique identifier for the contract associated with the stream.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "lang-willies": {
+            "description": "This sentence will trigger a test for unnecessary future tense.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "openapi-multiline-block": {
+            "description": "This paragraph is split\nonto more than one line.\n\nThis separate paragraph is also split\nonto more than one line.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "openapi-pipe-quote-desc": {
+            "description": "This description is not pipe-quoted in YAML.",
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/lang-patterns.yaml"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Language",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/lang-desc-unpunctuated": {
+      "get": {
+        "description": "This description is unpunctuated",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-lang-desc-unpunctuated"
+        },
+        "operationId": "get-lang-desc-unpunctuated",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Description is unpunctuated",
+        "tags": [
+          "Language"
+        ]
+      }
+    },
+    "/lang-literal-long": {
+      "get": {
+        "description": "Log this paragraph's very long inline literal as an editorial issue. Let's just insert some gratuitously long URL such as `https://techdocs.akamai.com/property-mgr/reference/fast` into the description.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-lang-literal-long"
+        },
+        "operationId": "get-lang-literal-long",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Overly long embedded literal",
+        "tags": [
+          "Language"
+        ]
+      }
+    },
+    "/lang-patterns": {
+      "get": {
+        "description": "Each schema demonstrates a language issue.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-lang-patterns"
+        },
+        "operationId": "get-lang-patterns",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "lang-alternate-plural": "...",
+                  "lang-chris-farley": "...",
+                  "lang-clause-dash": "...",
+                  "lang-clause-paren": "...",
+                  "lang-clause-semicolon": "...",
+                  "lang-common-abbrev": "...",
+                  "lang-component-based": "...",
+                  "lang-contractions": "...",
+                  "lang-duplicate-word": "...",
+                  "lang-hyphenated-adverb": "...",
+                  "lang-join-term": "...",
+                  "lang-kw-akamai-cc": "...",
+                  "lang-kw-akamai-depr": "...",
+                  "lang-kw-endpoint": "...",
+                  "lang-kw-js": "...",
+                  "lang-kw-multiple": "...",
+                  "lang-kw-provision": "...",
+                  "lang-kw-utilize": "...",
+                  "lang-link-url-display": "...",
+                  "lang-musty": "...",
+                  "lang-passive-voice": "...",
+                  "lang-sensitive-terms": "...",
+                  "lang-slash-alternators": "...",
+                  "lang-spell-code": "...",
+                  "lang-spell-text": "...",
+                  "lang-split-term": "...",
+                  "lang-standards-body": "...",
+                  "lang-tbd": "...",
+                  "lang-third-person-singular": "...",
+                  "lang-weak-relation": "...",
+                  "lang-willies": "...",
+                  "openapi-multiline-block": "...",
+                  "openapi-pipe-quote-desc": "..."
+                },
+                "schema": {
+                  "description": "Regex pattern tests.",
+                  "properties": {
+                    "lang-alternate-plural": {
+                      "description": "Lists the names of Anti-Malware software(s) that are active on the device. Tests all IP address(es) for liveness.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-capitalized-phrase": {
+                      "description": "This sentence features Noun Modification Concatenation Somnambulation.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-chris-farley": {
+                      "description": "The basic unit within a NetStorage instance is referred to as a \"storage group.\" Unicode string data. Ex: 'Hello World'. Once this period expires, Akamai marks the token as \"unrevoked\" and it can be used again.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-clause-dash": {
+                      "description": "Indicates the type of event - aup or avc. The message downloads only if the condition fails -- data has a different `ETag` than the provided one. The range format is `min:max` \u2014 for example, `2:4`. The incoming client request's `Host` header \u2013 for example, `www.example.com`. Downstream caching refers to the caching instructions associated with objects sent with responses toward clients&mdash;browsers, mobile devices, or client proxies.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-clause-paren": {
+                      "description": "This sentence has a parenthetical clause (but you knew that). This test should catch multi-word phrases, but not simple definitions of a three-letter acronym (TLA). Let's add a sentence here to put some space after that last paren. (It should also catch sentence-style parentheticals.)",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-clause-semicolon": {
+                      "description": "With `APPLY_ACS_QUERY_CONVERSION`, the key is reviewed and stripped down using settings defined for `queryStringConversionKeyOrder` and `queryStringConversionExclude`; a hash of the string is also applied and used for matching at request time. A text description of the error code; returns `null` on success when the `errorCode` is `400`. Consumers should not parse the `detail` member for information; extensions are more suitable and less error-prone ways to obtain such information. Comma-separated list of options to enable; `mapDetails` enables extra mapping-related information. The IDP manually overridden; otherwise `False`.",
+                      "minLength": 1,
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "lang-common-abbrev": {
+                      "description": "A trailing pipe at the end of a bucket indicates that there is no _greater than the max_ bucket, i.e. in the above example if loss schema was `0|5|80|` then it would mean `0%`, `0%` to `5%`, and `5%` to `80%`. Used primarily when it may be changed, e.g. by an intermediary or cache. The Medicaid Recipient ID number, a.k.a. _Client Identification Number_. The Read-Write vs. Read-only setting for the account. This API returns a collection of reports containing the provisioned demand percentage vs actual demand percentage seen by GTM rounded off to nearest 5 min interval for each data center. The logged event of a user-performed action, for example, the creation of a test definition or test case, the removal of either, adding a note to a diff, etc. The Medicaid Recipient ID number, aka _Client Identification Number_.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-component-based": {
+                      "description": "Purge enables you to push new content to the edge network. It lets you have fine-grained control over what publishes. It allows you to get your work done.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-contractions": {
+                      "description": "You should not write like this, because there is no reason to. If you did not write conversationally, it is not good writing. You are not obliged to write like this, and you can not keep doing this. If you could not avoid it, or if there have not been any opportunities to avoid it, it is bad writing that is difficult to read. If you are not able to stop doing this, we are obliged to trigger an error. And we will trigger an error, even when it does not necessarily apply. If what is being expressed sounds turgid to customers, they are turned off. If you have not already been warned, you would not be surprised by these errors, and you will be well advised to rewrite a bit. But you do not need to fix the ones that were not a problem.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-duplicate-word": {
+                      "description": "This word is is duplicated. It is easy to to miss these. Call it a a problem.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-hyphenated-adverb": {
+                      "description": "This is an unnecessarily-hyphenated adverb that ends in _ly_.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-join-term": {
+                      "description": "The user name who activated the key collection version. The selected set of host names in this configuration version. Input the complete path and file name for this file as a string.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-akamai-cc": {
+                      "description": "This is referred to as the \"Id\" in the Control Center interface. Maintaining properties manually within the Akamai Control Center interface limits you to that more consolidated approach. PAPI allows you to deploy rules more efficiently.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-akamai-depr": {
+                      "description": "A list of up to 20 Luna Control Center usernames of those who serve as the event's coordinators. Indicates if the API client's permissions are tied to a Luna user's permissions. Specifies the different ways you can edit an API client, including changing its owner, access rights to Luna services or resources, or deleting it. Note that `ccuParams` are only applicable for CCU OPEN clients. This doesn't delete the OPEN identity or the credentials.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-date-time": {
+                      "description": "The date and time when something happened.",
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "lang-kw-endpoint": {
+                      "description": "Call GET on the `/foo/bar/{fubarId}` endpoint. Then modify the data and pass it in on a PUT call to the same endpoint.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-ghost": {
+                      "description": "This refers incorrectly to a Ghost server. A common variant is GHost server, and perhaps a plain old ghost server. All of these case-insensitive variants are hinky, including GHOST.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-iso-6801": {
+                      "description": "This refers incorrectly to ISO 6801.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-js": {
+                      "description": "This refers incorrectly to Javascript. However, a `Content-Type` of `text/javascript;charset=UTF-8` is correct. Also lowercased javascript is incorrect.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-multiple": {
+                      "description": "I went down to the store and bought milk, butter, and multiple eggs.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-provision": {
+                      "description": "This sentence provisions something or other, but it's unclear what exactly is happening.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-kw-utilize": {
+                      "description": "This sentence utilizes a word that's entirely unnecessary.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-link-url-display": {
+                      "description": "This URL display link [https://www.google.com](https://www.google.com) triggers an error.  So does this [www.google.com](https://www.google.com) hostname link.  So does this [google.com](https://www.google.com) domain name link.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-musty": {
+                      "description": "You must avoid the imperative tone in sentences like this. Avoiding the imperative tone is required, or you fail ignominiously.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-passive-voice": {
+                      "description": "Passive voice may be used in this sentence.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-preposition-phrase": {
+                      "description": "Too many preposition phrases chained together in a sentence cause problems of the comprehension.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-sensitive-terms": {
+                      "description": "A value of `WHITELISTED` indicates you're waiting for approval from the China partner to enable your property `hostname` in China. This removes the property `hostname` from the whitelist without unmapping the edge hostname from it. Indicates if the device is blacklisted from the network. This object contains a whitelist or blacklist of domains and IP addresses to allow or block on your domain. Each string is encoded in master file format. RFC 1035 defines master file format for most record types. When you configure a `SECONDARY` zone, several Akamai nameservers known as zone transfer agents perform zone transfer requests to fetch the record data from the zone's configured master nameservers.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-slash-alternators": {
+                      "description": "This and/or that could be a problem. Or perhaps it is/may be a problem.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-spell-code": {
+                      "description": "This `isMispelld` word is in a camelCased literal.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-spell-text": {
+                      "description": "This is an ordinary mispelld word.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-split-term": {
+                      "description": "Identifies the `datacenterId` of which this datacenter is a clone. A datacenter clone is just like any other datacenter except that it inherits its `continent`, `country`, `stateOrProvince`, `city`, `latitude`, and `longitude` geographic attributes from the datacenter of which it is a clone.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-standards-body": {
+                      "description": "ISO-8601 timestamp indicating when the test definition was created. ISO3166 region code the edge IP maps to. Don't use non-routable RFC-1918 addresses. The value needs to be a valid RFC1123 hostname.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-tbd": {
+                      "description": "TBD.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-third-person-singular": {
+                      "description": "If a user were to modify his edge configuration's cache settings, her traffic would not spike.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-weak-relation": {
+                      "description": "The list of parameter objects associated with the method. The unique identifier for the contract associated with the stream.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "lang-willies": {
+                      "description": "This sentence will trigger a test for unnecessary future tense.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "openapi-multiline-block": {
+                      "description": "This paragraph is split\nonto more than one line.\n\nThis separate paragraph is also split\nonto more than one line.",
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "openapi-pipe-quote-desc": {
+                      "description": "This description is not pipe-quoted in YAML.",
+                      "minLength": 1,
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/lang-patterns.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Empty response."
+          }
+        },
+        "summary": "Regex pattern tests",
+        "tags": [
+          "Language"
+        ]
+      }
+    },
+    "/lang-pgf-long": {
+      "get": {
+        "description": "Happy families are all alike; every unhappy family is unhappy in its own way. Everything was in confusion in the Oblonskys' house. The wife had discovered that the husband was carrying on an intrigue with a French girl, who had been a governess in their family, and she had announced to her husband that she could not go on living in the same house with him. This position of affairs had now lasted three days, and not only the husband and wife themselves, but all the members of their family and household, were painfully conscious of it. Every person in the house felt that there was no sense in their living together, and that the stray people brought together by chance in any inn had more in common with one another than they, the members of the family and household of the Oblonskys. The wife did not leave her own room, the husband had not been at home for three days. The children ran wild all over the house; the English governess quarreled with the housekeeper, and wrote to a friend asking her to look out for a new situation for her; the man-cook had walked off the day before just at dinner time; the kitchen-maid, and the coachman had given warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-pgf-long"
+        },
+        "operationId": "get-pgf-long",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Test for long paragraph",
+        "tags": [
+          "Language"
+        ]
+      }
+    },
+    "/lang-pgf-multi": {
+      "get": {
+        "description": "Happy families are all alike.\n\nEvery unhappy family is unhappy in its own way.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-pgf-multi"
+        },
+        "operationId": "get-pgf-multi",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Test for more than one paragraph",
+        "tags": [
+          "Language"
+        ]
+      }
+    },
+    "/openapi-enforcer-error": {
+      "post": {
+        "description": "Serious, blocking mismatches between schema and sample data.\nThese tests are distributed across files because they don't\nall generate as a batch. Different types of enforcer errors\ngenerate only after others are resolved, per file.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/post-openapi-enforcer-error"
+        },
+        "operationId": "post-openapi-enforcer-error",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "schemaExcludesEmptyString": "",
+                "schemaExcludesEnum": "UNKNOWN_ENUM_VALUE",
+                "schemaExcludesNull": null,
+                "schemaExpectsInteger": "a string",
+                "schemaExpectsString": 9
+              },
+              "schema": {
+                "properties": {
+                  "schemaExcludesEmptyString": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "schemaExcludesEnum": {
+                    "enum": [
+                      "KNOWN_ENUM_VALUE"
+                    ],
+                    "type": "string"
+                  },
+                  "schemaExcludesNull": {
+                    "type": "string"
+                  },
+                  "schemaExpectsInteger": {
+                    "type": "integer"
+                  },
+                  "schemaExpectsString": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "openapi-enforcer errors",
+        "tags": [
+          "Spec"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "16-lang.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "components": {},
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Beta Swagger spec",
+    "version": "v1"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/spec-base-url-malformed": {
+      "get": {
+        "description": "__Beta__ Log error for trailing segment in the base URL.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-spec-base-url-malformed"
+        },
+        "operationId": "get-spec-base-url-malformed",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Base URL not kosher",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/svc-path-redundant": {
+      "get": {
+        "description": "__Beta__ Log redundant URL path as error. The duplicate op name & ID should also log as errors.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-svc-path-redundant"
+        },
+        "operationId": "get-svc-path-redundant",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Redundant URL path",
+        "tags": [
+          "Service"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2/extra-segment"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "03-spec-duplicate.yaml",
+    "status": "BETA"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

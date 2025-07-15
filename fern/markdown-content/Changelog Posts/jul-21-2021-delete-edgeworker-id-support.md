@@ -1,0 +1,11 @@
+---
+title: "Jul 21, 2021 — Support for Delete EdgeWorker ID and version"
+slug: "jul-21-2021-delete-edgeworker-id-support"
+type: ""
+createdAt: "Wed Jul 21 2021 21:07:00 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+- You can now use the EdgeWorkers Management application, the [API](https://techdocs.akamai.com/edgeworkers/reference/api), and [CLI](https://github.com/akamai/cli-edgeworkers) to delete an EdgeWorker ID and version.
+- [Delete an EdgeWorker ID](https://techdocs.akamai.com/edgeworkers/docs/manage-edgeworkers#delete-an-edgeworker-id) from your property configuration. All versions, code bundles, and the activation and deactivation history associated with the EdgeWorker ID are also deleted. 
+- [Delete an EdgeWorker version](https://techdocs.akamai.com/edgeworkers/docs/manage-edgeworkers#delete-an-edgeworker-version) from an EdgeWorker ID.
+- [View the properties](https://techdocs.akamai.com/edgeworkers/docs/manage-edgeworkers#view-properties) using an existing EdgeWorker ID.

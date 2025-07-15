@@ -1,0 +1,39 @@
+---
+title: "Jan 26, 2022 —  Improvements to work flow and expanded use case support"
+slug: "improvements-to-work-flow-and-expanded-use-case-support"
+type: ""
+createdAt: "Wed Jan 26 2022 17:52:00 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+We are pleased to have several EdgeWorkers features and updates to announce.
+
+**Updates to resource tier limits** 
+
+- We updated the [resource tier limits](doc:resource-tier-limitations) to help expand the supported use cases for EdgeWorkers. 
+
+    Updates to the **Basic compute** resource tier include:
+
+  - Maximum CPU time during initialization increased from 30 to 60 milliseconds
+  - Maximum wall time during initialization increased  from 100 to 200 milliseconds
+
+    Updates to the **Dynamic compute** resource tier include:
+
+  - Maximum CPU time during initialization increased from 30 to 60 milliseconds
+  - Maximum wall time during initialization increased from 100 to 200 milliseconds
+  - Maximum wall time per HTTP sub-request during the execution of all event handlers increased from 1 to 1.5 seconds
+
+**Standard TLS now a supported delivery method** 
+
+- [Standard TLS](https://techdocs.akamai.com/property-mgr/docs/serve-content-over-https), used to serve non PCI compliant traffic over HTTPS via an `edgesuite.net` edge hostname, is now supported as a delivery method for EdgeWorkers.
+
+> 👍 
+> 
+> At the moment you need to contact your Akamai representative or reach out via the [Serverless Slack channel](doc:welcome-to-edgeworkers#connect-via-slack) to opt-in to this new feature.
+
+**Create a new version in the code bundle editor** 
+
+- You can now create a new EdgeWorker version directly in the [code bundle editor](doc:code-bundle-editor). The code bundle editor opens with the last saved version or a Hello world example for you to use as a starting point for your new EdgeWorker version.
+
+**Cancel an EdgeWorkers activation** 
+
+- You can now use the [EdgeWorkers Management application](doc:manage-edgeworkers) or the [API](ref:cancel-activation) to cancel an EdgeWorkers activation if the status is still PENDING.

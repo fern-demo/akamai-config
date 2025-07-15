@@ -1,0 +1,8 @@
+---
+title: "Sep 26, 2024 — Override default JavaScript log level"
+slug: "sep-26-2024-override-default-javascript-log-level"
+type: ""
+createdAt: "Thu Sep 26 2024 12:07:29 GMT+0000 (Coordinated Universal Time)"
+hidden: true
+---
+Now when you deliver JavaScript logs to an external endpoint using a DataStream 2 stream you can use the EdgeWorkers Management application to [override the default log level](doc:manage-edgeworkers#override-the-javascript-log-level).

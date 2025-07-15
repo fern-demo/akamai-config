@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://schema.buildwithfern.dev/docs-yml.json
+instances:
+  - url: akamai.docs.buildwithfern.com # update this to {yourorg}.docs.buildwithfern.com
+    # custom-domain: plantstore.dev # specify your custom domain when you are ready to go live
+
+title: Akamai TechDocs
+
+layout:
+  searchbar-placement: header
+  page-width: full
+
+products:
+  - display-name: Cloud Computing
+    path: ./products/cloud-computing/versions/akamai-cloud.yml
+    icon: ./assets/cloud_computing.svg
+    subtitle: "Build powerful integrations"
+    versions:
+      - display-name: Akamai Cloud
+        path: ./products/cloud-computing/versions/akamai-cloud.yml
+        slug: akamai-cloud
+      - display-name: Build on the Cloud
+        path: ./products/cloud-computing/versions/build-on-cloud.yml
+        slug: build-on-cloud
+
+  - display-name: Content Delivery
+    path: ./products/content-delivery/versions/edge-workers.yml
+    icon: ./assets/content-delivery.svg
+    subtitle: "Deliver content to your users"
+    versions:
+      - display-name: Edge Workers
+        path: ./products/content-delivery/versions/edge-workers.yml
+        slug: edge-workers
+      - display-name: API Definitions
+        path: ./products/content-delivery/versions/api-definitions.yml
+        slug: api-definitions
+
+navbar-links:
+  - type: minimal
+    text: Akamai.com
+    url: https://www.akamai.com
+  - type: minimal
+    text: Linode.com
+    url: https://www.linode.com
+  - type: minimal
+    text: Contact us
+    url: https://www.linode.com/support/
+  - type: filled
+    text: Try Akamai
+    url: https://www.akamai.com/products#free-trials
+  - type: outlined
+    text: Log in
+    url: https://techdocs.akamai.com/dual-login?redirect=/home
+
+colors:
+  accentPrimary:
+    dark: "#0074BC"
+    light: "#0074BC"
+
+logo:
+  dark: assets/akamai-techdocs-logo.png
+  light: assets/akamai-techdocs-logo.png
+  height: 30
+  href: https://buildwithfern.com/?utm_campaign=demo&utm_medium=plantstore&utm_source=logo
+
+favicon: assets/7c45921-favicon.ico

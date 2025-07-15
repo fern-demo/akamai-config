@@ -1,0 +1,17 @@
+---
+title: "Jan 10, 2023 — New User Location Object properties"
+slug: "jan-10-2023-new-user-location-object-properties"
+type: ""
+createdAt: "Tue Jan 10 2023 20:56:33 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+You can now use the following [User Location Object](doc:user-location-object) properties to specify the geographic location of a request:
+
+- [`areaCodes`](doc:user-location-object#areacodes) 
+- [`bandwidth`](doc:user-location-object#bandwidth) 
+- [`dma`](doc:user-location-object#dma) 
+- [`fips`](doc:user-location-object#fips) 
+- [`latitude`](doc:user-location-object#latitude) 
+- [`longitude`](doc:user-location-object#longitude) 
+- [`networkType`](doc:user-location-object#networktype) 
+- [`timezone`](doc:user-location-object#timezone)

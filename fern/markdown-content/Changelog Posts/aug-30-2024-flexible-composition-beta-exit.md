@@ -1,0 +1,20 @@
+---
+title: "Aug 30, 2024 — Flexible composition beta exit & CLI support"
+slug: "aug-30-2024-flexible-composition-beta-exit"
+type: ""
+createdAt: "Fri Aug 30 2024 18:15:00 GMT+0000 (Coordinated Universal Time)"
+hidden: false
+---
+Flexible composition is now available to use without having to join the Beta program.
+
+The [EdgeWorkers CLI](https://github.com/akamai/cli-edgeworkers) now supports flexible composition via the following new commands:
+
+- `list-revision-activations`
+- `activation-revision`
+- `download-revision`
+- `get-revision-bom`
+- `get-revision`
+- `list-revisions`
+- `compare-revisions`
+- `pin-revision`
+- `unpin-revision`
