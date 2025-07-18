@@ -8,23 +8,12 @@ title: Akamai TechDocs
 layout:
   searchbar-placement: header
   page-width: full
+  tabs-placement: header
 
 products:
-  - display-name: Cloud Computing
-    path: ./products/cloud-computing/versions/akamai-cloud.yml
-    icon: ./assets/cloud_computing.svg
-    subtitle: "Build powerful integrations"
-    versions:
-      - display-name: Akamai Cloud
-        path: ./products/cloud-computing/versions/akamai-cloud.yml
-        slug: akamai-cloud
-      - display-name: Build on the Cloud
-        path: ./products/cloud-computing/versions/build-on-cloud.yml
-        slug: build-on-cloud
-
   - display-name: Content Delivery
     path: ./products/content-delivery/versions/edge-workers.yml
-    icon: ./assets/content-delivery.svg
+    image: ./assets/content-delivery.svg
     subtitle: "Deliver content to your users"
     versions:
       - display-name: Edge Workers
@@ -33,6 +22,17 @@ products:
       - display-name: API Definitions
         path: ./products/content-delivery/versions/api-definitions.yml
         slug: api-definitions
+  - display-name: Cloud Computing
+    path: ./products/cloud-computing/versions/akamai-cloud.yml
+    image: ./assets/cloud_computing.svg
+    subtitle: "Build powerful integrations"
+    versions:
+      - display-name: Akamai Cloud
+        path: ./products/cloud-computing/versions/akamai-cloud.yml
+        slug: akamai-cloud
+      - display-name: Build on the Cloud
+        path: ./products/cloud-computing/versions/build-on-cloud.yml
+        slug: build-on-cloud
 
 navbar-links:
   - type: minimal
@@ -47,14 +47,16 @@ navbar-links:
   - type: filled
     text: Try Akamai
     url: https://www.akamai.com/products#free-trials
-  - type: outlined
-    text: Log in
-    url: https://techdocs.akamai.com/dual-login?redirect=/home
+  # - type: outlined
+  #   text: Log in
+  #   url: https://techdocs.akamai.com/dual-login?redirect=/home
 
 colors:
   accentPrimary:
-    dark: "#0074BC"
-    light: "#0074BC"
+    dark: "#007AC5"
+    light: "#007AC5"
+
+css: ./assets/styles/main.css 
 
 logo:
   dark: assets/akamai-techdocs-logo.png
