@@ -1,10 +1,6 @@
 ---
 title: "Store locator"
 slug: "store-locator"
-excerpt: "Learn how to execute store locator in a serverless function with EdgeWorkers"
-hidden: false
-createdAt: "Thu Sep 30 2021 17:38:22 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Tue Mar 11 2025 14:54:52 GMT+0000 (Coordinated Universal Time)"
 ---
 Many websites provide a search function to help users find nearby locations such as retail stores. Typically, a store locator service is implemented on-premise or at the cloud origin, to search a database to find physical locations near the user. You can improve the performance of this search by executing it in a serverless function at the Edge with EdgeWorkers.
 
@@ -254,7 +250,7 @@ export function onClientRequest(request) {
   }
 
   let result = [];
-  for (var i = 0; i < nearest.length; i++) {
+  for (var i = 0; i &lt; nearest.length; i++) {
     let location = nearest[i];
     /* calculate distance and convert to miles */
     let distance = geokdbush.distance(lon, lat, location.lon, location.lat) / 1.609;

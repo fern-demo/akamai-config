@@ -1,13 +1,6 @@
 ---
 title: "Boost search autocomplete performance"
 slug: "boost-autocomplete-performance"
-excerpt: "Implement EdgeWorkers code to maximize the performance of popular search terms."
-hidden: true
-metadata: 
-  image: []
-  robots: "index"
-createdAt: "Mon Oct 04 2021 18:08:47 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Fri Jul 14 2023 14:31:40 GMT+0000 (Coordinated Universal Time)"
 ---
 Suggesting relevant search terms while a visitor types in a search box is a common practice on many websites and search engines. It provides a relevant and fast response that is essential for an excellent user experience. 
 

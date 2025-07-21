@@ -1,10 +1,6 @@
 ---
 title: "Dynamic Content Assembly using the html-rewriter"
 slug: "html-rewriter-dynamic-content-assembly"
-excerpt: "Learn how to use the EdgeWorkers [html-rewriter](doc:htmlrewriter) to generate dynamic HTML content."
-hidden: false
-createdAt: "Tue Jul 25 2023 13:49:53 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Tue Oct 01 2024 16:38:19 GMT+0000 (Coordinated Universal Time)"
 ---
 This example demonstrates how to combine JSON data from an API endpoint with an HTML template to make real-time changes to HTML code. When a logged in user makes a request, a discount code is also dynamically applied to the rendered content. These changes are made without altering the original source code on the origin server.
 
@@ -144,7 +140,7 @@ rewriter.onElement('section', el => {
 Here's the template before the EdgeWorkers function runs.
 
 ```html
-<!DOCTYPE html>
+&lt;!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -170,7 +166,7 @@ Here's the template before the EdgeWorkers function runs.
 Here's the generated content after the EdgeWorkers function runs.
 
 ```html
-<!DOCTYPE html>
+&lt;!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -240,40 +236,16 @@ To gain further performance benefits from dynamic content assembly you can also 
 
 To cache the HTML template and JSON you can use the [caching](https://techdocs.akamai.com/property-mgr/docs/caching-2) and [cache prefresh](https://techdocs.akamai.com/property-mgr/docs/cache-prefresh-refresh) Property Manager behaviors. You also need to make a small addition to the EdgeWorkers sub-request and add an `\X-Subrequest` header to the request. This identifies requests that come from an EdgeWorkers function so you can then use the header as part of the cache key.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/cacheIdModification-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cacheIdModification-v1.png" alt="Image"/>
+</Frame>
 
 
 Caching the content created by the html-rewriter requires a little extra care. There are two variants of content, one for regular users and one displaying a discount code for logged in users. You need to distinguish between the two variants to avoid cache key collisions because they both share the same URL. To do this you need to include the cookie that is set for logged in users as part of the cache key. This creates separate cache keys for each variant defined by attributes in the request. The final result looks like this.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/cacheIdModification2-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cacheIdModification2-v1.png" alt="Image"/>
+</Frame>
 
 
 > 📘 For a deep dive into caching considerations and transformed content refer to the [Response content transformation](doc:transform-response-content) use case.

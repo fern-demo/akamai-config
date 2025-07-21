@@ -1,10 +1,6 @@
 ---
 title: "Use npm package manager to import external modules"
 slug: "import-external-module-npm-package-mgr"
-excerpt: "Unwrapping Packages - A guide to using external modules in EdgeWorkers"
-hidden: false
-createdAt: "Thu Nov 30 2023 12:59:35 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Mon Mar 18 2024 14:13:04 GMT+0000 (Coordinated Universal Time)"
 ---
 EdgeWorkers lets you run custom JavaScript code on Akamai's edge network. While Akamai provides a variety of [built-in modules](doc:built-in-modules), there are use cases that may require custom modules from other developers or organizations. In this tutorial, you'll learn how to import a Node.js module into your EdgeWorkers functions. This process also applies to other package registries such as Yarn and GitHub.
 
@@ -12,22 +8,9 @@ EdgeWorkers lets you run custom JavaScript code on Akamai's edge network. While 
 
 Akamai EdgeWorkers uses the [ECMAScript Modules (ESM)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) system for JavaScript. ESM aligns with modern practices and offers efficient code execution at the edge. If, however, you have a Node.js module written in [CommonJS (CJS)](https://en.m.wikipedia.org/wiki/CommonJS), you need to convert it to an ESM format. Converting it makes it compatible with EdgeWorkers' runtime environment and paves the way for efficient code execution. 
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/importNPM.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "700px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/importNPM.jpg" alt="Image"/>
+</Frame>
 
 
 # Convert a CJS module to an ESM format

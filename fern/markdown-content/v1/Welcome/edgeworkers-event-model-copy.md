@@ -1,32 +1,18 @@
 ---
 title: "EdgeWorkers event model (COPY)"
 slug: "edgeworkers-event-model-copy"
-excerpt: ""
-hidden: true
-createdAt: "Thu Nov 07 2024 17:07:24 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Thu Nov 07 2024 17:26:13 GMT+0000 (Coordinated Universal Time)"
 ---
 Understand when EdgeWorker scripts are executed. The EdgeWorkers code is invoked based on specific HTTP events. To create a function for any of these events, implement the callbacks as explained in the [JavaScript API reference](doc:about-the-javascript-api).
 
-![event handlers](https://techdocs.akamai.com/edgeworkers/img/eventModel-v1.jpg)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/eventModel-v1.jpg" alt="event handlers"/>
+</Frame>
 
 The responseProvider event handler acts as a surrogate origin to execute EdgeWorkers code. To learn more, go to the [Response Orchestration](doc:response-orchestration) section.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/responseProviderEvent-v1.jpg",
-        null,
-        "responseProvider event handler"
-      ],
-      "align": "center",
-      "sizing": "700px"
-    }
-  ]
-}
-[/block]
+<Frame caption="responseProvider event handler">
+  <img src="https://techdocs.akamai.com/edgeworkers/img/responseProviderEvent-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## onClientRequest
@@ -142,25 +128,9 @@ Review the table for information about the available parameters.
 
 View the supported HTTP methods for the EdgeWorkers event handlers.
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Event handler",
-    "h-1": "Supported methods",
-    "h-2": "Unsupported methods",
-    "0-0": "`onOriginRequest`  \n`onOriginResponse`  \n`onClientResponse`  \n`onClientRequest`  \n`responseProvider`",
-    "0-1": "GET  \nHEAD  \nPOST  \nPUT  \nPATCH  \nDELETE  \nOPTIONS (see note below)",
-    "0-2": "CONNECT  \nTRACE"
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Event handler | Supported methods | Unsupported methods |
+|---|---|---|
+| `onOriginRequest`  <br/>`onOriginResponse`  <br/>`onClientResponse`  <br/>`onClientRequest`  <br/>`responseProvider` | GET  <br/>HEAD  <br/>POST  <br/>PUT  <br/>PATCH  <br/>DELETE  <br/>OPTIONS (see note below) | CONNECT  <br/>TRACE |
 
 
 > 📘 To use the OPTIONS HTTP method you need to add the `PMUSER_EW_ENABLE_OPTIONS` [variable](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars)  to your rule and set the value to `true`. The name of the variable must be UPPERCASE.
@@ -185,21 +155,9 @@ To bypass an event, set the **initial value** of the corresponding variable to "
 
 > 👍 The PMUSER\_ prefix for the variable is automatically included.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/edgeworkers-bypassvariable-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeworkers-bypassvariable-v1.png" alt="Image"/>
+</Frame>
 
 
 EdgeWorkers event handlers are always bypassed if their respective PMUSER variables are set, no matter which metadata stage they are restricted to. You can use use BYPASS variables in a programmatic manner to:

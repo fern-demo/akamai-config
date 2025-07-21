@@ -4,7 +4,7 @@ tabs:
     icon: fa-solid fa-book
   recipes:
     display-name: Recipes
-    icon: fa-solid fa-book-open
+    icon: fa-solid fa-flask
   # api:
   #   display-name: API
   #   icon: fa-solid fa-code
@@ -26,11 +26,46 @@ navigation:
     layout:
       - section: Welcome
         contents:
-          - page: Introduction
-            #path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
-            path: ../../../markdown-content/sample.mdx
-          - page: Authentication
-            path: ../../../markdown-content/sample.mdx
+          - page: Welcome to EdgeWorkers
+            path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
+          - section: EdgeWorkers event model
+            path: ../../../markdown-content/v1/Welcome/event-handler-functions.md
+            contents:
+              - page: Response orchestration
+                path: ../../../markdown-content/v1/Welcome/event-handler-functions/response-orchestration.md
+          - page: Administrator and developer roles
+            path: ../../../markdown-content/v1/Welcome/administrator-and-developer-roles.md
+          - page: Specifications
+            path: ../../../markdown-content/v1/Welcome/specifications.md
+          - section: Tutorials
+            path: ../../../markdown-content/v1/Welcome/use-cases.md
+            contents:
+              - page: Transform response content
+                path: ../../../markdown-content/v1/Welcome/use-cases/transform-response-content.md
+              - page: Boost autocomplete performance
+                path: ../../../markdown-content/v1/Welcome/use-cases/boost-autocomplete-performance.md
+              - page: Content insertion
+                path: ../../../markdown-content/v1/Welcome/use-cases/content-insertion.md
+              - page: Content security policy
+                path: ../../../markdown-content/v1/Welcome/use-cases/content-security-policy.md
+              - page: Fire and forget
+                path: ../../../markdown-content/v1/Welcome/use-cases/fire-and-forget.md
+              - page: HTML rewriter dynamic content assembly
+                path: ../../../markdown-content/v1/Welcome/use-cases/html-rewriter-dynamic-content-assembly.md
+              - page: Import external module npm package manager
+                path: ../../../markdown-content/v1/Welcome/use-cases/import-external-module-npm-package-mgr.md
+              - page: Live program replacement
+                path: ../../../markdown-content/v1/Welcome/use-cases/live-program-replacement.md
+              - page: Manifest and playlist personalization
+                path: ../../../markdown-content/v1/Welcome/use-cases/manifest-and-playlist-personalization.md
+              - page: Process response bodies
+                path: ../../../markdown-content/v1/Welcome/use-cases/process-response-bodies.md
+              - page: Redirect pages based on location
+                path: ../../../markdown-content/v1/Welcome/use-cases/redirect-pages-based-on-location.md
+              - page: Response body processing copy
+                path: ../../../markdown-content/v1/Welcome/use-cases/response-body-processing-copy.md
+              - page: Store locator
+                path: ../../../markdown-content/v1/Welcome/use-cases/store-locator.md
   - tab: recipes
     layout:
       - section: Welcome

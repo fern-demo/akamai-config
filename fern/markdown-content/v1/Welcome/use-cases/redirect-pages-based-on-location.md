@@ -1,10 +1,6 @@
 ---
 title: "Redirect pages based on location"
 slug: "redirect-pages-based-on-location"
-excerpt: ""
-hidden: false
-createdAt: "Wed May 17 2023 12:48:40 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Wed Dec 18 2024 19:30:17 GMT+0000 (Coordinated Universal Time)"
 ---
 In this tutorial you'll learn how to create an EdgeWorkers function that provides a customized user experience. Using less than 35 lines of code and EdgeScape geo data you can redirect web-site visitors to country specific content.
 
@@ -24,29 +20,17 @@ Before you can configure your EdgeWorkers function, you need to do a few things:
 
 An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control Center. It's also a unique identifier for your EdgeWorkers code.
 
-1. Log in to <<PORTAL_NICKNAME>>.
+1. Log in to &lt;<<PORTAL_NICKNAME>>.
 
-2. Go to <<PORTAL_ICON_ROOT>> <<CHAR_MENU_DELIMITER>> **CDN** <<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
+2. Go to &lt;<PORTAL_ICON_ROOT>> &lt;<CHAR_MENU_DELIMITER>> **CDN** &lt;<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 
    You cannot edit this auto-generated, unique identifier.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/ewID-v1.png",
-        null,
-        "Create EdgeWorkers ID"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame caption="Create EdgeWorkers ID">
+  <img src="https://techdocs.akamai.com/edgeworkers/img/ewID-v1.png" alt="Image"/>
+</Frame>
 
 
 4. Enter `Geolocation redirect` as the name for the EdgeWorker ID.
@@ -72,27 +56,15 @@ An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control C
 
 When you add the EdgeWorkers behavior in Property Manager you can also define which requests apply EdgeWorkers functions. By limiting the scope you can avoid unnecessary serverless hits to improve performance and reduce cost.
 
-1. Navigate to your property in <<PORTAL_NICKNAME>>.
+1. Navigate to your property in &lt;<PORTAL_NICKNAME>>.
 
 2. Click **Edit**.
 
 3. Click **+ Rules**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/addRule-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/addRule-v1.png" alt="Image"/>
+</Frame>
 
 
 4. Enter a name for  your rule and click the **Insert Rule** button.
@@ -101,41 +73,17 @@ When you add the EdgeWorkers behavior in Property Manager you can also define wh
 
    The criteria below only executes the EdgeWorkers function when the path matches `locationBasedRedirect`.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/redirectRule-v1.png",
-        null,
-        "Add EdgeWorkers behavior"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame caption="Add EdgeWorkers behavior">
+  <img src="https://techdocs.akamai.com/edgeworkers/img/redirectRule-v1.png" alt="Image"/>
+</Frame>
 
 
 6. Next, click the + Behavior button and select standard property behavior,
 7. Search for `EdgeWorkers` in **available behaviors**.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/addBehavior-v1.png",
-        null,
-        "Search for EdgeWorkers behavior"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame caption="Search for EdgeWorkers behavior">
+  <img src="https://techdocs.akamai.com/edgeworkers/img/addBehavior-v1.png" alt="Image"/>
+</Frame>
 
 
 7. Change the setting to **On**.
@@ -221,27 +169,15 @@ tar -czvf filename.tgz main.js bundle.json
 
 To deploy the code bundle you need to create an EdgeWorker version.
 
-1. Go to <<PORTAL_ICON_ROOT>> <<CHAR_MENU_DELIMITER>> **CDN** <<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
+1. Go to &lt;<PORTAL_ICON_ROOT>> &lt;<CHAR_MENU_DELIMITER>> **CDN** &lt;<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
 
 2. From the EdgeWorkers IDs page, select the EdgeWorker ID that you just created.
 
 3. Click the **Create version** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/createVersion-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/createVersion-v1.png" alt="Image"/>
+</Frame>
 
 
 4. Drag and drop the code bundle onto the window and click the **Create version** button.

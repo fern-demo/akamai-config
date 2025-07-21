@@ -1,10 +1,6 @@
 ---
 title: "Content insertion"
 slug: "content-insertion"
-excerpt: ""
-hidden: false
-createdAt: "Thu Apr 06 2023 18:17:48 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Tue Sep 03 2024 11:25:11 GMT+0000 (Coordinated Universal Time)"
 ---
 Learn how to create an EdgeWorkers function that dynamically adds auxiliary media content to an existing Video on Demand (VOD) asset. For advertising, branding, and distribution personalization it's useful to be able to dynamically insert content into an existing asset. This example uses the HLS Parser module. You can also use the DASH Parser module to configure content insertion.
 

@@ -55,6 +55,9 @@ colors:
   accentPrimary:
     dark: "#007AC5"
     light: "#007AC5"
+  background:
+    light: "#ffffff"
+
 
 css: ./assets/styles/main.css 
 
