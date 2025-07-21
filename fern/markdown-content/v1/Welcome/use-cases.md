@@ -12,7 +12,7 @@ Follow these steps to implement a serverless function, written in JavaScript. To
 
    Here are recipes for the JavaScript source code that include event handler functions for some of the most common EdgeWorkers implementations. 
 
-> 👍 You can find more code samples in the [EdgeWorkers GitHub repository](https://github.com/akamai/edgeworkers-examples/tree/master/edgecompute/examples). They are practical examples to use as a starting point for your Akamai EdgeWorkers. Feel free to use, modify, and extend!
+> 👍 You can find more code samples in the [EdgeWorkers GitHub repository](https://github.com/akamai/edgeworkers-examples/tree/master/edgecompute/examples). They are practical examples to use as a starting point for your {{COMPANY_NICKNAME}}. Feel free to use, modify, and extend!
 
 3. Refer to the individual tutorials in the use cases section below for detailed implementation examples:
    - [Add geo and custom data as a cookie](https://techdocs.akamai.com/v1/recipes/add-geo-and-custom-data-as-a-cookie)

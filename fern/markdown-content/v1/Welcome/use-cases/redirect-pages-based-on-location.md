@@ -20,9 +20,9 @@ Before you can configure your EdgeWorkers function, you need to do a few things:
 
 An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control Center. It's also a unique identifier for your EdgeWorkers code.
 
-1. Log in to &lt;<<PORTAL_NICKNAME>>.
+1. Log in to {{PORTAL_NICKNAME}}.
 
-2. Go to &lt;<PORTAL_ICON_ROOT>> &lt;<CHAR_MENU_DELIMITER>> **CDN** &lt;<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
+2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 
@@ -56,7 +56,7 @@ An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control C
 
 When you add the EdgeWorkers behavior in Property Manager you can also define which requests apply EdgeWorkers functions. By limiting the scope you can avoid unnecessary serverless hits to improve performance and reduce cost.
 
-1. Navigate to your property in &lt;<PORTAL_NICKNAME>>.
+1. Navigate to your property in {{PORTAL_NICKNAME}}.
 
 2. Click **Edit**.
 
@@ -169,7 +169,7 @@ tar -czvf filename.tgz main.js bundle.json
 
 To deploy the code bundle you need to create an EdgeWorker version.
 
-1. Go to &lt;<PORTAL_ICON_ROOT>> &lt;<CHAR_MENU_DELIMITER>> **CDN** &lt;<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
+1. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
 
 2. From the EdgeWorkers IDs page, select the EdgeWorker ID that you just created.
 
