@@ -10,10 +10,10 @@ The log built-in module is available to use in your EdgeWorkers code bundles to 
 
 To deliver the logging results from the log module you can either:
 
-- Enable [enhanced debug headers](doc:enable-enhanced-debug-headers) or;
-- Use a [DataStream 2](doc:ds2-javascript-logging).
+- Enable [enhanced debug headers](enable-enhanced-debug-headers.md) or;
+- Use a [DataStream 2](ds2-javascript-logging.md).
 
-Logging only occurs once you've requested logging information using [Enable enhanced debug headers](doc:enable-enhanced-debug-headers) or a DataStream 2 stream. For more information refer to the [JavaScript logging](doc:enable-javascript-logging) section.
+Logging only occurs once you've requested logging information using [Enable enhanced debug headers](enable-enhanced-debug-headers.md) or a DataStream 2 stream. For more information refer to the [JavaScript logging](enable-javascript-logging.md) section.
 
 # log()
 

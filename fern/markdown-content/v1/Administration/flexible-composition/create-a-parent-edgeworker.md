@@ -21,10 +21,10 @@ CoreSite EdgeWorker
 
 Create a child EdgeWorker called **Marketing**. Deploy and activate it on the Akamai staging network. 
 
-- You can use the instructions in the [EdgeWorkers Management application Hello World](doc:hello-world-edgeworkers-management-application) example to create an EdgeWorker ID and activate the code sample below.
+- You can use the instructions in the [EdgeWorkers Management application Hello World](hello-world-edgeworkers-management-application.md) example to create an EdgeWorker ID and activate the code sample below.
 - For best results, use the **Dynamic Compute** resource tier when creating your EdgeWorker ID.
 - Remember to note the EdgeWorker ID, you’ll need it to update the dependency list in the parent EdgeWorker.
-- Review the [limits](doc:limitations#flexible-composition-limits) that apply to EdgeWorkers functions created using flexible composition.
+- Review the [limits](limitations.md#flexible-composition-limits) that apply to EdgeWorkers functions created using flexible composition.
 
 Here's the JavaScript source code for the `main.js` file.
 
@@ -76,7 +76,7 @@ In order to import the EdgeWorkers, you need to declare a set of dependencies in
 
 4. Enter **active** as the version. This imports the version of the EdgeWorker ID specified in the previous step that is currently active on the Akamai network. When you use the active version, dynamic reactivation will occur if you create and activate a new version of this child EdgeWorker.
 
-> 📘 You can also import a child EdgeWorker by specifying the Revision ID. When you import a specific revision you lock the dependency tree of that child EdgeWorker. This can help when working across teams because it prevents dynamic activation. It also lets you import any active or inactive EdgeWorker revision. For more information see, [Import a static revision](doc:review-a-static-activation).
+> 📘 You can also import a child EdgeWorker by specifying the Revision ID. When you import a specific revision you lock the dependency tree of that child EdgeWorker. This can help when working across teams because it prevents dynamic activation. It also lets you import any active or inactive EdgeWorker revision. For more information see, [Import a static revision](review-a-static-activation.md).
 
 ```json
 {
@@ -91,10 +91,10 @@ In order to import the EdgeWorkers, you need to declare a set of dependencies in
 }
 ```
 
-5. [Create a code bundle](doc:create-a-code-bundle) for these files. 
-6. [Create an EdgeWorker ID](doc:create-an-edgeworker-id-1) named **CoreSite**. 
+5. [Create a code bundle](create-a-code-bundle.md) for these files. 
+6. [Create an EdgeWorker ID](create-an-edgeworker-id-1.md) named **CoreSite**. 
 7. Create a version and drop the `tgz` code bundle in the **Create version** window and click the **Create version** button again. 
-8. Next, [Activate an EdgeWorker version](doc:manage-edgeworkers#activate-a-version).
+8. Next, [Activate an EdgeWorker version](manage-edgeworkers.md#activate-a-version).
 
 # **View the Revision details**
 
@@ -106,27 +106,14 @@ Select **CoreSite** on the EdgeWorker IDs page and go to the** Revisions **tab.
 
 1. The first revision is automatically generated when you activate a parent EdgeWorker that includes dependencies.
 2. In this example, the Revision ID is `1-1` to represent the first Activation and the first Revision for this EdgeWorkers function. The next Activation will generate a Revision ID of `2-1`.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/revisions-v2.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/revisions-v2.png" alt="Image"/>
+</Frame>
 
 
 3. To view more details about the revision, click on `1-1` the Revision ID in this example.
 
-<br />
+<br/>
 
 ## 2. View the Bill of Materials
 
@@ -134,23 +121,10 @@ Select the **Bill of Materials (BOM)** tab to view the dependency tree for the C
 
 The BOM includes the Marketing EdgeWorkers function, and which version was activated. The BOM also shows the version of the top-level EdgeWorker and all of its dependencies. Every Revision ID is associated with a BOM. In this case, the BOM for Revision ID `1-1` shows that it contains version 1 of the parent EdgeWorker and version `1` of the child EdgeWorker `80552`.
 
-For more information, refer to the [Terminology](doc:terminology) section in this guide.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/BOM-v3.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+For more information, refer to the [Terminology](terminology.md) section in this guide.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/BOM-v3.jpg" alt="Image"/>
+</Frame>
 
 
 ## 3. View the Combined Code Bundle
@@ -159,20 +133,7 @@ Select the **Combined Code Bundle** tab to view the `main.js` and the `bundle.js
 
 The Code Bundle includes the top-level EdgeWorker and all of its transitive dependencies. In this case, that means version `1.0` of the marketing EdgeWorker and `0.2` of the CoreSite EdgeWorker.
 
-For more information, refer to the [Terminology](doc:terminology) section in this guide.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/combinedCodeBundle-v2.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+For more information, refer to the [Terminology](terminology.md) section in this guide.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/combinedCodeBundle-v2.png" alt="Image"/>
+</Frame>

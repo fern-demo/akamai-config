@@ -124,20 +124,247 @@ navigation:
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/deploy-hello-world-3.md
               - page: Test Hello World
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/test-hello-world-3.md
-      # - section: Administration
-      #   contents:
-      # - section: Development
-      #   contents:
-      # - section: JavaScript API reference
-      #   contents:
-      # - section: Technical resources
-      #   contents:
-      # - section: Debug
-      #   contents:
-      # - section: Monitor
-      #   contents:
-      # - section: Limitations
-      #   contents:
+      - section: Administration
+        contents:
+          - page: Set up the EdgeWorkers service
+            path: ../../../markdown-content/v1/Administration/set-up-the-edgeworkers-service.md
+          - page: Create an EdgeWorker ID
+            path: ../../../markdown-content/v1/Administration/create-an-edgeworker-id.md
+          - page: Add the EdgeWorkers behavior
+            path: ../../../markdown-content/v1/Administration/add-the-edgeworkers-behavior.md
+          - page: Manage EdgeWorkers
+            path: ../../../markdown-content/v1/Administration/manage-edgeworkers.md
+          - section: Site Failover
+            path: ../../../markdown-content/v1/Administration/site-failover.md
+            contents:
+              - page: Test site failover
+                path: ../../../markdown-content/v1/Administration/site-failover/test-site-failover.md
+          - page: Akamai CLI
+            path: ../../../markdown-content/v1/Administration/akamai-cli.md
+          - page: EdgeWorkers API
+            path: ../../../markdown-content/v1/Administration/edgeworkers-api.md
+          - section: Create a subWorker
+            path: ../../../markdown-content/v1/Administration/create-a-subworker.md
+            contents:
+              - page: Debug subWorkers
+                path: ../../../markdown-content/v1/Administration/create-a-subworker/debug-subworkers.md
+              - page: SubWorkers tutorial
+                path: ../../../markdown-content/v1/Administration/create-a-subworker/subworkers-tutorial.md
+          - section: Flexible composition
+            path: ../../../markdown-content/v1/Administration/flexible-composition.md
+            contents:
+              - page: Terminology
+                path: ../../../markdown-content/v1/Administration/flexible-composition/terminology.md
+              - page: Create a parent EdgeWorker
+                path: ../../../markdown-content/v1/Administration/flexible-composition/create-a-parent-edgeworker.md
+              - page: Add child EdgeWorkers
+                path: ../../../markdown-content/v1/Administration/flexible-composition/add-child-edgeworkers.md
+              - page: Pin a revision
+                path: ../../../markdown-content/v1/Administration/flexible-composition/pin-a-revision.md
+              - page: Review a static activation
+                path: ../../../markdown-content/v1/Administration/flexible-composition/review-a-static-activation.md
+              - page: Dynamic reactivation
+                path: ../../../markdown-content/v1/Administration/flexible-composition/dynamic-reactivation.md
+              - page: Debug flexible composition
+                path: ../../../markdown-content/v1/Administration/flexible-composition/debug-flexible-composition.md
+
+      - section: Development
+        contents:
+          - section: Write your JavaScript code
+            path: ../../../markdown-content/v1/Development/write-your-javascript-code.md
+            contents:
+              - page: JavaScript error handling
+                path: ../../../markdown-content/v1/Development/write-your-javascript-code/javascript-error-handling.md
+          - section: Create a code bundle
+            path: ../../../markdown-content/v1/Development/create-a-code-bundle.md
+            contents:
+              - page: Code bundle format
+                path: ../../../markdown-content/v1/Development/create-a-code-bundle/code-bundle-format.md
+          - page: Import a JavaScript module
+            path: ../../../markdown-content/v1/Development/import-a-javascript-module.md
+          - page: Execution environment
+            path: ../../../markdown-content/v1/Development/execution-environment.md
+          - page: TypeScript
+            path: ../../../markdown-content/v1/Development/typescript-1.md
+          - section: Developer tools
+            path: ../../../markdown-content/v1/Development/developer-tools.md
+            contents:
+              - page: Code bundle editor
+                path: ../../../markdown-content/v1/Development/developer-tools/code-bundle-editor.md
+              - page: EdgeWorkers code profiler
+                path: ../../../markdown-content/v1/Development/developer-tools/edgeworkers-code-profiler.md
+              - page: Code profiler tutorial
+                path: ../../../markdown-content/v1/Development/developer-tools/code-profiler-tutorial.md
+              - page: Dev environment tutorial
+                path: ../../../markdown-content/v1/Development/developer-tools/dev-environment-tutorial.md
+              - page: IDE extensions
+                path: ../../../markdown-content/v1/Development/developer-tools/ide-extensions.md
+              - page: Sandbox
+                path: ../../../markdown-content/v1/Development/developer-tools/sandbox.md
+              - page: TypeScript
+                path: ../../../markdown-content/v1/Development/developer-tools/typescript.md
+              - page: Unit testing for EdgeWorkers
+                path: ../../../markdown-content/v1/Development/developer-tools/unit-testing-for-edgeworkers.md
+
+      - section: JavaScript API reference
+        contents:
+          - page: About the JavaScript API
+            path: ../../../markdown-content/v1/JavaScript API reference/about-the-javascript-api.md
+          - page: Request Object
+            path: ../../../markdown-content/v1/JavaScript API reference/request-object.md
+          - page: Response Object
+            path: ../../../markdown-content/v1/JavaScript API reference/response-object.md
+          - page: User Location Object
+            path: ../../../markdown-content/v1/JavaScript API reference/user-location-object.md
+          - page: Device Object
+            path: ../../../markdown-content/v1/JavaScript API reference/device-object.md
+          - page: CacheKey Object
+            path: ../../../markdown-content/v1/JavaScript API reference/cachekey-object.md
+          - section: Built-in modules
+            path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules.md
+            contents:
+              - page: Cookies
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/cookies.md
+              - page: Create Response
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/create-response.md
+              - page: Crypto
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/crypto.md
+              - page: Encoding
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/encoding.md
+              - page: HTML Rewriter
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/htmlrewriter.md
+              - page: HTTP Request
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/http-request.md
+              - page: Log
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/log.md
+              - page: Streams
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/streams.md
+              - page: Text Encode Transform
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/text-encode-transform.md
+              - page: URL Search Params
+                path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/url-search-params.md
+          - section: External modules
+            path: ../../../markdown-content/v1/JavaScript API reference/external-modules.md
+            contents:
+              - page: CAT
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/cat.md
+              - page: CWT
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/cwt.md
+              - page: DASH parser
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/dash-parser.md
+              - page: EdgeKV
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/edgekv.md
+              - page: HLS parser
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/hls-parser.md
+              - page: JWT
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/jwt.md
+              - page: Watermarking
+                path: ../../../markdown-content/v1/JavaScript API reference/external-modules/watermarking.md
+
+      - section: Technical resources
+        contents:
+          - section: Best practices
+            path: ../../../markdown-content/v1/Technical resources/best-practices.md
+            contents:
+              - page: Best practices for performance
+                path: ../../../markdown-content/v1/Technical resources/best-practices/best-practices-for-performance.md
+              - page: Best practices for asynchronous processing
+                path: ../../../markdown-content/v1/Technical resources/best-practices/best-practices-for-asynchronous-processing.md
+          - section: FAQ
+            path: ../../../markdown-content/v1/Technical resources/faq-1.md
+            contents:
+              - page: FAQ
+                path: ../../../markdown-content/v1/Technical resources/faq-1/faq.md
+              - page: EdgeWorkers JavaScript code
+                path: ../../../markdown-content/v1/Technical resources/faq-1/edgeworkers-javascript-code.md
+              - page: Content transformation
+                path: ../../../markdown-content/v1/Technical resources/faq-1/content-transformation.md
+              - page: Technical
+                path: ../../../markdown-content/v1/Technical resources/faq-1/technical.md
+              - page: Prerequisites and limitations
+                path: ../../../markdown-content/v1/Technical resources/faq-1/prerequisites-and-limitations.md
+              - page: Product interoperability
+                path: ../../../markdown-content/v1/Technical resources/faq-1/product-interoperability.md
+              - page: Reporting and billing
+                path: ../../../markdown-content/v1/Technical resources/faq-1/reporting-and-billing.md
+              - page: Troubleshooting
+                path: ../../../markdown-content/v1/Technical resources/faq-1/troubleshooting.md
+          - page: Release notes
+            path: ../../../markdown-content/v1/Technical resources/release-notes.md
+          - link: EdgeKV documentation
+            href: https://techdocs.akamai.com/edgekv/docs
+          - link: EdgeWorkers Postman collection
+            href: https://www.postman.com/akamai-developer/workspace/akamai-apis/overview
+
+      - section: Debug
+        contents:
+          - page: About JavaScript troubleshooting
+            path: ../../../markdown-content/v1/Debug/about-javacript-troubleshooting.md
+          - section: Standard debug headers
+            path: ../../../markdown-content/v1/Debug/enable-standard-debug-headers.md
+            contents:
+              - page: Standard debug header details
+                path: ../../../markdown-content/v1/Debug/enable-standard-debug-headers/standard-debug-header-details.md
+          - section: Enhanced debug headers
+            path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers.md
+            contents:
+              - page: Enhanced debug header details for ResponseProvider
+                path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enable-enhanced-debug-headers-for-responseprovider.md
+              - page: Enhanced debug header details for HTTP sub-requests
+                path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enhanced-debug-header-details-for-http-sub-requests.md
+              - page: Enhanced debug header details for HTTP subWorkers
+                path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enhanced-debug-header-details-for-http-subworkers.md
+          - page: Error codes - EdgeWorkers Management Application
+            path: ../../../markdown-content/v1/Debug/error-codes.md
+          - page: Common errors
+            path: ../../../markdown-content/v1/Debug/common-errors.md
+          - page: Continue on error
+            path: ../../../markdown-content/v1/Debug/continue-on-error.md
+
+      - section: Monitor
+        contents:
+          - page: About monitoring
+            path: ../../../markdown-content/v1/Monitor/about-monitoring.md
+          - section: EdgeWorkers reports
+            path: ../../../markdown-content/v1/Monitor/manage-report-data.md
+            contents:
+              - page: Overview report
+                path: ../../../markdown-content/v1/Monitor/manage-report-data/overview-report.md
+              - page: Execution status report
+                path: ../../../markdown-content/v1/Monitor/manage-report-data/execution-status-report.md
+              - page: Execution time report
+                path: ../../../markdown-content/v1/Monitor/manage-report-data/execution-time-report.md
+              - page: Memory usage report
+                path: ../../../markdown-content/v1/Monitor/manage-report-data/memory-usage-report.md
+          - page: mPulse reports
+            path: ../../../markdown-content/v1/Monitor/mpulse.md
+          - section: JavaScript logging
+            path: ../../../markdown-content/v1/Monitor/enable-javascript-logging.md
+            contents:
+              - page: Use DataStream 2 to deliver JavaScript logs
+                path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/ds2-javascript-logging.md
+              - page: Integrate DataStream 2 logs
+                path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/integrate-datastream-2-logs.md
+              - page: JavaScript logging details
+                path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/javascript-logging-details.md
+          - section: DataStream 2 logs
+            path: ../../../markdown-content/v1/Monitor/datastream-2-integration.md
+            contents:
+              - page: DataStream 2 reports
+                path: ../../../markdown-content/v1/Monitor/datastream-2-integration/datastream2-reports.md
+              - page: DataStream 2 delivery log details
+                path: ../../../markdown-content/v1/Monitor/datastream-2-integration/datastream-2-delivery-log-details-copy.md
+          - page: Log Delivery Service
+            path: ../../../markdown-content/v1/Monitor/enable-log-delivery-for-edgeworkers.md
+
+      - section: Limitations
+        contents:
+          - page: Product limits
+            path: ../../../markdown-content/v1/Limitations/limitations.md
+          - page: Resource tier limitations
+            path: ../../../markdown-content/v1/Limitations/resource-tier-limitations.md
+          - page: Known issues
+            path: ../../../markdown-content/v1/Limitations/known-issues.md
   - tab: recipes
     layout:
       - section: Welcome

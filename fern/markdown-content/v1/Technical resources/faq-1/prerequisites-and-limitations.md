@@ -8,7 +8,7 @@ updatedAt: "Fri Nov 17 2023 18:24:39 GMT+0000 (Coordinated Universal Time)"
 ---
 ### What are the supported delivery products?
 
-Refer to the [Limitations](doc:limitations)  section for a list of supported delivery products.
+Refer to the [Limitations](limitations.md)  section for a list of supported delivery products.
 
 ### What are the supported delivery networks?
 
@@ -24,4 +24,4 @@ We decided not to run a Node.js environment within EdgeWorkers to reduce consump
 
 ### How do I enable EdgeWorkers?
 
-To enable EdgeWorkers you need to [Set up the EdgeWorkers service](doc:set-up-the-edgeworkers-service). You can then [start writing your JavaScript code](doc:write-your-javascript-code).
+To enable EdgeWorkers you need to [Set up the EdgeWorkers service](set-up-the-edgeworkers-service.md). You can then [start writing your JavaScript code](write-your-javascript-code.md).

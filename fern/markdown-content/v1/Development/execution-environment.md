@@ -44,7 +44,7 @@ The system will throw an exception from the setter when a named behaviour can't 
 The system will not raise exceptions for logically inconsistent setters (e.g. a setter that changes an originType without updating the associated options)
 
 All options will be passed in to matchers and behaviours as part of a named object.  
-e.g. .onPathName({values: [".png", ".jpg", ".svg", ".ico"]} )  
+e.g. `.onPathName({values: [".png", ".jpg", ".svg", ".ico"]})`
 Customers will be able to omit options  
 with a default value (aka defaultVal in the PM catalog JSON).  
 whose visibility condition is not met.  
@@ -115,15 +115,15 @@ The intent is to implement .any() with a single PAPI JSON Rule. Allowing command
 Be aware that there a minor inconsistency with this approach. The calls to the criteria parameter in the callback are inconsistent with the branching behaviour described above. 
 
 Consider:
-
+```
 cfg  
   .onPath({values: ["/a*"]})  
   .onHostname({values: ["host"]})  
   .onFileExtension({values: [".js"]})  
   // CONSIDER THIS SPOT
-
+```
 In the normal onConfig() flow, that is a boolean AND. Any command added after the onFileExtension() runs only if the matchers have matched. However, in the .any() callback:
-
+```
 cfg  
   .any(criteria => {  
     criteria  
@@ -132,7 +132,7 @@ cfg
       .onFileExtension({values: [".js"]})  
       // CONSIDER THIS SPOT  
   })
-
+```
 the location after the onFileExtension() looks like a branch from the previous example, but it follows a different convention: everything there runs, and the developer can't add a command. 
 
 The alternatives involve more typing and adding more items to the namespace.
@@ -143,13 +143,14 @@ cfg.any(OnPath(...), OnHostName(...), OnFileExtension(...))
 This requires exporting a separate function for each matcher. Those extra functions could confuse the user. 
 
 The callback passed to .any() could return an array of matchers:
-
+```
 cfg  
   .any(criteria => \[  
       criteria.onPath({values: ["/a*"]}),  
       criteria.onHostname({values: ["host"]}),  
       criteria.onFileExtension({values: [".js"]})  
   ])  
+```
 This succeeds in feeling different to the developer, but it's a bit awkward. It also requires more typing. 
 
 # Inline Documentation

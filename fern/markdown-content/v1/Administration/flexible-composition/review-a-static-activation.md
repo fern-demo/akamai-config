@@ -10,23 +10,10 @@ This example shows how to import a specific Revision ID of the Security EdgeWork
 
 When you import a Revision ID, the Security dependency tree remains locked to that revision. If the team that owns the Security EdgeWorker activates a new version it will not change your dependency tree. This lets you make and test improvements with a specific revision of an EdgeWorker without being impacted by changes made by the Security team. It also lets the you import an inactive EdgeWorker version. 
 
-To learn more, refer to the [Static Revisioning](doc:terminology#static-revisioning) definition on the [Terminology](doc:terminology) page.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/staticRevision-v2.jpg",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+To learn more, refer to the [Static Revisioning](terminology.md#static-revisioning) definition on the [Terminology](terminology.md) page.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/staticRevision-v2.jpg" alt="Image"/>
+</Frame>
 
 
 # **Update the parent EdgeWorker**
@@ -62,22 +49,9 @@ To learn more, refer to the [Static Revisioning](doc:terminology#static-revision
 Check to make sure you don't have any errors. If you try to import a Revision ID that doesn't exist, you'll get an error message.
 
 1. Click the **Create new version** button in the Code Bundle Editor and again in the confirmation window.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/importStaticrevision-v3.jpg",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/importStaticrevision-v3.jpg" alt="Image"/>
+</Frame>
 
 
 2. Next, activate the version that you just created.
@@ -90,19 +64,6 @@ To view the BOM, select the active version `4`, the Activation ID `7`, and then 
 Then select the **Bill of Materials** tab to see all the transitive dependencies for the CoreSite EdgeWorker.
 
 The BOM for the security EdgeWorker is frozen. If SSO, which is a child of security, is updated this change will not impact the CoreSite EdgeWorker. You will see a new version number for the SSO EdgeWorker in the BOM but it will not apply to CoreSite since it was created after the `revisionId` was identified in the code bundle.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/staticRevisionBOM-v4.jpg",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/staticRevisionBOM-v4.jpg" alt="Image"/>
+</Frame>

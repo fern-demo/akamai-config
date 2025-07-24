@@ -26,22 +26,9 @@ To get started we'll use a blank VS Code environment and add the following built
 - The Akamai CLI
 
 This one time install constructs the development container files. It then re-builds and re-launches the environment in the container.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/devEviroSetup-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "500px"
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/devEviroSetup-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## Set up the tool
@@ -82,47 +69,15 @@ Follow the steps in the guided initialization to start using the tech preview. Y
    For each selection the PCDN tool provides a list of available options based on your previous choice. You can use an existing property and EdgeWorker or create a new one. In this example we'll use an existing property and EdgeWorker.
 
 Once you're finished, the following source files are generated for your project in the `src` directory.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "File",
-    "h-1": "Description",
-    "0-0": "bundle.json",
-    "0-1": "The manifest file that includes necessary meta information.",
-    "1-0": "config.js",
-    "1-1": "Defines the module set up.",
-    "2-0": "main.js",
-    "2-1": "The JavaScript source code associated with the project that contains event handler functions.",
-    "3-0": "property.json",
-    "3-1": "Contains all the information you specified during installation:  \nproperty ID  \ncontractID  \ngroupID  \nedgeworkerID  \naccountSwitchKey"
-  },
-  "cols": 2,
-  "rows": 4,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/srcFolder-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+| File | Description |
+| --- | --- |
+| bundle.json | The manifest file that includes necessary meta information. |
+| config.js | Defines the module set up. |
+| main.js | The JavaScript source code associated with the project that contains event handler functions. |
+| property.json | Contains all the information you specified during installation:<br/>property ID<br/>contractID<br/>groupID<br/>edgeworkerID<br/>accountSwitchKey |
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/srcFolder-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## Create a property manager rule and add behaviors
@@ -234,103 +189,32 @@ Property manager and EdgeWorkers activations on staging are integrated into the 
 - Upload and activate the EdgeWorkers code bundle in Akamai Control Center.
 
 2. Switch over to Akamai Control Center to see that the activation for the new version is pending and activating on staging.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/pcdnPM-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/pcdnPM-v1.jpg" alt="Image"/>
+</Frame>
 
 
 3. The PCDN commands we used in the previous steps set up a property with a Linode origin, the hostname settings, the values that were not set are sensibly defaulted. 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/pcdnrule2-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/pcdnrule2-v1.jpg" alt="Image"/>
+</Frame>
 
 
 4. Here we see that caching is set to 0 days, the CP code and the EdgeWorker ID.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/pcdnRule-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/pcdnRule-v2.jpg" alt="Image"/>
+</Frame>
 
 
 ### View the EdgeWorker
 
 1. If you go to the EdgeWorker you can see the new version that includes a `config.js` file.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/pcdnVersion-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/pcdnCodeBundle-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/pcdnVersion-v1.jpg" alt="Image"/>
+</Frame>
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/pcdnCodeBundle-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## Download a configuration file
@@ -565,45 +449,17 @@ export async function responseProvider(request) {}
     The base rule is still there. There are also configurations for each of the paths. You can also see a new CP Code, the origin override, the new caching value. 
 
     You'll also notice the cacheKeyID modifications to include the test cookies or query params.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/importRules-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "800px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/importRules-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ```
 If you go to the EdgeWorker you can see the code bundle now includes the new headers for `onClientRequest` and `onClientResponse`.
 ```
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/headersCodeBundle-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "800px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/headersCodeBundle-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## Troubleshooting an error
@@ -618,43 +474,15 @@ In this example you'll learn how to use the PCDN tool to generate rules and trou
 3. Modify the CP code incorrectly and then run the `npx pcdm .` command to activate the EdgeWorker.
 
    The PCDN tool generates an error that provides a description of the error and the line of code where the error occurred.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/errorMessage-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/errorMessage-v1.jpg" alt="Image"/>
+</Frame>
 
 
 4. Fix the CP code and run the `npx pcdm .` command to activate the EdgeWorker again.
 5. Switch back to Akamai Control Center and see that the new version is activating on staging.
 
    This version includes the new rules.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/moreRules-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "750px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/moreRules-v1.jpg" alt="Image"/>
+</Frame>

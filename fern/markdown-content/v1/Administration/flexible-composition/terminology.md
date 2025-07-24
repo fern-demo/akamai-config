@@ -14,61 +14,47 @@ A package management system automates the process of putting modules and depende
 
 ## Parent EdgeWorker
 
-A parent EdgeWorker is any EdgeWorkers function that imports other EdgeWorkers code bundles as dependencies.  A parent EdgeWorker can also be a child. To learn more, follow the steps in [Create a parent EdgeWorker](doc:create-a-parent-edgeworker).
+A parent EdgeWorker is any EdgeWorkers function that imports other EdgeWorkers code bundles as dependencies.  A parent EdgeWorker can also be a child. To learn more, follow the steps in [Create a parent EdgeWorker](create-a-parent-edgeworker.md).
 
 ## Child EdgeWorker
 
-A child EdgeWorker is imported by one or more parent EdgeWorkers. Child EdgeWorkers can also contain dependencies. To learn more, follow the steps in [Add a child EdgeWorker to an existing parent](doc:add-child-edgeworkers).
+A child EdgeWorker is imported by one or more parent EdgeWorkers. Child EdgeWorkers can also contain dependencies. To learn more, follow the steps in [Add a child EdgeWorker to an existing parent](add-child-edgeworkers.md).
 
 The example below illustrates the parent-child relationship.
 
 - **EWID: 4 **is the top level parent that has two direct child EdgeWorkers. 
 - **EWID: 4** also has one transitive child EdgeWorker. A transitive child is not a direct descendant of the parent EdgeWorker but is connected via another EdgeWorker in the dependency tree.
 - **EWID: 2** is both a child EdgeWorker to EWID:4, and a parent to EdgeWorker of EWID:1.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/parentChildRelationship-v3.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "650px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/parentChildRelationship-v3.jpg" alt="Image"/>
+</Frame>
 
 
 ## Combined code bundle
 
-A combined code bundle is composed of the parent code bundle and all imported child dependencies. To learn more, go to the [Create a code bundle](doc:create-a-code-bundle) topic in this guide.
+A combined code bundle is composed of the parent code bundle and all imported child dependencies. To learn more, go to the [Create a code bundle](create-a-code-bundle.md) topic in this guide.
 
-> 📘 You need to [Create an EdgeWorker version](doc:manage-edgeworkers#create-an-edgeworker-version) when you want to activate a new EdgeWorkers code bundle or update an existing code bundle.
+> 📘 You need to [Create an EdgeWorker version](manage-edgeworkers.md#create-an-edgeworker-version) when you want to activate a new EdgeWorkers code bundle or update an existing code bundle.
 
 ## Revision
 
 The EdgeWorkers service creates a Revision when a child EdgeWorker is updated. Revisions are dynamically submitted by the system on the same Akamai network, either staging or production, as the activation they are linked to. One activation can have many revisions. Revisions are mapped, like activations, to a specific network. If a version is activated on the staging network, the revision will also occur on the staging network.  
 
-The first revision is generated when a parent EdgeWorker is activated. Subsequent revisions are dynamically created by new child activations. To learn more, refer to the [Review a dynamic reactivation](doc:dynamic-reactivation) example in this guide.
+The first revision is generated when a parent EdgeWorker is activated. Subsequent revisions are dynamically created by new child activations. To learn more, refer to the [Review a dynamic reactivation](dynamic-reactivation.md) example in this guide.
 
 Activations, on the other hand, are submitted by the user on a specific Akamai network, either staging or production. You need to perform a separate activation to activate the same version on another network.
 
 ## Revision ID
 
-Each dynamic reactivation generates a unique Revision ID. The first Revision ID is created when you activate the parent EdgeWorker version. Subsequent Revision IDs are created when you activate a new version of a child EdgeWorker. To see how this works you can review the diagram in the [Dynamic reactivation](doc:terminology#dynamic-reactivation) description.
+Each dynamic reactivation generates a unique Revision ID. The first Revision ID is created when you activate the parent EdgeWorker version. Subsequent Revision IDs are created when you activate a new version of a child EdgeWorker. To see how this works you can review the diagram in the [Dynamic reactivation](terminology.md#dynamic-reactivation) description.
 
 The Revision ID consists of the activation ID and a unique ID for each reactivation, separated by a dash. For example, the first Revision ID for the Activation 1 would be `1-1`. When a new version of a child is activated, the parent gets a new Revision ID, `1-2`.   If Activation 1 does not have any dependencies, an Revision ID of `1-0` is created automatically as a placeholder.
 
-You can use the Revision ID to identify what was pushed to the network. The Revision ID appears in Control Center with a link to the Bill of Materials. You can also view a list of the Revision IDs in Akamai Control Center. To learn more, refer to the [Review a dynamic reactivation](doc:dynamic-reactivation) example in this guide.
+You can use the Revision ID to identify what was pushed to the network. The Revision ID appears in Control Center with a link to the Bill of Materials. You can also view a list of the Revision IDs in Akamai Control Center. To learn more, refer to the [Review a dynamic reactivation](dynamic-reactivation.md) example in this guide.
 
 ## Static Revisioning
 
-Static revisioning lets you freeze the dependency tree of a imported child EdgeWorkers as you work on changes to your code bundles. Instead of using the current active version, you can import an active or inactive child EdgeWorker using the Revision ID. This lets you import a large tree without having to worry about the impact of dynamic reactivations from various children in the code bundle. For more information, see [Import a static revision](doc:review-a-static-activation).
+Static revisioning lets you freeze the dependency tree of a imported child EdgeWorkers as you work on changes to your code bundles. Instead of using the current active version, you can import an active or inactive child EdgeWorker using the Revision ID. This lets you import a large tree without having to worry about the impact of dynamic reactivations from various children in the code bundle. For more information, see [Import a static revision](review-a-static-activation.md).
 
 Revision pinning lets you temporarily disable dynamic reactivation for an EdgeWorker. When you pin a revision, it freezes the entire active dependency tree for EdgeWorkers that you own.  It doesn't let you control the dependencies of a pinned child EdgeWorker that belongs to another team. The parent EdgeWorker won't be dynamically reactivated via that child until it is unpinned. It is up to the team that owns the child EdgeWorkers to decide when to unpin it. 
 
@@ -96,7 +82,7 @@ Pinning an active revision locks the parent EdgeWorker to that revision.
 
 By default, when you activate a parent EdgeWorker the initial revision is pinned to the parent. This prevents dynamic reactivation. You can use revision pinning to change which revision is pinned to the parent or to pin a revision to the parent if you disabled auto pin when activating the parent. 
 
-Direct or transitive child EdgeWorkers cannot trigger new revisions for the pinned parent EdgeWorker or any of its transitive parents. This allows you to control what is imported by the EdgeWorkers that you own. You can only pin active revisions that you have access to and not those owned by other teams. For more information see [Pin a revision](doc:pin-a-revision) in this guide.
+Direct or transitive child EdgeWorkers cannot trigger new revisions for the pinned parent EdgeWorker or any of its transitive parents. This allows you to control what is imported by the EdgeWorkers that you own. You can only pin active revisions that you have access to and not those owned by other teams. For more information see [Pin a revision](pin-a-revision.md) in this guide.
 
 ## Auto pin
 
@@ -106,7 +92,7 @@ To enable dynamic reactivation you need to disable auto pin when you activate th
 
 ## Dynamic reactivation
 
-A new revision of the parent EdgeWorker is dynamically activated when a new version of a child EdgeWorker is activated. For more information see, [Review a dynamic reactivation](doc:dynamic-reactivation) in this guide.
+A new revision of the parent EdgeWorker is dynamically activated when a new version of a child EdgeWorker is activated. For more information see, [Review a dynamic reactivation](dynamic-reactivation.md) in this guide.
 
 > 📘 By default, dynamic reactivation is disabled. You need to disable auto pin when you activate the parent EdgeWorker. If the initial revision was pinned, it can be unpinned to enable dynamic reactivation.
 
@@ -115,47 +101,19 @@ A dynamic reactivation pushes the parent EdgeWorker and its dependencies to the 
 - BOM  
 - Revision ID  
 - Changes between revisions
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/dynamicReactivation-v4.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "650px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/dynamicReactivation-v4.jpg" alt="Image"/>
+</Frame>
 
 
 ## Revision activation
 
-A revision activation lets you activate an old revision. You can only activate a revision that is part of the current activation. On the other hand, an [Activation](doc:manage-edgeworkers#activate-an-edgeworker-version) is submitted by the user on a specific network. You need to perform another activation to activate the same version on another network.
+A revision activation lets you activate an old revision. You can only activate a revision that is part of the current activation. On the other hand, an [Activation](manage-edgeworkers.md#activate-an-edgeworker-version) is submitted by the user on a specific network. You need to perform another activation to activate the same version on another network.
 
 This example shows that you can select a revision that was previously activated and activate it again.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/revisionActivation-v5.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "650px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/revisionActivation-v5.jpg" alt="Image"/>
+</Frame>
 
 
 ## BOM

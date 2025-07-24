@@ -10,7 +10,7 @@ Use these best practices to maximize the performance of your custom JavaScript c
 
 Although many performance benefits come out of the box with EdgeWorkers, you should still develop your custom code with these tips in mind.
 
-> 👍 You can also use the [EdgeWorkers Code Profiler](doc:edgeworkers-code-profiler) to gain insight about the performance of your code. For details on how to use this profiling information, review the [Code profiler tutorial](doc:code-profiler-tutorial).
+> 👍 You can also use the [EdgeWorkers Code Profiler](edgeworkers-code-profiler.md) to gain insight about the performance of your code. For details on how to use this profiling information, review the [Code profiler tutorial](code-profiler-tutorial.md).
 
 # Use the right events
 
@@ -79,7 +79,7 @@ You can find more information about JSON parsing in this [blog](https://v8.dev/b
 
 > 👍 Deploy smaller code bundles to reduce invocation time.
 
-Remove any unnecessary or dead code from your code bundles. Treeshaking can be automated using modern bundlers like rollup to create lean ES2015 modules. Read the  [Store locator](doc:store-locator) use case to learn how to use npm and rollup to add JavaScript libraries to your EdgeWorkers scripts.
+Remove any unnecessary or dead code from your code bundles. Treeshaking can be automated using modern bundlers like rollup to create lean ES2015 modules. Read the  [Store locator](store-locator.md) use case to learn how to use npm and rollup to add JavaScript libraries to your EdgeWorkers scripts.
 
 You should also use the smallest library available that provides the functionality you need to achieve your use case.
 
@@ -87,7 +87,7 @@ You should also use the smallest library available that provides the functionali
 
 > 👍 Invoke multiple HTTP sub-requests in parallel.
 
-Evaluate if you can parallelise your sub-requests before handling their responses. This is faster than triggering them one by one in series. Remember to take into account the [limits for concurrent HTTP sub-requests](doc:resource-tier-limitations).
+Evaluate if you can parallelise your sub-requests before handling their responses. This is faster than triggering them one by one in series. Remember to take into account the [limits for concurrent HTTP sub-requests](resource-tier-limitations.md).
 
 ```javascript
 // Two subrequests triggered and handled in series

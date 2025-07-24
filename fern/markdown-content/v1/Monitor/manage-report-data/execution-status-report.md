@@ -8,9 +8,11 @@ updatedAt: "Tue Oct 01 2024 15:58:18 GMT+0000 (Coordinated Universal Time)"
 ---
 This report lists execution success and error statuses, grouped by event handler.
 
-If the EdgeWorker version includes child EdgeWorkers, the active revision ID also appears in the graph. For more information see, [Flexible composition](doc:flexible-composition).
+If the EdgeWorker version includes child EdgeWorkers, the active revision ID also appears in the graph. For more information see, [Flexible composition](flexible-composition.md).
 
- ![Execution status overview](https://techdocs.akamai.com/edgeworkers/img/executionStatusReport-v2.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/executionStatusReport-v2.png" alt="Execution status overview"/>
+</Frame>
 
 ### Execution status summary for selected EdgeWorker IDs
 
@@ -34,44 +36,18 @@ This report lets you view the execution statuses in a list that shows:
 You can filter the report to display the results for a specific status. Review the following table for a description of each of the available statuses.
 
 <br />
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Error",
-    "h-1": "Description",
-    "0-0": "Success",
-    "0-1": "EdgeWorkers function executed successfully.",
-    "1-0": "Generic error",
-    "1-1": "Unnamed or uncategorized error.",
-    "2-0": "Unknown EdgeWorker ID",
-    "2-1": "The EdgeWorker ID is not [activated](doc:manage-edgeworkers#activate-an-edgeworker-version).",
-    "3-0": "Runtime error",
-    "3-1": "Error at runtime or environment prevented EdgeWorkers execution.",
-    "4-0": "Execution error",
-    "4-1": "Error during EdgeWorkers execution, such as JavaScript exception or error.",
-    "5-0": "Timeout error",
-    "5-1": "EdgeWorkers function timed out.",
-    "6-0": "Resource limit hit",
-    "6-1": "The EdgeWorkers function exceeded the amount of memory it is allowed to use. Review the [Resource tier limitations](doc:resource-tier-limitations) for more information.",
-    "7-0": "CPU timeout error",
-    "7-1": "The EdgeWorkers function exceeded the allowed CPU time when running an event handler. For more information see, [Product limits](doc:limitations).",
-    "8-0": "Wall timeout error",
-    "8-1": "The EdgeWorkers function exceeded the allowed Wall time when running an event handler. For more information see, [Product limits](doc:limitations).",
-    "9-0": "Init CPU timeout error",
-    "9-1": "The EdgeWorkers function exceeded the allowed CPU time during initialization.  \n  \nThis can occur if the EdgeWorkers code bundle contains too much JavaScript to load within the time limits. It can also occur if the EdgeWorkers function attempts to perform too many calculations during initialization.  \n  \nFor more information see, [Product limits](doc:limitations).",
-    "10-0": "Init wall timeout error",
-    "10-1": "The EdgeWorkers function exceeded the allowed wall time during initialization.  \n  \nThis can occur if the EdgeWorkers code bundle contains too much JavaScript to load within the time limits. It can also occur if the EdgeWorkers function attempts to perform too many calculations during initialization.  \n  \nFor more information see, [Product limits](doc:limitations).",
-    "11-0": "subWorker not enabled",
-    "11-1": "The EdgeWorkers code bundle is not enabled as a subWorker.  \n  \nThis can occur if a sub-request is made to an EdgeWorker and the code bundle is not [enabled as a subWorker](doc:create-a-subworker#enable-subworkers) .  \n  \n**Note:** The sub-request will bypass the EdgeWorker and continue processing.",
-    "12-0": "subWorker limit hit",
-    "12-1": "The EdgeWorkers function exceeded the subWorkers product limits and did not execute.  \n  \nThis can occur when the maximum number of nested subWorkers allowed for a single root sub-request is exceeded.  \n  \nWhen this happens, the sub-request that called the subWorker receives a 500 HTTP response code."
-  },
-  "cols": 2,
-  "rows": 13,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Error | Description |
+| --- | --- |
+| Success | EdgeWorkers function executed successfully. |
+| Generic error | Unnamed or uncategorized error. |
+| Unknown EdgeWorker ID | The EdgeWorker ID is not [activated](manage-edgeworkers.md#activate-an-edgeworker-version). |
+| Runtime error | Error at runtime or environment prevented EdgeWorkers execution. |
+| Execution error | Error during EdgeWorkers execution, such as JavaScript exception or error. |
+| Timeout error | EdgeWorkers function timed out. |
+| Resource limit hit | The EdgeWorkers function exceeded the amount of memory it is allowed to use. Review the [Resource tier limitations](resource-tier-limitations.md) for more information. |
+| CPU timeout error | The EdgeWorkers function exceeded the allowed CPU time when running an event handler. For more information see, [Product limits](limitations.md). |
+| Wall timeout error | The EdgeWorkers function exceeded the allowed Wall time when running an event handler. For more information see, [Product limits](limitations.md). |
+| Init CPU timeout error | The EdgeWorkers function exceeded the allowed CPU time during initialization.<br/><br/>This can occur if the EdgeWorkers code bundle contains too much JavaScript to load within the time limits. It can also occur if the EdgeWorkers function attempts to perform too many calculations during initialization.<br/><br/>For more information see, [Product limits](limitations.md). |
+| Init wall timeout error | The EdgeWorkers function exceeded the allowed wall time during initialization.<br/><br/>This can occur if the EdgeWorkers code bundle contains too much JavaScript to load within the time limits. It can also occur if the EdgeWorkers function attempts to perform too many calculations during initialization.<br/><br/>For more information see, [Product limits](limitations.md). |
+| subWorker not enabled | The EdgeWorkers code bundle is not enabled as a subWorker.<br/><br/>This can occur if a sub-request is made to an EdgeWorker and the code bundle is not [enabled as a subWorker](create-a-subworker.md#enable-subworkers) .<br/><br/>**Note:** The sub-request will bypass the EdgeWorker and continue processing. |
+| subWorker limit hit | The EdgeWorkers function exceeded the subWorkers product limits and did not execute.<br/><br/>This can occur when the maximum number of nested subWorkers allowed for a single root sub-request is exceeded.<br/><br/>When this happens, the sub-request that called the subWorker receives a 500 HTTP response code. |

@@ -11,13 +11,13 @@ updatedAt: "Wed Aug 24 2022 14:14:48 GMT+0000 (Coordinated Universal Time)"
 ---
 You can use the EdgeWorkers Management application to create a unique identifier, name, and select a resource tier for your EdgeWorkers code.
 
-An EdgeWorker ID is required to enable the EdgeWorkers behavior in your <<COMPANY_NICKNAME>> property configuration.
+An EdgeWorker ID is required to enable the EdgeWorkers behavior in your {{COMPANY_NICKNAME}} property configuration.
 
 > 📘 You can also use the [EdgeWorkers API](https://techdocs.akamai.com/edgeworkers/reference/api) to create an EdgeWorker ID.
 
 1. Log in to Control Center.
 
-2. Go to <<PORTAL_ICON_ROOT>> <<CHAR_MENU_DELIMITER>> **CDN** <<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
+2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 
@@ -31,7 +31,7 @@ An EdgeWorker ID is required to enable the EdgeWorkers behavior in your <<COMPAN
 
 5. Select a Group Association.
 
-   You can only select a group that you have permission to access. For more information about the EdgeWorkers permission model see [Manage access to EdgeWorkers](doc:manage-access-to-edgeworkers).
+   You can only select a group that you have permission to access. For more information about the EdgeWorkers permission model see [Manage access to EdgeWorkers](manage-access-to-edgeworkers.md).
 
 6. Select a Contract ID to list the available resource tiers under the contract.
 
@@ -41,6 +41,6 @@ An EdgeWorker ID is required to enable the EdgeWorkers behavior in your <<COMPAN
 
    EdgeWorkers resource tiers currently include  and **Dynamic Compute** and **Basic Compute**. To select a resource tier the associated product entitlement must be available on your customer contract.
 
-   The limits for each resource tier are different. You can view the limits for the selected resource tier in the details section or you can view the [Resource tier limitations](doc:resource-tier-limitations)  section.
+   The limits for each resource tier are different. You can view the limits for the selected resource tier in the details section or you can view the [Resource tier limitations](resource-tier-limitations.md)  section.
 
-> 👍 Each resource tier has a different billing rate. Please contact your account representative for more information. See the [Resource tiers](doc:select-a-resource-tier) section for more information including details about which use cases are supported for each resource tier.
+> 👍 Each resource tier has a different billing rate. Please contact your account representative for more information. See the [Resource tiers](select-a-resource-tier.md) section for more information including details about which use cases are supported for each resource tier.

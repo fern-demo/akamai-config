@@ -6,9 +6,9 @@ hidden: true
 createdAt: "Mon Apr 08 2024 12:51:14 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Tue Jul 09 2024 11:24:21 GMT+0000 (Coordinated Universal Time)"
 ---
-JavaScript logging captures log messages generated during the current request. You can deliver the JavaScript logs via [Enhanced debug headers](doc:enable-enhanced-debug-headers) or a[DataStream 2 stream](doc:ds2-javascript-logging)
+JavaScript logging captures log messages generated during the current request. You can deliver the JavaScript logs via [Enhanced debug headers](enable-enhanced-debug-headers.md) or a[DataStream 2 stream](ds2-javascript-logging.md)
 
-In addition to logging static strings, you can also use variable substitution to include [dynamic data](doc:enable-javascript-logging#add-dynamic-data-to-log-messages) in the EdgeWorkers logs. 
+In addition to logging static strings, you can also use variable substitution to include [dynamic data](enable-javascript-logging.md#add-dynamic-data-to-log-messages) in the EdgeWorkers logs. 
 
 > 🚧 When adding JavaScript logging to your EdgeWorkers make sure that sensitive data is not included in the log output.
 
@@ -21,11 +21,11 @@ The following restrictions apply to JavaScript logging headers:
 
 # Use enhanced debug headers to view JavaScript logs
 
-For information about how to retrieve logs for the `responseProvider` event handler see, [Use DataStream 2 to deliver JavaScript logs](doc:ds2-javascript-logging).
+For information about how to retrieve logs for the `responseProvider` event handler see, [Use DataStream 2 to deliver JavaScript logs](ds2-javascript-logging.md).
 
-1. To view the JavaScript logging results you need to set up your property for [enhanced debug headers](doc:enable-enhanced-debug-headers).
+1. To view the JavaScript logging results you need to set up your property for [enhanced debug headers](enable-enhanced-debug-headers.md).
 
-2. Import the built-in [log](doc:log)  module.
+2. Import the built-in [log](log.md)  module.
 
 ```javascript
 import {logger} from 'log' // Import the logger module export function
@@ -71,7 +71,7 @@ This example lists the corresponding logging response header for each event hand
 "X-Akamai-EdgeWorker-onClientResponse-Log: D:main.js:16 iron\r\n"
 ```
 
-6. You can also use the `akamai-x-ew-log` header to specify the [log](doc:log) level. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. In the request header below, `akamai-x-ew-log-level: error`, specifies that **error** level messages should be included in the logs.
+6. You can also use the `akamai-x-ew-log` header to specify the [log](log.md) level. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. In the request header below, `akamai-x-ew-log-level: error`, specifies that **error** level messages should be included in the logs.
 
 ```curl
 curl "http://www.example.com" -H 'Pragma: akamai-x-ew-debug' -H 'akamai-x-ew-log' -H 'akamai-x-ew-log-level: error' -H 'Akamai-EW-Trace: eyJ0eXAiOiJKV1Qi ... iu1XOS9eJOl-54Yw
@@ -79,9 +79,9 @@ curl "http://www.example.com" -H 'Pragma: akamai-x-ew-debug' -H 'akamai-x-ew-log
 
 # Use DataStream 2 to deliver the JavaScript logs
 
-For complete instructions that include how to set up a DataStream 2 stream and a log destination, refer to the [Use DataStream 2 to deliver JavaScript logs](doc:javascript-logging) tutorial.
+For complete instructions that include how to set up a DataStream 2 stream and a log destination, refer to the [Use DataStream 2 to deliver JavaScript logs](javascript-logging.md) tutorial.
 
-1. Import the [log](doc:log) built-in module in the `main.js` file. The log built-in module logs messages generated during the current request.
+1. Import the [log](log.md) built-in module in the `main.js` file. The log built-in module logs messages generated during the current request.
 
 ```javascript
 // Import logging module
@@ -112,7 +112,7 @@ export function onClientResponse (request, response) {
 ```
 
 2. Add the logging parameter to the `bundle.json` file. You can set the JavaScript logging level in the code bundle. By default, EdgeWorkers logs are set to ERROR.  
-   Use the `ds2id` you created to stream the logs. For more information see, [Use DataStream 2 to deliver JavaScript logs](doc:javascript-logging).
+   Use the `ds2id` you created to stream the logs. For more information see, [Use DataStream 2 to deliver JavaScript logs](javascript-logging.md).
 
 ```json
 {
@@ -138,7 +138,7 @@ With streamed responses, this information is not available until the event handl
 
 > 📘 For `responseProvider` you need to add the Pragma `akamai-x-ew-debug-rp` header that enables the multi-part response header. If the `responseProvider` event handler is not implemented, a status of **UnimplementedEventHandler** will appear in the standard trace header.
 
-1. Make sure that  you've [enabled enhanced debug headers](doc:enable-enhanced-debug-headers)  and added the [built-in log](doc:log) module to your EdgeWorkers function.
+1. Make sure that  you've [enabled enhanced debug headers](enable-enhanced-debug-headers.md)  and added the [built-in log](log.md) module to your EdgeWorkers function.
 
 2. Here’s a curl request that adds the Pragma `akamai-x-ew-debug-rp` multi-part response header and the `Akamai-EW-Trace` header to retrieve the JavaScript logging information:
 
@@ -171,7 +171,7 @@ X-Akamai-EdgeWorker-responseProvider-Log: D:main.js:40 SubRequests Completed - R
 --j50cx0rLZHkfMieMHdE7HM--
 ```
 
-3. You can also use the `akamai-x-ew-log` header to specify the [log](doc:log) level. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. In the request header below, `akamai-x-ew-log-level: error`, specifies that **error** level messages should be included in the logs.
+3. You can also use the `akamai-x-ew-log` header to specify the [log](log.md) level. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. In the request header below, `akamai-x-ew-log-level: error`, specifies that **error** level messages should be included in the logs.
 
 ```curl
 curl -i 'http://www.example.com/ -H 'Pragma: akamai-x-ew-debug-rp'-H 'akamai-x-ew-log' -H 'akamai-x-ew-log-level: error' -H 'Akamai-EW-Trace: eyJ0eXAiOiJKV1Qi ... iu1XOS9eJOl-54Yw'

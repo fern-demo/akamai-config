@@ -21,31 +21,18 @@ First let’s take a look at how to set up and run the EdgeWorkers Code Profiler
 
 > 📘 In this example we'll use the VS Code extension to profile our code. The EdgeWorker Code Profiler also supports the [IntelliJ Plugin](https://github.com/akamai/edgeworkers-intellij). 
 > 
-> You can find more details about the IntelliJ Plugin and how to use it to run the profiler in the [EdgeWorkers Code Profiler](doc:edgeworkers-code-profiler) section.
+> You can find more details about the IntelliJ Plugin and how to use it to run the profiler in the [EdgeWorkers Code Profiler](edgeworkers-code-profiler.md) section.
 
 As part of setting up this extension, you also need to install the [Akamai CLI](https://github.com/akamai/cli) and create an .edgerc file with [Akamai API Client credentials](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials).
 
-> 👍 You can also use the CLI to profile your code. You can find more details about the CLI and how to run the profiler in the [EdgeWorkers Code Profiler](doc:edgeworkers-code-profiler) section.
+> 👍 You can also use the CLI to profile your code. You can find more details about the CLI and how to run the profiler in the [EdgeWorkers Code Profiler](edgeworkers-code-profiler.md) section.
 
 2. Once installed, you can access the profiler in the bottom panel of the EdgeWorkers VScode extension. 
 
 3. To profile your code, enter the URL that the EdgeWorkers function is configured to operate at and an event handler to profile. You can optionally add a file path, a file name, and request headers. Then just hit **Run Profiler**.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/vscodeProfiler-v2.jpg",
-        null,
-        "Code Profiler"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/vscodeProfiler-v2.jpg" alt="Image"/>
+</Frame>
 
 
 # Improve your code
@@ -55,18 +42,21 @@ In this tutorial we'll profile the [trace-headers](https://github.com/akamai/edg
 1. Upload the code bundle from [June 23, 2022](https://github.com/akamai/edgeworkers-examples/tree/81b160975e8a38369f91ea9e18ea6ed6429bfef5/edgecompute/examples/traffic-filtering/trace-headers) to a test website.
 
    The EdgeWorkers code is functioning as expected by tracing out request and response headers to the page html. 
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/profilingData-v1.png",null,"Profiling data"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/profilingData-v1.png" alt="Image"/>
+</Frame>
 
 2. Run the same URL through the EdgeWorkers Code Profiler. 
 
-   The results show that a lot of time is spent repeatedly calling into the [getHeaders()](doc:request-object#getheaders) function. While each call is quick, the repeated calls have a disproportionate impact on the page load time. 
+   The results show that a lot of time is spent repeatedly calling into the [getHeaders()](request-object.md#getheaders) function. While each call is quick, the repeated calls have a disproportionate impact on the page load time. 
+<div>
+<video width="100%" height="auto" loop="true" autoplay="true" controls muted>
+  <source src="https://techdocs.akamai.com/edgeworkers/videos/codeProfilerBlog1-v1.mov" type="video/mp4"></source>
+  <strong>Error</strong>: The video's URL was inaccessible.
+</video>
+</div>
 
-[block:html]
-{
-  "html": "<div>\n<video width=\"100%\" height=\"auto\" loop=\"true\" autoplay=\"true\" controls muted>\n  <source src=\"https://techdocs.akamai.com/edgeworkers/videos/codeProfilerBlog1-v1.mov\" type=\"video/mp4\">\n  <strong>Error</strong>: The video's URL was inaccessible.\n</video>\n</div>\n\n<style></style>"
-}
-[/block]
+<style></style>
 
 
 3. Let’s take a look at the EdgeWorkers code, under `constructResponseBody()`.
@@ -132,12 +122,14 @@ function constructResponseBody(request, response) {
 ```
 
 5. Activate the updated EdgeWorkers version on the Akamai staging network and confirm that you get the same result in a browser. 
+<div>
+<video width="100%" height="auto" loop="true" autoplay="true" controls muted>
+  <source src="https://techdocs.akamai.com/edgeworkers/videos/codeProfilerBlog2-v1.mov" type="video/mp4"></source>
+  <strong>Error</strong>: The video's URL was inaccessible.
+</video>
+</div>
 
-[block:html]
-{
-  "html": "<div>\n<video width=\"100%\" height=\"auto\" loop=\"true\" autoplay=\"true\" controls muted>\n  <source src=\"https://techdocs.akamai.com/edgeworkers/videos/codeProfilerBlog2-v1.mov\" type=\"video/mp4\">\n  <strong>Error</strong>: The video's URL was inaccessible.\n</video>\n</div>\n\n<style></style>"
-}
-[/block]
+<style></style>
 
 
 6. Run the EdgeWorkers Code Profiler again to see the impact on performance.
@@ -153,4 +145,4 @@ The EdgeWorkers Code Profiler currently provides information about CPU execution
 - [Akamai EdgeWorkers Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=akamaiEdgeworker.akamai-edgeworkers-vscode-extension)
 - [VSCode Extension repo](https://github.com/akamai/edgeworkers-vscode) 
 - [IntelliJ Plugin](https://github.com/akamai/edgeworkers-intellij)
-- [EdgeWorkers Code Profiler](doc:edgeworkers-code-profiler)  in Akamai TechDocs
+- [EdgeWorkers Code Profiler](edgeworkers-code-profiler.md)  in Akamai TechDocs

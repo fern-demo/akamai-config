@@ -9,45 +9,17 @@ updatedAt: "Fri Apr 26 2024 11:29:54 GMT+0000 (Coordinated Universal Time)"
 To receive enhanced debugging information about EdgeWorkers executions on subWorker sub-requests: 
 
 - Pass the `akamai-x-ew-subworkers` pragma header.
-- Include the other pragma headers required for [Enhanced debug headers](doc:enable-enhanced-debug-headers).  
+- Include the other pragma headers required for [Enhanced debug headers](enable-enhanced-debug-headers.md).  
 - The debugging headers and pragmas are automatically forwarded on any sub-requests made by the EdgeWorker. 
 - The debug response headers are collected and returned on the response. 
 
 When you specify `akamai-x-ew-subworkers`, the following set of pragmas and headers are automatically forwarded on sub-requests.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/multiAccountDebugsubWorkers-v4.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "2300px"
-    }
-  ]
-}
-[/block]
-
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Forwarded request pragmas",
-    "h-1": " Response headers",
-    "0-0": "\\*`akamai-x-ew-subworkers`  \n`akamai-x-ew-debug`  \n`akamai-x-ew-onclientrequest`  \n`akamai-x-ew-onclientresponse`  \n`akamai-x-ew-onoriginrequest`  \n`akamai-x-ew-onoriginresponse`  \n`akamai-x-ew-debug-subs`  \n`akamai-x-ew-debug-rp`",
-    "0-1": "Debug response headers include the request ID.  \nThe request ID identifies the headers associated with specific sub-requests.  \n  \n`x-akamai-edgeworker-onclientrequest-info`  \n`x-akamai-edgeworker-onclientresponse-info`  \n`x-akamai-edgeworker-onoriginrequest-info`  \n`x-akamai-edgeworker-onoriginresponse-info`  \n`x-akamai-edgeworker-onclientrequest-log`  \n`x-akamai-edgeworker-onclientresponse-log`  \n`x-akamai-edgeworker-onoriginrequest-log`  \n`x-akamai-edgeworker-onoriginrequest-log`  \n`x-akamai-edgeworker-subrequests`"
-  },
-  "cols": 2,
-  "rows": 1,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/multiAccountDebugsubWorkers-v4.jpg" alt="Image"/>
+</Frame>
+| Forwarded request pragmas |  Response headers |
+| --- | --- |
+| \*`akamai-x-ew-subworkers`<br/>`akamai-x-ew-debug`<br/>`akamai-x-ew-onclientrequest`<br/>`akamai-x-ew-onclientresponse`<br/>`akamai-x-ew-onoriginrequest`<br/>`akamai-x-ew-onoriginresponse`<br/>`akamai-x-ew-debug-subs`<br/>`akamai-x-ew-debug-rp` | Debug response headers include the request ID.<br/>The request ID identifies the headers associated with specific sub-requests.<br/><br/>`x-akamai-edgeworker-onclientrequest-info`<br/>`x-akamai-edgeworker-onclientresponse-info`<br/>`x-akamai-edgeworker-onoriginrequest-info`<br/>`x-akamai-edgeworker-onoriginresponse-info`<br/>`x-akamai-edgeworker-onclientrequest-log`<br/>`x-akamai-edgeworker-onclientresponse-log`<br/>`x-akamai-edgeworker-onoriginrequest-log`<br/>`x-akamai-edgeworker-onoriginrequest-log`<br/>`x-akamai-edgeworker-subrequests` |
 
 
 \*The `akamai-x-ew-subworkers` pragma response includes the `Akamai-EW-Trace` and the `Akamai-X-EW-Subworkers-Log` forward request headers.
@@ -85,49 +57,15 @@ It has a request ID of 10f5d16 and returned a 200 response. The sub-request also
 X-Akamai-Edgeworker-Subrequests-10f5e61: ew=1147649205; evt=CReq; id=1; method=GET; url="<http://example.com/?x=sw_root_to_sw_child">; rsp=200; dur=4; req_id=10f5d16
 ```
 
-<br>
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/debugsubWorkers-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "2500px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/debugsubWorkers-v2.jpg" alt="Image"/>
+</Frame>
 
 
 ## Response header fields for subWorkers
 
-In addition to the [HTTP sub-request](doc:enhanced-debug-header-details-for-http-sub-requests) header fields the `req-id` field is also included when you add the `akamai-x-ew-subworkers` pragma header to a request.
+In addition to the [HTTP sub-request](enhanced-debug-header-details-for-http-sub-requests.md) header fields the `req-id` field is also included when you add the `akamai-x-ew-subworkers` pragma header to a request.
+| Response header field | Details | Description |
+| --- | --- | --- |
+| subWorker request ID<br/>req_id=`<req_id>` | `<req_id>` | Identifier for the request that issued the subWorker. |
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Response header field",
-    "h-1": "Details",
-    "h-2": "Description",
-    "0-0": "subWorker request ID  \nreq_id=`<req_id>`",
-    "0-1": "`<req_id>`",
-    "0-2": "Identifier for the request that issued the subWorker."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
-<br>

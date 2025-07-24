@@ -9,7 +9,7 @@ metadata:
 createdAt: "Thu Feb 16 2023 17:30:14 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Wed May 17 2023 12:46:54 GMT+0000 (Coordinated Universal Time)"
 ---
-Review these common questions about EdgeWorkers content transformation. To learn more, review the the [Response content transformation](doc:transform-response-content) tutorial in this guide.
+Review these common questions about EdgeWorkers content transformation. To learn more, review the the [Response content transformation](transform-response-content.md) tutorial in this guide.
 
 ### What are the benefits of using EdgeWorkers to transform content?
 
@@ -50,8 +50,8 @@ Yes, you can cache the EdgeWorkers content so you don't have to execute the Java
 
 ### Can I use the same URL for the EdgeWorkers code and origin to "transparently" modify the content of an existing URL?
 
-This is also possible. The EdgeWorkers code can make an HTTP sub-request to the same URL that initiated the EdgeWorkers execution. EdgeWorkers are not allowed to execute on sub-requests, so you don't have to worry about an infinite loop. There are some nuanced implementation details, especially if caching of the original and transformed content is required.  For more information, refer to the [Response content transformation](doc:transform-response-content) topic in this guide.
+This is also possible. The EdgeWorkers code can make an HTTP sub-request to the same URL that initiated the EdgeWorkers execution. EdgeWorkers are not allowed to execute on sub-requests, so you don't have to worry about an infinite loop. There are some nuanced implementation details, especially if caching of the original and transformed content is required.  For more information, refer to the [Response content transformation](transform-response-content.md) topic in this guide.
 
 ### Which limits apply to requests that are transformed by EdgeWorkers?
 
-All EdgeWorkers limits apply, including CPU time, wall time, and memory limits. Additionally, the request to retrieve the original content must complete within the maximum wall time allowed per HTTP sub-request. Refer to the [Resource tier](doc:resource-tier-limitations) and [Product](doc:limitations) limits for more information.
+All EdgeWorkers limits apply, including CPU time, wall time, and memory limits. Additionally, the request to retrieve the original content must complete within the maximum wall time allowed per HTTP sub-request. Refer to the [Resource tier](resource-tier-limitations.md) and [Product](limitations.md) limits for more information.

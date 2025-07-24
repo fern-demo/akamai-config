@@ -12,28 +12,23 @@ To receive enhanced debugging information about the EdgeWorkers execution in the
 
 - An `Akamai-EW-Trace` request header that contains a JSON Web Token (JWT) authentication token. 
 
-- One of the standard Pragma headers. See the [Enable standard debug headers](doc:enable-standard-debug-headers) for more information.
+- One of the standard Pragma headers. See the [Enable standard debug headers](enable-standard-debug-headers.md) for more information.
 
-- For `responseProvider` you need to add the `Pragma: akamai-x-ew-debug-rp` header that enables the multi-part response body. See [Enable enhanced debug headers for responseProvider](doc:enable-enhanced-debug-headers-for-responseprovider) for more information.
+- For `responseProvider` you need to add the `Pragma: akamai-x-ew-debug-rp` header that enables the multi-part response body. See [Enable enhanced debug headers for responseProvider](enable-enhanced-debug-headers-for-responseprovider.md) for more information.
 
 - To debug HTTP sub-requests you need to add the `Pragma: akamai-x-ew-debug-subs` header to the request.
 
 - To debug subWorkers you need to add the `Pragma: akamai-x-ew-subworkers` header to the request.
 
 Watch this five minute video to learn how to get started debugging your EdgeWorkers code using enhanced debug headers.
-
-[block:html]
-{
-  "html": "\n<iframe width=\"512\" height=\"288\" src=\"https://www.youtube.com/embed/-aFsvumwfOg\" title=\"Akamai EdgeWorkers | Using Enhanced Debug Headers\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"
-}
-[/block]
+<iframe width="512" height="288" src="https://www.youtube.com/embed/-aFsvumwfOg" title="Akamai EdgeWorkers | Using Enhanced Debug Headers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 # Request enhanced debug headers
 
 Follow these steps to generate a JWT authentication token and add enhanced debug headers to your requests. You can also use these steps to re-generate an expired token.
 
-If your configuration includes subWorkers refer to the details in the [JWT authentication token security for subWorkers]. [Enhanced debug headers](doc:enable-enhanced-debug-headers#jwt-autentication-token-security) section for more information. 
+If your configuration includes subWorkers refer to the details in the [JWT authentication token security for subWorkers]. [Enhanced debug headers](enable-enhanced-debug-headers.md#jwt-autentication-token-security) section for more information. 
 
 Before you begin, go to [Akamai CLI for EdgeWorkers](https://github.com/akamai/cli-edgeworkers#readme) for instructions on how to install the EdgeWorkers package. You'll also find an overview of commands you can use to manage your EdgeWorkers. 
 
@@ -41,7 +36,7 @@ Make sure to follow the instructions in the [Get Started with APIs](https://tech
 
 > 👍 You can also use the EdgeWorkers API to [generate an authentication token](ref:post-secure-token).
 
-> 👍 Review the [enhanced debug header details](doc:enhanced-debug-header-details) documentation to learn more about the response debug fields and to view examples.
+> 👍 Review the [enhanced debug header details](enhanced-debug-header-details.md) documentation to learn more about the response debug fields and to view examples.
 
 1. Use this EdgeWorkers CLI command to generate a JWT authentication token. In this example we set the token expiry to 60 minutes for the `www.example.com` hostname.
 
@@ -67,7 +62,7 @@ Akamai-EW-Trace: eyJ0eXAiOiJKV1Qi ... iu1XOS9eJOl-54Yw
 
 3. To receive enhanced debugging information, add a request header to your requests. The `akamai-x-ew-debug` Pragma header includes debugging information for the `onClientRequest`, `onClientResponse`, `onOriginRequest`, and `onOriginResponse` event handlers. 
 
-The `akamai-x-ew-log` header provides log delivery information via response headers. You can also optionally use the `akamai-x-ew-log-level: %log_level%` header to specify which severity message to include in the enhanced debug headers. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. For more information, refer to the [log](doc:log) built-in module.
+The `akamai-x-ew-log` header provides log delivery information via response headers. You can also optionally use the `akamai-x-ew-log-level: %log_level%` header to specify which severity message to include in the enhanced debug headers. The available log levels, in ascending order of severity, are `trace`, `debug`, `info`, `warn`, and `error`. For more information, refer to the [log](log.md) built-in module.
 
 ```curl
 curl "http://www.example.com" -H 'Pragma: akamai-x-ew-debug' -H 'akamai-x-ew-log' -H 'akamai-x-ew-log-level: error' -H 'Akamai-EW-Trace: eyJ0eXAiOiJKV1Qi ... iu1XOS9eJOl-54Yw
@@ -89,7 +84,7 @@ x-akamai-edgeworker-onclientrequest-info: ew=<your EdgeWorker ID> v1.0:example; 
 
 ## JWT authentication token security for subWorkers
 
-If your subWorkers make calls to EdgeWorkers in different accounts you need to add an `Akamai-EW-Trace` request header that contains a JSON Web Token (JWT) authentication token for each account. See [Specify multiple trace headers](doc:debug-subworkers#specify-multiple-trace-headers) for more information.
+If your subWorkers make calls to EdgeWorkers in different accounts you need to add an `Akamai-EW-Trace` request header that contains a JSON Web Token (JWT) authentication token for each account. See [Specify multiple trace headers](debug-subworkers.md#specify-multiple-trace-headers) for more information.
 
 To keep the `Akamai-EW-Trace` tokens secure, headers are automatically removed from sub-requests:
 
@@ -109,23 +104,9 @@ There are three properties on three accounts with trace headers EW-Trace-1, EW-T
   - Additional sub-requests to other grand-child properties which belong to account 2 will keep their EW-Trace-2 token.
 
 <br>
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/multiAccoutDebugsubWorkers-v4.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "2500px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/multiAccoutDebugsubWorkers-v4.jpg" alt="Image"/>
+</Frame>
 
 
 <br>
@@ -136,7 +117,7 @@ There are three properties on three accounts with trace headers EW-Trace-1, EW-T
 
 SubWorkers let you make requests to EdgeWorkers created in different properties or accounts.
 
-You need to specify an additional trace header for each separate property in an enhanced debug request header. For more information on how to create a JWT token, go to the [Enhanced debug headers](doc:enable-enhanced-debug-headers#request-enhanced-debug-headers) section in this guide.
+You need to specify an additional trace header for each separate property in an enhanced debug request header. For more information on how to create a JWT token, go to the [Enhanced debug headers](enable-enhanced-debug-headers.md#request-enhanced-debug-headers) section in this guide.
 
 To do this, add a second `Akamai-EW-Trace` header to the request.
 

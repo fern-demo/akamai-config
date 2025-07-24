@@ -13,4 +13,6 @@ The Overview report contains a summary of all the EdgeWorker IDs selected for th
 
 The summary also includes the total number of sub-requests made from the EdgeWorker IDs selected for the report.
 
- ![Overview report](https://techdocs.akamai.com/edgeworkers/img/overviewReport-v2.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/overviewReport-v2.png" alt="Overview report"/>
+</Frame>

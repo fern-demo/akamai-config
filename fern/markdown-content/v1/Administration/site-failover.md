@@ -18,13 +18,13 @@ Programming errors, unexpected input from end-users, changes in documents return
 
 - Use **EdgeWorkers Execution Status** in a match condition.
 
-- [Retry the failed EdgeWorkers request](doc:site-failover#retry-the-request) and continue processing the delivery property metadata.
+- [Retry the failed EdgeWorkers request](site-failover.md#retry-the-request) and continue processing the delivery property metadata.
 
 - By-pass the failed EdgeWorkers function and serve the same URL.  Support is required to implement this Failover action. Contact your account team or send an email to [edgeworkers@akamai.com](mailto:edgeworkers@akamai.com) for more information. 
 
-> 👍 EdgeWorkers failures caused by a coding issue throw a JavaScript error. Where possible, [catch errors](doc:javascript-error-handling) in your JavaScript code and execute alternative logic.
+> 👍 EdgeWorkers failures caused by a coding issue throw a JavaScript error. Where possible, [catch errors](javascript-error-handling.md) in your JavaScript code and execute alternative logic.
 
-> 📘 When testing Site Failover you need to remove the `akamai-x-ew-debug-rp` Pragma header. For more information refer to the [known issue](doc:known-issues#site-failover-and-responseprovider-built-in-variable).
+> 📘 When testing Site Failover you need to remove the `akamai-x-ew-debug-rp` Pragma header. For more information refer to the [known issue](known-issues.md#site-failover-and-responseprovider-built-in-variable).
 
 # Detect an EdgeWorkers failure
 
@@ -34,30 +34,38 @@ By default a match condition detects errors that occur when executing `onClientR
 
 The following Property Manager logic detects errors from all event handlers.
 
- ![Failover to static content](https://techdocs.akamai.com/edgeworkers/img/property-manager-logic-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/property-manager-logic-v1.png" alt="Failover to static content"/>
+</Frame>
 
 1. Create a rule with a match condition that enables the **PMUSER_RP_STATUS** variable when the **Metadata Stage** is **client-response**.
 
 > 👍 The Site Failover rules need to appear after the EdgeWorkers behavior. If you add them before the EdgeWorkers behavior the Site Failover logic will not execute.
 
- ![Failover to static content](https://techdocs.akamai.com/edgeworkers/img/is-client-response-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/is-client-response-v1.png" alt="Failover to static content"/>
+</Frame>
 
 2. Create a child rule to the **Is client-response** rule. 
 3. Add a match condition that enables the **PMUSER_RP_ERROR** variable when the **PMUSER_RP_STATUS** is not empty AND is not \*success\* or \*unimplementedHandler\*.
 
 > 📘 You can also add \*unknownEdgeWorker\* to the list of variable values. This prevents Site Failover from triggering when your configuration includes a deactivated EdgeWorker ID.
 > 
-> For more information about the variable values you can use in a match condition,  refer to the [Execution status report](doc:manage-report-data#execution-status-report) description.
+> For more information about the variable values you can use in a match condition,  refer to the [Execution status report](manage-report-data.md#execution-status-report) description.
 
 4. You also need to enable wildcards for this rule. To do this, click the gear icon in the match condition and select the **Wildcards in value**  check box from the **Additional Options** window and uncheck the **case-sensitive value **check box. 
 
   If you don't see the gear icon, hover your mouse over the match condition.
 
-  ![Failover to static content](https://techdocs.akamai.com/edgeworkers/img/rp-status-v1.png)
+  <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/rp-status-v1.png" alt="Failover to static content"/>
+</Frame>
 
 5. Add another child rule to the **Is client-response** rule.  Add a match condition that enables the **Site Failover** behavior when the EdgeWorkers Execution status is **Failure** OR the **PMUSER_RP_ERROR** is **true**.
 
-  ![Failover to static content](https://techdocs.akamai.com/edgeworkers/img/on-ew-error-v1.png)
+  <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/on-ew-error-v1.png" alt="Failover to static content"/>
+</Frame>
 
 # Invoke failover
 
@@ -73,7 +81,9 @@ This will re-execute the request and invoke the EdgeWorkers function again. Retr
 
 When an EdgeWorkers function fails you can serve alternate content from NetStorage.
 
- ![Failover to static content](https://techdocs.akamai.com/edgeworkers/img/failover-to-static-content-v2.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/failover-to-static-content-v2.png" alt="Failover to static content"/>
+</Frame>
 
 In some cases, existing failover logic may also detect EdgeWorkers errors and interfere with attempts to implement EdgeWorkers-specific failover.  In particular, the match condition for Origin Timeout errors is known to match on some types of EdgeWorkers errors.
 
@@ -81,6 +91,10 @@ In some cases, existing failover logic may also detect EdgeWorkers errors and in
 
 You can also forward the request to an alternate location to execute the origin logic when an EdgeWorkers failure occurs.
 
- ![EdgeWorkers failover check](https://techdocs.akamai.com/edgeworkers/img/edgeworkers-failover-check-v1.jpg)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeworkers-failover-check-v1.jpg" alt="EdgeWorkers failover check"/>
+</Frame>
 
- ![EdgeWorkers site failover](https://techdocs.akamai.com/edgeworkers/img/edgeworkers-site-failover-v1.jpg)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeworkers-site-failover-v1.jpg" alt="EdgeWorkers site failover"/>
+</Frame>

@@ -8,11 +8,11 @@ updatedAt: "Tue Feb 13 2024 21:07:59 GMT+0000 (Coordinated Universal Time)"
 ---
 ### Can EdgeWorkers interact with metadata variables?
 
-Yes, EdgeWorkers can read and write to PMUSER\_ variables in the delivery property. See [getVariable](doc:request-object#getvariable) and [setVariable](doc:request-object#setvariable) for more information.
+Yes, EdgeWorkers can read and write to PMUSER\_ variables in the delivery property. See [getVariable](request-object.md#getvariable) and [setVariable](request-object.md#setvariable) for more information.
 
 ### What product data does EdgeWorkers have access to?
 
-EdgeWorkers has access to EdgeScape (stored in the request's [User Location Object](doc:user-location-object)) and Device Characteristics (stored in the requests's [Device Object](doc:device-object)).
+EdgeWorkers has access to EdgeScape (stored in the request's [User Location Object](user-location-object.md)) and Device Characteristics (stored in the requests's [Device Object](device-object.md)).
 
 ### Does EdgeWorkers replace Edge Side Includes (ESI)?
 

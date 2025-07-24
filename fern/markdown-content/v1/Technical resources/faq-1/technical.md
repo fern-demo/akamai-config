@@ -8,7 +8,7 @@ updatedAt: "Tue Mar 11 2025 14:50:49 GMT+0000 (Coordinated Universal Time)"
 ---
 ### How does EdgeWorkers apply its business logic?
 
-The EdgeWorkers [event model](doc:event-handler-functions) contains "hooks" that can be called at specific points throughout the end user request-response workflow. Each event has [specific features and capabilities](doc:about-the-javascript-api) that allow it to transform and modify the request and response as it flows through the Intelligent Edge Platform.
+The EdgeWorkers [event model](event-handler-functions.md) contains "hooks" that can be called at specific points throughout the end user request-response workflow. Each event has [specific features and capabilities](about-the-javascript-api.md) that allow it to transform and modify the request and response as it flows through the Intelligent Edge Platform.
 
 ### How does the order of execution work?
 
@@ -17,7 +17,7 @@ Metadata actions are performed during the stages where EdgeWorkers events are de
 Let’s review the order in which actions are applied when manipulating a response header that includes:
 
 - An [Edge Side Includes (ESI)](https://techdocs.akamai.com/property-mgr/docs/esi-edge-side-includes) add_header()
-- The EdgeWorkers [response.setHeader()](doc:response-object#setheader) in the onClientResponse event
+- The EdgeWorkers [response.setHeader()](response-object.md#setheader) in the onClientResponse event
 - The Property Manager [Modify Outgoing Response Header](https://techdocs.akamai.com/property-mgr/docs/modify-outgoing-response-header) behavior
 
 EdgeWorkers and Property Manager are different interfaces that result in the same proxy task.
@@ -32,8 +32,8 @@ Security products tend to run prior to delivery features. EdgeWorkers functions 
 
 ### How does EdgeWorkers handle errors?
 
-Ultimately, it depends on the error handling options you enable as well as the type of error it is. Generally, you can enable [Site Failover](doc:site-failover) to catch EdgeWorkers failures and apply alternate logic. You can also write try/catch blocks in your JavaScript code to handle exceptions.
+Ultimately, it depends on the error handling options you enable as well as the type of error it is. Generally, you can enable [Site Failover](site-failover.md) to catch EdgeWorkers failures and apply alternate logic. You can also write try/catch blocks in your JavaScript code to handle exceptions.
 
 ### Can multiple EdgeWorkers fire for a single request?
 
-Yes, you can make an HTTP request from one EdgeWorker to another on the same or different property and account. For more information, go to [Create a subWorker](doc:create-a-subworker) in this guide.
+Yes, you can make an HTTP request from one EdgeWorker to another on the same or different property and account. For more information, go to [Create a subWorker](create-a-subworker.md) in this guide.

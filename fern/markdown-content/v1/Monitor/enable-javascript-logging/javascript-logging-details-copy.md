@@ -6,7 +6,7 @@ hidden: true
 createdAt: "Mon Apr 08 2024 13:03:30 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Tue Jul 09 2024 11:27:09 GMT+0000 (Coordinated Universal Time)"
 ---
-You can deliver the JavaScript logs via [Enhanced debug headers](doc:enable-enhanced-debug-headers) or a [DataStream 2](doc:ds2-javascript-logging).
+You can deliver the JavaScript logs via [Enhanced debug headers](enable-enhanced-debug-headers.md) or a [DataStream 2](ds2-javascript-logging.md).
 
 # Enhanced debug header logging details
 
@@ -18,9 +18,9 @@ Each event handler returns a corresponding response header. A response header is
 - X-Akamai-EdgeWorker-onOriginResponse-Log
 - X-Akamai-EdgeWorker-responseProvider-Log
 
-You can also add the `X-Akamai-EdgeWorker-subworkers-Log` request header to limit which EdgeWorkers collect JavaScript logs. This can help you stay with the JavaScript Logging limits. For more information go to [subWorkers JavaScript Logging details](doc:javascript-logging-details-copy#javascript-logging-for-subworkers).
+You can also add the `X-Akamai-EdgeWorker-subworkers-Log` request header to limit which EdgeWorkers collect JavaScript logs. This can help you stay with the JavaScript Logging limits. For more information go to [subWorkers JavaScript Logging details](javascript-logging-details-copy.md#javascript-logging-for-subworkers).
 
-> 📘 You can configure the JavaScript logs to appear in an [LDS server log](https://techdocs.akamai.com/log-delivery/docs) or a [DataStream 2 log](doc:datastream-2-integration).
+> 📘 You can configure the JavaScript logs to appear in an [LDS server log](https://techdocs.akamai.com/log-delivery/docs) or a [DataStream 2 log](datastream-2-integration.md).
 
 ## Enhanced debug header logging format
 
@@ -114,7 +114,7 @@ A  vertical bar (|) separates multiple messages.
 
 # Data Stream 2 JavaScript logging details
 
-You can generate these logs by following the steps in the [Use DataStream 2 to deliver JavaScript logs](doc:javascript-logging) tutorial.
+You can generate these logs by following the steps in the [Use DataStream 2 to deliver JavaScript logs](javascript-logging.md) tutorial.
 
 The following is an example of the JSON data output by DataStream 2. If you select the JSON output option for your logs, `timestamp` and `version` are renamed to `time` and `format` to facilitate the naming conventions of specific endpoints.
 
@@ -144,32 +144,12 @@ The following is an example of the JSON data output by DataStream 2. If you sele
 ## Data Stream 2 logging format
 
 EdgeWorkers JavaScript logging returns logs in the following format, `timestamp` `version` `ds2id` `severity` `traceid` `spanid` `traceflags` `resource` `attributes` `body`.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Data Stream 2 logging field",
-    "h-1": "Description",
-    "0-0": "`severity`",
-    "0-1": "The available severity levels are TRACE, DEBUG, INFO, WARN, and ERROR.",
-    "1-0": "`timestamp` or  \n`time` for JSON log output",
-    "1-1": "Time of event handler initialization.",
-    "2-0": "`version` or `format` for JSON output",
-    "2-1": "A version number specifying the format of the log line for accurate parsing.  \nThe initial value is 1.",
-    "3-0": "`body`",
-    "3-1": "You can include any text here. The body is delivered as URL encoded data and remains encoded until it reaches the destination endpoints. Protobuf supports formatted JSON.",
-    "4-0": "`ds2id`",
-    "4-1": "Corresponds to the `streamId` identified in the EdgeWorkers code bundle. This is same streamID you can use for  API calls such as, `get-stream`.",
-    "5-0": "`attributes`",
-    "5-1": "Additional information about the specific event occurrence. You can use this field to store  information about the event handler invocation such as, if the event handler is available in the other stream formats. Including it here may increase data transfer.  \n  \nWhen written to disk as text, it provides a comma delimited name-value pair mapping to be converted into resources.",
-    "6-0": "`resource`",
-    "6-1": "Describes information about the source of the log such as the `ip`, `cloud.provider`, `ew_id`, `ew_version`."
-  },
-  "cols": 2,
-  "rows": 7,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Data Stream 2 logging field | Description |
+| --- | --- |
+| `severity` | The available severity levels are TRACE, DEBUG, INFO, WARN, and ERROR. |
+| `timestamp` or<br/>`time` for JSON log output | Time of event handler initialization. |
+| `version` or `format` for JSON output | A version number specifying the format of the log line for accurate parsing.<br/>The initial value is 1. |
+| `body` | You can include any text here. The body is delivered as URL encoded data and remains encoded until it reaches the destination endpoints. Protobuf supports formatted JSON. |
+| `ds2id` | Corresponds to the `streamId` identified in the EdgeWorkers code bundle. This is same streamID you can use for  API calls such as, `get-stream`. |
+| `attributes` | Additional information about the specific event occurrence. You can use this field to store  information about the event handler invocation such as, if the event handler is available in the other stream formats. Including it here may increase data transfer.<br/><br/>When written to disk as text, it provides a comma delimited name-value pair mapping to be converted into resources. |
+| `resource` | Describes information about the source of the log such as the `ip`, `cloud.provider`, `ew_id`, `ew_version`. |

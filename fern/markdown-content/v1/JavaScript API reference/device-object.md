@@ -11,7 +11,7 @@ updatedAt: "Thu Feb 10 2022 14:43:45 GMT+0000 (Coordinated Universal Time)"
 ---
 The `device` request object contains properties specifying the client device characteristics.
 
-Device property specifics apply to a given [request](doc:request-object) . The value of this property is null if the contract associated with the request does not have entitlements for [Edge Device Characteristics](https://techdocs.akamai.com/property-mgr/docs/device-charac).
+Device property specifics apply to a given [request](request-object.md) . The value of this property is null if the contract associated with the request does not have entitlements for [Edge Device Characteristics](https://techdocs.akamai.com/property-mgr/docs/device-charac).
 
 # acceptsThirdPartyCookie
 

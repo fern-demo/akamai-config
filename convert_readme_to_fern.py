@@ -191,18 +191,32 @@ def convert_block_html(content: str) -> str:
 
 
 def fix_html_attributes(html: str) -> str:
-    """Fix missing quotes in HTML attributes."""
+    """Fix malformed HTML attributes and tags."""
     
-    # Fix src attributes without quotes
-    # Pattern: src=URL (without quotes) -> src="URL"
-    html = re.sub(r'src=([^\s>]+)(?=[\s>])', r'src="\1"', html)
+    # Fix double quotes in src attributes: src=""URL"" -> src="URL"
+    html = re.sub(r'src=""([^"]+)""', r'src="\1"', html)
+    
+    # Fix malformed title attributes with extra quotes: title=""Text" more text" -> title="Text more text"
+    html = re.sub(r'title=""([^"]*)"([^"]*)"', r'title="\1\2"', html)
+    
+    # Fix src attributes without quotes: src=URL -> src="URL"
+    html = re.sub(r'src=([^\s">]+)(?=[\s>])', r'src="\1"', html)
     
     # Fix href attributes without quotes
-    html = re.sub(r'href=([^\s>]+)(?=[\s>])', r'href="\1"', html)
+    html = re.sub(r'href=([^\s">]+)(?=[\s>])', r'href="\1"', html)
     
     # Fix other common attributes that might be missing quotes
-    html = re.sub(r'alt=([^\s>]+)(?=[\s>])', r'alt="\1"', html)
-    html = re.sub(r'title=([^\s>]+)(?=[\s>])', r'title="\1"', html)
+    html = re.sub(r'alt=([^\s">]+)(?=[\s>])', r'alt="\1"', html)
+    html = re.sub(r'title=([^\s">]+)(?=[\s>])', r'title="\1"', html)
+    
+    # Fix unclosed <br> tags -> <br/>
+    html = re.sub(r'<br(?:\s[^>]*)?>(?!</)', r'<br/>', html)
+    
+    # Fix missing closing iframe tags
+    html = re.sub(r'(<iframe[^>]*>)(?!.*</iframe>)', r'\1</iframe>', html, flags=re.DOTALL)
+    
+    # Remove any double closing iframe tags that might have been created
+    html = re.sub(r'</iframe>\s*</iframe>', r'</iframe>', html)
     
     return html
 
@@ -285,6 +299,9 @@ def process_file(file_path: Path, dry_run: bool = False) -> bool:
         content = convert_readme_variables(content)
         content = convert_doc_links(content)
         content = convert_images_to_frames(content)
+        
+        # Apply HTML cleanup to all content (not just block content)
+        content = fix_html_attributes(content)
         
         # Check if content changed
         if content != original_content:

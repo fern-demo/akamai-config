@@ -16,7 +16,7 @@ EdgeWorkers uses [Google's V8 engine](https://v8.dev/) for its code execution ru
 
 ### What is the activation time for EdgeWorkers code bundle updates?
 
-Expected activation (propagation) times align with delivery properties at 2-5 minutes on staging, and 8-10 minutes on production. Activations into your developer [<<COMPANY_NICKNAME>> Sandbox](https://techdocs.akamai.com/sandbox/docs) tunnel is near real-time.
+Expected activation (propagation) times align with delivery properties at 2-5 minutes on staging, and 8-10 minutes on production. Activations into your developer [{{COMPANY_NICKNAME}} Sandbox](https://techdocs.akamai.com/sandbox/docs) tunnel is near real-time.
 
 ### Which JavaScript libraries can I include in an EdgeWorkers code bundle?
 
@@ -28,9 +28,9 @@ You can use most self-contained JavaScript libraries that:
 
 - Do not try to make external calls.
 
-- Fit within the EdgeWorkers [system limits](doc:limitations).
+- Fit within the EdgeWorkers [system limits](limitations.md).
 
- You can also review this blog article on how to use [rollup](doc:store-locator) to flatten a JavaScript library for use within EdgeWorkers.
+ You can also review this blog article on how to use [rollup](store-locator.md) to flatten a JavaScript library for use within EdgeWorkers.
 
 ### When will EdgeWorkers support additional languages?
 
@@ -74,7 +74,3 @@ export async function responseProvider(request) {
             	}
     	}
 ```
-
-<!--
-
- 

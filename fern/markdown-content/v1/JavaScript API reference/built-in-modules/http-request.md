@@ -18,15 +18,15 @@ Any caching features defined for the delivery product apply to both standard UR
 
 To use sub-requests you need an associated delivery product. Hostnames can only be requested directly when served through the Akamai network. If you don't have an associated delivery product sub-requests will fail with a 400 HTTP response code. If your content is not yet available through the Akamai platform, refer to the Property Manager guide for instructions on how to [Create a new property](https://techdocs.akamai.com/property-mgr/docs/create-new-prop). 
 
-See the [Limitations](doc:limitations) section for more information about the supported delivery products and the event handler timeouts.
+See the [Limitations](limitations.md) section for more information about the supported delivery products and the event handler timeouts.
 
-> 👍 For information about re-using request and response headers, refer to the [FAQ](doc:edgeworkers-javascript-code#can-i-re-use-request-and-response-headers) in this guide.
+> 👍 For information about re-using request and response headers, refer to the [FAQ](edgeworkers-javascript-code.md#can-i-re-use-request-and-response-headers) in this guide.
 
 # Debugging sub-requests
 
 Extra trace information is available for debugging sub-requests. It exposes information including the sub-request status code, request timing, and rate limiting. 
 
-You can enable the enhanced sub-request trace by [adding debug pragmas](doc:enhanced-debug-header-details-for-http-sub-requests) to your request.  
+You can enable the enhanced sub-request trace by [adding debug pragmas](enhanced-debug-header-details-for-http-sub-requests.md) to your request.  
 
 # httpRequest()
 
@@ -38,16 +38,16 @@ When a `httpRequest()` timeout occurs, a  JavaScript error() Object is thrown.
 
 These restrictions apply when using the `httpRequest` function:
 
-- Requests made through the `httpRequest()` function will only trigger [subWorker enabled](doc:create-a-subworker#enable-subworkers) EdgeWorkers attached to the requested resource.
+- Requests made through the `httpRequest()` function will only trigger [subWorker enabled](create-a-subworker.md#enable-subworkers) EdgeWorkers attached to the requested resource.
 - EdgeWorkers sub-requests only support HTTPS. If you specify another protocol in the sub-request the EdgeWorkers function will automatically convert it to HTTPS.
 - You cannot specify a port number.
 - Sub-requests may specify the `GET`, `HEAD`, `POST`, `PUT`, `DELETE` and `OPTIONS` verbs.
 - Hostnames created using [automated slot matching](https://techdocs.akamai.com/property-mgr/docs/opt-slot-support) are not supported.
-- To prevent intermittent data corruption errors that are hard to debug you shouldn't pass sub-request headers back in the response. For more information, review the [FAQ](doc:edgeworkers-javascript-code#can-i-include-sub-request-headers-in-the-response) in the EdgeWorkers JavaScript code section.
+- To prevent intermittent data corruption errors that are hard to debug you shouldn't pass sub-request headers back in the response. For more information, review the [FAQ](edgeworkers-javascript-code.md#can-i-include-sub-request-headers-in-the-response) in the EdgeWorkers JavaScript code section.
 
-> 📘 For more information you can also review the [Limitations](doc:limitations) that apply to sub-requests.
+> 📘 For more information you can also review the [Limitations](limitations.md) that apply to sub-requests.
 
-To view debugging information for HTTP sub-requests you need to [Enable enhanced debug headers](doc:enable-enhanced-debug-headers). For more information review the [Enhanced debug header details for HTTP sub-requests](doc:enhanced-debug-header-details-for-http-sub-requests) section.
+To view debugging information for HTTP sub-requests you need to [Enable enhanced debug headers](enable-enhanced-debug-headers.md). For more information review the [Enhanced debug header details for HTTP sub-requests](enhanced-debug-header-details-for-http-sub-requests.md) section.
 
 ### Parameters
 
@@ -64,35 +64,12 @@ httpRequest('https://[akamai served domain]')
 ```
 
 The options must be a JavaScript object containing at least one of the optional properties.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Property",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "method",
-    "0-1": "String",
-    "0-2": "The HTTP request method to use. Defaults to GET, if not specified.",
-    "1-0": "headers",
-    "1-1": "Object <p><strong>Note:</strong>  EdgeWorkers should not manipulate Akamai headers added for internal use. These headers typically start with 'X-Ak' and 'Akamai-'.",
-    "1-2": "The HTTP request headers to include. The property names of this object are the header names. The property values are arrays containing the header values.",
-    "2-0": "body",
-    "2-1": "String or ReadableStream",
-    "2-2": "Content of the request body.",
-    "3-0": "timeout",
-    "3-1": "Integer",
-    "3-2": "Timeout value, in milliseconds, for the response to complete."
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Property | Type | Description |
+| --- | --- | --- |
+| method | String | The HTTP request method to use. Defaults to GET, if not specified. |
+| headers | Object <p><strong>Note:</strong></p>  EdgeWorkers should not manipulate Akamai headers added for internal use. These headers typically start with 'X-Ak' and 'Akamai-'. | The HTTP request headers to include. The property names of this object are the header names. The property values are arrays containing the header values. |
+| body | String or ReadableStream | Content of the request body. |
+| timeout | Integer | Timeout value, in milliseconds, for the response to complete. |
 
 
 ```javascript
@@ -317,23 +294,6 @@ This function has the same signature as the Fetch API's [Header.get](https://dev
 ```javascript
 get(name)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Returns a string with the values of the headers concatenated using the string \", \", or null if the header is not found.  \nFor `Set-Cookie` headers for use [response.getHeader()](doc:response-object#getheader)  instead."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Returns a string with the values of the headers concatenated using the string ", ", or null if the header is not found.<br/>For `Set-Cookie` headers for use [response.getHeader()](response-object.md#getheader)  instead. |

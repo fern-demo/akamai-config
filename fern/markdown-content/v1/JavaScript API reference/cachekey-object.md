@@ -137,26 +137,9 @@ includeVariable(name)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of the Property Manager user-defined variable. Only variables that start with a `PMUSER_` prefix are available. The name of the variable must be UPPERCASE.  \n  \nFor more information on how to create a user-defined variable refer to the [Property Manager](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars) documentation."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of the Property Manager user-defined variable. Only variables that start with a `PMUSER_` prefix are available. The name of the variable must be UPPERCASE.<br/><br/>For more information on how to create a user-defined variable refer to the [Property Manager](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars) documentation. |
 
 
 ```javascript

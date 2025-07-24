@@ -9,14 +9,14 @@ metadata:
 createdAt: "Mon May 24 2021 00:13:25 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Thu Feb 09 2023 18:37:54 GMT+0000 (Coordinated Universal Time)"
 ---
-Review these details when designing EdgeWorkers functions. To learn more about the specific HTTP events that can execute an EdgeWorkers script, see [EdgeWorkers event model](doc:event-handler-functions).
+Review these details when designing EdgeWorkers functions. To learn more about the specific HTTP events that can execute an EdgeWorkers script, see [EdgeWorkers event model](event-handler-functions.md).
 
-> 👍 For information about the supported HTTP methods see, [Event handler methods](doc:event-handler-functions#event-handler-methods).
+> 👍 For information about the supported HTTP methods see, [Event handler methods](event-handler-functions.md#event-handler-methods).
 
 **Use case support matrix**  
 View the event handler and JavaScript method you can use to achieve an EdgeWorkers use case.
 
-## 
+##
 
 <table>
 
@@ -26,11 +26,11 @@ View the event handler and JavaScript method you can use to achieve an EdgeWorke
 
 <colgroup>
 
-<col>
+<col/>
 
-<col>
+<col/>
 
-<col>
+<col/>
 
 </colgroup>
 
@@ -52,13 +52,15 @@ View the event handler and JavaScript method you can use to achieve an EdgeWorke
 
 <tr>
 
-<td rowspan="6"; style="vertical-align:top">onClientRequest</td>
+<td rowspan="6" style="vertical-align:top">onClientRequest</td>
 
-<td>Redirect Management
+<td>
+Redirect Management
 
 Traffic Filtering  
 Allow / Deny  
-Static Response Offload</td>
+Static Response Offload
+</td>
 
 <td style="vertical-align:top"> <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#respondwith">respondWith() </a></td>
 
@@ -68,7 +70,8 @@ Static Response Offload</td>
 
 <td style="vertical-align:top">Header Management</td>
 
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getheader">getHeader()  </a>
+<td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getheader">getHeader()  </a>
 
 <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setheader">setHeader() </a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#addheader">addHeader()</a>  
@@ -82,17 +85,18 @@ Static Response Offload</td>
 
 <td style="vertical-align:top">Cookie Management</td>
 
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
+<td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
 
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies
-#toheader">toHeader()</a>  
+<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#toheader">toHeader()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#get">get()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#getall">getAll()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#names">names()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#add">add()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#delete">delete()</a>
 
-See the note below.</td>
+See the note below.
+</td>
 
 </tr>
 
@@ -100,7 +104,8 @@ See the note below.</td>
 
 <td style="vertical-align:top">Delivery Property Flow Control</td>
 
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable() </a>
+<td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable() </a>
 
 <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setvariable">setVariable() </a>
 
@@ -110,9 +115,11 @@ See the note below.</td>
 
 <tr>
 
-<td>Conditionally Route Traffic
+<td>
+Conditionally Route Traffic
 
-Personalization</td>
+Personalization
+</td>
 
 <td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#route">route() </a></td>
 
@@ -129,19 +136,22 @@ Personalization</td>
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cachekey-object#includequeryargument">includeQueryArgument()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cachekey-object#includecookie">includeCookie()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cachekey-object#includeheader">includeHeader()</a>  
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cachekey-object#includevariable">includeVariable()</a></td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/cachekey-object#includevariable">includeVariable()</a>
+</td>
 
 </tr>
 
 <tr>
 
-<td rowspan="1"; style="vertical-align:top">onClientResponse</td>
+<td rowspan="1" style="vertical-align:top">onClientResponse</td>
 
-<td>Redirect Management
+<td>
+Redirect Management
 
 Immediate HTML responses
 
-Refer to the [Product limits](doc:limitations) for information about the supported response size.</td>
+Refer to the [Product limits](limitations.md) for information about the supported response size.
+</td>
 
 <td style="vertical-align:top"> <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#respondwith">respondWith() </a></td>
 
@@ -149,10 +159,11 @@ Refer to the [Product limits](doc:limitations) for information about the support
 
 <tr>
 
-<td rowspan="3"; style="vertical-align:top">onOriginRequest
-
+<td rowspan="3" style="vertical-align:top">
+onOriginRequest
 onOriginResponse  
-onClientResponse</td>
+onClientResponse
+</td>
 
 <td style="vertical-align:top">Header Management</td>
 
@@ -161,7 +172,8 @@ onClientResponse</td>
 
 <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setheader">setHeader() </a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#addheader">addHeader()</a>  
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#removeheader">removeHeader()</a></td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#removeheader">removeHeader()</a>
+</td>
 
 </tr>
 
@@ -169,17 +181,18 @@ onClientResponse</td>
 
 <td style="vertical-align:top">Cookie Management</td>
 
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
+<td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
 
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies
-#toheader">toHeader()</a>  
+<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#toheader">toHeader()</a>
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#get">get()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#getall">getAll()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#names">names()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#add">add()</a>  
 <a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#delete">delete()</a>
 
-See the note below.</td>
+See the note below.
+</td>
 
 </tr>
 
@@ -187,15 +200,17 @@ See the note below.</td>
 
 <td>Delivery Property Flow Control</td>
 
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable() </a>
+<td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable() </a>
 
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setvariable">setVariable() </a></td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setvariable">setVariable() </a>
+</td>
 
 </tr>
 
 <tr>
 
-<td rowspan="2"; style="vertical-align:top">responseProvider</td>
+<td rowspan="2" style="vertical-align:top">responseProvider</td>
 
 <td style="vertical-align:top">Response Orchestration</td>
 
@@ -212,7 +227,8 @@ See the note below.</td>
 
 To use the `responseProvider` functions, you need to  
 import the <a href="https://techdocs.akamai.com/edgeworkers/docs/create-response">create-response</a>, <a href="https://techdocs.akamai.com/edgeworkers/docs/streams">streams</a>,  
-<a href="https://techdocs.akamai.com/edgeworkers/docs/text-encode-transform">text-encode-transform</a>, and <a href="https://techdocs.akamai.com/edgeworkers/docs/http-request">http-request </a>modules.</td>
+<a href="https://techdocs.akamai.com/edgeworkers/docs/text-encode-transform">text-encode-transform</a>, and <a href="https://techdocs.akamai.com/edgeworkers/docs/http-request">http-request </a>modules.
+</td>
 
 </tr>
 
@@ -228,94 +244,5 @@ import the <a href="https://techdocs.akamai.com/edgeworkers/docs/create-response
 </table>
 
 > 📘 Cookie Management methods
-> 
+>
 > To use theCookie Management methods, you need to import the <a a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a> module.
-
-<!--- <tr>
-
-<td rowspan="3"; style="vertical-align:top">onOriginResponse</td>
-
-<td style="vertical-align:top">Header Management</td>
-
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getheader">getHeader()  </a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setheader">setHeader() </a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#addheader">addHeader()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#removeheader">removeHeader()</a>
-</td>
-</tr>
-
-<tr>
-
-<td style="vertical-align:top">Cookie Management</td>
-
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies
-#toheader">toHeader()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#get">get()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#getall">getAll()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#names">names()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#add">add()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#delete">delete()</a>
-
-See the note below.</td>
-</tr>
-
-<tr>
-
-<td>Delivery Property Flow Control</td>
-
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable() </a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setvariable">setVariable() </a>
-</td>
-
-</tr>
-
-<tr> 
-<td rowspan="3"; style="vertical-align:top">onOriginRequest
-
-onClientResponse</td>
-
-<td style="vertical-align:top">Header Management</td>
-
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getheader">getHeader()  </a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setheader">setHeader() </a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#addheader">addHeader()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#removeheader">removeHeader()</a>
-</td>
-
-</tr>
-
-<tr>
-
-<td style="vertical-align:top">Cookie Management</td>
-
-<td><a href="https://techdocs.akamai.com/edgeworkers/docs/cookies">cookies </a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies
-#toheader">toHeader()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#get">get()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#getall">getAll()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#names">names()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#add">add()</a>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/cookies#delete">delete()</a>
-
-See note below.</td>
-</tr>
-
-</tr>
-
-<tr>
-
-<td>Delivery Property Flow Control</td>
-
-<td>
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#getvariable">getVariable()</a>
-
-<a href="https://techdocs.akamai.com/edgeworkers/docs/request-object#setvariable">setVariable() </a>
-</td> ---!>
-
- 

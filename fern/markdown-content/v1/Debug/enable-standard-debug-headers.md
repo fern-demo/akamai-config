@@ -13,15 +13,10 @@ To enable request-level debugging you need to include an Akamai Pragma header in
 
 A request that includes an Akamai Pragma header returns the related trace response headers. The Standard debug header provides details and the status type of the EdgeWorkers function executed during the request or response.
 
-> 👍 See [Enable enhanced debug headers](doc:enable-enhanced-debug-headers) for instructions on how to return more detailed response headers that include a status message and the amount of wall time, CPU time, and memory usage consumed by the event handler. Enhanced debug headers can also provide information about HTTP sub-requests.
+> 👍 See [Enable enhanced debug headers](enable-enhanced-debug-headers.md) for instructions on how to return more detailed response headers that include a status message and the amount of wall time, CPU time, and memory usage consumed by the event handler. Enhanced debug headers can also provide information about HTTP sub-requests.
 
 Watch this four minute video to learn how to get started debugging your EdgeWorkers code using standard debug headers.
-
-[block:html]
-{
-  "html": "\n<iframe width=\"512\" height=\"288\" src=\"https://www.youtube.com/embed/-mvpdqwYsmA?list=PLDlttLRccCk5klAIiA5UlAWUsUFW8r7RN\" title=\"EdgeWorkers Standard Debugging\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"
-}
-[/block]
+<iframe width="512" height="288" src="https://www.youtube.com/embed/-mvpdqwYsmA?list=PLDlttLRccCk5klAIiA5UlAWUsUFW8r7RN" title="EdgeWorkers Standard Debugging" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 You can add one or more of the following  Akamai Pragma headers to your request:

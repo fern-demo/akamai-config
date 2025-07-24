@@ -58,11 +58,11 @@ You can now add the public key and the crypto built-in module to your EdgeWorker
 
 1. Update your EdgeWorkers function so that it performs these operations:
 
-   - Loads the public key using the [`importKey()`](doc:crypto#importkey) method to verify a signature. 
+   - Loads the public key using the [`importKey()`](crypto.md#importkey) method to verify a signature. 
 
-   - Converts the two input headers, [`verify-data`](doc:crypto#verify)  and [`verify-sig`](doc:crypto#verify), from a header-friendly [base64](doc:encoding#base64) format to a Uint8Array. The built-in [encoding](doc:encoding) module contains a number of helpers that transform common input formats such as, [base16](doc:encoding#base16), [base64](doc:encoding#base64), and [base64url](doc:encoding#base64url) to JavaScript’s typed arrays.
+   - Converts the two input headers, [`verify-data`](crypto.md#verify)  and [`verify-sig`](crypto.md#verify), from a header-friendly [base64](encoding.md#base64) format to a Uint8Array. The built-in [encoding](encoding.md) module contains a number of helpers that transform common input formats such as, [base16](encoding.md#base16), [base64](encoding.md#base64), and [base64url](encoding.md#base64url) to JavaScript’s typed arrays.
 
-   - Runs the [`verify()`](doc:crypto#verify)  function on the Uint8Arrays that represent the input headers. 
+   - Runs the [`verify()`](crypto.md#verify)  function on the Uint8Arrays that represent the input headers. 
 
 Here's an example of an EdgeWorkers function after you've updated it to perform theses functions and added the key and crypto modules. 
 
@@ -219,7 +219,7 @@ verified: [{"alg":"HS256","typ":"JWT"},{"sub":"employee0","name":"Tom Leighton",
 
 # CryptoKey Object
 
-The CryptoKey interface represents a cryptographic key obtained from the [`importKey()`](doc:crypto#importkey) SubtleCrypto method. After you create a key you can use it to verify a signature, encrypt, or decrypt data.
+The CryptoKey interface represents a cryptographic key obtained from the [`importKey()`](crypto.md#importkey) SubtleCrypto method. After you create a key you can use it to verify a signature, encrypt, or decrypt data.
 
 ## CryptoKey Object Properties
 
@@ -271,38 +271,13 @@ import { crypto } from 'crypto';
             }
         }
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "format",
-    "0-1": "String",
-    "0-2": "Describes the data format of the key to import. It can be one of the following:  \n  \n- raw  \n- pkcs8  \n- spki  \n- jwk",
-    "1-0": "keyData",
-    "1-1": "ArrayBuffer  \nTypedArray  \nDataView  \nor JSONWebKey object",
-    "1-2": "Contains the key in the given format.",
-    "2-0": "algorithm",
-    "2-1": "Object  \n  \nThe AES-CBC, AES-CTR and AES-GCM algorithms can be either an object or a string.",
-    "2-2": "Defines the type of key to import and provides extra algorithm specific parameters.  \n  \nThe supported algorithms with formats are:  \n  \n- RSASSA-PKCS1-v1_5: [jwk](doc:crypto#rsassa-pkcs1-v1_5-jwk-example), [pkcs8](doc:crypto#rsassa-pkcs1-v1_5-pkcs8-example), [spki](doc:crypto#rsassa-pkcs1-v1_5--spki-example)  \n- RSA-PSS: [jwk](doc:crypto#rsa-pss-jwk-example), [pkcs8](doc:crypto#rsa-pss-pkcs8-example), [spki](doc:crypto#rsa-pss-spki-example),  \n- HMAC: [jwk](doc:crypto#hmac-jwk-example), [raw](doc:crypto#hmac-raw-example)  \n- AES-CBC: [jwk](doc:crypto#aes-cbc-jwk-example), [raw](doc:crypto#aes-cbc-raw-example)  \n- ECDSA: [jwk](doc:crypto#ecdsa-jwk-example), [pkcs8](doc:crypto#ecdsa-pkcs8-example), [raw](doc:crypto#ecdsa-raw-example), [spki](doc:crypto#ecdsa-spki-example)  \n- AES-CTR: [jwk](doc:crypto#aes-ctr-jwk-example)  \n- RSA-OAEP: [jwk](doc:crypto#rsa-oaep-jwk-example)  \n- AES-GCM: [raw](doc:crypto#aes-gcm-raw-example)",
-    "3-0": "extractable",
-    "3-1": "Boolean",
-    "3-2": "Must be set to false.  \nIndicates whether the key can be exported.",
-    "4-0": "keyUsages",
-    "4-1": "Array of strings",
-    "4-2": "Indicates what can be done with the key:  \n\"encrypt\",  \n\"decrypt\",  \n\"sign\",  \nand \"verify\""
-  },
-  "cols": 3,
-  "rows": 5,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| format | String | Describes the data format of the key to import. It can be one of the following:<br/><br/>- raw<br/>- pkcs8<br/>- spki<br/>- jwk |
+| keyData | ArrayBuffer<br/>TypedArray<br/>DataView<br/>or JSONWebKey object | Contains the key in the given format. |
+| algorithm | Object<br/><br/>The AES-CBC, AES-CTR and AES-GCM algorithms can be either an object or a string. | Defines the type of key to import and provides extra algorithm specific parameters.<br/><br/>The supported algorithms with formats are:<br/><br/>- RSASSA-PKCS1-v1_5: [jwk](crypto.md#rsassa-pkcs1-v1_5-jwk-example), [pkcs8](crypto.md#rsassa-pkcs1-v1_5-pkcs8-example), [spki](crypto.md#rsassa-pkcs1-v1_5--spki-example)<br/>- RSA-PSS: [jwk](crypto.md#rsa-pss-jwk-example), [pkcs8](crypto.md#rsa-pss-pkcs8-example), [spki](crypto.md#rsa-pss-spki-example),<br/>- HMAC: [jwk](crypto.md#hmac-jwk-example), [raw](crypto.md#hmac-raw-example)<br/>- AES-CBC: [jwk](crypto.md#aes-cbc-jwk-example), [raw](crypto.md#aes-cbc-raw-example)<br/>- ECDSA: [jwk](crypto.md#ecdsa-jwk-example), [pkcs8](crypto.md#ecdsa-pkcs8-example), [raw](crypto.md#ecdsa-raw-example), [spki](crypto.md#ecdsa-spki-example)<br/>- AES-CTR: [jwk](crypto.md#aes-ctr-jwk-example)<br/>- RSA-OAEP: [jwk](crypto.md#rsa-oaep-jwk-example)<br/>- AES-GCM: [raw](crypto.md#aes-gcm-raw-example) |
+| extractable | Boolean | Must be set to false.<br/>Indicates whether the key can be exported. |
+| keyUsages | Array of strings | Indicates what can be done with the key:<br/>"encrypt",<br/>"decrypt",<br/>"sign",<br/>and "verify" |
 
 
 ### RSASSA-PKCS1-v1_5: jwk example
@@ -574,94 +549,31 @@ let key = await crypto.subtle.importKey(
 ## encrypt()
 
 Returns a promise that fulfills with an ArrayBuffer containing the encrypted data.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "algorithm",
-    "0-1": "Object",
-    "0-2": "Specifies the algorithm to use and any extra parameters if required.  \n  \nThe supported algorithms are:  \n  \n- AES-CBC  \n- RSA-OAEP  \n  **Note**: Due to a known issue, the RSA-OAEP `encrypt()` function is not currently interoperable with other SubtleCrypto implementations. The encrypted data, however, remains secure.  \n- AES-CTR  \n- AES-GCM",
-    "1-0": "key",
-    "1-1": "CryptoKey",
-    "1-2": "Contains the key to use for encryption.",
-    "2-0": "data",
-    "2-1": "ArrayBuffer  \nTypedArray  \nor DataView",
-    "2-2": "Contains the data to be encrypted."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| algorithm | Object | Specifies the algorithm to use and any extra parameters if required.<br/><br/>The supported algorithms are:<br/><br/>- AES-CBC<br/>- RSA-OAEP<br/>  **Note**: Due to a known issue, the RSA-OAEP `encrypt()` function is not currently interoperable with other SubtleCrypto implementations. The encrypted data, however, remains secure.<br/>- AES-CTR<br/>- AES-GCM |
+| key | CryptoKey | Contains the key to use for encryption. |
+| data | ArrayBuffer<br/>TypedArray<br/>or DataView | Contains the data to be encrypted. |
 
 
 ## decrypt()
 
 Returns a promise that fulfills with an ArrayBuffer containing the decrypted data. 
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "algorithm",
-    "0-1": "Object",
-    "0-2": "Specifies the algorithm to use and any extra parameters if required.  \n  \nThe supported algorithms are:  \n  \n- AES-CBC  \n- RSA-OAEP  \n  **Note:** Due to a known issue, the RSA-OAEP `decrypt()` function currently only supports decryption of text encrypted by EdgeWorkers. It is not interoperable with other SubtleCrypto implementations at this time.  \n- AES-CTR  \n- AES-GCM",
-    "1-0": "key",
-    "1-1": "CryptoKey",
-    "1-2": "Contains the key to uses for decryption.",
-    "2-0": "data",
-    "2-1": "ArrayBuffer  \nTypedArray  \nor DataView",
-    "2-2": "Contains the data to be encrypted."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| algorithm | Object | Specifies the algorithm to use and any extra parameters if required.<br/><br/>The supported algorithms are:<br/><br/>- AES-CBC<br/>- RSA-OAEP<br/>  **Note:** Due to a known issue, the RSA-OAEP `decrypt()` function currently only supports decryption of text encrypted by EdgeWorkers. It is not interoperable with other SubtleCrypto implementations at this time.<br/>- AES-CTR<br/>- AES-GCM |
+| key | CryptoKey | Contains the key to uses for decryption. |
+| data | ArrayBuffer<br/>TypedArray<br/>or DataView | Contains the data to be encrypted. |
 
 
 ## sign()
 
 Generates a digital signature. Returns a promise that fulfills with an ArrayBuffer containing the signature.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "algorithm",
-    "0-1": "String or Object",
-    "0-2": "Specifies the signature algorithm to use and its parameters.  \nThe supported algorithms include:  \n  \n- HMAC  \n- RSA-PSS  \n- RSASSA-PKCS1-v1_5  \n- ECDSA",
-    "1-0": "key",
-    "1-1": "CryptoKey",
-    "1-2": "Contains the key to use to generate the signature.",
-    "2-0": "data",
-    "2-1": "ArrayBuffer  \nTypedArray  \nor DataView",
-    "2-2": "Contains the data to be signed."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| algorithm | String or Object | Specifies the signature algorithm to use and its parameters.<br/>The supported algorithms include:<br/><br/>- HMAC<br/>- RSA-PSS<br/>- RSASSA-PKCS1-v1_5<br/>- ECDSA |
+| key | CryptoKey | Contains the key to use to generate the signature. |
+| data | ArrayBuffer<br/>TypedArray<br/>or DataView | Contains the data to be signed. |
 
 
 HMAC: sign example
@@ -677,63 +589,21 @@ let sig = await crypto.subtle.sign("HMAC", key, data).catch((err) => {
 ## verify()
 
 Verifies a digital signature. Returns a promise that fulfills with a boolean value. The boolean value is `true` if the signature is valid, if the signature is invalid it returns a value of `false`.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "algorithm",
-    "0-1": "Object  \n  \nThe RSASSA-PKCS1-v1_5 and HMAC algorithms can be either an object or a string",
-    "0-2": "Defines the algorithm to use, algorithm choices, and extra parameters.  \n  \nThe supported algorithms are:  \n  \n- HMAC  \n- RSA-PSS  \n- RSASSA-PKCS1-v1_5  \n- ECDSA",
-    "1-0": "key",
-    "1-1": "CryptoKey",
-    "1-2": "Contains the key to use to verify the signature.",
-    "2-0": "signature",
-    "2-1": "ArrayBuffer",
-    "2-2": "Contains the signature to verify.",
-    "3-0": "data",
-    "3-1": "ArrayBuffer",
-    "3-2": "Contains the data that needs its signature verified."
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| algorithm | Object<br/><br/>The RSASSA-PKCS1-v1_5 and HMAC algorithms can be either an object or a string | Defines the algorithm to use, algorithm choices, and extra parameters.<br/><br/>The supported algorithms are:<br/><br/>- HMAC<br/>- RSA-PSS<br/>- RSASSA-PKCS1-v1_5<br/>- ECDSA |
+| key | CryptoKey | Contains the key to use to verify the signature. |
+| signature | ArrayBuffer | Contains the signature to verify. |
+| data | ArrayBuffer | Contains the data that needs its signature verified. |
 
 
 ## digest()
 
 Generates a digest of the given data. Returns a promise that fulfills with an ArrayBuffer containing the digest.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "algorithm",
-    "0-1": "string or object",
-    "0-2": "Includes the name property and the string names the hash functions use. Supported values include:  \n\"SHA-1\"  \n\"SHA-256\"  \n\"SHA-384\"  \n\"SHA-512\"",
-    "1-0": "data",
-    "1-1": "ArrayBuffer  \nTypedArray  \nor DataView",
-    "1-2": "Contains the data to be digested."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| algorithm | string or object | Includes the name property and the string names the hash functions use. Supported values include:<br/>"SHA-1"<br/>"SHA-256"<br/>"SHA-384"<br/>"SHA-512" |
+| data | ArrayBuffer<br/>TypedArray<br/>or DataView | Contains the data to be digested. |
 
 
 The following example computes the SHA-256 hash of a static array buffer. The expected output is Encoded: `d87303c776e767aa617e9e5c8a3238a2f7c3e98ea395165786d97322bd731415`.

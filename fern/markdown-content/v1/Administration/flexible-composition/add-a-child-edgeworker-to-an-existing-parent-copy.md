@@ -20,7 +20,7 @@ CoreSite EdgeWorker
 
 Create a child EdgeWorker called **security**. Deploy and activate it on the Akamai staging network. 
 
-- You can use the instructions in the [EdgeWorkers Management application Hello World](doc:hello-world-edgeworkers-management-application) example to create an EdgeWorker ID and activate the code sample below.
+- You can use the instructions in the [EdgeWorkers Management application Hello World](hello-world-edgeworkers-management-application.md) example to create an EdgeWorker ID and activate the code sample below.
 - For best results, use the **Dynamic Compute** resource tier when creating your EdgeWorker ID.
 - Remember to note the EdgeWorker ID, you’ll need it to update the dependency list in the parent EdgeWorker.
 - Make sure you activate the child EdgeWorker before trying to import it into a parent. The import will fail if the child is not yet activated.
@@ -67,7 +67,7 @@ export function onClientRequest (request) {}
 
    Enter `active` as the version. This imports the version of the EdgeWorker ID specified in the previous step that is currently active on the Akamai network. When you use the active version, dynamic reactivation will occur if you create and activate a new version of this child EdgeWorker.
 
-> 📘 You can also import a child EdgeWorker by specifying the Revision ID. When you import a specific revision you lock the dependency tree of that child EdgeWorker. This can help when working across teams because it prevents dynamic activation. It also lets you import any active or inactive EdgeWorker revision. For more information see, [Import a static revision](doc:review-a-static-activation).
+> 📘 You can also import a child EdgeWorker by specifying the Revision ID. When you import a specific revision you lock the dependency tree of that child EdgeWorker. This can help when working across teams because it prevents dynamic activation. It also lets you import any active or inactive EdgeWorker revision. For more information see, [Import a static revision](review-a-static-activation.md).
 
 ```json
 {
@@ -116,41 +116,15 @@ You ${user.authorized ? "are" : "are not"} authorized.
 Check to make sure you don't have any errors. If you try to import an EdgeWorker ID that doesn't exist or isn't activated you'll get an error message.
 
 1. Click the **Create new version** button in the Code Bundle Editor and again in the confirmation window.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/parentReactivationCodeBundle-v1.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/parentReactivationCodeBundle-v1.png" alt="Image"/>
+</Frame>
 
 
 2. Next, activate the version that you just created.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/parentReactivation-v1.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/parentReactivation-v1.png" alt="Image"/>
+</Frame>
 
 
 3. Requests sent to the top-level EdgeWorker will now apply the authorization changes included in the child Security EdgeWorker.
@@ -165,22 +139,9 @@ Check to make sure you don't have any errors. If you try to import an EdgeWorker
 ## 1\. View the Revision Activations
 
 1. A new revision, `2-1`, appears for the EdgeWorker ID.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/revisionChild-v2.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/revisionChild-v2.png" alt="Image"/>
+</Frame>
 
 
 2. To view more details about the revision, click on `2-1`, the Revision ID in this example.
@@ -188,40 +149,14 @@ Check to make sure you don't have any errors. If you try to import an EdgeWorker
 ## 2\. Bill of Materials
 
 The BOM now shows the two dependencies and which EdgeWorker version was deployed.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/childBOM-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/childBOM-v2.jpg" alt="Image"/>
+</Frame>
 
 
 ## 3\. Combined Code Bundle
 
 The combined code bundle lets you view the `main.js` and the `bundle.json` files for the parent and the two child EdgeWorkers.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/childCombinedCodeBundle-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/childCombinedCodeBundle-v1.png" alt="Image"/>
+</Frame>

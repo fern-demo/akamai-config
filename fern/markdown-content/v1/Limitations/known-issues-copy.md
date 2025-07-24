@@ -12,7 +12,7 @@ When you include the `responseProvider` debug Pragma header, `akamai-x-ew-debug-
 
 - Returns an inaccurate status. 
 - Indicates success, even on a failure. 
-- Prevents the [Site Failover](doc:site-failover) behavior from responding to an EdgeWorkers failover accurately.
+- Prevents the [Site Failover](site-failover.md) behavior from responding to an EdgeWorkers failover accurately.
 
 To resolve this issue you need to remove the `akamai-x-ew-debug-rp` Pragma header when testing Site Failover. 
 
@@ -28,7 +28,7 @@ Cache hierarchy categorizes the bytes served to the client by the forward server
 
 ## cacheKey modifications and Phased Release Cloudlet
 
-When the [Phased Release Cloudlet](https://techdocs.akamai.com/cloudlets/docs/what-is-phased-release) is included in a request, [cacheKey modifications](doc:cachekey-object) are not applied.
+When the [Phased Release Cloudlet](https://techdocs.akamai.com/cloudlets/docs/what-is-phased-release) is included in a request, [cacheKey modifications](cachekey-object.md) are not applied.
 
 If both Phased Release and EdgeWorkers are working on the same request the last behavior in the property (from a top-to-bottom perspective) controls the forward path and forward origin routing. This is expected behavior.
 
@@ -36,7 +36,7 @@ If both Phased Release and EdgeWorkers are working on the same request the last 
 
 The EdgeWorkers behavior must be placed before Conditional Origin behaviors in Property Manager rules.
 
-> 📘 An EdgeWorkers function can be used to select a [Conditional Origin](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins) using [`request.route()`](doc:request-object#route) within the `onClientRequest` event handler.
+> 📘 An EdgeWorkers function can be used to select a [Conditional Origin](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins) using [`request.route()`](request-object.md#route) within the `onClientRequest` event handler.
 
 ## Bot Manager Premier interoperability
 
@@ -77,13 +77,17 @@ async function responseProvider(request) {
 
 To solve this issue, exclude mPulse from running on the sub-request type.  You can configure this in a Property Manager rule that matches on the `EW_SUBREQUEST` Request Type.
 
- ![Bot Manager known issue](https://techdocs.akamai.com/edgeworkers/img/DisableMPulseOnSubrequest-v1.jpg)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/DisableMPulseOnSubrequest-v1.jpg" alt="Bot Manager known issue"/>
+</Frame>
 
 ## Requests forwarded to NetStorage require the CP Code Root
 
-To forward a request to [NetStorage](https://techdocs.akamai.com/netstorage/docs) using the [route()](doc:request-object#route) function, you need to include the [CP Code Root](https://techdocs.akamai.com/netstorage/docs/create-an-upload-account#upload-directory-association) in the NetStorage path.
+To forward a request to [NetStorage](https://techdocs.akamai.com/netstorage/docs) using the [route()](request-object.md#route) function, you need to include the [CP Code Root](https://techdocs.akamai.com/netstorage/docs/create-an-upload-account#upload-directory-association) in the NetStorage path.
 
- ![NetSorage Known Issue](https://techdocs.akamai.com/edgeworkers/img/netStorageKnownIssue-v1.jpg)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/netStorageKnownIssue-v1.jpg" alt="NetSorage Known Issue"/>
+</Frame>
 
 A _403 Forbidden_ error will occur if the path doesn't include the CP Code Root.
 
@@ -99,7 +103,7 @@ export function onClientRequest(request) {
 
 To check the actual number of EdgeWorkers events invoked on the network, refer to the data reported in the [Billing Center](https://control.akamai.com/apps/billing/#/bills/your-bills).
 
-You can use EdgeWorkers execution [reports](doc:manage-report-data) to analyze resource consumption metrics such as the CPU execution time, memory usage, and success/error ratio related to your EdgeWorkers functions.
+You can use EdgeWorkers execution [reports](manage-report-data.md) to analyze resource consumption metrics such as the CPU execution time, memory usage, and success/error ratio related to your EdgeWorkers functions.
 
 During periods of network congestion, the metrics streaming into the data warehouse may be dropped. When metrics are dropped, the number of EdgeWorkers events invoked displayed in the EdgeWorkers reports may be less than the official amount.
 
@@ -109,7 +113,7 @@ When you enable Quick-IMS or Fast-IMS on your Akamai edge servers the 200 respon
 
 ## Reporting impact when Prefetch Objects and EdgeWorkers both enabled
 
-You can enable the [Prefetch objects](https://techdocs.akamai.com/property-mgr/docs/prefetching) and EdgeWorkers behaviors on the same property. If you do so, the total number of EdgeWorkers executions in the EdgeWorkers [Overview report](doc:overview-report) may be higher than the **Total edge hits** in the [Traffic report](https://techdocs.akamai.com/reporting/docs/traffic-rpts#traffic-report).
+You can enable the [Prefetch objects](https://techdocs.akamai.com/property-mgr/docs/prefetching) and EdgeWorkers behaviors on the same property. If you do so, the total number of EdgeWorkers executions in the EdgeWorkers [Overview report](overview-report.md) may be higher than the **Total edge hits** in the [Traffic report](https://techdocs.akamai.com/reporting/docs/traffic-rpts#traffic-report).
 
 This is because EdgeWorkers execute on internal prefetch requests that are not included in the **Total edge hits** of the [Traffic report](https://techdocs.akamai.com/reporting/docs/traffic-rpts#traffic-report).
 
@@ -155,4 +159,4 @@ This improvement will let you use BYPASS variables in a programmatic manner, all
 - Make decisions in later metadata stages when access to more information is available. For example, you can only execute `onClientResponse` if a specific response header is present.
 - Set the variables from within an EdgeWorkers event, to bypass later events.
 
-You can find more information about BYPASS variables in the [EdgeWorkers event model](doc:event-handler-functions) section of this guide.
+You can find more information about BYPASS variables in the [EdgeWorkers event model](event-handler-functions.md) section of this guide.

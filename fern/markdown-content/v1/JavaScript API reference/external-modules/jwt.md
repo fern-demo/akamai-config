@@ -19,53 +19,15 @@ JWTValidator(jwtOptions: JWTOptions)
 ```
 
 # JWTOptions Object
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "h-3": "Exceptions",
-    "0-0": "issuer",
-    "0-1": "String",
-    "0-2": "**(Optional)** The issuer to check with an `iss` claim in the JWT payload.",
-    "0-3": "Error(`Invalid jwtOptions: issuer must be non empty string`)",
-    "1-0": "subject",
-    "1-1": "String",
-    "1-2": "**(Optional)** The subject to check with a `sub` claim in the JWT payload.",
-    "1-3": "Error(`Invalid jwtOptions: subject must be non empty string`)",
-    "2-0": "audience",
-    "2-1": "String",
-    "2-2": "**(Optional) **The audience to check with an `aud` claim in the JWT payload.",
-    "2-3": "Error(`Invalid jwtOptions: audience must be non empty string`)",
-    "3-0": "ignoreExpiration",
-    "3-1": "Boolean",
-    "3-2": "**(Optional) **If false, validate the expiry of the token.  \n  \nDefault is true.",
-    "3-3": "Error(`Invalid jwtOptions: ignoreExpiration must be boolean`)",
-    "4-0": "ignoreNotBefore",
-    "4-1": "Boolean",
-    "4-2": "**(Optional)** If false, validate the `not before` claim of the token.  \n  \nDefault is true.",
-    "4-3": "Error(`Invalid jwtOptions: ignoreNotBefore must be boolean`)",
-    "5-0": "allowUnsecuredToken",
-    "5-1": "Boolean",
-    "5-2": "**(Optional)** If true, allow unsecured JWT tokens.  \nFor example, alg = NONE  \n  \nDefault is false",
-    "5-3": "If false, throws unsupported unsecured JWT tokens error whenever unsecured JWT tokens are passed.",
-    "6-0": "clockTolerance",
-    "6-1": "Number",
-    "6-2": "**(Optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims.  \n  \nDefault is 60 seconds.",
-    "6-3": "Error('`Invalid jwtOptions: clockTimestamp must be number`)"
-  },
-  "cols": 4,
-  "rows": 7,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description | Exceptions |
+| --- | --- | --- | --- |
+| issuer | String | **(Optional)** The issuer to check with an `iss` claim in the JWT payload. | Error(`Invalid jwtOptions: issuer must be non empty string`) |
+| subject | String | **(Optional)** The subject to check with a `sub` claim in the JWT payload. | Error(`Invalid jwtOptions: subject must be non empty string`) |
+| audience | String | **(Optional) **The audience to check with an `aud` claim in the JWT payload. | Error(`Invalid jwtOptions: audience must be non empty string`) |
+| ignoreExpiration | Boolean | **(Optional) **If false, validate the expiry of the token.<br/><br/>Default is true. | Error(`Invalid jwtOptions: ignoreExpiration must be boolean`) |
+| ignoreNotBefore | Boolean | **(Optional)** If false, validate the `not before` claim of the token.<br/><br/>Default is true. | Error(`Invalid jwtOptions: ignoreNotBefore must be boolean`) |
+| allowUnsecuredToken | Boolean | **(Optional)** If true, allow unsecured JWT tokens.<br/>For example, alg = NONE<br/><br/>Default is false | If false, throws unsupported unsecured JWT tokens error whenever unsecured JWT tokens are passed. |
+| clockTolerance | Number | **(Optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims.<br/><br/>Default is 60 seconds. | Error('`Invalid jwtOptions: clockTimestamp must be number`) |
 
 
 # JWTJson
@@ -118,43 +80,19 @@ The following default rules apply to signature verification.
 Throws an error with appropriate message if type checks fails for arguments.
 
 > 👍 You can configure the validation options using the `jwtOptions` parameter. You will only receive validation errors for options that you have enabled.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Error",
-    "h-1": "Description",
-    "0-0": "Error(`Invalid token type, expected string!`)",
-    "0-1": "Argument type check fails.",
-    "1-0": "Error(`Invalid hex string`)",
-    "1-1": "Key passed is not valid hex format.",
-    "2-0": "Error(`InvalidLengthError: JWT signature is not correctly encoded`)",
-    "2-1": "The JWT signature is not valid base64url encoded.",
-    "3-0": "Error(`JWT malformed: invalid iss, expected ${jwtOptions.issuer}`)",
-    "3-1": "Issuer validation does not match the `iss` field from the JWT payload.",
-    "4-0": "Error(`JWT malformed: invalid sub, expected ${jwtOptions.subject}`)",
-    "4-1": "Subject validation does not match the `sub` field from the JWT payload.",
-    "5-0": "Error(`JWT malformed: invalid aud, expected ${jwtOptions.audience}`)",
-    "5-1": "Audience validation is not present in the `aud` field from the JWT payload.",
-    "6-0": "Error(`JWT malformed: exp must be number`)",
-    "6-1": "Expiry validation type checks fail for the `exp` field from the JWT payload.",
-    "7-0": "Error(`JWT expired`)",
-    "7-1": "You have enabled expiry validation and the token is expired.",
-    "8-0": "Error(`JWT malformed: nbf must be number`)",
-    "8-1": "Not before validation type checks fail for the `nbf` field from the JWT payload.",
-    "9-0": "Error(`JWT not active`)",
-    "9-1": "You have enabled not before validation and the token is not active.",
-    "10-0": "DOMException or TypeError",
-    "10-1": "This error occurs if:  \n  \n- You try to use invalid key data.  \n- The key is not an accepted key for the algorithm.  \n- You try to use an algorithm that is either unknown or isn't suitable for a verify operation."
-  },
-  "cols": 2,
-  "rows": 11,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Error | Description |
+| --- | --- |
+| Error(`Invalid token type, expected string!`) | Argument type check fails. |
+| Error(`Invalid hex string`) | Key passed is not valid hex format. |
+| Error(`InvalidLengthError: JWT signature is not correctly encoded`) | The JWT signature is not valid base64url encoded. |
+| Error(`JWT malformed: invalid iss, expected ${jwtOptions.issuer}`) | Issuer validation does not match the `iss` field from the JWT payload. |
+| Error(`JWT malformed: invalid sub, expected ${jwtOptions.subject}`) | Subject validation does not match the `sub` field from the JWT payload. |
+| Error(`JWT malformed: invalid aud, expected ${jwtOptions.audience}`) | Audience validation is not present in the `aud` field from the JWT payload. |
+| Error(`JWT malformed: exp must be number`) | Expiry validation type checks fail for the `exp` field from the JWT payload. |
+| Error(`JWT expired`) | You have enabled expiry validation and the token is expired. |
+| Error(`JWT malformed: nbf must be number`) | Not before validation type checks fail for the `nbf` field from the JWT payload. |
+| Error(`JWT not active`) | You have enabled not before validation and the token is not active. |
+| DOMException or TypeError | This error occurs if:<br/><br/>- You try to use invalid key data.<br/>- The key is not an accepted key for the algorithm.<br/>- You try to use an algorithm that is either unknown or isn't suitable for a verify operation. |
 
 
 ## JWT verification example using the HS256 algorithm

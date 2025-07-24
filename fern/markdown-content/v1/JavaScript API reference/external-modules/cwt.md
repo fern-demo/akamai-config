@@ -21,72 +21,17 @@ CWTValidator(cwtOptions: CWTOptions)
 ```
 
 # CWTOptions Object
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "h-3": "Default Value",
-    "h-4": "Exceptions",
-    "0-0": "isCWTTagAdded",
-    "0-1": "Boolean",
-    "0-2": "**(optional)** Enable if the CWT CBOR Tag (61) is added when the token is generated.  \n  \nRefer to the [CBOR Web Token Internet Standards](https://www.rfc-editor.org/rfc/rfc8392.html) for more details on tags.",
-    "0-3": "false",
-    "0-4": "Error(`Invalid cwtOptions: isCWTTagAdded must be boolean`)",
-    "1-0": "isCoseCborTagAdded",
-    "1-1": "Boolean",
-    "1-2": "**(optional)** Enable if the COSE CBOR Tag such as, `COSE_Mac0` is added when the token is generated.  \n  \nRefer to the [CBOR Object Signing and Encryption (COSE)](https://datatracker.ietf.org/wg/cose/about/) for more details on tags.  \n  \nCurrently only `Tag COSE_Mac0` and `COSE_Sign1` are supported.",
-    "1-3": "true",
-    "1-4": "Error(`Invalid cwtOptions: isCoseCborTagAdded must be boolean`)",
-    "2-0": "headerValidation",
-    "2-1": "Boolean",
-    "2-2": "**(optional)** Indicates if the CWT header needs to be validated.",
-    "2-3": "false",
-    "2-4": "Error(`Invalid cwtOptions: headerValidation must be boolean`)",
-    "3-0": "issuer",
-    "3-1": "String",
-    "3-2": "**(optional)** The issuer to check with an `iss` claim in the CWT payload.",
-    "3-3": "",
-    "3-4": "Error(`Invalid cwtOptions: issuer must be non empty string`)",
-    "4-0": "subject",
-    "4-1": "String",
-    "4-2": "**(optional)** The subject to check with a `sub` claim in the CWT payload.",
-    "4-3": "",
-    "4-4": "Error(`Invalid cwtOptions: subject must be non empty string`)",
-    "5-0": "audience",
-    "5-1": "String",
-    "5-2": "**(optional)** The audience to check with an `aud` claim in the CWT payload.",
-    "5-3": "",
-    "5-4": "Error(`Invalid cwtOptions: audience must be non empty string or array`)",
-    "6-0": "ignoreExpiration",
-    "6-1": "Boolean",
-    "6-2": "**(optional)** If false, validate the expiry of the token.",
-    "6-3": "true",
-    "6-4": "Error(`Invalid cwtOptions: ignoreExpiration must be boolean`)",
-    "7-0": "ignoreNotBefore",
-    "7-1": "Boolean",
-    "7-2": "**(optional)** If false, validate the `not before` claim of the token.",
-    "7-3": "true",
-    "7-4": "Error(`Invalid cwtOptions: ignoreNotBefore must be boolean`)",
-    "8-0": "clockTolerance",
-    "8-1": "Number",
-    "8-2": "**(optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims.",
-    "8-3": "60 seconds",
-    "8-4": "Error(`Invalid cwtOptions: clockTolerance must be number`)"
-  },
-  "cols": 5,
-  "rows": 9,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description | Default Value | Exceptions |
+| --- | --- | --- | --- | --- |
+| isCWTTagAdded | Boolean | **(optional)** Enable if the CWT CBOR Tag (61) is added when the token is generated.<br/><br/>Refer to the [CBOR Web Token Internet Standards](https://www.rfc-editor.org/rfc/rfc8392.html) for more details on tags. | false | Error(`Invalid cwtOptions: isCWTTagAdded must be boolean`) |
+| isCoseCborTagAdded | Boolean | **(optional)** Enable if the COSE CBOR Tag such as, `COSE_Mac0` is added when the token is generated.<br/><br/>Refer to the [CBOR Object Signing and Encryption (COSE)](https://datatracker.ietf.org/wg/cose/about/) for more details on tags.<br/><br/>Currently only `Tag COSE_Mac0` and `COSE_Sign1` are supported. | true | Error(`Invalid cwtOptions: isCoseCborTagAdded must be boolean`) |
+| headerValidation | Boolean | **(optional)** Indicates if the CWT header needs to be validated. | false | Error(`Invalid cwtOptions: headerValidation must be boolean`) |
+| issuer | String | **(optional)** The issuer to check with an `iss` claim in the CWT payload. |  | Error(`Invalid cwtOptions: issuer must be non empty string`) |
+| subject | String | **(optional)** The subject to check with a `sub` claim in the CWT payload. |  | Error(`Invalid cwtOptions: subject must be non empty string`) |
+| audience | String | **(optional)** The audience to check with an `aud` claim in the CWT payload. |  | Error(`Invalid cwtOptions: audience must be non empty string or array`) |
+| ignoreExpiration | Boolean | **(optional)** If false, validate the expiry of the token. | true | Error(`Invalid cwtOptions: ignoreExpiration must be boolean`) |
+| ignoreNotBefore | Boolean | **(optional)** If false, validate the `not before` claim of the token. | true | Error(`Invalid cwtOptions: ignoreNotBefore must be boolean`) |
+| clockTolerance | Number | **(optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims. | 60 seconds | Error(`Invalid cwtOptions: clockTolerance must be number`) |
 
 
 # CWTJSON Object
@@ -127,32 +72,11 @@ Translates the payload with integer keys to map with string keys using the `labe
 ```javascript
 claimsTranslate( payload: any, labelsMap: { [key: number | string]: string }, translators?: { [key: string]: Function })
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "",
-    "h-1": "",
-    "h-2": "",
-    "0-0": "payload",
-    "0-1": "CWT payload         ",
-    "0-2": "CWT payload from the CWT JSON object obtained upon successful verification.",
-    "1-0": "labelsMap",
-    "1-1": "JSON object",
-    "1-2": "Map of integer keys that needs to be translated to string keys.  \nThis will translate integer keys from a CWT payload to a JSON object containing string keys. Refer to the example below. ",
-    "2-0": "translators",
-    "2-1": "JSON object",
-    "2-2": "(optional) Contains the field with the `translator` function mapping. Refer to the example below."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+|  |  |  |
+| --- | --- | --- |
+| payload | CWT payload          | CWT payload from the CWT JSON object obtained upon successful verification. |
+| labelsMap | JSON object | Map of integer keys that needs to be translated to string keys.<br/>This will translate integer keys from a CWT payload to a JSON object containing string keys. Refer to the example below.  |
+| translators | JSON object | (optional) Contains the field with the `translator` function mapping. Refer to the example below. |
 
 
 ```javascript
