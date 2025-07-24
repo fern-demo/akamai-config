@@ -81,8 +81,49 @@ navigation:
               - page: Change resource tier
                 path: ../../../markdown-content/v1/Prerequisites/select-a-resource-tier/change-resource-tier.md
 
-      # - section: Get started
-      #   contents:
+      - section: Get started
+        contents:
+          - page: Hello World tutorials
+            path: ../../../markdown-content/v1/Get started/hello-world.md
+          - section: EdgeWorkers Management Application Hello World
+            path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application.md
+            contents:
+              - page: Create an EdgeWorker ID
+                path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/create-an-edgeworker-id-1.md
+              - page: Create the Hello World code bundle
+                path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/create-the-hello-world-code-bundle-1.md
+              - page: Add the EdgeWorker behavior
+                path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/add-the-edgeworker-behavior-1.md
+              - page: Deploy Hello World
+                path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/deploy-hello-world-1.md
+              - page: Test Hello World
+                path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/test-hello-world-1.md
+          - section: API Hello World
+            path: ../../../markdown-content/v1/Get started/api-hello-world.md
+            contents:
+              - page: Create an EdgeWorker ID
+                path: ../../../markdown-content/v1/Get started/api-hello-world/create-an-edgeworker-id-2.md
+              - page: Create the Hello World code bundle
+                path: ../../../markdown-content/v1/Get started/api-hello-world/create-the-hello-world-code-bundle-2.md
+              - page: Add the EdgeWorkers behavior
+                path: ../../../markdown-content/v1/Get started/api-hello-world/add-the-edgeworkers-behavior-2.md
+              - page: Deploy Hello World
+                path: ../../../markdown-content/v1/Get started/api-hello-world/deploy-hello-world-2.md
+              - page: Test Hello World
+                path: ../../../markdown-content/v1/Get started/api-hello-world/test-hello-world-2.md
+          - section: CLI Hello World
+            path: ../../../markdown-content/v1/Get started/cli-hello-world.md
+            contents:
+              - page: Create an EdgeWorker ID
+                path: ../../../markdown-content/v1/Get started/cli-hello-world/create-an-edgeworker-id-3.md
+              - page: Create the Hello World code bundle
+                path: ../../../markdown-content/v1/Get started/cli-hello-world/create-the-hello-world-code-bundle-3.md
+              - page: Add the EdgeWorkers behavior
+                path: ../../../markdown-content/v1/Get started/cli-hello-world/add-the-edgeworkers-behavior-3.md
+              - page: Deploy Hello World
+                path: ../../../markdown-content/v1/Get started/cli-hello-world/deploy-hello-world-3.md
+              - page: Test Hello World
+                path: ../../../markdown-content/v1/Get started/cli-hello-world/test-hello-world-3.md
       # - section: Administration
       #   contents:
       # - section: Development

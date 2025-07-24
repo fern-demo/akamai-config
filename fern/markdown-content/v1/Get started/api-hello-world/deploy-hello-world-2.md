@@ -9,7 +9,7 @@ metadata:
 createdAt: "Mon Jul 05 2021 12:42:58 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Mon Nov 22 2021 20:32:09 GMT+0000 (Coordinated Universal Time)"
 ---
-Now that you've created the code bundle in the previous step, you can use HTTPie and httpie-edgegrid to access the <<COMPANY_NICKNAME>> APIs. 
+Now that you've created the code bundle in the previous step, you can use HTTPie and httpie-edgegrid to access the {{COMPANY_NICKNAME}} APIs. 
 
 # Add an EdgeWorker version
 
@@ -37,7 +37,7 @@ http --timeout=30 --auth-type edgegrid -a <API credentials section>: POST :/edge
 
 # Activate the EdgeWorker version
 
-1. Activate the EdgeWorker version on the <<COMPANY_NICKNAME>> network. Note the `activationId`. You'll need it to monitor the activation status.
+1. Activate the EdgeWorker version on the {{COMPANY_NICKNAME}} network. Note the `activationId`. You'll need it to monitor the activation status.
 
 ```shell
 http --timeout=30 --auth-type edgegrid -a <API credentials section>: POST :/edgeworkers/v1/ids/<edgeWorkerId>/activations network=<network> version=<version>
@@ -61,4 +61,4 @@ http --timeout=30 --auth-type edgegrid -a <API credentials section>: GET :/edgew
 
     The `activationId` was provided in the previous step when the EdgeWorker ID was activated.
 
-3. Next, follow these instructions to [test the Hello World code bundle](doc:test-hello-world-2).
+3. Next, follow these instructions to [test the Hello World code bundle](test-hello-world-2.md).

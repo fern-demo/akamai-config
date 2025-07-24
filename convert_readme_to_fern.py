@@ -4,10 +4,17 @@ Convert ReadMe syntax to Fern/markdown syntax.
 
 This script handles:
 1. Block parameters (JSON tables) → Standard markdown tables
-2. Block images (JSON format) → Fern Frame syntax
-3. ReadMe variables (<<VAR>> → {{VAR}})
-4. Doc links ([text](doc:filename#anchor) → proper markdown links)
-5. Images (![](url) → Fern Frame syntax)
+2. Block HTML (JSON format) → Clean HTML (iframes as-is, images wrapped in Frames)
+3. Block images (JSON format) → Fern Frame syntax
+4. ReadMe variables (<<VAR>> → {{VAR}})
+5. Doc links ([text](doc:filename#anchor) → proper markdown links)
+6. Images (![](url) → Fern Frame syntax)
+
+TODO - Future Enhancements:
+- Fix hyperlink paths: Currently doc links assume files are in same directory,
+  need to build file map and use proper relative paths
+- Replace ReadMe variables with actual values instead of just converting syntax
+  (e.g., {{COMPANY_NICKNAME}} → "Akamai", {{CHAR_CHECK}} → "✓")
 """
 
 import os
@@ -77,19 +84,45 @@ def convert_block_parameters(content: str) -> str:
             print(f"Warning: Failed to parse block parameters: {e}")
             return match.group(0)  # Return original content if parsing fails
     
-    # Pattern to match [block:parameters] ... [/block]
-    pattern = r'\[block:parameters\]\s*\n(.*?)\n\[/block\]'
+    # Pattern to match [block:parameters] ... [/block] (both single-line and multi-line formats)
+    pattern = r'^(\s*)\[block:parameters\]\s*\n?(.*?)\n?\s*\[/block\]'
     
-    return re.sub(pattern, parse_block_table, content, flags=re.DOTALL)
+    def replace_with_proper_indentation(match):
+        leading_whitespace = match.group(1)  # Capture but don't use leading spaces
+        json_content = match.group(2)
+        
+        # Parse the block table
+        result = parse_block_table(type('Match', (), {'group': lambda self, x: json_content})())
+        
+        # Tables should start at column 0
+        return result
+    
+    return re.sub(pattern, replace_with_proper_indentation, content, flags=re.DOTALL | re.MULTILINE)
 
 
 def convert_readme_variables(content: str) -> str:
     """Convert ReadMe variables from <<VAR>> to {{VAR}}."""
+    
+    # TODO: Eventually replace ReadMe variables with actual values
+    # Current variables found include:
+    # - {{COMPANY_NICKNAME}} -> should become "Akamai" 
+    # - {{PORTAL_NAME}} -> should become "Akamai Control Center"
+    # - {{CHAR_CHECK}} -> should become "✓" or checkmark symbol
+    # - {{CHAR_MENU_DELIMITER}} -> should become ">" or appropriate delimiter
+    # - {{PORTAL_ICON_ROOT}} -> should be removed or replaced with appropriate text
+    # For now, we just convert the syntax from << >> to {{ }}
+    
     return re.sub(r'<<([^>]+)>>', r'{{\1}}', content)
 
 
 def convert_doc_links(content: str) -> str:
     """Convert doc links from [text](doc:filename#anchor) to relative markdown links."""
+    
+    # TODO: Fix hyperlink paths - currently assumes files are in same directory
+    # The referenced files could be in different folders, so we need to:
+    # 1. Build a map of all markdown files and their paths
+    # 2. Find the correct relative path from current file to target file
+    # 3. Update links to use proper relative paths (e.g., ../folder/file.md)
     
     def replace_doc_link(match) -> str:
         link_text = match.group(1)
@@ -107,6 +140,71 @@ def convert_doc_links(content: str) -> str:
     pattern = r'\[([^\]]+)\]\(doc:([^)]+)\)'
     
     return re.sub(pattern, replace_doc_link, content)
+
+
+def convert_block_html(content: str) -> str:
+    """Convert ReadMe block HTML to clean HTML, wrapping images in Frames."""
+    
+    def parse_block_html(match) -> str:
+        try:
+            # Extract JSON content between [block:html] and [/block]
+            json_str = match.group(1).strip()
+            data = json.loads(json_str)
+            
+            if 'html' not in data:
+                return match.group(0)  # Return original if no html field
+            
+            # Extract HTML content and clean it up
+            html_content = data['html']
+            
+            # Remove leading/trailing newlines and whitespace
+            html_content = html_content.strip()
+            
+            # Fix missing quotes in HTML attributes (common in ReadMe exports)
+            html_content = fix_html_attributes(html_content)
+            
+            # If it's an img tag, wrap it in Frame component
+            if html_content.strip().startswith('<img'):
+                return f'<Frame>\n  {html_content}\n</Frame>'
+            else:
+                # For other HTML (like iframes), return as-is
+                return html_content
+            
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"Warning: Failed to parse block HTML: {e}")
+            return match.group(0)  # Return original content if parsing fails
+    
+    # Pattern to match [block:html] ... [/block] (both single-line and multi-line formats)
+    pattern = r'^(\s*)\[block:html\]\s*\n?(.*?)\n?\s*\[/block\]'
+    
+    def replace_with_proper_indentation(match):
+        leading_whitespace = match.group(1)  # Capture any leading spaces/tabs
+        json_content = match.group(2)
+        
+        # Parse the HTML block
+        result = parse_block_html(type('Match', (), {'group': lambda self, x: json_content})())
+        
+        # Don't preserve the leading whitespace for Frame blocks - they should start at column 0
+        return result
+    
+    return re.sub(pattern, replace_with_proper_indentation, content, flags=re.DOTALL | re.MULTILINE)
+
+
+def fix_html_attributes(html: str) -> str:
+    """Fix missing quotes in HTML attributes."""
+    
+    # Fix src attributes without quotes
+    # Pattern: src=URL (without quotes) -> src="URL"
+    html = re.sub(r'src=([^\s>]+)(?=[\s>])', r'src="\1"', html)
+    
+    # Fix href attributes without quotes
+    html = re.sub(r'href=([^\s>]+)(?=[\s>])', r'href="\1"', html)
+    
+    # Fix other common attributes that might be missing quotes
+    html = re.sub(r'alt=([^\s>]+)(?=[\s>])', r'alt="\1"', html)
+    html = re.sub(r'title=([^\s>]+)(?=[\s>])', r'title="\1"', html)
+    
+    return html
 
 
 def convert_block_images(content: str) -> str:
@@ -141,10 +239,20 @@ def convert_block_images(content: str) -> str:
             print(f"Warning: Failed to parse block image: {e}")
             return match.group(0)  # Return original content if parsing fails
     
-    # Pattern to match [block:image] ... [/block]
-    pattern = r'\[block:image\]\s*\n(.*?)\n\[/block\]'
+    # Pattern to match [block:image] ... [/block] (both single-line and multi-line formats)
+    pattern = r'^(\s*)\[block:image\]\s*\n?(.*?)\n?\s*\[/block\]'
     
-    return re.sub(pattern, parse_block_image, content, flags=re.DOTALL)
+    def replace_with_proper_indentation(match):
+        leading_whitespace = match.group(1)  # Capture but don't use leading spaces
+        json_content = match.group(2)
+        
+        # Parse the block image
+        result = parse_block_image(type('Match', (), {'group': lambda self, x: json_content})())
+        
+        # Frames should start at column 0
+        return result
+    
+    return re.sub(pattern, replace_with_proper_indentation, content, flags=re.DOTALL | re.MULTILINE)
 
 
 def convert_images_to_frames(content: str) -> str:
@@ -172,6 +280,7 @@ def process_file(file_path: Path, dry_run: bool = False) -> bool:
         
         # Apply all conversions
         content = convert_block_parameters(content)
+        content = convert_block_html(content)
         content = convert_block_images(content)
         content = convert_readme_variables(content)
         content = convert_doc_links(content)

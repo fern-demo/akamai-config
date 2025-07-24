@@ -9,7 +9,7 @@ metadata:
 createdAt: "Mon Jul 05 2021 12:42:10 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Thu Aug 26 2021 16:45:22 GMT+0000 (Coordinated Universal Time)"
 ---
-Your Hello World code bundle must contain the `main.js` and `bundle.json` files.  See [code bundle format](doc:code-bundle-format) for more information.
+Your Hello World code bundle must contain the `main.js` and `bundle.json` files.  See [code bundle format](code-bundle-format.md) for more information.
 
 1. Create a folder on your computer for the code bundle files.
 
@@ -17,7 +17,7 @@ Your Hello World code bundle must contain the `main.js` and `bundle.json` files.
 
 3. Use the Hello World code sample to create the JavaScript source in a file called `main.js`.
 
-> 👍 When you start creating your own EdgeWorkers functions you can use the built-in [Code bundle editor](doc:code-bundle-editor) to validate and edit your `bundle.json` and `main.js` files.
+> 👍 When you start creating your own EdgeWorkers functions you can use the built-in [Code bundle editor](code-bundle-editor.md) to validate and edit your `bundle.json` and `main.js` files.
 
 ```javascript
 // Hello World Example
@@ -41,4 +41,4 @@ export function onClientResponse(request, response) {
 tar -czvf filename.tgz main.js bundle.json
 ```
 
-5. Next, follow these instructions to [deploy the Hello World code bundle](doc:deploy-hello-world-2).
+5. Next, follow these instructions to [deploy the Hello World code bundle](deploy-hello-world-2.md).

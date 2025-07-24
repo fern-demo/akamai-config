@@ -55,4 +55,4 @@ akamai edgeworkers status <edgeworker-identifier>
 
 - Replace `<edgeWorker-identifier>` with the ID of your Hello World EdgeWorker.
 
-3. Next, follow these instructions to [test the Hello World code bundle](doc:test-hello-world-3).
+3. Next, follow these instructions to [test the Hello World code bundle](test-hello-world-3.md).
