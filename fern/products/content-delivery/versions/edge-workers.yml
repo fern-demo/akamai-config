@@ -66,6 +66,37 @@ navigation:
                 path: ../../../markdown-content/v1/Welcome/use-cases/response-body-processing-copy.md
               - page: Store locator
                 path: ../../../markdown-content/v1/Welcome/use-cases/store-locator.md
+      - section: Prerequisites
+        contents:
+          - section: Add EdgeWorkers to your contract
+            path: ../../../markdown-content/v1/Prerequisites/add-edgeworkers-to-contract.md
+            contents:
+              - page: EdgeWorkers free trial
+                path: ../../../markdown-content/v1/Prerequisites/add-edgeworkers-to-contract/edgeworkers-free-trial.md
+          - page: Manage access to EdgeWorkers
+            path: ../../../markdown-content/v1/Prerequisites/manage-access-to-edgeworkers.md
+          - section: Select a resource tier
+            path: ../../../markdown-content/v1/Prerequisites/select-a-resource-tier.md
+            contents:
+              - page: Change resource tier
+                path: ../../../markdown-content/v1/Prerequisites/select-a-resource-tier/change-resource-tier.md
+
+      # - section: Get started
+      #   contents:
+      # - section: Administration
+      #   contents:
+      # - section: Development
+      #   contents:
+      # - section: JavaScript API reference
+      #   contents:
+      # - section: Technical resources
+      #   contents:
+      # - section: Debug
+      #   contents:
+      # - section: Monitor
+      #   contents:
+      # - section: Limitations
+      #   contents:
   - tab: recipes
     layout:
       - section: Welcome

@@ -10,4 +10,4 @@ This diagram illustrates how the different roles in your organization may divide
 
 Once you've successfully completed the Hello World use case, review the code samples in the [Akamai EdgeWorkers GitHub repo](https://github.com/akamai/edgeworkers-examples/tree/master/edgecompute/examples). Each example uses an EdgeWorkers function to optimize content delivery by creating customized experiences for your website visitors.
 
-Once you've reviewed the prerequisites you can start setting up the EdgeWorkers service and Create an EdgeWorker ID.(doc:create-an-edgeworker-id).
+Once you've reviewed the prerequisites you can start setting up the EdgeWorkers service and [Create an EdgeWorker ID].(doc:create-an-edgeworker-id).
