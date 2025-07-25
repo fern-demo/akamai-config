@@ -35,29 +35,32 @@ navigation:
         path: ../../markdown-content/sample.mdx
   - tab: api
     layout:
-      - api: Beta Swagger Spec
+      - api: Polymorphic API Example
+        api-name: sample-spec
+        
+      - api: Beta Swagger Spec API
         api-name: demo-beta-swagger-spec
-      - api: Data
+      - api: Data API
         api-name: demo-data
-      - api: Deprecated Swagger Spec
+      - api: Deprecated Swagger Spec API
         api-name: demo-deprecated-swagger-spec
-      - api: Exclude Components And Custom Syntax
+      - api: Exclude Components And Custom Syntax API
         api-name: demo-exclude-components-and-custom-syntax
-      - api: Internal OpenAPI 3.1 Support
+      - api: Internal OpenAPI 3.1 Support API
         api-name: demo-internal-openapi-31-support
-      - api: Language
+      - api: Language API
         api-name: demo-language
       - api: Limited Availability Swagger Base Path
         api-name: demo-limited-availability-swagger-base-path
-      - api: Operation
+      - api: Operation API
         api-name: demo-operation
-      - api: Parameters
+      - api: Parameters API
         api-name: demo-parameters
-      - api: Sample Data
+      - api: Sample Data API
         api-name: demo-sample-data
-      - api: Service
+      - api: Service API
         api-name: demo-service
-      - api: Service SVC
+      - api: Service SVC API
         api-name: demo-service-svc
       - api: The Response API
         api-name: demo-the-response-api

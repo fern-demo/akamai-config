@@ -384,8 +384,6 @@ navigation:
           csharp: akamai-edgeworkers
           ruby: akamai-edgeworkers
         api-name: edgeworkers
-      - api: Polymorphic API Example
-        api-name: sample-spec
   - tab: changelog
   - tab: cli
     layout:
