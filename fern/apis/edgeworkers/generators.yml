@@ -3,3 +3,141 @@
 api:
   specs:
     - openapi: v1/openapi.json
+
+groups:
+  ts-sdk:
+    generators:
+      - name: fernapi/fern-typescript-sdk
+        version: 2.6.2
+        output:
+          location: npm
+          package-name: "akamai-edgeworkers"
+          #token: "${NPM_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-typescript-sdk"
+
+  python-sdk:
+    generators:
+      - name: fernapi/fern-python-sdk
+        version: 4.25.6
+        output:
+          location: pypi
+          package-name: "akamai-edgeworkers"
+          #token: "${PYPI_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-python-sdk"
+
+  go-sdk:
+    generators:
+      - name: fernapi/fern-go-sdk
+        version: 1.5.2
+        github:
+          repository: "fern-demo/akamai-edgeworkers-go-sdk"
+
+  java-sdk:
+    generators:
+      - name: fernapi/fern-java-sdk
+        version: 2.39.0
+        output:
+          location: maven
+          coordinate: "com.akamai-edgeworkers:sdk"
+          #username: "${MAVEN_USERNAME}"
+          #password: "${MAVEN_PASSWORD}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-java-sdk"
+
+  dotnet-sdk:
+    generators:
+      - name: fernapi/fern-csharp-sdk
+        version: 2.1.1
+        output:
+          location: nuget
+          package-name: "akamai-edgeworkers"
+          #token: "${NUGET_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-dotnet-sdk"
+
+  ruby-sdk:
+    generators:
+      - name: fernapi/fern-ruby-sdk
+        version: 0.9.0-rc2
+        output:
+          location: rubygems
+          package-name: "akamai-edgeworkers"
+          #token: "${RUBYGEMS_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-ruby-sdk"
+
+  php-sdk:
+    generators:
+      - name: fernapi/fern-php-sdk
+        version: 1.16.5
+        github:
+          repository: "fern-demo/akamai-edgeworkers-php-sdk"
+  
+  all-sdks:
+    generators:
+      # TypeScript SDK
+      - name: fernapi/fern-typescript-sdk
+        version: 2.6.2
+        output:
+          location: npm
+          package-name: "akamai-edgeworkers"
+          #token: "${NPM_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-typescript-sdk"
+      
+      # Python SDK
+      - name: fernapi/fern-python-sdk
+        version: 4.25.6
+        output:
+          location: pypi
+          package-name: "akamai-edgeworkers"
+          #token: "${PYPI_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-python-sdk"
+      
+      # Go SDK
+      - name: fernapi/fern-go-sdk
+        version: 1.5.2
+        github:
+          repository: "fern-demo/akamai-edgeworkers-go-sdk"
+      
+      # Java SDK
+      - name: fernapi/fern-java-sdk
+        version: 2.39.0
+        output:
+          location: maven
+          coordinate: "com.akamai-edgeworkers:sdk"
+          #username: "${MAVEN_USERNAME}"
+          #password: "${MAVEN_PASSWORD}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-java-sdk"
+      
+      # .NET SDK
+      - name: fernapi/fern-csharp-sdk
+        version: 2.1.1
+        output:
+          location: nuget
+          package-name: "akamai-edgeworkers"
+          #token: "${NUGET_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-dotnet-sdk"
+      
+      # Ruby SDK
+      - name: fernapi/fern-ruby-sdk
+        version: 0.9.0-rc2
+        output:
+          location: rubygems
+          package-name: "akamai-edgeworkers"
+          #token: "${RUBYGEMS_TOKEN}"
+        github:
+          repository: "fern-demo/akamai-edgeworkers-ruby-sdk"
+      
+      # PHP SDK
+      - name: fernapi/fern-php-sdk
+        version: 1.16.5
+        github:
+          repository: "fern-demo/akamai-edgeworkers-php-sdk"
+
+

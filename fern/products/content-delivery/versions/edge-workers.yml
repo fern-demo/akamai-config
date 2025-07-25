@@ -375,11 +375,17 @@ navigation:
             path: ../../../markdown-content/sample.mdx
   - tab: api
     layout:
-      - api: API Reference
-        # snippets:
-        #   python: 
-        #   typescript:
+      - api: EdgeWorkers API
+        snippets:
+          python: akamai-edgeworkers
+          typescript: akamai-edgeworkers
+          go: https://fern-demo/akamai-edgeworkers-go-sdk
+          java: com.akamai-edgeworkers:sdk
+          csharp: akamai-edgeworkers
+          ruby: akamai-edgeworkers
         api-name: edgeworkers
+      - api: Polymorphic API Example
+        api-name: sample-spec
   - tab: changelog
   - tab: cli
     layout:
