@@ -1,8 +1,0 @@
----
-title: "Dec 19, 2023  — Log level support for JavaScript logs"
-slug: "log-module-updates"
-type: ""
-createdAt: "Tue Dec 19 2023 14:47:46 GMT+0000 (Coordinated Universal Time)"
-hidden: false
----
-You can now specify the severity of the logging messages included in the [JavaScript logs](doc:enable-javascript-logging). For more information go the [log](doc:log) built-in module.
