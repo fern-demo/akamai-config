@@ -1,0 +1,40 @@
+type: object
+description: |-
+  Contains details about the URL protection policy actions.
+  
+x-akamai:
+  file-path: schemas/url-protection-policy-actions.yaml
+additionalProperties: false
+required:
+- urlProtectionActions
+properties:
+  urlProtectionActions:
+    type: array
+    description: |
+      The actions to take when the specified conditions are met.
+    items:
+      type: object
+      additionalProperties: false
+      required:
+      - id
+      - action
+      properties:
+        id:
+          type: string
+          description: |
+            __Read-only__ Uniquely identifies each URL protection policy.
+          readOnly: true
+        action:
+          description: |
+            The action to assign to this URL protection policy. Choose `alert`, `deny`, `none`, or `deny_custom_{custom_deny_id}`. Run [Modify a custom deny action](ref:put-custom-deny) to manage your custom deny actions. If the action is `none`, the URL protection policy is inactive in the policy.
+          oneOf:
+          - enum:
+            - alert
+            - deny
+            - none
+            type: string
+            title: Predefined actions
+          - minLength: 1
+            type: string
+            title: Custom actions
+            pattern: ^deny_custom_[0-9]+$

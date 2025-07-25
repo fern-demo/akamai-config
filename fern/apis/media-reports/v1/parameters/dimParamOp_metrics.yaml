@@ -1,0 +1,8 @@
+description: |
+  Identifies metrics with comma-separated IDs.
+in: query
+name: metrics
+required: true
+schema:
+  type: string
+  example: 1,2,3

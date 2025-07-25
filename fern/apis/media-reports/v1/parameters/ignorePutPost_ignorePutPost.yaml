@@ -1,0 +1,8 @@
+description: |
+  Specifies if the API should ignore ingest data when generating the response, `False` by default.
+in: query
+name: ignorePutPost
+schema:
+  default: false
+  type: boolean
+  example: true

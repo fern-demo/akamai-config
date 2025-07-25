@@ -1,0 +1,7 @@
+description: |
+  The time period in which to group each data record, expressed as number of seconds.
+in: query
+name: aggregation
+schema:
+  type: integer
+  example: 1440

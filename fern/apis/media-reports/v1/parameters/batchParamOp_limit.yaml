@@ -1,0 +1,10 @@
+description: |
+  The number of rows to return from `1` to `10000`. The default value is `300`.
+in: query
+name: limit
+schema:
+  default: 300
+  maximum: 10000
+  minimum: 1
+  type: integer
+  example: 300

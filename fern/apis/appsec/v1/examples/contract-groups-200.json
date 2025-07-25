@@ -1,0 +1,19 @@
+{
+  "contract_groups": [
+    {
+      "contractId": "C-0N7RAC71",
+      "displayName": "Main Street Corporation ",
+      "groupId": 12345
+    },
+    {
+      "contractId": "K-0N7RAK71",
+      "displayName": "AltQ",
+      "groupId": 12345
+    },
+    {
+      "contractId": "K-0N7RAK71",
+      "displayName": "BV QA",
+      "groupId": 32145
+    }
+  ]
+}

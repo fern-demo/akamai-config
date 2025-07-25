@@ -5,9 +5,9 @@ tabs:
   recipes:
     display-name: Recipes
     icon: fa-solid fa-flask
-  # api:
-  #   display-name: API
-  #   icon: fa-solid fa-code
+  api:
+    display-name: API
+    icon: fa-solid fa-code
   changelog:
     display-name: Release notes
     icon: fa-solid fa-clock
@@ -373,8 +373,14 @@ navigation:
             path: ../../../markdown-content/sample.mdx
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
+  - tab: api
+    layout:
+      - api: API Reference
+        # snippets:
+        #   python: 
+        #   typescript:
+        api-name: edgeworkers
   - tab: changelog
-
   - tab: cli
     layout:
       - section: Welcome
