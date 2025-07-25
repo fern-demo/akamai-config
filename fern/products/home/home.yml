@@ -1,0 +1,3 @@
+navigation:
+- page: Home
+  path: ../../markdown-content/home.mdx

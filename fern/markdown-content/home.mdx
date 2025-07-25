@@ -1,0 +1,325 @@
+---
+slug: home
+title: Welcome to Akamai TechDocs
+subtitle: Find guides, APIs, Terraform, code examples, and more for  products and services.
+hide-feedback: true
+layout: overview
+---
+<style>
+{` 
+  .fern-page-actions {
+    display: none !important;
+  }
+  .fern-button{
+    margin: 0.25rem 0.5rem 0.25rem 0;
+  }
+  .fern-card{
+    
+  }
+`}
+
+</style>
+
+## Featured links
+
+<CardGroup cols={2}>
+  <Card
+    title="Cloud Computing"
+    href="/cloud-computing"
+    icon="cloud"
+  >
+    Build, deploy, and scale your modern apps.
+    <br/>
+    <Button intent="primary">Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Get started with Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <br/>
+    <Button outlined>Linode CLI</Button>
+  </Card>
+  
+  <Card
+    title="Security"
+    href="/security"
+    icon="shield"
+  >
+    Learn how to integrate ElevenLabs
+    <br/>
+    <Button intent="primary">Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Get started with Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <br/>
+    <Button outlined>Linode CLI</Button>
+  </Card>
+  
+  <Card
+    title="Security"
+    href="/security-blue"
+    icon="dollar-sign"
+  >
+    Learn how to integrate ElevenLabs
+    <br/>
+    <Button intent="primary">Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Get started with Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <br/>
+    <Button outlined>Linode CLI</Button>
+  </Card>
+  
+  <Card
+    title="Security"
+    href="/security-yellow"
+    icon="lightbulb"
+  >
+    Learn how to integrate ElevenLabs
+    <br/>
+    <Button intent="primary">Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Get started with Akamai Cloud</Button>
+    <br/>
+    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <br/>
+    <Button outlined>Linode CLI</Button>
+  </Card>
+</CardGroup>
+
+## Browse products & services
+
+<div id="products-filter" className="td-filter">
+  <div className="td-filter-body">
+    {/* Sidebar */}
+    <div className="td-filter-sidebar">
+      <div className="td-sidebar-item td-active" data-category="all">
+        <span>All products & services</span>
+        <span className="td-icon td-icon-right">›</span>
+      </div>
+      <div className="td-sidebar-item" data-category="compute">
+        <span>Cloud Computing</span>
+        <span className="td-icon td-icon-right">›</span>
+      </div>
+      <div className="td-sidebar-item" data-category="security">
+        <span>Security</span>
+        <span className="td-icon td-icon-right">›</span>
+      </div>
+      <div className="td-sidebar-item" data-category="networking">
+        <span>Cloud networking</span>
+        <span className="td-icon td-icon-right">›</span>
+      </div>
+      <div className="td-sidebar-item" data-category="tools">
+        <span>Cross-product tools</span>
+        <span className="td-icon td-icon-right">›</span>
+      </div>
+    </div>
+
+    {/* Main content */}
+    <div className="td-filter-main">
+      <div className="td-fltr-hdr">
+        <div className="td-main-hdr">All products & services</div>
+        
+        {/* Mobile dropdown */}
+        <div className="td-mx-filter">
+          <select id="mx-filter-dropdown">
+            <option value="all">All products & services</option>
+            <option value="compute">Cloud Computing</option>
+            <option value="security">Security</option>
+            <option value="networking">Cloud networking</option>
+            <option value="tools">Cross-product tools</option>
+          </select>
+        </div>
+        
+        {/* Search */}
+        <div className="td-main-search">
+          <input 
+            id="main-search" 
+            type="search" 
+            placeholder="Filter by product or doc type" 
+            autoComplete="off"
+          />
+        </div>
+      </div>
+
+      {/* Fern Cards container */}
+      <div className="td-main-body">
+        <CardGroup cols={2} className="td-filter-cards">
+          
+          <Card 
+            title="Akamai Cloud" 
+            href="/cloud-computing"
+            className="filter-card"
+          >
+            Build, deploy, and scale your modern apps.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+              <Button minimal href="/terraform">Terraform</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="cloud api cli terraform" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Akamai Guardcore Segmentation" 
+            href="/guardcore"
+            className="filter-card"
+          >
+            Advanced security solutions for network segmentation and threat protection.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security guardcore api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Zero Trust Network Access" 
+            href="/zero-trust"
+            className="filter-card"
+          >
+            Secure your network with zero trust principles and comprehensive access controls.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/guide">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security zero-trust network api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Akamai Developer Center" 
+            href="/developer-center"
+            className="filter-card"
+          >
+            Find developer tools, resources, and sample code, and connect with the Akamai community.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+              <Button minimal href="/terraform">Terraform</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="developer api cli terraform tools" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Terraform" 
+            href="/terraform"
+            className="filter-card"
+          >
+            Manage and provision your Akamai configurations in Terraform.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/terraform">Terraform</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="terraform infrastructure api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Control Center" 
+            href="/control-center"
+            className="filter-card"
+          >
+            Use this portal to manage your Akamai security and delivery products and services.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+              <Button minimal href="/terraform">Terraform</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="control center portal management" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Cloud Networking" 
+            href="/cloud-networking"
+            className="filter-card"
+          >
+            Connect and secure your cloud infrastructure with advanced networking solutions.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking cloud infrastructure api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="PowerShell" 
+            href="/powershell"
+            className="filter-card"
+          >
+            Make calls to many of our APIs with a consistent interface using our PowerShell module.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="powershell api automation" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Application Security" 
+            href="/appsec"
+            className="filter-card"
+          >
+            Protect your applications from threats with comprehensive security solutions.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/guide">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security application appsec firewall" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="EdgeWorkers" 
+            href="/edgeworkers"
+            className="filter-card"
+          >
+            Execute JavaScript at the edge to customize and optimize your applications.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/guide">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="edge javascript workers compute" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="CDN & Web Performance" 
+            href="/cdn"
+            className="filter-card"
+          >
+            Accelerate your content delivery and optimize web performance globally.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/cli">CLI</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="cdn performance delivery cache" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Bot Manager" 
+            href="/bot-manager"
+            className="filter-card"
+          >
+            Detect and mitigate malicious bot traffic while allowing good bots through.
+            
+            <div className="card-footer-tags">
+              <Button minimal href="/api">API</Button>
+              <Button minimal href="/guide">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security bot management protection" style={{display: 'none'}}></div>
+          </Card>
+
+        </CardGroup>
+      </div>
+    </div>
+  </div>
+</div>
