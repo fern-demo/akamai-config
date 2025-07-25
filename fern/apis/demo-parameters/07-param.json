@@ -1,0 +1,1457 @@
+{
+  "components": {
+    "headers": {
+      "Location": {
+        "description": "A URL path you can GET the newly created resource from.",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "headers/Location.yaml"
+        }
+      },
+      "content-type": {
+        "description": "An unnecessary `Content-Type` response header.",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "headers/content-type.yaml"
+        }
+      }
+    },
+    "parameters": {
+      "If-Match": {
+        "description": "This header's name is not Capitalized-Dashed.",
+        "in": "header",
+        "name": "if-match",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/If-Match.yaml"
+        }
+      },
+      "X-Limit-Elements-Per-Property-Limit": {
+        "description": "This header's name is Capitalized-Dashed.",
+        "in": "header",
+        "name": "X-Limit-Elements-Per-Property-Limit",
+        "schema": {
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/X-Limit-Elements-Per-Property-Limit.yaml"
+        }
+      },
+      "accept": {
+        "description": "An `Accept` header.",
+        "in": "header",
+        "name": "Accept",
+        "schema": {
+          "enum": [
+            "application/json"
+          ],
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/accept.yaml"
+        }
+      },
+      "content-type": {
+        "description": "A `Content-Type` header.",
+        "in": "header",
+        "name": "Content-Type",
+        "schema": {
+          "enum": [
+            "application/json"
+          ],
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/content-type.yaml"
+        }
+      },
+      "explodedParam": {
+        "description": "A param that accepts an array of values with no example.",
+        "in": "query",
+        "name": "explodedParam",
+        "required": false,
+        "schema": {
+          "items": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "x-akamai": {
+          "file-path": "parameters/explodedParam.yaml"
+        }
+      },
+      "paramMismatch": {
+        "description": "A param example doesn't match response example.",
+        "in": "query",
+        "name": "paramMismatch",
+        "schema": {
+          "example": "match",
+          "type": "string"
+        },
+        "x-akamai": {
+          "file-path": "parameters/paramMismatch.yaml"
+        }
+      }
+    },
+    "schemas": {
+      "noop": {
+        "additionalProperties": false,
+        "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+        "properties": {
+          "chico": {
+            "description": "Chico.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          },
+          "groucho": {
+            "description": "Groucho.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          },
+          "harpo": {
+            "description": "Harpo.",
+            "enum": [
+              "MARX"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "groucho",
+          "chico",
+          "harpo"
+        ],
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/noop.yaml"
+        }
+      },
+      "param": {
+        "properties": {
+          "paramMismatch": {
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/param.yaml"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "description": "This text doesn't publish, no way.",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Parameters",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/lang-desc-unpunctuated/{parameterId}": {
+      "get": {
+        "description": "Throw check-log warning for unpunctuated description.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-lang-desc-unpunctuated"
+        },
+        "operationId": "get-lang-desc-unpunctuated",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Param description unpunctuated",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "This description lacks punctuation.",
+          "in": "path",
+          "name": "parameterId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/op-header-ct": {
+      "put": {
+        "description": "Log `op-header-ct` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-op-header-ct"
+        },
+        "operationId": "put-op-header-ct",
+        "parameters": [
+          {
+            "description": "__Enum__ An `Accept` header.",
+            "in": "header",
+            "name": "Accept",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/accept.yaml"
+            }
+          },
+          {
+            "description": "__Enum__ A `Content-Type` header.",
+            "in": "header",
+            "name": "Content-Type",
+            "schema": {
+              "enum": [
+                "application/json"
+              ],
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/content-type.yaml"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "chico": "MARX",
+                "groucho": "MARX",
+                "harpo": "MARX"
+              },
+              "schema": {
+                "additionalProperties": false,
+                "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                "properties": {
+                  "chico": {
+                    "description": "Chico.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "groucho": {
+                    "description": "Groucho.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  },
+                  "harpo": {
+                    "description": "Harpo.",
+                    "enum": [
+                      "MARX"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "groucho",
+                  "chico",
+                  "harpo"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/noop.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "chico": "MARX",
+                  "groucho": "MARX",
+                  "harpo": "MARX"
+                },
+                "schema": {
+                  "additionalProperties": false,
+                  "description": "Minimal no-op schema useful as a link target, but housing no tests of its own. This helps avoid unnecessary drag from many different test operations unnecessarily linking much larger schemas.",
+                  "properties": {
+                    "chico": {
+                      "description": "Chico.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "groucho": {
+                      "description": "Groucho.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    },
+                    "harpo": {
+                      "description": "Harpo.",
+                      "enum": [
+                        "MARX"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "groucho",
+                    "chico",
+                    "harpo"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/noop.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response.",
+            "headers": {
+              "Content-Type": {
+                "description": "An unnecessary `Content-Type` response header.",
+                "schema": {
+                  "type": "string"
+                },
+                "x-akamai": {
+                  "file-path": "headers/content-type.yaml"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Accept or Content-Type header present",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/openapi-enforcer-error": {
+      "post": {
+        "description": "Serious, blocking mismatches between schema and sample data.\nThese tests are distributed across files because they don't\nall generate as a batch. Different types of enforcer errors\ngenerate only after others are resolved, per file.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/post-openapi-enforcer-error"
+        },
+        "operationId": "post-openapi-enforcer-error",
+        "parameters": [
+          {
+            "example": 9,
+            "in": "query",
+            "name": "paramExpectsString",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "openapi-enforcer errors",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/openapi-html-comment": {
+      "get": {
+        "description": "Log an `openapi-html-comment` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-openapi-html-comment"
+        },
+        "operationId": "get-openapi-html-comment",
+        "parameters": [
+          {
+            "description": "A param description. <!-- Commented out content -->",
+            "in": "query",
+            "name": "paramDescHasHtmlComment",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response. <!-- Another HTML comment -->"
+          }
+        },
+        "summary": "Param description has HTML comment",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-arr": {
+      "get": {
+        "description": "Log `param-arr` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-arr"
+        },
+        "operationId": "get-param-arr",
+        "parameters": [
+          {
+            "description": "This parameter's schema specifies an array, possibly an attempt to express `explode:false,style:form` for comma-separated values.",
+            "in": "query",
+            "name": "specifiesArray",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Parameter specifies an array schema",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-default-bool-matches-example": {
+      "get": {
+        "description": "No API user would ever want to specify an optional query parameter that's the default value, so throw a warning recommending to reverse it.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-default-bool-matches-example"
+        },
+        "operationId": "get-param-default-bool-matches-example",
+        "parameters": [
+          {
+            "description": "This boolean param is explicitly `required: false`. Throw a `param-default-bool-matches-example` error because the `default` matches the `example` value.",
+            "in": "query",
+            "name": "booleanQueryParamOptionalExplicit",
+            "required": false,
+            "schema": {
+              "default": true,
+              "example": true,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This boolean param is implicitly optional. Throw a `param-default-bool-matches-example` error because the `default` matches the `example` value.",
+            "in": "query",
+            "name": "booleanQueryParamOptionalImplicit",
+            "schema": {
+              "default": true,
+              "example": true,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "Confirm a missing `default` value throws a warning for an optional boolean.",
+            "in": "query",
+            "name": "booleanQueryParamMissingDefault",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Optional boolean parameter's `example` matches `default`",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-default-lacks-desc": {
+      "get": {
+        "description": "Log a `param-default-lacks-desc` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-default-lacks-desc"
+        },
+        "operationId": "get-param-default-lacks-desc",
+        "parameters": [
+          {
+            "description": "Incomplete description.",
+            "in": "query",
+            "name": "defaultParameter",
+            "schema": {
+              "default": true,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing `default` in description",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-default-lacks-spec": {
+      "get": {
+        "description": "Log a `param-default-lacks-spec` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-default-lacks-spec"
+        },
+        "operationId": "get-param-default-lacks-spec",
+        "parameters": [
+          {
+            "description": "A missing default syntax in the schema.",
+            "in": "query",
+            "name": "defaultParameter",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing `default` syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-default-missing-bool": {
+      "get": {
+        "description": "Log a `param-default-missing-bool` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-default-missing-bool"
+        },
+        "operationId": "get-param-default-missing-bool",
+        "parameters": [
+          {
+            "description": "A missing default syntax for boolean in the schema.",
+            "in": "query",
+            "name": "defaultParameter",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing `default` syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-default-missing-enum": {
+      "get": {
+        "description": "Log a `param-default-missing-enum` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-default-missing-enum"
+        },
+        "operationId": "get-param-default-missing-enum",
+        "parameters": [
+          {
+            "description": "__Enum__ A missing default syntax for enum in the schema.",
+            "in": "query",
+            "name": "defaultParameter",
+            "schema": {
+              "enum": [
+                "ONE",
+                "TWO"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing `default` syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-delimit-lacks-desc": {
+      "get": {
+        "description": "Log a `param-delimit-lacks-spec` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-delimit-lacks-desc"
+        },
+        "operationId": "get-param-delimit-lacks-desc",
+        "parameters": [
+          {
+            "description": "A param missing style description.",
+            "explode": false,
+            "in": "query",
+            "name": "delimitedQuery",
+            "required": true,
+            "schema": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "style": "spaceDelimited"
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing style description",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-delimit-lacks-spec": {
+      "get": {
+        "description": "Log a `param-delimit-lacks-spec` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-delimit-lacks-spec"
+        },
+        "operationId": "get-param-delimit-lacks-spec",
+        "parameters": [
+          {
+            "description": "A pipe delimited param with no style syntax",
+            "in": "query",
+            "name": "delimitedQuery",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing style syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-desc-missing/{parameterId}": {
+      "get": {
+        "description": "Throw error for missing description.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-desc-missing"
+        },
+        "operationId": "get-param-desc-missing",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Param missing description",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "parameterId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/param-empty-valued-desc": {
+      "get": {
+        "description": "Log missing `param-empty-valued-desc` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-empty-valued-desc"
+        },
+        "operationId": "get-param-empty-valued-desc",
+        "parameters": [
+          {
+            "description": "Raise an error about a missing empty syntax.",
+            "in": "query",
+            "name": "emptyValueParam",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing `allowEmptyValue` syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-empty-valued-spec": {
+      "get": {
+        "description": "Log missing `empty` descriptor.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-empty-valued-spec"
+        },
+        "operationId": "get-param-empty-valued-spec",
+        "parameters": [
+          {
+            "allowEmptyValue": true,
+            "description": "Raise an error about missing descriptor.",
+            "in": "query",
+            "name": "emptyValueParam",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing empty in description",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-example-bad-chars": {
+      "get": {
+        "description": "Log a `param-example-bad-chars` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-example-bad-chars"
+        },
+        "operationId": "get-param-example-bad-chars",
+        "parameters": [
+          {
+            "allowReserved": true,
+            "description": "Allow to send unencoded character.",
+            "in": "query",
+            "name": "urlEncodedParameter",
+            "schema": {
+              "example": "value@value@value",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Unencoded param characters",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-example-missing/{parameterId}": {
+      "get": {
+        "description": "Log missing example as blocking error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-example-missing"
+        },
+        "operationId": "get-param-example-missing",
+        "parameters": [
+          {
+            "description": "Do _not_ raise a `param-example-missing` error here, because plural `examples` are specified.",
+            "examples": {
+              "chico": {
+                "summary": "Chico"
+              },
+              "groucho": {
+                "summary": "Groucho",
+                "value": "Groucho Marx"
+              },
+              "harpo": {
+                "value": "Harpo Marx"
+              },
+              "zeppo": {}
+            },
+            "in": "query",
+            "name": "parameterWithExamples",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Do not raise a `param-example-missing` error here, because an `example` is specified in the outer param spec.",
+            "example": "groucho",
+            "in": "query",
+            "name": "parameterWithOuterExample",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Do not raise a `param-example-missing` error here, because an `example` is specified in the inner schema spec.",
+            "in": "query",
+            "name": "parameterWithInnerExample",
+            "required": true,
+            "schema": {
+              "example": "harpo",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Do not raise a `param-example-missing` error here, an example is speced within `oneOf`, `anyOf`, `allOf`",
+            "in": "query",
+            "name": "parameterWithOneOf",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "enum": [
+                    "day",
+                    "week",
+                    "month",
+                    "year"
+                  ],
+                  "example": "month",
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          },
+          {
+            "description": "Raise a `schema-poly-single-item` error. This is a one-item array.",
+            "in": "query",
+            "name": "parameterWithSingleOneOf",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response.",
+            "headers": {
+              "Location": {
+                "description": "A URL path you can GET the newly created resource from.",
+                "schema": {
+                  "type": "string"
+                },
+                "x-akamai": {
+                  "file-path": "headers/Location.yaml"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Missing param example",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "Raise a `param-example-missing` error.",
+          "in": "path",
+          "name": "parameterId",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "description": "A param that accepts an array of values with no example.",
+          "in": "query",
+          "name": "explodedParam",
+          "required": false,
+          "schema": {
+            "items": {
+              "maxLength": 20,
+              "minLength": 0,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "x-akamai": {
+            "file-path": "parameters/explodedParam.yaml"
+          }
+        }
+      ]
+    },
+    "/param-header-name-malformed": {
+      "get": {
+        "description": "Throw `param-header-name-malformed` warning for request header incorrectly set in dashed-lowercase.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-header-name-malformed"
+        },
+        "operationId": "get-param-header-name-malformed",
+        "parameters": [
+          {
+            "description": "This header's name is not Capitalized-Dashed.",
+            "in": "header",
+            "name": "if-match",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/If-Match.yaml"
+            }
+          },
+          {
+            "description": "This header's name is Capitalized-Dashed.",
+            "in": "header",
+            "name": "X-Limit-Elements-Per-Property-Limit",
+            "schema": {
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/X-Limit-Elements-Per-Property-Limit.yaml"
+            }
+          },
+          {
+            "description": "A param example doesn't match response example.",
+            "in": "query",
+            "name": "paramMismatch",
+            "schema": {
+              "example": "match",
+              "type": "string"
+            },
+            "x-akamai": {
+              "file-path": "parameters/paramMismatch.yaml"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "paramMismatch": "mismatch"
+                },
+                "schema": {
+                  "properties": {
+                    "paramMismatch": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/param.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        },
+        "summary": "Header name malformed",
+        "tags": [
+          "Headers"
+        ]
+      }
+    },
+    "/param-misplaced": {
+      "get": {
+        "description": "It should be at method level, not shared at path level.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-misplaced-query"
+        },
+        "operationId": "get-param-misplaced-query",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response.",
+            "headers": {
+              "Location": {
+                "description": "A URL path you can GET the newly created resource from.",
+                "schema": {
+                  "type": "string"
+                },
+                "x-akamai": {
+                  "file-path": "headers/Location.yaml"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Query param is defined at path level"
+      },
+      "parameters": [
+        {
+          "description": "This query param should be defined at method level.",
+          "in": "query",
+          "name": "misplacedParamType",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/param-misplaced/{misplacedParamId}": {
+      "get": {
+        "description": "It should be at path level, so that all operations inherit it.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-misplaced-path"
+        },
+        "operationId": "get-param-misplaced-path",
+        "parameters": [
+          {
+            "description": "This path param should be defined at path level.",
+            "in": "path",
+            "name": "misplacedParamId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response.",
+            "headers": {
+              "Location": {
+                "description": "A URL path you can GET the newly created resource from.",
+                "schema": {
+                  "type": "string"
+                },
+                "x-akamai": {
+                  "file-path": "headers/Location.yaml"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Path param is defined at method level"
+      }
+    },
+    "/param-name-action": {
+      "get": {
+        "description": "Log a `param-name-action` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-name-action"
+        },
+        "operationId": "get-param-name-action",
+        "parameters": [
+          {
+            "description": "Unrestful name of the param with \"action\".",
+            "in": "query",
+            "name": "deleteAction",
+            "required": true,
+            "schema": {
+              "example": "value",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Action param name",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-name-malformed/{param-id}": {
+      "get": {
+        "description": "Warn about malformed param name.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-name-malformed"
+        },
+        "operationId": "get-param-name-malformed",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Param name not camelCase",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "Raise a `param-name-malformed` warning due to the non-camelCase `name`.",
+          "in": "path",
+          "name": "param-id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/param-name-parroted": {
+      "get": {
+        "description": "Log a `param-name-parroted` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-name-parroted"
+        },
+        "operationId": "get-param-name-parroted",
+        "parameters": [
+          {
+            "description": "This description repeats `parrotParamName`, redundantly and more than once.",
+            "in": "query",
+            "name": "parrotParamName",
+            "required": true,
+            "schema": {
+              "example": true,
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Param name repeated in description",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-name-unqualified/{status}": {
+      "get": {
+        "description": "Log a `param-name-unqualified` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-name-unqualified"
+        },
+        "operationId": "get-param-name-unqualified",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Unqualified path param",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "Unqualified path param.",
+          "in": "path",
+          "name": "status",
+          "required": true,
+          "schema": {
+            "example": "value",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/param-null-desc": {
+      "get": {
+        "description": "Log missing nullable syntax.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-null-desc"
+        },
+        "operationId": "get-param-null-desc",
+        "parameters": [
+          {
+            "description": "Raise a `param-null-desc` error.",
+            "in": "query",
+            "name": "nullParam",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing nullable syntax",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-null-spec": {
+      "get": {
+        "description": "Log missing null in the description",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-null-spec"
+        },
+        "operationId": "get-param-null-spec",
+        "parameters": [
+          {
+            "description": "Raise an error about missing descriptor.",
+            "in": "query",
+            "name": "nullParam",
+            "schema": {
+              "nullable": true,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Missing null in description",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-obj": {
+      "get": {
+        "description": "Log `param-obj` warning.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-obj"
+        },
+        "operationId": "get-param-obj",
+        "parameters": [
+          {
+            "description": "This parameter's schema specifies an object, apparently passing JSON ata through the URL.",
+            "in": "query",
+            "name": "specifiesObject",
+            "schema": {
+              "properties": {
+                "chico": {
+                  "type": "string"
+                },
+                "groucho": {
+                  "type": "string"
+                },
+                "harpo": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Parameter specifies an object schema",
+        "tags": [
+          "Params"
+        ]
+      }
+    },
+    "/param-required-with-default/{parameterId}": {
+      "get": {
+        "description": "Throw `param-required-with-default` warning for required param with a default value.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-required-with-default"
+        },
+        "operationId": "get-param-required-with-default",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Param required with default",
+        "tags": [
+          "Params"
+        ]
+      },
+      "parameters": [
+        {
+          "description": "Required, but with a default value?",
+          "in": "path",
+          "name": "parameterId",
+          "required": true,
+          "schema": {
+            "default": "REQUIRED_DEFAULT_VALUE_IS_FUBAR",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/param-str-enum-desc-unlisted": {
+      "get": {
+        "description": "Log missing enum value in description as blocking error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-param-enum-desc-unlisted"
+        },
+        "operationId": "get-param-enum-desc-unlisted",
+        "parameters": [
+          {
+            "description": "__Enum__ Raise an error because this description fails to detail each enum value. Values are `GROUCHO`, `CHICO`, and `HARPO`. Account for random other `LITERAL` value that may be in the description, which we may want to warn about separately.",
+            "in": "query",
+            "name": "parameterType",
+            "required": false,
+            "schema": {
+              "enum": [
+                "GROUCHO",
+                "CHICO",
+                "HARPO",
+                "ZEPPO"
+              ],
+              "example": "GROUCHO",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response.",
+            "headers": {
+              "Location": {
+                "description": "A URL path you can GET the newly created resource from.",
+                "schema": {
+                  "type": "string"
+                },
+                "x-akamai": {
+                  "file-path": "headers/Location.yaml"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Missing enum value in description (2DO)"
+      }
+    },
+    "/sample-values-sensitive": {
+      "get": {
+        "description": "Log a `sample-values-sensitive` error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-sample-values-sensitive"
+        },
+        "operationId": "get-sample-values-sensitive",
+        "parameters": [
+          {
+            "description": "A hostname value that doesn't follow the regex pattern",
+            "in": "query",
+            "name": "hostname",
+            "schema": {
+              "example": "www.example.rt",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Incorrect param example",
+        "tags": [
+          "Params"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "OAUTH",
+    "file-path": "07-param.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

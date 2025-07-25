@@ -1,0 +1,109 @@
+{
+  "components": {},
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Service",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/openapi-multiline-block": {
+      "get": {
+        "description": "Descriptions need to be on one\nline.  That's because Readme's\nmarkdown processor doesn't respect\nthe usual expectation that\nlinebreaks are insignificant\nwithin a block. ReadMe forces\nlines to break exactly where\nthey break in source, which leads\nto poorly formatted output.\nLog this multi-line source\nparagraph as a problem.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-openapi-multiline-block"
+        },
+        "operationId": "get-openapi-multiline-block",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Multi-line description",
+        "tags": [
+          "Service"
+        ]
+      }
+    },
+    "/openapi-ref-malformed": {
+      "put": {
+        "description": "The request/response omits a `$ref` to a directory path, so instead it's interpreted as a raw string value.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-openapi-ref-malformed"
+        },
+        "operationId": "put-openapi-ref-malformed",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": "examples/fubar.json"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": "examples/fubar.json"
+              }
+            },
+            "description": "Specifies a bad example that's missing a `$ref`."
+          }
+        },
+        "summary": "Example link is malformed",
+        "tags": [
+          "Service"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "05-syntax.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

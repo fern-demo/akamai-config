@@ -1,0 +1,141 @@
+{
+  "components": {},
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Service",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/openapi-html-comment": {
+      "get": {
+        "description": "This description contains an HTML comment. <!-- This is an attempt to hide content. -->",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-openapi-html-comment"
+        },
+        "operationId": "get-openapi-html-comment",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Op description contains HTML comment",
+        "tags": [
+          "Syntax"
+        ]
+      }
+    },
+    "/openapi-ref-non-linked-example": {
+      "get": {
+        "description": "Raise a warning about inline examples.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-openapi-ref-non-linked-example"
+        },
+        "operationId": "get-openapi-ref-non-linked-example",
+        "responses": {
+          "200": {
+            "content": {
+              "application/octet-stream": {
+                "examples": {
+                  "first": {
+                    "summary": "First",
+                    "value": {
+                      "property": "test"
+                    }
+                  },
+                  "second": {
+                    "summary": "Second",
+                    "value": {
+                      "chico": "MARX",
+                      "groucho": "MARX",
+                      "harpo": "MARX"
+                    }
+                  }
+                },
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Inline examples in the examples object",
+        "tags": [
+          "Service"
+        ]
+      }
+    },
+    "/svc-path-redundant": {
+      "get": {
+        "description": "Log redundant URL path as error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-svc-path-redundant"
+        },
+        "operationId": "get-svc-path-redundant",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Redundant URL path",
+        "tags": [
+          "Service"
+        ]
+      }
+    },
+    "/svc-title-redundant": {
+      "get": {
+        "description": "Log redundant Swagger title as error.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-svc-title-redundant"
+        },
+        "operationId": "get-svc-title-redundant",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Redundant swagger title",
+        "tags": [
+          "Service"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Main API server",
+      "url": "http://{hostname}/test-suite/v2"
+    },
+    {
+      "description": "Alternate API server",
+      "url": "metrics-query.aclp.linode.com"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "MADE_UP_AUTH_TYPE",
+    "file-path": "01-svc.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

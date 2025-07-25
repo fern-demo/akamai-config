@@ -1,0 +1,1334 @@
+{
+  "components": {},
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Sample data",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/openapi-enforcer-error": {
+      "post": {
+        "description": "Serious, blocking mismatches between schema and sample data.\nThese tests are distributed across files because they don't\nall generate as a batch. Different types of enforcer errors\ngenerate only after others are resolved, per file.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/post-openapi-enforcer-error"
+        },
+        "operationId": "post-openapi-enforcer-error",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "schemaExcludesEnum": "UNKNOWN_ENUM_VALUE"
+              },
+              "schema": {
+                "properties": {
+                  "schemaExcludesEnum": {
+                    "enum": [
+                      "KNOWN_ENUM_VALUE"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "openapi-enforcer errors",
+        "tags": [
+          "Spec"
+        ]
+      }
+    },
+    "/samples": {
+      "get": {
+        "description": "Example JSON provides test cases.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-svc-title-redundant"
+        },
+        "operationId": "get-svc-title-redundant",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "cp-code": null,
+                  "cp-codes": [
+                    null
+                  ],
+                  "cpCode": "wrong",
+                  "cpCodes": [
+                    "wrongo",
+                    "mary lou"
+                  ],
+                  "cp_code": 3242352,
+                  "cp_codes": [
+                    3242352,
+                    83423
+                  ],
+                  "group-ids": [
+                    null
+                  ],
+                  "groupIds": [
+                    "wrongo",
+                    "mary lou"
+                  ],
+                  "group_ids": [
+                    3242352,
+                    83423
+                  ],
+                  "ipv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+                  "sample-get-put-mismatch": "All work and no play makes Jack a dull boy.",
+                  "sample-max-length-array-obj": [
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    },
+                    {
+                      "key": "value"
+                    }
+                  ],
+                  "sample-max-length-array-scalar": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E",
+                    "F",
+                    "G",
+                    "H",
+                    "I",
+                    "J",
+                    "K",
+                    "L",
+                    "M",
+                    "N",
+                    "O",
+                    "P"
+                  ],
+                  "sample-max-length-file": "All work and no play makes Jack a dull boy.",
+                  "sample-num-string": {
+                    "id": "54321",
+                    "policyId": "12345",
+                    "stringifiedDigits": "67890",
+                    "zipCode": "01742"
+                  },
+                  "sample-orphaned": "All work and no play makes Jack a dull boy.",
+                  "sample-redundant": "All work and no play makes Jack a dull boy.",
+                  "sample-ro-in-req": "All work and no play makes Jack a dull boy.",
+                  "sample-test-fubar": {
+                    "fubarInString": "This is a foo and bar value.",
+                    "tbdInString": "This is a tbd and TBD value.",
+                    "testInArray": [
+                      "This is a test value."
+                    ]
+                  },
+                  "sample-thing": [
+                    {
+                      "policyName": "Policy 1",
+                      "widgetName": "widget #1"
+                    },
+                    {
+                      "policyName": "Policy 2",
+                      "widgetName": "widget #2"
+                    },
+                    {
+                      "orphanName": "orphan #1",
+                      "policyName": "Policy 3"
+                    }
+                  ],
+                  "sample-updated-by": "All work and no play makes Jack a dull boy.",
+                  "sample-values-sensitive": {
+                    "accountId": "A-CCT7890",
+                    "accountName": "Main Street Corporation",
+                    "contractId": "K-0N7RAK71",
+                    "contractIds": [
+                      1234
+                    ],
+                    "email": "jkowalski@example.com",
+                    "group-id": null,
+                    "groupId": "wrong",
+                    "group_id": 3242352,
+                    "hostname": "mprzybus@akamai.com",
+                    "ipv4": "192.0.2.35",
+                    "modifiedBy": "hgildong",
+                    "testIp": "192.0.2.244",
+                    "testObject": {
+                      "nested": {
+                        "groupId": "12345"
+                      }
+                    }
+                  },
+                  "username": "jsmith"
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Test sample data",
+        "tags": [
+          "Sample data"
+        ]
+      }
+    },
+    "/samples/sample-max-length-file": {
+      "get": {
+        "description": "Example JSON provides test cases.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-sample-max-length-file"
+        },
+        "operationId": "get-sample-max-length-file",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "data": [
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-03T03:07:21.308+0000",
+                      "id": 204000000054669,
+                      "ipv4": "192.0.2.82",
+                      "message": "Config :51RKS gen:185RKS :2076\nNevada :9117PAC :9959",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T03:07:01.617+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Identity Providers",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-07-21T16:15:07.106+0000",
+                      "id": 204000000048367,
+                      "message": "Config :571RKS gen:698RKS :809\nNevada :4514PAC :7828",
+                      "progressPct": 100,
+                      "startTime": "2020-07-21T16:14:57.994+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-04T23:53:14.992+0000",
+                      "id": 204000000055152,
+                      "message": "Config :80RKS gen:238RKS :2737\nNevada :7052PAC :7504",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T23:53:02.263+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-01T01:39:41.429+0000",
+                      "id": 204000000053510,
+                      "message": "Config :50RKS gen:507RKS :2098\nNevada :5154PAC :5729",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T01:39:28.053+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "adevi",
+                      "endTime": "2020-08-01T02:10:06.675+0000",
+                      "id": 204000000053573,
+                      "message": "Config :59RKS gen:199RKS :2751\nNevada :9101PAC :10071",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T02:09:41.700+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-02T02:26:32.167+0000",
+                      "id": 204000000054020,
+                      "message": "Config :52RKS gen:180RKS :2849\nNevada :9820PAC :10285",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T02:26:15.833+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-08-02T22:42:39.248+0000",
+                      "id": 204000000054219,
+                      "message": "Config :56RKS gen:220RKS :16039\nNevada :21407PAC :22244",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T22:41:22.041+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 4 Locations 1 Policies 1 Custom Lists",
+                      "deployedBy": "jdupont@etp.com",
+                      "endTime": "2020-07-31T11:59:53.640+0000",
+                      "id": 204000000053186,
+                      "message": "Config :1063RKS gen:6000RKS :8186\nNevada :16126PAC :17946",
+                      "progressPct": 100,
+                      "startTime": "2020-07-31T11:59:34.373+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-06T20:34:04.748+0000",
+                      "id": 204000000056344,
+                      "message": "Config :857RKS gen:1020RKS :3546\nNevada :6183PAC :8848",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:33:54.630+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "mrossi@etp.com",
+                      "endTime": "2020-08-06T20:39:31.122+0000",
+                      "id": 204000000056345,
+                      "message": "Config :810RKS gen:965RKS :3505\nNevada :6079PAC :8761",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:39:21.110+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "alfulani",
+                      "endTime": "2020-08-03T01:55:15.724+0000",
+                      "id": 204000000054514,
+                      "message": "Config :48RKS gen:173RKS :2124\nNevada :8819PAC :9333",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T01:54:56.532+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-05T23:44:08.445+0000",
+                      "id": 204000000055782,
+                      "message": "Config :85RKS gen:242RKS :2995\nNevada :6288PAC :6946",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T23:43:52.098+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-01T22:14:14.502+0000",
+                      "id": 204000000053665,
+                      "message": "Config :59RKS gen:201RKS :1594\nNevada :4412PAC :5127",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T22:14:02.398+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-08-04T22:58:17.826+0000",
+                      "id": 204000000055095,
+                      "message": "Config :61RKS gen:217RKS :2309\nNevada :5409PAC :6143",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T22:58:06.619+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-04T23:24:52.785+0000",
+                      "id": 204000000055123,
+                      "message": "Config :61RKS gen:201RKS :2432\nNevada :6088PAC :6777",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T23:24:41.641+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jdupont@etp.com",
+                      "id": 204000000055708,
+                      "message": "Transaction rolled back because it has been marked as rollback-only",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T18:10:08.512+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-08-06T01:59:41.358+0000",
+                      "id": 204000000056023,
+                      "message": "Config :67RKS gen:207RKS :2516\nNevada :8545PAC :8980",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T01:59:30.441+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 2 Policies",
+                      "deployedBy": "jkowalski@etp.com",
+                      "endTime": "2020-08-06T23:25:17.141+0000",
+                      "id": 204000000056360,
+                      "message": "Config :820RKS gen:976RKS :5300\nNevada :7930PAC :10078",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T23:25:05.786+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-08-05T03:03:10.627+0000",
+                      "id": 204000000055521,
+                      "message": "Config :53RKS gen:189RKS :2655\nNevada :7354PAC :7998",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T03:02:56.949+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "afero@etp.com",
+                      "endTime": "2020-08-05T19:39:20.322+0000",
+                      "id": 204000000055724,
+                      "message": "Config :546RKS gen:720RKS :5214\nNevada :9014PAC :10431",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T19:39:00.589+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "jdupont@etp.com",
+                      "endTime": "2020-08-05T17:21:38.432+0000",
+                      "id": 204000000055701,
+                      "message": "Config :610RKS gen:767RKS :878\nNevada :5033PAC :11595",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:21:25.025+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "jsmith@etp.com",
+                      "endTime": "2020-08-05T17:23:58.200+0000",
+                      "id": 204000000055702,
+                      "message": "Config :565RKS gen:705RKS :811\nNevada :4503PAC :7756",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:23:49.052+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jdupont@etp.com",
+                      "endTime": "2020-08-05T18:11:30.452+0000",
+                      "id": 204000000055709,
+                      "message": "Config :17660RKS gen:19558RKS :20300\nNevada :24993PAC :28802",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T18:10:51.399+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-08-01T23:32:29.028+0000",
+                      "id": 204000000053686,
+                      "message": "Config :901RKS gen:1245RKS :3917\nNevada :10806PAC :11365",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T23:25:24.508+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-08-10T12:05:53.947+0000",
+                      "id": 204000000058677,
+                      "message": "Config :1291RKS gen:1478RKS :3956\nNevada :10242PAC :13485",
+                      "progressPct": 100,
+                      "startTime": "2020-08-10T12:05:39.150+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-07-23T14:10:42.758+0000",
+                      "id": 204000000049531,
+                      "message": "Config :535RKS gen:679RKS :796\nNevada :3808PAC :6593",
+                      "progressPct": 100,
+                      "startTime": "2020-07-23T14:10:34.930+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-07-23T14:11:45.085+0000",
+                      "id": 204000000049533,
+                      "message": "Config :519RKS gen:662RKS :751\nNevada :3494PAC :4824",
+                      "progressPct": 100,
+                      "startTime": "2020-07-23T14:11:39.122+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-08-03T01:32:10.518+0000",
+                      "id": 204000000054436,
+                      "message": "Config :62RKS gen:209RKS :2545\nNevada :10153PAC :10890",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T01:31:55.078+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-02T01:05:49.205+0000",
+                      "id": 204000000053862,
+                      "message": "Config :60RKS gen:200RKS :1909\nNevada :6605PAC :7353",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T01:05:34.862+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-02T23:30:41.977+0000",
+                      "id": 204000000054247,
+                      "message": "Config :67RKS gen:209RKS :2240\nNevada :7080PAC :7826",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T23:29:09.957+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "afero",
+                      "endTime": "2020-08-01T01:06:12.347+0000",
+                      "id": 204000000053438,
+                      "message": "Config :91RKS gen:695RKS :2778\nNevada :8773PAC :9517",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T00:52:17.078+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-03T00:19:07.835+0000",
+                      "id": 204000000054299,
+                      "message": "Config :61RKS gen:195RKS :2495\nNevada :5822PAC :6516",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T00:18:59.622+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-03T23:56:10.758+0000",
+                      "id": 204000000054849,
+                      "message": "Config :85RKS gen:268RKS :3140\nNevada :8438PAC :8873",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T23:55:35.064+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jsmith@etp.com",
+                      "id": 204000000055707,
+                      "message": "Transaction rolled back because it has been marked as rollback-only. Transaction rolled back because it has been marked as rollback-only. Transaction rolled back because it has been marked as rollback-only. Transaction rolled back because it has been marked as rollback-only.",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T18:09:10.361+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "alfulani",
+                      "endTime": "2020-08-02T23:54:54.887+0000",
+                      "id": 204000000054264,
+                      "message": "Config :52RKS gen:221RKS :40511\nNevada :45722PAC :46412",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T23:53:41.314+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-07-13T18:51:33.395+0000",
+                      "id": 204000000044704,
+                      "message": "Config :2166RKS gen:2757RKS :5307\nNevada :75160PAC :75646",
+                      "progressPct": 100,
+                      "startTime": "2020-07-13T18:50:16.449+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-05T16:55:39.336+0000",
+                      "id": 204000000055696,
+                      "message": "Config :578RKS gen:831RKS :3382\nNevada :7382PAC :11121",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T16:55:26.177+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-05T17:29:30.338+0000",
+                      "id": 204000000055706,
+                      "message": "Config :613RKS gen:753RKS :869\nNevada :4321PAC :6642",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:29:22.473+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-06T20:49:41.173+0000",
+                      "id": 204000000056347,
+                      "message": "Config :981RKS gen:1142RKS :4486\nNevada :7116PAC :9434",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:49:30.498+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "jsmith@etp.com",
+                      "id": 204000000055703,
+                      "message": "Transaction rolled back because it has been marked as rollback-only",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:24:47.286+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "jdupont@etp.com",
+                      "endTime": "2020-08-05T17:27:44.515+0000",
+                      "id": 204000000055704,
+                      "message": "Config :18106RKS gen:20016RKS :21168\nNevada :25678PAC :34140",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:26:58.719+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "mrossi@etp.com",
+                      "id": 204000000055705,
+                      "message": "Transaction rolled back because it has been marked as rollback-only",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T17:28:03.781+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-08-05T23:18:41.088+0000",
+                      "id": 204000000055761,
+                      "message": "Config :88RKS gen:233RKS :2572\nNevada :7536PAC :8232",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T23:18:25.966+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "alfulani@etp.com",
+                      "endTime": "2020-08-06T20:46:58.257+0000",
+                      "id": 204000000056346,
+                      "message": "Config :895RKS gen:1035RKS :1147\nNevada :3778PAC :6591",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:46:50.427+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 1 Policies",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-06T20:51:03.540+0000",
+                      "id": 204000000056348,
+                      "message": "Config :935RKS gen:1095RKS :4766\nNevada :7646PAC :9846",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:50:52.495+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Identity Providers",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-07-21T16:19:03.284+0000",
+                      "id": 204000000048370,
+                      "message": "Config :650RKS gen:786RKS :890\nNevada :3135PAC :6245",
+                      "progressPct": 100,
+                      "startTime": "2020-07-21T16:18:55.804+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 2 Policies",
+                      "deployedBy": "alfulani",
+                      "endTime": "2020-07-23T14:08:58.929+0000",
+                      "id": 204000000049530,
+                      "message": "Config :1549RKS gen:1701RKS :3925\nNevada :7916PAC :11737",
+                      "progressPct": 100,
+                      "startTime": "2020-07-23T14:08:45.891+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-01T22:38:11.034+0000",
+                      "id": 204000000053671,
+                      "message": "Config :256RKS gen:568RKS :2751\nNevada :8933PAC :9506",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T22:37:26.334+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-02T01:53:33.750+0000",
+                      "id": 204000000053945,
+                      "message": "Config :54RKS gen:202RKS :2165\nNevada :5535PAC :6236",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T01:53:22.308+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 1 Policies 1 Custom Responses 1 Custom Lists",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-07-21T13:37:50.429+0000",
+                      "id": 204000000048328,
+                      "message": "Config :772RKS gen:969RKS :5402\nNevada :11521PAC :14685",
+                      "progressPct": 100,
+                      "startTime": "2020-07-21T13:37:34.444+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-02T23:04:54.207+0000",
+                      "id": 204000000054226,
+                      "message": "Config :53RKS gen:202RKS :1511\nNevada :4778PAC :5204",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T23:04:47.672+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-03T00:53:10.490+0000",
+                      "id": 204000000054339,
+                      "message": "Config :267RKS gen:412RKS :3050\nNevada :8808PAC :9473",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T00:43:39.953+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations",
+                      "deployedBy": "tyamada@etp.com",
+                      "endTime": "2020-08-03T20:37:22.596+0000",
+                      "id": 204000000054812,
+                      "message": "Config :612RKS gen:769RKS :3021\nNevada :5529PAC :8460",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T20:37:12.300+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-03T20:50:14.142+0000",
+                      "id": 204000000054817,
+                      "message": "Config :549RKS gen:705RKS :5556\nNevada :7972PAC :10145",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T20:50:02.678+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 1 Policies",
+                      "deployedBy": "jkowalski@etp.com",
+                      "endTime": "2020-08-04T21:32:37.347+0000",
+                      "id": 204000000055073,
+                      "message": "Config :542RKS gen:702RKS :3759\nNevada :34523PAC :37226",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T21:31:58.906+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-05T00:26:10.630+0000",
+                      "id": 204000000055194,
+                      "message": "Config :87RKS gen:222RKS :2568\nNevada :7858PAC :8688",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T00:25:46.165+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-05T16:56:53.663+0000",
+                      "id": 204000000055697,
+                      "message": "Config :588RKS gen:798RKS :982\nNevada :5283PAC :8059",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T16:56:10.210+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "afero",
+                      "id": 204000000055698,
+                      "message": "Transaction rolled back because it has been marked as rollback-only",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T16:58:36.474+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-08-05T22:20:21.392+0000",
+                      "id": 204000000055740,
+                      "message": "Config :101RKS gen:263RKS :3625\nNevada :8663PAC :9497",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T22:19:23.038+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "List Deploy",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-03T21:18:22.412+0000",
+                      "id": 204000000054821,
+                      "message": "Config :17042RKS gen:19506RKS :23902\nNevada :27373PAC :30368",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T21:17:38.845+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-05T18:16:34.799+0000",
+                      "id": 204000000055710,
+                      "message": "Config :18267RKS gen:20345RKS :21164\nNevada :25231PAC :28571",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T18:15:55.307+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 1 Policies",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-06T15:45:46.664+0000",
+                      "id": 204000000056331,
+                      "message": "Config :652RKS gen:833RKS :2143\nNevada :6077PAC :8764",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T15:45:31.204+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 3 Locations",
+                      "deployedBy": "tyamada@etp.com",
+                      "endTime": "2020-08-06T23:23:50.971+0000",
+                      "id": 204000000056359,
+                      "message": "Config :1066RKS gen:1226RKS :25325\nNevada :29122PAC :30510",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T23:23:19.269+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 2 Locations",
+                      "deployedBy": "jdupont@etp.com",
+                      "endTime": "2020-08-06T23:26:37.748+0000",
+                      "id": 204000000056361,
+                      "message": "Config :1210RKS gen:1444RKS :1611\nNevada :4130PAC :7438",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T23:26:29.032+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Identity Providers",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-06T23:27:11.115+0000",
+                      "id": 204000000056362,
+                      "message": "Config :967RKS gen:1121RKS :1237\nNevada :3687PAC :5915",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T23:27:03.978+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-05T02:29:52.883+0000",
+                      "id": 204000000055466,
+                      "message": "Config :536RKS gen:681RKS :2539\nNevada :5630PAC :7833",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:29:33.113+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jperez",
+                      "endTime": "2020-08-05T02:37:04.214+0000",
+                      "id": 204000000055479,
+                      "message": "Config :559RKS gen:696RKS :807\nNevada :7898PAC :10609",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:36:28.584+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "afero",
+                      "endTime": "2020-08-05T02:47:18.231+0000",
+                      "id": 204000000055497,
+                      "message": "Config :57RKS gen:363RKS :2571\nNevada :7596PAC :8289",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:47:00.123+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-06T02:21:48.748+0000",
+                      "id": 204000000056071,
+                      "message": "Config :72RKS gen:220RKS :2505\nNevada :8410PAC :9101",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T02:21:25.870+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-06T18:28:07.814+0000",
+                      "id": 204000000056338,
+                      "message": "Config :870RKS gen:1023RKS :2276\nNevada :6100PAC :7695",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T18:27:58.860+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "hgildong@etp.com",
+                      "endTime": "2020-08-06T20:03:53.623+0000",
+                      "id": 204000000056339,
+                      "message": "Config :1024RKS gen:1165RKS :1278\nNevada :5003PAC :15533",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:03:36.811+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-06T20:52:38.585+0000",
+                      "id": 204000000056349,
+                      "message": "Config :880RKS gen:1022RKS :2265\nNevada :4585PAC :7748",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:52:29.631+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-03T01:42:49.795+0000",
+                      "id": 204000000054458,
+                      "message": "Config :771RKS gen:916RKS :3850\nNevada :9179PAC :9881",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T01:42:33.248+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jkowalski",
+                      "endTime": "2020-08-05T02:39:09.459+0000",
+                      "id": 204000000055483,
+                      "message": "Config :537RKS gen:673RKS :805\nNevada :6986PAC :9897",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:38:40.141+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-06T00:05:59.522+0000",
+                      "id": 204000000055796,
+                      "message": "Config :65RKS gen:211RKS :2983\nNevada :7772PAC :8194",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T00:05:48.364+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 2 Policies 1 Custom Lists",
+                      "deployedBy": "tyamada",
+                      "endTime": "2020-07-21T13:44:17.490+0000",
+                      "id": 204000000048330,
+                      "message": "Config :1154RKS gen:1476RKS :7202\nNevada :12905PAC :16285",
+                      "progressPct": 100,
+                      "startTime": "2020-07-21T13:43:59.874+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "adevi",
+                      "endTime": "2020-07-23T14:11:21.541+0000",
+                      "id": 204000000049532,
+                      "message": "Config :810RKS gen:1029RKS :1166\nNevada :4319PAC :7394",
+                      "progressPct": 100,
+                      "startTime": "2020-07-23T14:11:12.899+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 5 Policies",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-05T16:59:59.209+0000",
+                      "id": 204000000055699,
+                      "message": "Config :1289RKS gen:1708RKS :5078\nNevada :8564PAC :11583",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T16:59:46.364+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jsmith",
+                      "endTime": "2020-08-02T02:05:03.485+0000",
+                      "id": 204000000053977,
+                      "message": "Config :53RKS gen:189RKS :1901\nNevada :6501PAC :7110",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T02:04:51.984+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-08-03T03:32:59.111+0000",
+                      "id": 204000000054679,
+                      "message": "Config :82RKS gen:225RKS :2423\nNevada :10665PAC :11491",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T03:32:43.465+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-05T01:39:01.198+0000",
+                      "id": 204000000055343,
+                      "message": "Config :99RKS gen:257RKS :2169\nNevada :6564PAC :7082",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T01:38:39.158+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "adevi",
+                      "endTime": "2020-08-02T22:15:16.849+0000",
+                      "id": 204000000054215,
+                      "message": "Config :249RKS gen:425RKS :2780\nNevada :8284PAC :9214",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T22:14:16.616+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-04T00:25:14.085+0000",
+                      "id": 204000000054857,
+                      "message": "Config :167RKS gen:312RKS :2516\nNevada :6858PAC :7544",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T00:23:39.001+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "adevi@etp.com",
+                      "endTime": "2020-08-05T19:25:55.284+0000",
+                      "id": 204000000055722,
+                      "message": "Config :575RKS gen:732RKS :2040\nNevada :6378PAC :8672",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T19:25:45.567+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "afero@etp.com",
+                      "endTime": "2020-08-06T16:23:25.222+0000",
+                      "id": 204000000056332,
+                      "message": "Config :1231RKS gen:1495RKS :1661\nNevada :5705PAC :9202",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T16:23:14.710+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "afero",
+                      "endTime": "2020-08-04T22:19:11.041+0000",
+                      "id": 204000000055082,
+                      "message": "Config :456RKS gen:607RKS :4086\nNevada :7676PAC :8391",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T22:18:33.421+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "jsmith",
+                      "endTime": "2020-07-31T17:11:46.298+0000",
+                      "id": 204000000053209,
+                      "message": "Config :887RKS gen:1354RKS :3630\nNevada :6972PAC :9585",
+                      "progressPct": 100,
+                      "startTime": "2020-07-31T17:11:35.439+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-08-01T23:51:13.866+0000",
+                      "id": 204000000053705,
+                      "message": "Config :61RKS gen:207RKS :2257\nNevada :7060PAC :7785",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T23:51:02.733+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "hgildong",
+                      "endTime": "2020-08-02T03:12:55.549+0000",
+                      "id": 204000000054110,
+                      "message": "Config :645RKS gen:783RKS :3032\nNevada :9553PAC :10260",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T03:12:34.170+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-06T20:31:56.027+0000",
+                      "id": 204000000056343,
+                      "message": "Config :976RKS gen:1106RKS :1220\nNevada :8908PAC :11736",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T20:31:43.020+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-08-06T01:29:43.891+0000",
+                      "id": 204000000055945,
+                      "message": "Config :78RKS gen:218RKS :2631\nNevada :8351PAC :9099",
+                      "progressPct": 100,
+                      "startTime": "2020-08-06T01:29:14.282+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-01T02:00:04.483+0000",
+                      "id": 204000000053547,
+                      "message": "Config :77RKS gen:500RKS :2208\nNevada :8434PAC :9190",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T01:59:47.059+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-08-05T02:09:53.960+0000",
+                      "id": 204000000055429,
+                      "message": "Config :60RKS gen:198RKS :2467\nNevada :10786PAC :11475",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:09:33.801+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "adevi",
+                      "endTime": "2020-08-05T02:34:55.243+0000",
+                      "id": 204000000055472,
+                      "message": "Config :554RKS gen:694RKS :1990\nNevada :14833PAC :147416",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T02:32:17.434+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Locations 6 Policies",
+                      "deployedBy": "afero",
+                      "id": 204000000055695,
+                      "message": "Transaction rolled back because it has been marked as rollback-only",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T16:55:02.227+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "szhang",
+                      "endTime": "2020-08-01T23:03:09.823+0000",
+                      "id": 204000000053675,
+                      "message": "Config :674RKS gen:811RKS :2690\nNevada :7898PAC :8583",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T23:02:46.944+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Changes in this deployment: 1 Policies",
+                      "deployedBy": "szhang@etp.com",
+                      "endTime": "2020-08-03T20:44:11.969+0000",
+                      "id": 204000000054816,
+                      "message": "Config :512RKS gen:659RKS :2691\nNevada :5021PAC :8073",
+                      "progressPct": 100,
+                      "startTime": "2020-08-03T20:44:02.348+0000",
+                      "status": "COMPLETED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "mrossi",
+                      "endTime": "2020-08-05T22:53:08.070+0000",
+                      "id": 204000000055745,
+                      "message": "Config :179RKS gen:326RKS :2650\nNevada :5941PAC :6405",
+                      "progressPct": 100,
+                      "startTime": "2020-08-05T22:52:24.943+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "jdupont",
+                      "endTime": "2020-08-01T01:49:55.296+0000",
+                      "id": 204000000053530,
+                      "message": "Config :55RKS gen:473RKS :2548\nNevada :7897PAC :8687",
+                      "progressPct": 100,
+                      "startTime": "2020-08-01T01:49:30.607+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "asingh",
+                      "endTime": "2020-08-02T01:47:13.753+0000",
+                      "id": 204000000053907,
+                      "message": "Config :100RKS gen:458RKS :3684\nNevada :8749PAC :10838",
+                      "progressPct": 100,
+                      "startTime": "2020-08-02T01:31:46.212+0000",
+                      "status": "FAILED"
+                    },
+                    {
+                      "comment": "Dynamic domain resolution changes",
+                      "deployedBy": "afero",
+                      "endTime": "2020-08-04T01:08:56.437+0000",
+                      "id": 204000000054959,
+                      "message": "Config :76RKS gen:213RKS :2248\nNevada :7256PAC :7759\nConfig :76RKS gen:213RKS :2248\nNevada :7256PAC :7759\nConfig :76RKS gen:213RKS :2248\nNevada :7256PAC :7759\nConfig :76RKS gen:213RKS :2248\nNevada :7256PAC :7759\nConfig :76RKS gen:213RKS :2248\nNevada :7256PAC :7759\nConfig :76RKS gen:213RKS :2248\nNevada :7256PAC :7759",
+                      "progressPct": 100,
+                      "startTime": "2020-08-04T01:08:45.913+0000",
+                      "status": "FAILED"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Long sample data file",
+        "tags": [
+          "Sample data"
+        ]
+      }
+    },
+    "/samples/sample-scalar-payload": {
+      "get": {
+        "description": "Example JSON provides test cases.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-sample-scalar-payload"
+        },
+        "operationId": "get-sample-scalar-payload",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": 63423.325
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "JSON payload is not array or object",
+        "tags": [
+          "Sample data"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "09-sample.yaml"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}
