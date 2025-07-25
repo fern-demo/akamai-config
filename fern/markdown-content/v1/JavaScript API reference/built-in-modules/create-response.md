@@ -18,7 +18,7 @@ This module is available to use in your EdgeWorker code bundles to return an obj
 
 ## Error handling when streaming with createResponse()
 
-As soon as the EdgeWorker returns the opaque object from `responseProvider()`  the status code and headers registered with `createResponse()` are sent to the client. If you pass a [ReadableStream](doc:streams) into `createResponse()` it allows your EdgeWorker to continue executing so it can stream the response body to the client. 
+As soon as the EdgeWorker returns the opaque object from `responseProvider()`  the status code and headers registered with `createResponse()` are sent to the client. If you pass a [ReadableStream](streams.md) into `createResponse()` it allows your EdgeWorker to continue executing so it can stream the response body to the client. 
 
 If there is an uncaught error during streaming, the following can occur:
 
@@ -28,7 +28,7 @@ If there is an uncaught error during streaming, the following can occur:
 
 Since your EdgeWorker has already sent the `200 OK`, the client probably expects a valid response and may encounter problems. 
 
-For more information, go to the [Response body processing](doc:process-response-bodies) tutorial.
+For more information, go to the [Response body processing](process-response-bodies.md) tutorial.
 
 # createResponse()
 
@@ -36,7 +36,7 @@ Generates the return value for `responseProvider()`.
 
 Use this function to validate the passed values and return an opaque object. The opaque object can be used to resolve the Promise returned from responseProvider(). The function accepts either a list of parameters or an options object.
 
-> 👍 You need to enable the multi-part response header for `responseProvider` when adding the built-in log module to your EdgeWorkers functions. For more information see [Enable and JavaScript logging for responseProvider](doc:enable-javascript-logging#enable-javascript-logging-for-responseprovider).
+> 👍 You need to enable the multi-part response header for `responseProvider` when adding the built-in log module to your EdgeWorkers functions. For more information see [Enable and JavaScript logging for responseProvider](enable-javascript-logging.md#enable-javascript-logging-for-responseprovider).
 
 > 📘 An exception is thrown if callers specify invalid parameters.
 
@@ -47,35 +47,12 @@ createResponse(status, headers, body, [deny_reason])
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "status",
-    "0-1": "Integer",
-    "0-2": "HTTP status code of the outgoing response <strong>Note:</strong>  The status supports <strong>2xx Success</strong>, <strong>3xx Redirection</strong>  <strong>4xx Client Error</strong>, and <strong>5xx Server Error</strong> status codes.",
-    "1-0": "headers",
-    "1-1": "Object  \n<strong>Note:</strong>  A string cannot contain illegal characters. Refer to section three of the <a href=\"https://tools.ietf.org/html/rfc7230#section-3.2\">RFC 7230</a> document for information about the allowed characters.",
-    "1-2": "Properties used as key:value pairs for the response headers. Keys are strings that contain header names, values are either strings or arrays of strings.  \n  \nHeader names and values must conform to the [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2) standards.",
-    "2-0": "body",
-    "2-1": "String or ReadableStream",
-    "2-2": "Content of the response body  \nWhen specified as a string, the body is limited to 16 KB. When specified as a ReadableStream, there is no size limit. The ReadableStream should consist of bytes of data. You can use the [TextEncoder](doc:text-encode-transform) class to transform a text stream into a byte stream.",
-    "3-0": "deny_reason",
-    "3-1": "String",
-    "3-2": "**Optional** Deny reason for the 403 status code."
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| status | Integer | HTTP status code of the outgoing response <strong>Note:</strong>  The status supports <strong>2xx Success</strong>, <strong>3xx Redirection</strong>  <strong>4xx Client Error</strong>, and <strong>5xx Server Error</strong> status codes. |
+| headers | Object<br/><strong>Note:</strong>  A string cannot contain illegal characters. Refer to section three of the <a href="https://tools.ietf.org/html/rfc7230#section-3.2">RFC 7230</a> document for information about the allowed characters. | Properties used as key:value pairs for the response headers. Keys are strings that contain header names, values are either strings or arrays of strings.<br/><br/>Header names and values must conform to the [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2) standards. |
+| body | String or ReadableStream | Content of the response body<br/>When specified as a string, the body is limited to 16 KB. When specified as a ReadableStream, there is no size limit. The ReadableStream should consist of bytes of data. You can use the [TextEncoder](text-encode-transform.md) class to transform a text stream into a byte stream. |
+| deny_reason | String | **Optional** Deny reason for the 403 status code. |
 
 
 ```javascript

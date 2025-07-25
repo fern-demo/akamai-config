@@ -146,29 +146,10 @@ SetCookie([cookieHeader], [options])
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "cookieHeader",
-    "0-1": "String or Object",
-    "0-2": "<b>Optional</b> Passes the raw Set-Cookie header to the constructor to parse. If a string is passed, an attempt is made to parse it as Set-Cookie. If an Object is passed, the constructor copies properties of that object into the SetCookie object for its own properties.",
-    "1-0": "options",
-    "1-1": "Object",
-    "1-2": "<b>Optional</b> This object parses an existing Set-Cookie header to override the default decode of the Set-Cookie values. This object must have a function named 'decode' on it, to return the custom decoding results from the string."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| cookieHeader | String or Object | <b>Optional</b> Passes the raw Set-Cookie header to the constructor to parse. If a string is passed, an attempt is made to parse it as Set-Cookie. If an Object is passed, the constructor copies properties of that object into the SetCookie object for its own properties. |
+| options | Object | <b>Optional</b> This object parses an existing Set-Cookie header to override the default decode of the Set-Cookie values. This object must have a function named 'decode' on it, to return the custom decoding results from the string. |
 
 
 ```javascript
@@ -207,26 +188,9 @@ toHeader([options])
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "options",
-    "0-1": "String",
-    "0-2": "<b>Optional</b> The Options object overrides the default encoding of the Set-Cookie values. This object must have a function named 'encode' on it, to return the custom encoding results for the string."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| options | String | <b>Optional</b> The Options object overrides the default encoding of the Set-Cookie values. This object must have a function named 'encode' on it, to return the custom encoding results for the string. |
 
 
 ```javascript
@@ -268,29 +232,10 @@ Cookies([cookieHeader], [options])
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "cookieHeader",
-    "0-1": "String or Array",
-    "0-2": "<b>Optional</b> Passes the raw Cookie header to the constructor to parse. If an array is passed, the first element must be a string that is used as the cookie's string to parse. If it is not passed, an empty cookies object is returned.",
-    "1-0": "options",
-    "1-1": "String",
-    "1-2": "<b>Optional</b> This object is only used when parsing an existing Cookie header to override the default decode of the Cookie values. This object must have a function named 'decode' on it to return the custom decoding results from the string."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| cookieHeader | String or Array | <b>Optional</b> Passes the raw Cookie header to the constructor to parse. If an array is passed, the first element must be a string that is used as the cookie's string to parse. If it is not passed, an empty cookies object is returned. |
+| options | String | <b>Optional</b> This object is only used when parsing an existing Cookie header to override the default decode of the Cookie values. This object must have a function named 'decode' on it to return the custom decoding results from the string. |
 
 
 ```javascript
@@ -326,26 +271,9 @@ toHeader([options])
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "options",
-    "0-1": "String",
-    "0-2": "<b>Optional</b> The Options object overrides the default encoding of the Set-Cookie values. This object must have a function named 'encode' on it, to return the custom encoding results for the string."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| options | String | <b>Optional</b> The Options object overrides the default encoding of the Set-Cookie values. This object must have a function named 'encode' on it, to return the custom encoding results for the string. |
 
 
 ```javascript
@@ -385,26 +313,9 @@ get(name)
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of first matching cookie  \n  \nIf no cookies exist, a value of `undefined` is returned."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of first matching cookie<br/><br/>If no cookies exist, a value of `undefined` is returned. |
 
 
 ```javascript
@@ -425,26 +336,9 @@ getAll (name)
 ```
 
 Review the table below for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of all matching cookies  \n  \nIf no cookies exist, an empty array is returned."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of all matching cookies<br/><br/>If no cookies exist, an empty array is returned. |
 
 
 ```javascript

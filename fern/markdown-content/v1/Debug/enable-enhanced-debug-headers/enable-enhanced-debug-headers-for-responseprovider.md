@@ -17,7 +17,7 @@ When you include, `akamai-x-ew-debug-rp` in the request, the **AK_EDGEWORKERS_RP
 
 - Returns an inaccurate status. 
 - Indicates success, even on a failure. This prevents `responseProvider` errors from being detected by Property Manager.
-- Prevents the [Site Failover](doc:site-failover) behavior from responding to an EdgeWorkers failover accurately.
+- Prevents the [Site Failover](site-failover.md) behavior from responding to an EdgeWorkers failover accurately.
 
 To resolve this issue you need to remove the `akamai-x-ew-debug-rp` Pragma header when testing Site Failover.
 

@@ -1,0 +1,245 @@
+{
+  "components": {
+    "schemas": {
+      "three-one": {
+        "$schema": "http://json-schema.org/draft-04-schema#",
+        "additionalProperties": false,
+        "id": "resource:/descriptors/papi/v1/schemas/CreateOrClonePropertyRequestV0.json#",
+        "javaType": "com.akamai.luna.papi.model.PropertyCreateRequest",
+        "properties": {
+          "null-type-solo": {
+            "description": "This is an unlikely edge case where `null` is the only type specified.",
+            "type": [
+              "null"
+            ]
+          },
+          "null-type-string": {
+            "description": "Schema `type` is string, and `\"null\"` is properly spec'd as string.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "obj-pattern-properties": {
+            "description": "Mapping object.",
+            "patternProperties": {
+              ".+": {
+                "description": "Mapped object.",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "schema-type-multi": {
+            "description": "Schema `type` is string. Each is a substantial, non-`null` data type. This should block publication, as `oneOf`/`anyOf` syntax is much clearer.",
+            "type": [
+              "string",
+              "integer"
+            ]
+          }
+        },
+        "required": [
+          "null-type-string",
+          "null-type-solo",
+          "schema-type-multi",
+          "obj-pattern-properties"
+        ],
+        "type": "object",
+        "x-akamai": {
+          "file-path": "schemas/three-one.yaml"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Internal OpenAPI 3.1 support",
+    "version": "v2"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/three-one/data": {
+      "put": {
+        "description": "__Internal__ Schema tests on OpenAPI 3.1.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/put-three-one-data"
+        },
+        "operationId": "put-three-one-data",
+        "parameters": [
+          {
+            "description": "For customers who manage more than one account, this [runs the operation from another account](https://techdocs.akamai.com/developer/docs/manage-many-accounts-with-one-api-client). The Identity and Access Management API provides a [list of available account switch keys](https://techdocs.akamai.com/iam-api/reference/get-client-account-switch-keys).",
+            "in": "query",
+            "name": "accountSwitchKey",
+            "required": false,
+            "schema": {
+              "example": "1-5C0YLB:1-8BYUX",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "null-type-bareword": "Foo",
+                "null-type-both": "Foo",
+                "null-type-solo": null,
+                "null-type-string": "Foo",
+                "obj-pattern-properties": {
+                  "bar": 2,
+                  "foo": 1
+                },
+                "schema-type-multi": "Foo"
+              },
+              "schema": {
+                "$schema": "http://json-schema.org/draft-04-schema#",
+                "additionalProperties": false,
+                "id": "resource:/descriptors/papi/v1/schemas/CreateOrClonePropertyRequestV0.json#",
+                "javaType": "com.akamai.luna.papi.model.PropertyCreateRequest",
+                "properties": {
+                  "null-type-solo": {
+                    "description": "This is an unlikely edge case where `null` is the only type specified.",
+                    "type": [
+                      "null"
+                    ]
+                  },
+                  "null-type-string": {
+                    "description": "Schema `type` is string, and `\"null\"` is properly spec'd as string.",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "obj-pattern-properties": {
+                    "description": "Mapping object.",
+                    "patternProperties": {
+                      ".+": {
+                        "description": "Mapped object.",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "schema-type-multi": {
+                    "description": "Schema `type` is string. Each is a substantial, non-`null` data type. This should block publication, as `oneOf`/`anyOf` syntax is much clearer.",
+                    "type": [
+                      "string",
+                      "integer"
+                    ]
+                  }
+                },
+                "required": [
+                  "null-type-string",
+                  "null-type-solo",
+                  "schema-type-multi",
+                  "obj-pattern-properties"
+                ],
+                "type": "object",
+                "x-akamai": {
+                  "file-path": "schemas/three-one.yaml"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "null-type-bareword": "Foo",
+                  "null-type-both": "Foo",
+                  "null-type-solo": null,
+                  "null-type-string": "Foo",
+                  "obj-pattern-properties": {
+                    "bar": 2,
+                    "foo": 1
+                  },
+                  "schema-type-multi": "Foo"
+                },
+                "schema": {
+                  "$schema": "http://json-schema.org/draft-04-schema#",
+                  "additionalProperties": false,
+                  "id": "resource:/descriptors/papi/v1/schemas/CreateOrClonePropertyRequestV0.json#",
+                  "javaType": "com.akamai.luna.papi.model.PropertyCreateRequest",
+                  "properties": {
+                    "null-type-solo": {
+                      "description": "This is an unlikely edge case where `null` is the only type specified.",
+                      "type": [
+                        "null"
+                      ]
+                    },
+                    "null-type-string": {
+                      "description": "Schema `type` is string, and `\"null\"` is properly spec'd as string.",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "obj-pattern-properties": {
+                      "description": "Mapping object.",
+                      "patternProperties": {
+                        ".+": {
+                          "description": "Mapped object.",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "schema-type-multi": {
+                      "description": "Schema `type` is string. Each is a substantial, non-`null` data type. This should block publication, as `oneOf`/`anyOf` syntax is much clearer.",
+                      "type": [
+                        "string",
+                        "integer"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "null-type-string",
+                    "null-type-solo",
+                    "schema-type-multi",
+                    "obj-pattern-properties"
+                  ],
+                  "type": "object",
+                  "x-akamai": {
+                    "file-path": "schemas/three-one.yaml"
+                  }
+                }
+              }
+            },
+            "description": "Successful response."
+          }
+        },
+        "summary": "Schema tests on OpenAPI 3.1",
+        "tags": [
+          "Schemas"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://{hostname}/test-suite/v2"
+    }
+  ],
+  "x-akamai": {
+    "auth-type": "EDGE_GRID",
+    "file-path": "17-three-one.yaml",
+    "status": "INTERNAL"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

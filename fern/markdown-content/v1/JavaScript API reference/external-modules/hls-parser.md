@@ -12,7 +12,7 @@ The protocols for transferring unbounded streams of multimedia data, as describe
 
 Currently the HLS parser only accepts complete UTF-8 encoded m3u8 playlist file contents and does not work in streaming mode to parse chunks of data.
 
-> 👍 Refer to [Import a JavaScript module](doc:import-a-javascript-module) for instructions on how to load an external JavaScript module into the EdgeWorkers `main.js` file.
+> 👍 Refer to [Import a JavaScript module](import-a-javascript-module.md) for instructions on how to load an external JavaScript module into the EdgeWorkers `main.js` file.
 
 # Code samples and use cases
 
@@ -20,13 +20,13 @@ Go to the the [EdgeWorkers GitHub repo](https://github.com/akamai/edgeworkers-ex
 
 To help you learn more about how to use the HLS Parser module, we've added the following use cases to this guide. You can also find the code samples in the [EdgeWorkers GitHub repo](https://github.com/akamai/edgeworkers-examples/tree/master/delivery/media/hls/examples).
 
-- **[Manifest and Playlist Manipulation](doc:manifest-and-playlist-personalization)**  
+- **[Manifest and Playlist Manipulation](manifest-and-playlist-personalization.md)**  
   Dynamically create personalized renditions of available Video on demand (VOD) playlists.
 
-- **[Live program replacement](doc:live-program-replacement)**  
+- **[Live program replacement](live-program-replacement.md)**  
   Dynamically replace a live stream or linear program with a blackout slate during a time period and within specific geographic locations.
 
-- **[Content insertion](doc:content-insertion)**  
+- **[Content insertion](content-insertion.md)**  
   Dynamically add auxiliary media content to an existing Video on Demand (VOD) asset using Pre-Roll, Mid-Roll, and Post-Roll operations. 
 
 # Manifest Parsing
@@ -76,32 +76,11 @@ Removes all variants with specified bitrates from the playlist. Returns `true` i
 ```javascript
 preserveVariantsByBitrate(playlistObject, bitrate, tolerance=100000)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "playlistObject",
-    "0-1": "Object",
-    "0-2": "Instance of the playlist Object, MasterPlaylist, or MediaPlaylist. For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module.",
-    "1-0": "bitrate",
-    "1-1": "Array of strings",
-    "1-2": "Represents the bitrates. For example, 100000, 10000-20000, 20000-300000.  \nThe value is a decimal-integer of bits per second. It represents the average segment bitrate of the Variant Stream.",
-    "2-0": "tolerance=100000",
-    "2-1": "Number",
-    "2-2": "Bitrate tolerance. By default, bitrate filtering uses a tolerance of ±100,000 bps for comparisons.  \nFor example, a parameter value of 2200000 bps will match any bitrate value within \": \"tolerance=1000\" such as, 2185000.  \nNote: Tolerance is not considered for bitrate ranges such as, 10000-20000."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| playlistObject | Object | Instance of the playlist Object, MasterPlaylist, or MediaPlaylist. For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module. |
+| bitrate | Array of strings | Represents the bitrates. For example, 100000, 10000-20000, 20000-300000.<br/>The value is a decimal-integer of bits per second. It represents the average segment bitrate of the Variant Stream. |
+| tolerance=100000 | Number | Bitrate tolerance. By default, bitrate filtering uses a tolerance of ±100,000 bps for comparisons.<br/>For example, a parameter value of 2200000 bps will match any bitrate value within ": "tolerance=1000" such as, 2185000.<br/>Note: Tolerance is not considered for bitrate ranges such as, 10000-20000. |
 
 
 ## preserveVariantsByResolution()
@@ -153,29 +132,10 @@ Removes audio renditions that use languages not specified in the master playlist
 ```javascript
 preserveAudioRenditionByLanguage(playlistObject, language)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "playlistObject",
-    "0-1": "Object",
-    "0-2": "Instance of the playList Object, MasterPlaylist, or MediaPlaylist.For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module.",
-    "1-0": "language",
-    "1-1": "String",
-    "1-2": "Contains single or multiple languages to be preserved. For example, ['EN','FR'].  \n  \nThe value is a quoted-string containing a [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.html) language tag that identifies the language of the VALUE.  \n  \nNote: An array of any other characters ([' '], ['abc']) can remove all subtitle renditions."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| playlistObject | Object | Instance of the playList Object, MasterPlaylist, or MediaPlaylist.For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module. |
+| language | String | Contains single or multiple languages to be preserved. For example, ['EN','FR'].<br/><br/>The value is a quoted-string containing a [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.html) language tag that identifies the language of the VALUE.<br/><br/>Note: An array of any other characters ([' '], ['abc']) can remove all subtitle renditions. |
 
 
 ## preserveSubtitleRenditionByLanguage()
@@ -185,29 +145,10 @@ Removes subtitle renditions that use languages not specified in the master playl
 ```javascript
 preserveSubtitleRenditionByLanguage(playlistObject, language)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "playlistObject",
-    "0-1": "Object",
-    "0-2": "Instance of the playList Object, MasterPlaylist, or MediaPlaylist. For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module.",
-    "1-0": "language",
-    "1-1": "Array of strings",
-    "1-2": "Contains single or multiple languages to be preserved. For example, ['EN','FR'].  \n  \nThe value is a quoted-string containing a [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.html) language tag that identifies the language of the VALUE.  \n  \nNote: An array of any other characters ([' '], ['abc']) can remove all subtitle renditions."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| playlistObject | Object | Instance of the playList Object, MasterPlaylist, or MediaPlaylist. For more information, refer to the [npm](https://www.npmjs.com/package/hls-parser) documentation on this external module. |
+| language | Array of strings | Contains single or multiple languages to be preserved. For example, ['EN','FR'].<br/><br/>The value is a quoted-string containing a [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.html) language tag that identifies the language of the VALUE.<br/><br/>Note: An array of any other characters ([' '], ['abc']) can remove all subtitle renditions. |
 
 
 # Content (bumper) insertion
@@ -249,29 +190,10 @@ A holder for an auxiliary media playlist that will be inserted into the primary 
 ```javascript
 Bumper: { afterSeconds: number; auxiliaryPlaylist: Object }
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "afterSeconds",
-    "0-1": "Number",
-    "0-2": "Duration in seconds, relative to primary media playlist, where the segments from the `auxiliaryPlaylist` will be inserted.  \n  \n`MAX_VALUE` indicates the segments from the auxiliary media playlist that need to be inserted at the end in the primary media playlist.  \n  \nA value of `0` indicates that the segments from the auxiliary media playlist need to be inserted at the start in the primary media playlist.",
-    "1-0": "auxiliaryPlaylist",
-    "1-1": "Object",
-    "1-2": "Instance of the `mediaPlaylist` Object that corresponds to the auxiliary media playlist."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| afterSeconds | Number | Duration in seconds, relative to primary media playlist, where the segments from the `auxiliaryPlaylist` will be inserted.<br/><br/>`MAX_VALUE` indicates the segments from the auxiliary media playlist that need to be inserted at the end in the primary media playlist.<br/><br/>A value of `0` indicates that the segments from the auxiliary media playlist need to be inserted at the start in the primary media playlist. |
+| auxiliaryPlaylist | Object | Instance of the `mediaPlaylist` Object that corresponds to the auxiliary media playlist. |
 
 
 # LiveManifestTransformer

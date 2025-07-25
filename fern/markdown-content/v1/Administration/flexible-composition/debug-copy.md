@@ -16,7 +16,7 @@ With dynamic reactivation, teams that develop EdgeWorkers are responsible for en
 
 # Enhanced debug headers
 
-[Enhanced debug headers](doc:enable-enhanced-debug-headers) include the following details to help you understand which EdgeWorker version handled a request.
+[Enhanced debug headers](enable-enhanced-debug-headers.md) include the following details to help you understand which EdgeWorker version handled a request.
 
 - The **Revision ID** of the EdgeWorkers function. You can use the Revision ID to find the associated bill of materials.
 - The **EdgeWorker ID** in the file paths. The EdgeWorker ID appears in the log output and stack traces, to show exactly where events occurred.
@@ -40,9 +40,9 @@ X-Akamai-EdgeWorker-onClientRequest-Info: ew=64735 v0.4:jscomp-logging; status=E
 
 # JavaScript logging
 
-[JavaScript logging](doc:enable-javascript-logging) captures log messages generated during the current request. 
+[JavaScript logging](enable-javascript-logging.md) captures log messages generated during the current request. 
 
-You can deliver the JavaScript logs via [Enhanced debug headers](doc:enhanced-debug-headers) or a [DataStream 2 stream](doc:ds2-javascript-logging).
+You can deliver the JavaScript logs via [Enhanced debug headers](enhanced-debug-headers.md) or a [DataStream 2 stream](ds2-javascript-logging.md).
 
 The paths included in exceptions indicate which EdgeWorker ID and version triggered the error. Here's a enhanced debug header log output example.
 
@@ -51,45 +51,26 @@ X-Akamai-EdgeWorker-onClientRequest-Log: D:166203-0.3/main.js:6 main message|D:1
 ```
 
 EdgeWorkers JavaScript logging returns logs in the following format `<debug-level>`:`<EdgeWorker-ID>`:`<version>`:`<file>`:`<line>`:`<message>`.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Description",
-    "0-0": "`<debug-level>`",
-    "0-1": "Currently the level is always \"D\" for debug.",
-    "1-0": "`<EdgeWorker-ID>`",
-    "1-1": "The EdgeWorker ID that generated the logging message.",
-    "2-0": "`<version>`",
-    "2-1": "The EdgeWorker version that generated the logging message.",
-    "3-0": "`<file>`",
-    "3-1": "The URL encoded file name is only included if it is different from the previous log line.",
-    "4-0": "`<line>`",
-    "4-1": "The line number where the log was executed.",
-    "5-0": "`<message>`",
-    "5-1": "The URL encoded message. Includes values for any data included in the message.  \n  \n- A  vertical bar (|) separates multiple messages.  \n- All text in the string is ASCII. Invalid characters and delimiters are percent encoded.  \n- A dollar sign appends text truncated by the byte limit."
-  },
-  "cols": 2,
-  "rows": 6,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Field | Description |
+| --- | --- |
+| `<debug-level>` | Currently the level is always "D" for debug. |
+| `<EdgeWorker-ID>` | The EdgeWorker ID that generated the logging message. |
+| `<version>` | The EdgeWorker version that generated the logging message. |
+| `<file>` | The URL encoded file name is only included if it is different from the previous log line. |
+| `<line>` | The line number where the log was executed. |
+| `<message>` | The URL encoded message. Includes values for any data included in the message.<br/><br/>- A  vertical bar (|) separates multiple messages.<br/>- All text in the string is ASCII. Invalid characters and delimiters are percent encoded.<br/>- A dollar sign appends text truncated by the byte limit. |
 
 
 # DataStream 2 logs
 
-[DataStream 2 log](doc:datastream-2-integration) details now include a field for the Revision ID. The format of the log output is.
+[DataStream 2 log](datastream-2-integration.md) details now include a field for the Revision ID. The format of the log output is.
 
 `//[EdgeWorker-Id]/[Version]/[Event Handler]/[Off Reason]/[Logic Executed]/[RevisionID]/[Status]/#[Metrics]` 
 
 Here's an example of the usage information output:  
 `//4380/4.0/1/-/0/4/#1,2\//4380/4.0/4/-/0/4/#0,0\//4380/4.0/5/-/1/1/#0,0`
 
-A [Revision ID](doc:terminology#revision-id) is generated each time a dynamic reactivation occurs. If a dynamic reactivation did not occur a dash (-) appears to represent this field in the log output. 
+A [Revision ID](terminology.md#revision-id) is generated each time a dynamic reactivation occurs. If a dynamic reactivation did not occur a dash (-) appears to represent this field in the log output. 
 
 # Fallback to the previous Revision
 
@@ -103,7 +84,9 @@ If a team in your organization activates a child EdgeWorker with errors, the par
 
 4. Click the **Activate revision** button and select the Revision that you want to fallback to
 
-![](https://techdocs.akamai.com/edgeworkers/img/activateFallback-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/activateFallback-v1.png" alt="Image"/>
+</Frame>
 
 5. Click the** Activate revision** button.
 
@@ -113,7 +96,7 @@ If a team in your organization activates a child EdgeWorker with errors, the par
 
 These error codes appear in the EdgeWorkers Management application to keep you informed about limitations and issues related to flexible composition.
 
-You can find a full list of error codes in the [Error codes - EdgeWorkers Management Application](doc:error-codes) section of this guide.
+You can find a full list of error codes in the [Error codes - EdgeWorkers Management Application](error-codes.md) section of this guide.
 
 |        |                                                                                                                           |
 | :----- | :------------------------------------------------------------------------------------------------------------------------ |

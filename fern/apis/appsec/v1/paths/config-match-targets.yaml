@@ -1,0 +1,69 @@
+x-akamai:
+  file-path: paths/config-match-targets.yaml
+  path-info: /configs/{configId}/versions/{versionNumber}/match-targets
+parameters:
+- $ref: ../parameters/config-id-path.yaml
+- $ref: ../parameters/version-number-path.yaml
+post:
+  operationId: post-match-targets
+  summary: Create a match target
+  tags:
+  - Match targets
+  description: |
+    Creates a new Match Target in the specified Configuration Version. _Products:_ Kona Site Defender, App & API Protector with the Advanced Security module.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        example:
+          $ref: ../examples/match-target-post.json
+        schema:
+          $ref: ../schemas/match-target.yaml
+  responses:
+    201:
+      description: |
+        Successfully created a  match target.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/match-target-website-get-200.json
+          schema:
+            $ref: ../schemas/match-target.yaml
+    400:
+      $ref: ../errors/400.yaml
+    403:
+      description: |
+        [Forbidden](ref:403). You don't have access to match targets in this security configuration.
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). Security configuration version wasn't found.
+      $ref: ../errors/404.yaml
+get:
+  operationId: get-match-targets
+  summary: List match targets
+  tags:
+  - Match targets
+  description: |
+    Returns match targets defined in the specified security configuration version. _Products:_ Kona Site Defender, App & API Protector with the Advanced Security module.
+  parameters:
+  - $ref: ../parameters/policy-id-query.yaml
+  - $ref: ../parameters/include-child-object-name-query.yaml
+  responses:
+    200:
+      description: |
+        Successfully returned match targets.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/match-targets-200.json
+          schema:
+            $ref: ../schemas/match-targets.yaml
+    403:
+      description: |
+        [Forbidden](ref:403). You don't have access to match targets in this security configuration.
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). Security configuration version wasn't found.
+      $ref: ../errors/404.yaml

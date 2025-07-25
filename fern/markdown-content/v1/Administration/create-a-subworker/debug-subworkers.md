@@ -11,28 +11,14 @@ updatedAt: "Fri Apr 26 2024 11:38:18 GMT+0000 (Coordinated Universal Time)"
 To receive enhanced debugging information about EdgeWorkers executions on sub-requests: 
 
 - Pass the `akamai-x-ew-subworkers` pragma header.
-- Include the other pragma headers required for [Enhanced debug headers](doc:enhanced-debug-headers).  
+- Include the other pragma headers required for [Enhanced debug headers](enhanced-debug-headers.md).  
 - The debugging headers and pragmas are automatically forwarded on any sub-requests made by the EdgeWorker. 
 - The debug response headers are collected and returned on the response. 
 
 When you specify `akamai-x-ew-subworkers`, the following set of pragmas and headers are automatically forwarded on sub-requests.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Forwarded request pragmas",
-    "h-1": " Response headers",
-    "0-0": "\\*`akamai-x-ew-subworkers`  \n`akamai-x-ew-debug`  \n`akamai-x-ew-onclientrequest`  \n`akamai-x-ew-onclientresponse`  \n`akamai-x-ew-onoriginrequest`  \n`akamai-x-ew-onoriginresponse`  \n`akamai-x-ew-debug-subs`  \n`akamai-x-ew-debug-rp`",
-    "0-1": "Debug response headers include the request ID.  \nThe request ID identifies the headers associated with specific sub-requests.  \n  \n`x-akamai-edgeworker-onclientrequest-info`  \n`x-akamai-edgeworker-onclientresponse-info`  \n`x-akamai-edgeworker-onoriginrequest-info`  \n`x-akamai-edgeworker-onoriginresponse-info`  \n`x-akamai-edgeworker-onclientrequest-log`  \n`x-akamai-edgeworker-onclientresponse-log`  \n`x-akamai-edgeworker-onoriginrequest-log`  \n`x-akamai-edgeworker-onoriginrequest-log`  \n`x-akamai-edgeworker-subrequests`"
-  },
-  "cols": 2,
-  "rows": 1,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Forwarded request pragmas |  Response headers |
+| --- | --- |
+| \*`akamai-x-ew-subworkers`<br/>`akamai-x-ew-debug`<br/>`akamai-x-ew-onclientrequest`<br/>`akamai-x-ew-onclientresponse`<br/>`akamai-x-ew-onoriginrequest`<br/>`akamai-x-ew-onoriginresponse`<br/>`akamai-x-ew-debug-subs`<br/>`akamai-x-ew-debug-rp` | Debug response headers include the request ID.<br/>The request ID identifies the headers associated with specific sub-requests.<br/><br/>`x-akamai-edgeworker-onclientrequest-info`<br/>`x-akamai-edgeworker-onclientresponse-info`<br/>`x-akamai-edgeworker-onoriginrequest-info`<br/>`x-akamai-edgeworker-onoriginresponse-info`<br/>`x-akamai-edgeworker-onclientrequest-log`<br/>`x-akamai-edgeworker-onclientresponse-log`<br/>`x-akamai-edgeworker-onoriginrequest-log`<br/>`x-akamai-edgeworker-onoriginrequest-log`<br/>`x-akamai-edgeworker-subrequests` |
 
 
 \*The `akamai-x-ew-subworkers` pragma response includes the `Akamai-EW-Trace` and the `Akamai-X-EW-Subworkers-Log` forward request headers.
@@ -70,7 +56,7 @@ X-Akamai-Edgeworker-Subrequests-10f5e61: ew=1147649205; evt=CReq; id=1; method=G
 
 ## JWT authentication token security
 
-If your subWorkers make calls to EdgeWorkers in different accounts you to need to add an `Akamai-EW-Trace` request header that contains a JSON Web Token (JWT) authentication token for each account. See [Specify multiple trace headers](doc:debug-subworkers#specify-multiple-trace-headers) for more information.
+If your subWorkers make calls to EdgeWorkers in different accounts you to need to add an `Akamai-EW-Trace` request header that contains a JSON Web Token (JWT) authentication token for each account. See [Specify multiple trace headers](debug-subworkers.md#specify-multiple-trace-headers) for more information.
 
 To keep the `Akamai-EW-Trace` tokens secure, headers are automatically removed from sub-requests:
 
@@ -95,7 +81,7 @@ There are three properties on three accounts with trace headers EW-Trace-1, EW-T
 
 SubWorkers let you make requests to EdgeWorkers created in different properties or accounts.
 
-You need to specify an additional trace header for each separate property in an enhanced debug request header. For more information on how to create a JWT token, go the [Enhanced debug headers](doc:enable-enhanced-debug-headers#request-enhanced-debug-headers)section in this guide.
+You need to specify an additional trace header for each separate property in an enhanced debug request header. For more information on how to create a JWT token, go the [Enhanced debug headers](enable-enhanced-debug-headers.md#request-enhanced-debug-headers)section in this guide.
 
 To do this, add a second `Akamai-EW-Trace` header to the request.
 
@@ -148,7 +134,7 @@ The overall response header size limit applies to all response headers. It does 
 
 Each EdgeWorkers event can generate a 1 KB log. This means that a single subWorker invocation can potentially generate a 4 KB log. This makes logging the largest contributor to the subWorkers debugging response headers.
 
-If your log response headers are hitting these limits, making it difficult to debug a particular subWorker, you can specify the `akamai-x-ew-subworkers-log` request header. The value of this header should be a comma separated list of  the EdgeWorker IDs you want to include in the logs. Any EdgeWorkers not on this list will not produce log headers for the request. If, however, you configured [DataStream 2](doc:datastream-2-integration) for EdgeWorkers the EdgeWorker IDs not included in the list will appear in the DataStream 2 logs.
+If your log response headers are hitting these limits, making it difficult to debug a particular subWorker, you can specify the `akamai-x-ew-subworkers-log` request header. The value of this header should be a comma separated list of  the EdgeWorker IDs you want to include in the logs. Any EdgeWorkers not on this list will not produce log headers for the request. If, however, you configured [DataStream 2](datastream-2-integration.md) for EdgeWorkers the EdgeWorker IDs not included in the list will appear in the DataStream 2 logs.
 
 This request specify a single EdgeWorker ID to log `akamai-x-ew-subworkers-log: 809212161`.
 

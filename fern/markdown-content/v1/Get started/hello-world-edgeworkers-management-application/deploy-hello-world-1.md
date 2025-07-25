@@ -14,8 +14,9 @@ Use the EdgeWorkers Management application to deploy the Hello World code bundle
 1. From the EdgeWorkers IDs page, select the **Hello World EdgeWorker ID** that you just created.
 
 2. Click the **Create version** button.
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/edgeworker-new-version-v1.png",null,"Create EdgeWorker version"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeworker-new-version-v1.png" alt="Image"/>
+</Frame>
 
 3. Drag and drop the Hello World code bundle onto the window and click the **Create version** button.
 
@@ -31,4 +32,4 @@ Use the EdgeWorkers Management application to deploy the Hello World code bundle
 
 4. Select the **Staging** network to test the Hello World code sample.
 
-5. Next, follow these instructions to [test the Hello World code bundle](doc:test-hello-world-1).
+5. Next, follow these instructions to [test the Hello World code bundle](test-hello-world-1.md).

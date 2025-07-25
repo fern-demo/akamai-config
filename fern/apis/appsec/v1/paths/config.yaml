@@ -1,0 +1,88 @@
+x-akamai:
+  file-path: paths/config.yaml
+  path-info: /configs/{configId}
+parameters:
+- $ref: ../parameters/config-id-path.yaml
+get:
+  operationId: get-config
+  summary: Get a security configuration
+  tags:
+  - General configuration settings
+  description: |
+    Retrieves the configuration details.
+  parameters:
+  - $ref: ../parameters/include-hostnames-query.yaml
+  responses:
+    200:
+      description: |
+        Successful response.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/configuration-200.json
+          schema:
+            $ref: ../schemas/config-get.yaml
+    403:
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). Security configuration wasn't found.
+      $ref: ../errors/404.yaml
+put:
+  operationId: put-config
+  summary: Rename a security configuration
+  tags:
+  - General configuration settings
+  description: |
+    Update the name of your security configuration. _Products:_ All.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        example:
+          $ref: ../examples/config-rename-200.json
+        schema:
+          $ref: ../schemas/config-rename.yaml
+  responses:
+    200:
+      description: |
+        Successfully renamed the security configuration.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/config-rename-200.json
+          schema:
+            $ref: ../schemas/config-rename.yaml
+    400:
+      $ref: ../errors/400.yaml
+    403:
+      description: |
+        [Forbidden](ref:403). You don't have access to this security configuration.
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). Security configuration wasn't found.
+      $ref: ../errors/404.yaml
+delete:
+  operationId: delete-config
+  summary: Delete a configuration
+  tags:
+  - General configuration settings
+  description: |
+    Deletes the specified security configuration. _Products:_ All.
+  responses:
+    204:
+      description: |
+        Successfully deleted the security configuration.
+    400:
+      description: |
+        [Invalid](ref:400). Security configuration is active in a network and not editable.
+      $ref: ../errors/400.yaml
+    403:
+      description: |
+        [Forbidden](ref:403). You don't have access to this security configuration.
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). Security configuration version wasn't found.
+      $ref: ../errors/404.yaml

@@ -6,17 +6,12 @@ hidden: false
 createdAt: "Tue Sep 27 2022 13:34:15 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Tue Mar 25 2025 12:40:05 GMT+0000 (Coordinated Universal Time)"
 ---
-The EdgeWorkers Code Profiler helps you gain insight about the CPU performance and memory usage consumed by your EdgeWorkers code. You can view the profiling information in a V8 compatible profiling tool to see which section of your code is consuming the most CPU timing resources and the most memory [resources](doc:resource-tier-limitations). 
+The EdgeWorkers Code Profiler helps you gain insight about the CPU performance and memory usage consumed by your EdgeWorkers code. You can view the profiling information in a V8 compatible profiling tool to see which section of your code is consuming the most CPU timing resources and the most memory [resources](resource-tier-limitations.md). 
 
-> 👍 For more information about how to use the profiling information to improve your code, read the [Code profiler tutorial](doc:code-profiler-tutorial).
+> 👍 For more information about how to use the profiling information to improve your code, read the [Code profiler tutorial](code-profiler-tutorial.md).
 
 Watch this video to help you get started and to learn more about how to identify potential performance issues associated with EdgeWorkers execution.
-
-[block:html]
-{
-  "html": "\n<iframe width=\"512\" height=\"288\" src=\"https://www.youtube.com/embed/fOatzvRtalc\" title=\"Akamai EdgeWorkers Code Profiler\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n"
-}
-[/block]
+<iframe width="512" height="288" src="https://www.youtube.com/embed/fOatzvRtalc" title="Akamai EdgeWorkers Code Profiler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 # Prerequisites
@@ -37,56 +32,31 @@ Before you can use the EdgeWorkers Code Profiler you need to:
 
 Once you've completed the prerequisites, the EdgeWorkers Code Profiler will appear in the bottom panel of the EdgeWorkers VS Code extension or IntelliJ plugin.
 
-> 📘 Profiling is currently limited to the [Akamai staging network](doc:manage-edgeworkers#activate-an-edgeworker-version).
+> 📘 Profiling is currently limited to the [Akamai staging network](manage-edgeworkers.md#activate-an-edgeworker-version).
 
 1. To profile your code, enter the URL where your EdgeWorkers function is configured to execute. 
 
 Here's an example of the Code Profiler in the **EdgeWorkers VS Code extension**.   
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/vscodeProfiler-v2.jpg",
-        null,
-        "Code Profiler"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/vscodeProfiler-v2.jpg" alt="Image"/>
+</Frame>
 
 
 Here's an example of the Code Profiler in the **EdgeWorkers IntelliJ Plugin**.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/injellijCodeProfiler-v2.jpg",
-        null,
-        "Code Profiler"
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/injellijCodeProfiler-v2.jpg" alt="Image"/>
+</Frame>
 
 
 2. Select a Profiling type, either **CPU Profiling** or **Memory Profiling**. 
 
 3. Select **Force Cold Start** if you want to run the EdgeWorkers initialization code first.
 
-   Cold start profiling results include information about code that runs outside an EdgeWorkers event handler. You can use these insights to help improve the [wall time](doc:resource-tier-limitations) consumption of your code during EdgeWorkers events.
+   Cold start profiling results include information about code that runs outside an EdgeWorkers event handler. You can use these insights to help improve the [wall time](resource-tier-limitations.md) consumption of your code during EdgeWorkers events.
 
 4. The IntelliJ plugin lets you apply the following additional parameters.
 
-- Select an [HTTP Method](doc:event-handler-functions#event-handler-methods) supported by EdgeWorkers to use.
+- Select an [HTTP Method](event-handler-functions.md#event-handler-methods) supported by EdgeWorkers to use.
 
 - Specify the granularity of the **Sampling Interval** to help display faster running segments of code. Note that you can create a profile that's too big to return. 
 
@@ -99,58 +69,36 @@ The EdgeWorkers Code Profiler operates on a per event handler basis. Event handl
 8. Click the **Run Profiler** button to get a profile of the JavaScript code.
 
 Here's an example of the profiling output in the EdgeWorkers VS Code extension.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/codeProfilerOutput-v1.png",
-        null,
-        "Code Profiler output"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/codeProfilerOutput-v1.png" alt="Image"/>
+</Frame>
 
 
 Here's an example of the profiling output in the EdgeWorkers IntelliJ Plugin.
 
- ![Code Profiler output](https://techdocs.akamai.com/edgeworkers/img/edgeWorkersRunIntellij-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeWorkersRunIntellij-v1.png" alt="Code Profiler output"/>
+</Frame>
 
 9. Click on the “flame” icon in the top right corner of the profiler tool to view the EdgeWorkers execution details in a [flamegraph](https://www.brendangregg.com/flamegraphs.html). Flamegraphs illustrate the stack trace and the amount of time spent in each stack frame. 
 
 Here's an example of a flamegraph generated using the EdgeWorkers VS Code Extension. 
 
- ![Code Profiler flame graph](https://techdocs.akamai.com/edgeworkers/img/codeProfilerFlameGraph-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/codeProfilerFlameGraph-v1.png" alt="Code Profiler flame graph"/>
+</Frame>
 
 Here's an example of a flamegraph generated using the EdgeWorkers IntelliJ Plugin. 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/edgeWorkersIntelllijFllameGraph.png",
-        null,
-        "Code Profiler flame graph"
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeWorkersIntelllijFllameGraph.png" alt="Image"/>
+</Frame>
 
 
 # Use the CLI to profile your code
 
 If you can’t use the VS Code extension, the IntelliJ plugin, or if you need more flexibility you can use the CLI to profile your code.  
 
-> 📘 Profiling is currently limited to the [Akamai staging network](doc:manage-edgeworkers#activate-an-edgeworker-version).
+> 📘 Profiling is currently limited to the [Akamai staging network](manage-edgeworkers.md#activate-an-edgeworker-version).
 
 ## Request code profiling information
 
@@ -196,7 +144,7 @@ Akamai-EW-Trace: eyJ0eXAiOiJKV1Qi ... iu1XOS9eJOl-54Yw
 
 6. To profile your code during a cold start include the `x-ew-code-profile-during-cold-start:on` header in the request.
 
-   A cold start profiling request runs the EdgeWorkers initialization code first. The results include information about code that runs outside an EdgeWorkers event handler. You can use these insights to help improve the [wall time](doc:resource-tier-limitations) consumption of your code during EdgeWorkers events.
+   A cold start profiling request runs the EdgeWorkers initialization code first. The results include information about code that runs outside an EdgeWorkers event handler. You can use these insights to help improve the [wall time](resource-tier-limitations.md) consumption of your code during EdgeWorkers events.
 
 7. Issue an HTTP request with the JWT token and an event handler.
 

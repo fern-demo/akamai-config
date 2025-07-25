@@ -10,7 +10,7 @@ EdgeWorkers built-in reports help you gain insight about the performance and exe
 
 > 📘 Go to the [Billing Center](https://control.akamai.com/apps/billing/#/bills/your-bills) for accurate EdgeWorkers event numbers. The event numbers provided in the EdgeWorkers reports may be impacted by network congestion. For more information refer to this [Known issue](https://techdocs.akamai.com/edgeworkers/docs/known-issues#use-billing-center-for-accurate-edgeworkers-event-data).
 
-These reports can also help monitor the health of your EdgeWorkers and provide information about whether your EdgeWorkers functions are operating within the defined [product limits](doc:limitations). 
+These reports can also help monitor the health of your EdgeWorkers and provide information about whether your EdgeWorkers functions are operating within the defined [product limits](limitations.md). 
 
 ## View the Reporting dashboard
 
@@ -18,62 +18,21 @@ Follow these steps to view the EdgeWorkers Management application and the built-
 
 > 📘 The EdgeWorkers option is only available under **CDN** if EdgeWorkers is part of your contract.
 
-1. Log in to <<PORTAL_NICKNAME>>.
+1. Log in to {{PORTAL_NICKNAME}}.
 
-2. Go to <<PORTAL_ICON_ROOT>> <<CHAR_MENU_DELIMITER>> **CDN** <<CHAR_MENU_DELIMITER>> **EdgeWorkers**.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/reportsOption2-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "340px",
-      "border": true
-    }
-  ]
-}
-[/block]
+2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/reportsOption2-v1.png" alt="Image"/>
+</Frame>
 
 
 3. Click the **EdgeWorker Reports** tab.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/reportsOption3-v2.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "440px"
-    }
-  ]
-}
-[/block]
-
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/reportsOption3-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "3px"
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/reportsOption3-v2.png" alt="Image"/>
+</Frame>
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/reportsOption3-v1.png" alt="Image"/>
+</Frame>
 
 
 ***
@@ -84,29 +43,13 @@ You can customize the data included in your reports. The available customization
 
 > 👍 Each time you change data options click the **Update Reports** button to refresh the report contents.
 
- ![EdgeWorkers reports](https://techdocs.akamai.com/edgeworkers/img/edgeWorkersReports1-v2.png)
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Data option",
-    "h-1": "Description",
-    "0-0": "Select EdgeWorker IDs",
-    "0-1": "Limit your report to specific EdgeWorker IDs. You can select up to 10 EdgeWorker IDs. Once you select the EdgeWorker IDs you can go to the <strong>Version</strong> tab and select which versions of each selected EdgeWorker ID to include in the report.",
-    "1-0": "Select versions",
-    "1-1": "By default the report includes all versions of each selected EdgeWorker ID. You can, however, limit the EdgeWorker versions in your reports.",
-    "2-0": "Select event handlers",
-    "2-1": "Limit your report to the selected event handlers. For more information go to [Event handler functions](doc:event-handler-functions).",
-    "3-0": "Select execution statuses",
-    "3-1": "Create reports based on the successful, failed, or both execution statuses. You can also choose specific failure types.  \n**Note: **You can't filter sub-requests by execution status.",
-    "4-0": "Date range",
-    "4-1": "Filter report output to a specific date range."
-  },
-  "cols": 2,
-  "rows": 5,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/edgeWorkersReports1-v2.png" alt="EdgeWorkers reports"/>
+</Frame>
+| Data option | Description |
+| --- | --- |
+| Select EdgeWorker IDs | Limit your report to specific EdgeWorker IDs. You can select up to 10 EdgeWorker IDs. Once you select the EdgeWorker IDs you can go to the <strong>Version</strong> tab and select which versions of each selected EdgeWorker ID to include in the report. |
+| Select versions | By default the report includes all versions of each selected EdgeWorker ID. You can, however, limit the EdgeWorker versions in your reports. |
+| Select event handlers | Limit your report to the selected event handlers. For more information go to [Event handler functions](event-handler-functions.md). |
+| Select execution statuses | Create reports based on the successful, failed, or both execution statuses. You can also choose specific failure types.<br/>**Note: **You can't filter sub-requests by execution status. |
+| Date range | Filter report output to a specific date range. |

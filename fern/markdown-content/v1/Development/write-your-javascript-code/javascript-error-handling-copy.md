@@ -8,7 +8,7 @@ updatedAt: "Tue Jul 09 2024 11:17:44 GMT+0000 (Coordinated Universal Time)"
 ---
 When writing the JavaScript code for your EdgeWorkers functions consider the areas where errors are likely to occur. You should try to configure fallback options to handle these potential errors inside of the JavaScript code.
 
-> 📘 Errors not caught in JavaScript can be detected in Property Manager and handled through Site Failover behaviors. See [Configure Site Failover](doc:site-failover) for more information.
+> 📘 Errors not caught in JavaScript can be detected in Property Manager and handled through Site Failover behaviors. See [Configure Site Failover](site-failover.md) for more information.
 
 # Try/catch blocks
 
@@ -50,13 +50,13 @@ export function onClientRequest (request) {
 
 # Async/Await
 
-The code for handling [rejected promises](doc:javascript-error-handling#rejected-promises) is driven by the [JavaScript specifications](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). 
+The code for handling [rejected promises](javascript-error-handling.md#rejected-promises) is driven by the [JavaScript specifications](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). 
 
 In many cases, you can use the async/await pattern to simplify this code.  Async/await is syntactic sugar. It lets you catch errors in the more familiar try/catch syntax by using the Async/await pattern in an awaited promise. 
 
 For more information you can review this [async/await tutorial](https://javascript.info/async-await).  
 
-The code below is functionally equivalent to the previous [rejected promises](doc:javascript-error-handling#rejected-promises) example. Internally, the JavaScript runtime creates the necessary handlers to execute code when the promise returned by `httpRequest()` function is resolved or rejected.
+The code below is functionally equivalent to the previous [rejected promises](javascript-error-handling.md#rejected-promises) example. Internally, the JavaScript runtime creates the necessary handlers to execute code when the promise returned by `httpRequest()` function is resolved or rejected.
 
 ```javascript
 export async function onClientRequest (request) {

@@ -1,8 +1,0 @@
----
-title: "Nov 11, 2024 — Support for OPTIONS HTTP method"
-slug: "options-http-method"
-type: ""
-createdAt: "Mon Nov 11 2024 13:48:00 GMT+0000 (Coordinated Universal Time)"
-hidden: false
----
-The EdgeWorkers event handlers now support the OPTIONS HTTP method. To use the OPTIONS method you need to add the `PMUSER_EW_ENABLE_OPTIONS` variable to your rule and set the value to `true`. The name of the variable must be UPPERCASE.

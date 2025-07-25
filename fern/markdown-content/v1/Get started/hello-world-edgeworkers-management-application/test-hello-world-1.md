@@ -9,8 +9,8 @@ updatedAt: "Fri Nov 17 2023 18:23:40 GMT+0000 (Coordinated Universal Time)"
 During the testing process you can use these resources and tips and to help you troubleshoot:
 
 - To handle exceptions cleanly write `try` and `catch` blocks in your JavaScript code. 
-- Refer to the [Limitations](doc:limitations) section for information about what you should keep in mind when designing your EdgeWorkers functions. You can also review a list of the currently supported delivery products.
-- Use [Site Failover](doc:site-failover)  to define what action to take in the event that an EdgeWorkers function fails.
+- Refer to the [Limitations](limitations.md) section for information about what you should keep in mind when designing your EdgeWorkers functions. You can also review a list of the currently supported delivery products.
+- Use [Site Failover](site-failover.md)  to define what action to take in the event that an EdgeWorkers function fails.
 - Note that currently EdgeWorkers functions are supported on the both Enhanced TLS and Standard TLS networks. 
 
 1. Use this curl request, resolved to staging, to exercise the Hello World EdgeWorker.

@@ -30,7 +30,7 @@ let response = await httpRequest(url, opt);
 
 Returns the methods that specify the HTTP response in cache for an HTTP request.
 
-For more information see the [CacheKey Object](doc:cachekey-object).
+For more information see the [CacheKey Object](cachekey-object.md).
 
 ## clientIp
 
@@ -56,7 +56,7 @@ A unique identifier in the form of an unsigned integer that is used for reportin
 
 Returns an object that contains properties specifying the client device characteristics.
 
-For more information see the [Device Object](doc:device-object).
+For more information see the [Device Object](device-object.md).
 
 ## host
 
@@ -126,7 +126,7 @@ request.url
 
 Returns an object that contains properties specifying the geographic location.
 
-For more information see the [User Location Object](doc:user-location-object).
+For more information see the [User Location Object](user-location-object.md).
 
 # Methods
 
@@ -134,19 +134,19 @@ The following methods are available for the EdgeWorkers Request Object.
 
 | Methods                                             | onClient Request | onOrigin Request | onOrigin Response | onClient Response | response Provider |
 | :-------------------------------------------------- | :--------------- | :--------------- | :---------------- | :---------------- | :---------------- |
-| [respondWith()](doc:request-object#respondwith)     | ✓                | ✓                | ✓                 | ✓                 |                   |
-| [addHeader()](doc:request-object#addheader)         | ✓                | ✓                |                   |                   |                   |
-| [getHeader()](doc:request-object#getheader)         | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
-| [getHeaders()](doc:request-object#getheaders)       | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
-| [setHeader()](doc:request-object#setheader)         | ✓                | ✓                |                   |                   |                   |
-| [removeHeader()](doc:request-object#removeheader)   | ✓                | ✓                |                   |                   |                   |
-| [getVariable()](doc:request-object#getvariable)     | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
-| [setVariable()](doc:request-object#setvariable)     | ✓                | ✓                | ✓                 | ✓                 |                   |
-| [route()](doc:request-object#route)                 | ✓                |                  |                   |                   |                   |
-| [text()](doc:request-object#text)                   |                  |                  |                   |                   | ✓                 |
-| [json()](doc:request-object#json)                   |                  |                  |                   |                   | ✓                 |
-| [arrayBuffer()](doc:request-object#arraybuffer)     |                  |                  |                   |                   | ✓                 |
-| [wasTerminated()](doc:request-object#wasterminated) | ✓                | ✓                |                   |                   |                   |
+| [respondWith()](request-object.md#respondwith)     | ✓                | ✓                | ✓                 | ✓                 |                   |
+| [addHeader()](request-object.md#addheader)         | ✓                | ✓                |                   |                   |                   |
+| [getHeader()](request-object.md#getheader)         | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
+| [getHeaders()](request-object.md#getheaders)       | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
+| [setHeader()](request-object.md#setheader)         | ✓                | ✓                |                   |                   |                   |
+| [removeHeader()](request-object.md#removeheader)   | ✓                | ✓                |                   |                   |                   |
+| [getVariable()](request-object.md#getvariable)     | ✓                | ✓                | ✓                 | ✓                 | ✓                 |
+| [setVariable()](request-object.md#setvariable)     | ✓                | ✓                | ✓                 | ✓                 |                   |
+| [route()](request-object.md#route)                 | ✓                |                  |                   |                   |                   |
+| [text()](request-object.md#text)                   |                  |                  |                   |                   | ✓                 |
+| [json()](request-object.md#json)                   |                  |                  |                   |                   | ✓                 |
+| [arrayBuffer()](request-object.md#arraybuffer)     |                  |                  |                   |                   | ✓                 |
+| [wasTerminated()](request-object.md#wasterminated) | ✓                | ✓                |                   |                   |                   |
 
 ## respondWith()
 
@@ -171,38 +171,15 @@ respondWith(status, headers, body, [deny_reason])
 ```
 
 Review the table for information about the available parameters.  This method can be modified during the `onClientRequest`,  `onClientResponse`, `onOrigin Request`, and `onOrigin Response` events.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "status",
-    "0-1": "Integer",
-    "0-2": "HTTP status code <p><strong>Note:</strong>  The status supports <strong>2xx Success</strong> , <strong>3xx Redirection</strong> , <strong>4xx Client Error</strong> , and <strong>5xx Server Error</strong> status codes. An exception is thrown if the status code is outside the <strong>2xx</strong> to <strong>5xx</strong> range.)</p>",
-    "1-0": "headers",
-    "1-1": "Object",
-    "1-2": "Properties used as key:value pairs for the response header",
-    "2-0": "body",
-    "2-1": "String",
-    "2-2": "Content of the response body",
-    "3-0": "deny_reason",
-    "3-1": "String",
-    "3-2": "(optional) Deny reason when the status code is a 403"
-  },
-  "cols": 3,
-  "rows": 4,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| status | Integer | HTTP status code <p><strong>Note:</strong>  The status supports <strong>2xx Success</strong> , <strong>3xx Redirection</strong> , <strong>4xx Client Error</strong> , and <strong>5xx Server Error</strong> status codes. An exception is thrown if the status code is outside the <strong>2xx</strong> to <strong>5xx</strong> range.)</p> |
+| headers | Object | Properties used as key:value pairs for the response header |
+| body | String | Content of the response body |
+| deny_reason | String | (optional) Deny reason when the status code is a 403 |
 
 
-> 📘 By default, you cannot add a "Set-Cookie" header to the `request.respondWith()` header. You need to enable it with the metadata header tag described on the [cookies](doc:cookies) page. Other response headers are supported.
+> 📘 By default, you cannot add a "Set-Cookie" header to the `request.respondWith()` header. You need to enable it with the metadata header tag described on the [cookies](cookies.md) page. Other response headers are supported.
 
 > 📘 If you apply EdgeWorkers and an Edge Redirect Cloudlet to the same end user request, the Cloudlet cannot set the Location header when the EdgeWorker runs a `respondWith()` method.
 
@@ -229,29 +206,10 @@ addHeader(name, value)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "New header name  \nShould conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names",
-    "1-0": "value",
-    "1-1": "String or Array",
-    "1-2": "New Header value(s)  \nSupports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf)"
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | New header name<br/>Should conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names |
+| value | String or Array | New Header value(s)<br/>Supports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf) |
 
 
 ```javascript
@@ -312,29 +270,10 @@ setHeader(name, value)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of the header  \nShould conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names",
-    "1-0": "value",
-    "1-1": "String",
-    "1-2": "Value of the header  \nSupports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf)"
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of the header<br/>Should conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names |
+| value | String | Value of the header<br/>Supports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf) |
 
 
 > 📘 EdgeWorkers cannot manipulate Akamai headers added for internal use. These headers typically start with 'X-Ak' and 'Akamai-'.
@@ -378,26 +317,9 @@ getVariable(name)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameters",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Names of the user-defined variables  \n  \nIf no variables exist, a value of `undefined` is returned."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameters | Type | Description |
+| --- | --- | --- |
+| name | String | Names of the user-defined variables<br/><br/>If no variables exist, a value of `undefined` is returned. |
 
 
 > 📘 `PMUSER_` variables with a security setting of **sensitive** are not available within an EdgeWorkers function using `getVariable`.
@@ -459,32 +381,11 @@ Review the table for information about the available parameters.
 | destination | Object | A JavaScript object containing the optional properties. An error is  thrown if the input is not a JavaScript Object. |
 
 Review the table below for information about the optional properties.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Properties",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "path",
-    "0-1": "String",
-    "0-2": "New path for the outbound origin request. <p>Include the complete URI path beginning with a forward slash (/). If the URI includes a filename, the file extension is also required. <p>This setting overrides any previously defined Property Manager behaviors that attempt to set the forward path.</p><p><strong>Note:</strong>  A Property Manager behavior that attempts to set the forward path after the EdgeWorker runs will override this EdgeWorkers setting.</p>",
-    "1-0": "query",
-    "1-1": "String",
-    "1-2": "New query string for the outbound origin request.",
-    "2-0": "origin",
-    "2-1": "String",
-    "2-2": "New outbound origin request to a preconfigured origin identifier in the delivery property. <p><strong>Note:</strong>  See [Set up a Conditional Origin Group rule](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins#set-up-a-conditional-origin-group-rule) in the Cloudlets documentation for instructions on how to set up the origins to use with your EdgeWorkers."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Properties | Type | Description |
+| --- | --- | --- |
+| path | String | New path for the outbound origin request. <p>Include the complete URI path beginning with a forward slash (/). If the URI includes a filename, the file extension is also required. <p>This setting overrides any previously defined Property Manager behaviors that attempt to set the forward path.</p><p><strong>Note:</strong>  A Property Manager behavior that attempts to set the forward path after the EdgeWorker runs will override this EdgeWorkers setting.</p> |
+| query | String | New query string for the outbound origin request. |
+| origin | String | New outbound origin request to a preconfigured origin identifier in the delivery property. <p><strong>Note:</strong>  See [Set up a Conditional Origin Group rule](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins#set-up-a-conditional-origin-group-rule) in the Cloudlets documentation for instructions on how to set up the origins to use with your EdgeWorkers. |
 
 
 > 📘 You may have origins that produce different content for the same URL. When you are changing this kind of origin you need to ensure that you use the origin server hostname in the cache key. For more information see the [Cache Key Hostname](https://techdocs.akamai.com/property-mgr/docs/configure-unique-origin#cache-key-hostname) documentation.
@@ -499,7 +400,7 @@ request.route({origin: "origin-1", path: "/example.html", query: "a=1&b=2"});
 
 Reads the body to completion and returns a promise that resolves to a string containing the full body. The request is decoded as UTF-8, using the replacement character on encoding errors.
 
-The maximum request size is 16 KB. If the request exceeds this limit the [promise](doc:best-practices-for-asynchronous-processing) is rejected.  
+The maximum request size is 16 KB. If the request exceeds this limit the [promise](best-practices-for-asynchronous-processing.md) is rejected.  
 This method can only be called during the `responseProvider` event.
 
 ```javascript
@@ -520,7 +421,7 @@ export async function responseProvider (request) {
 
 Reads the body to completion. Returns a promise that resolves to an Object that is a result of parsing the body JSON.
 
-The maximum request size is 16 KB. If the request exceeds this limit the [promise](doc:best-practices-for-asynchronous-processing) is rejected.  
+The maximum request size is 16 KB. If the request exceeds this limit the [promise](best-practices-for-asynchronous-processing.md) is rejected.  
 This method can only be called during the `responseProvider` event.
 
 ```javascript
@@ -538,7 +439,7 @@ export async function responseProvider (request)  {
 
 Reads the body to completion. Returns a promise that resolves to an ArrayBuffer containing the bytes of the request. 
 
-The maximum request size is 16 KB. If the request exceeds this limit the [promise](doc:best-practices-for-asynchronous-processing) is rejected.  
+The maximum request size is 16 KB. If the request exceeds this limit the [promise](best-practices-for-asynchronous-processing.md) is rejected.  
 This method can only be called during the `responseProvider` event.
 
 ```javascript

@@ -1,10 +1,6 @@
 ---
 title: "Live program replacement"
 slug: "live-program-replacement"
-excerpt: ""
-hidden: false
-createdAt: "Fri Apr 07 2023 15:10:25 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Tue Sep 03 2024 11:25:34 GMT+0000 (Coordinated Universal Time)"
 ---
 This example demonstrates how to use an EdgeWorkers function to dynamically replace a **live stream** with a **blackout slate** during a specific time period and within specific geolocations. With live sporting events it's sometimes necessary to blackout a channel due to regional rights or league specific rules.
 
@@ -58,7 +54,7 @@ For more detailed information about blackout slates refer to the [HLS parser](do
 
 - Gets complete original media and converts bytes to UTF-8.
 - Invokes the necessary helper functions for the `LiveManifestTransformer` class to perform blackout slate replacements.
-- Checks for any applicable blackout intervals at `EXT-X-PROGRAM-DATE-TIME`. For example, policy start-time `<= EXT-X-PROGRAM-DATE-TIME <= policy end-time`. If so, replaces the original content segment with a content segment from the policy.  
+- Checks for any applicable blackout intervals at `EXT-X-PROGRAM-DATE-TIME`. For example, policy start-time `&lt;= EXT-X-PROGRAM-DATE-TIME &lt;= policy end-time`. If so, replaces the original content segment with a content segment from the policy.  
 - Repeats the segment replacement process until the `EXT-X-PROGRAM-DATE-TIME` for the original content segment is not in range of the start-time and end-time. 
 
 3. The above logic executes whenever the player reloads a live media playlist.
@@ -109,7 +105,7 @@ const endDate = '2022-08-17T15:07:50.000Z';
 const videoPolicy = [{
   "startDate": startDate,
   "endDate": endDate,
-  "content":  `#EXTM3U
+  "content":  \`#EXTM3U
   #EXT-X-VERSION:6
   ## Generated with https://github.com/google/shaka-packager version v2.5.1-9f11077-release
   #EXT-X-TARGETDURATION:3
@@ -123,14 +119,14 @@ const videoPolicy = [{
   http://example-ew-hls-mper.akamaized.net/Slate/Slate734s/REPLACE-ME/seg_0004.m4s
   #EXTINF:2.000,
   http://example-ew-hls-mper.akamaized.net/Slate/Slate734s/REPLACE-ME/seg_0005.m4s
-  #EXT-X-ENDLIST`
+  #EXT-X-ENDLIST\`
 }];
  
 // In this example the video policy is hardcoded.
 const audioPolicy = [{
   "startDate": startDate,
   "endDate": endDate,
-  "content":  `#EXTM3U
+  "content":  \`#EXTM3U
   #EXT-X-VERSION:6
   ## Generated with https://github.com/google/shaka-packager version v2.5.1-9f11077-release
   #EXT-X-TARGETDURATION:3
@@ -144,7 +140,7 @@ const audioPolicy = [{
   http://example-ew-hls-mper.akamaized.net/Slate/Slate734s/audio_en/seg_0004.m4s
   #EXTINF:2.000,
   http://example-ew-hls-mper.akamaized.net/Slate/Slate734s/audio_en/seg_0005.m4s
-  #EXT-X-ENDLIST`
+  #EXT-X-ENDLIST\`
 }];
  
 export class HlsProgramReplacementTranform extends TransformStream {

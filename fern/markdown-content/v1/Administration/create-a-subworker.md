@@ -6,30 +6,17 @@ hidden: false
 createdAt: "Tue Jan 23 2024 14:23:57 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Mon Jan 20 2025 15:09:47 GMT+0000 (Coordinated Universal Time)"
 ---
-A subWorker is an EdgeWorker that is called by another EdgeWorker in an [http request](doc:http-request#httprequest). subWorkers let you divide the work and responsibilities for large projects among different teams. Each team can own a separate EdgeWorker, deploy it on different schedules, and use their preferred tool chains. 
+A subWorker is an EdgeWorker that is called by another EdgeWorker in an [http request](http-request.md#httprequest). subWorkers let you divide the work and responsibilities for large projects among different teams. Each team can own a separate EdgeWorker, deploy it on different schedules, and use their preferred tool chains. 
 
 You can make HTTP requests to EdgeWorkers on different properties or different accounts. In the example below an EdgeWorker running on property A is making an HTTP request to another EdgeWorker running on property B. 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/subWorkers.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "650px"
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/subWorkers.jpg" alt="Image"/>
+</Frame>
 
 
 When using an HTTP request to call another EdgeWorker you can apply optimizations to accelerate the sub-request. For example, a subWorker can cache the response if it's expected to remain relatively constant. You can also use other behaviors available in Akamai Control Center to route the response to an appropriate EdgeWorker or handle errors.
 
-> 📘 To learn more, refer to the [Fragment generation using subWorkers](doc:subworkers-tutorial) tutorial in this guide. When designing your EdgeWorkers functions make sure you review the [subWorkers limits](doc:limitations#subworkers-limits).
+> 📘 To learn more, refer to the [Fragment generation using subWorkers](subworkers-tutorial.md) tutorial in this guide. When designing your EdgeWorkers functions make sure you review the [subWorkers limits](limitations.md#subworkers-limits).
 
 By executing an EdgeWorker as a subWorker in an HTTP request you can:
 
@@ -40,7 +27,7 @@ By executing an EdgeWorker as a subWorker in an HTTP request you can:
 
 > 👍 How are Flexible Composition and subWorkers different?
 > 
-> [Flexible composition](doc:flexible-composition) lets you share code within the same account and property to work collaboratively across teams in a large organization. 
+> [Flexible composition](flexible-composition.md) lets you share code within the same account and property to work collaboratively across teams in a large organization. 
 > 
 > subWorkers lets you share the results of computation across accounts and use Akamai optimizations to cache or accelerate a sub-request.
 
@@ -94,7 +81,7 @@ subWorkers let different teams share in the construction of a single web page. A
 
 > 📘 Use Flexible composition to consume data from a child EdgeWorker
 > 
-> You should use [Flexible composition](doc:flexible-composition) versus subWorkers when the parent EdgeWorker makes a call to a child that returns data for further processing. Flexible composition is a better solution if the parent EdgeWorker needs to manage the HTTP request, the HTTP response, convert the output into a readable format such as JSON, and handle errors. If the child is performing an operation that takes a lot of wall time, then the parent could still exceed the wall-time limit.
+> You should use [Flexible composition](flexible-composition.md) versus subWorkers when the parent EdgeWorker makes a call to a child that returns data for further processing. Flexible composition is a better solution if the parent EdgeWorker needs to manage the HTTP request, the HTTP response, convert the output into a readable format such as JSON, and handle errors. If the child is performing an operation that takes a lot of wall time, then the parent could still exceed the wall-time limit.
 > 
 > subWorkers is the best option when consuming HTML output from a child that will be included in the output.
 

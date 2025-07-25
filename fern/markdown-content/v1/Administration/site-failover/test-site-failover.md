@@ -8,7 +8,7 @@ updatedAt: "Thu Jan 18 2024 21:58:17 GMT+0000 (Coordinated Universal Time)"
 ---
 To help provide the best possible user experience for your customers you should test your failover logic.
 
-> 📘 When testing Site Failover you need to remove the `akamai-x-ew-debug-rp` Pragma header. For more information refer to the [known issue](doc:known-issues#site-failover-and-responseprovider-built-in-variable).
+> 📘 When testing Site Failover you need to remove the `akamai-x-ew-debug-rp` Pragma header. For more information refer to the [known issue](known-issues.md#site-failover-and-responseprovider-built-in-variable).
 
 # Use code to generate failures
 
@@ -77,7 +77,7 @@ When enhanced debugging for `responseProvider` is enabled the following behavior
 - Caching is bypassed to prevent the body with debug data from being stored in cache and delivered to other users.
 - `AK_EDGEWORKERS_RP_STATUS` will always report success, preventing `responseProvider` errors from being detectable by Property Manager.
 
-For more information see [Enable enhanced debug headers for responseProvider](doc:enable-enhanced-debug-headers-for-responseprovider).
+For more information see [Enable enhanced debug headers for responseProvider](enable-enhanced-debug-headers-for-responseprovider.md).
 
 # Bypass failover for testing
 
@@ -85,4 +85,6 @@ When testing and troubleshooting your EdgeWorkers code, you may want to bypass f
 
 For example, use the match condition below around the EdgeWorkers failover logic to see the original error if the query string `bypass-failover=true` is present.
 
- ![Bypass failover](https://techdocs.akamai.com/edgeworkers/img/bypass-failover-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/bypass-failover-v1.png" alt="Bypass failover"/>
+</Frame>

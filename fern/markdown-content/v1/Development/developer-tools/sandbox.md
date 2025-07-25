@@ -12,7 +12,7 @@ You can use Sandbox to create an isolated development environment to test your E
 
 Before you install the Sandbox CLI package you need to install the [Akamai CLI](https://github.com/akamai/cli).
 
-You'll also need the EdgeWorker ID and the active version number. You can find this information using the [EdgeWorkers Management application](doc:manage-edgeworkers). 
+You'll also need the EdgeWorker ID and the active version number. You can find this information using the [EdgeWorkers Management application](manage-edgeworkers.md). 
 
 For more information about how to test site and property changes in an isolated development environment before actual deployment review the [Sandbox User Guide](https://techdocs.akamai.com/sandbox/docs).
 
@@ -78,7 +78,7 @@ akamai sandbox add-edgeworker <edgeworker-id> <edgeworker-tarball>
 
 > 📘 All Sandbox traffic is tagged with the `X-Akamai-Sandbox: true` response header.
 > 
-> See the [Enable enhanced debug headers](doc:enable-enhanced-debug-headers) for more information about how to debug the EdgeWorkers script.
+> See the [Enable enhanced debug headers](enable-enhanced-debug-headers.md) for more information about how to debug the EdgeWorkers script.
 
 4. Run this command every time you update your EdgeWorkers code:
 

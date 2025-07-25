@@ -21,7 +21,7 @@ TypeScript supports these features to help write, maintain, and refactor your Ja
 
 For more information about TypeScript go to [the language's homepage](https://www.typescriptlang.org/).
 
-You can review the steps to [install typescript dependencies](doc:dev-environment-tutorial#install-typescript-dependencies) in the development environment tutorial.
+You can review the steps to [install typescript dependencies](dev-environment-tutorial.md#install-typescript-dependencies) in the development environment tutorial.
 
 1. Enter this command to install the `DefinitelyTyped` definition for the EdgeWorkers API inside an existing TypeScript project:
 

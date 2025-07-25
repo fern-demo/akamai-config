@@ -15,9 +15,9 @@ To receive enhanced debugging information about the EdgeWorkers execution in the
 
 - An `Akamai-EW-Trace` request header that contains a secure JSON Web Token (JWT) authentication token. 
 
-- One of the standard Pragma headers. See the [Enable standard debug headers](doc:enable-standard-debug-headers) for more information.
+- One of the standard Pragma headers. See the [Enable standard debug headers](enable-standard-debug-headers.md) for more information.
 
-- For `responseProvider` you need to add the `Pragma: akamai-x-ew-debug-rp` header that enables the multi-part response header. See [Enable enhanced debug headers for responseProvider](doc:enable-enhanced-debug-headers-for-responseprovider) for more information.
+- For `responseProvider` you need to add the `Pragma: akamai-x-ew-debug-rp` header that enables the multi-part response header. See [Enable enhanced debug headers for responseProvider](enable-enhanced-debug-headers-for-responseprovider.md) for more information.
 
 - To debug HTTP sub-requests you need to add the `Pragma: akamai-x-ew-debug-subs` header to the request.
 
@@ -31,7 +31,7 @@ Make sure to follow the instructions in the [Get Started with APIs](https://tech
 
 > 👍 You can also use the EdgeWorkers API to [generate an authentication token](ref:post-secure-token).
 
-> 👍 Review the [enhanced debug header details](doc:enhanced-debug-header-details) documentation to learn more about the response debug fields and to view examples.
+> 👍 Review the [enhanced debug header details](enhanced-debug-header-details.md) documentation to learn more about the response debug fields and to view examples.
 
 1. Use this EdgeWorkers CLI command to generate a JWT authentication token. In this example we set the token expiry to 60 minutes for the `www.example.com` hostname.
 

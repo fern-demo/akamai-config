@@ -8,7 +8,7 @@ updatedAt: "Wed May 08 2024 15:22:44 GMT+0000 (Coordinated Universal Time)"
 ---
 This module is available to use in your EdgeWorkers functions to consume and rewrite HTML documents. The html-rewriter module includes a built-in parser that emulates standard HTML parsing and DOM-construction. 
 
-> 📘 To learn more, go to the [Dynamic Content Assembly using the html-rewriter](doc:html-rewriter-dynamic-content-assembly) use case in this guide.
+> 📘 To learn more, go to the [Dynamic Content Assembly using the html-rewriter](html-rewriter-dynamic-content-assembly.md) use case in this guide.
 
 An EdgeWorkers function can register callbacks on CSS selectors. When the parser encounters an element matching the selector, it executes the callback. The callback can insert new content around the element, modify the tag attributes, or remove the element entirely. 
 
@@ -124,29 +124,10 @@ The EdgeWorkers output will contain the following images.
 ## onElement()
 
 Registers a handler to run when a CSS selector matches. The handler takes an Element object as a parameter and provides functions to modify the document. 
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "handler",
-    "0-1": "Function<Element>",
-    "0-2": "The function that runs when the selector matches. When the `HtmlRewritingStream` calls the handler, it passes an Element object as an argument.  \n  \nAsync handlers are not currently supported. It is not possible  to await an `httpRequest()` call in the handler.",
-    "1-0": "selector",
-    "1-1": "String",
-    "1-2": "A CSS selector that specifies when the handler should run.  \n  \nEvaluates the selector string on the incoming text.  It does not match on text inserted with the [Element methods](doc:htmlrewriter#methods-1)."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| handler | Function | The function that runs when the selector matches. When the `HtmlRewritingStream` calls the handler, it passes an Element object as an argument.<br/><br/>Async handlers are not currently supported. It is not possible  to await an `httpRequest()` call in the handler. |
+| selector | String | A CSS selector that specifies when the handler should run.<br/><br/>Evaluates the selector string on the incoming text.  It does not match on text inserted with the [Element methods](htmlrewriter.md#methods-1). |
 
 
 ## Handler Execution Ordering
@@ -259,29 +240,10 @@ rewriter.onElement('head', el => {
 <script src="browsers.js"></script>
 </head>
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "newText",
-    "0-1": "String",
-    "0-2": "Text to insert at the end of the element.  \nRepeated calls act like a FIFO queue. It inserts the contents of the first call first, and inserts the contents of the last call next to the end tag.",
-    "1-0": "option",
-    "1-1": "Object",
-    "1-2": "**(Optional)** An argument that controls the insertion of a missing end tag. The rewriter will add the appropriate end tag to an implicitly closed tag of an Object if `insert_implicit_close` is set to `true`."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| newText | String | Text to insert at the end of the element.<br/>Repeated calls act like a FIFO queue. It inserts the contents of the first call first, and inserts the contents of the last call next to the end tag. |
+| option | Object | **(Optional)** An argument that controls the insertion of a missing end tag. The rewriter will add the appropriate end tag to an implicitly closed tag of an Object if `insert_implicit_close` is set to `true`. |
 
 
 ## before()
@@ -353,26 +315,9 @@ The rewriter changed `<head></head>` to the following.
 ```javascript
 <head><link rel='preload' href='main.js' as='script'/></head>
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "newText",
-    "0-1": "String",
-    "0-2": "New text to insert. Inserts the text immediately after the start tag, but before the content.  \n  \nCalls insert the text immediately after the start tag.  Repeated calls act like a LIFO queue. Inserts the contents of the last call first, and inserts the contents of the first call last."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| newText | String | New text to insert. Inserts the text immediately after the start tag, but before the content.<br/><br/>Calls insert the text immediately after the start tag.  Repeated calls act like a LIFO queue. Inserts the contents of the last call first, and inserts the contents of the first call last. |
 
 
 ## removeAttribute()
@@ -409,54 +354,18 @@ Running on an input of `<script>window.alert('hi')</script>`, produces the follo
 ```javascript
 <script src='cached.js'></script>
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "newText",
-    "0-1": "String",
-    "0-2": "The text to insert between the start and end tags.  \nIf `replaceChildren()` is called multiple times, the value passed in to the last invocation is inserted.",
-    "1-0": "options",
-    "1-1": "Object",
-    "1-2": "An optional argument that controls the insertion of a missing end tag. The rewriter will add the appropriate end tag to an implicitly closed tag of an Object if `insert_implicit_close` is set to `true`."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| newText | String | The text to insert between the start and end tags.<br/>If `replaceChildren()` is called multiple times, the value passed in to the last invocation is inserted. |
+| options | Object | An optional argument that controls the insertion of a missing end tag. The rewriter will add the appropriate end tag to an implicitly closed tag of an Object if `insert_implicit_close` is set to `true`. |
 
 
 ## replaceWith()
 
 Removes the tags and element children. Inserts the passed content in its place. 
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "newText",
-    "0-1": "String",
-    "0-2": "The text inserted in place of the element and its children.  \nInserts the value passed in the last invocation if `replaceWith()` is called multiple times."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| newText | String | The text inserted in place of the element and its children.<br/>Inserts the value passed in the last invocation if `replaceWith()` is called multiple times. |
 
 
 This example registers a new callback.
@@ -499,32 +408,11 @@ When run on `<div>` produces the results below.
 ```javascript
 <div single='single' double="double">
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "The name is case insensitive.  \n  If the name contains an illegal character, the function will throw a TypeError.",
-    "1-0": "value",
-    "1-1": "String",
-    "1-2": "The value of the attribute. If the string contains illegal characters, they will be escaped. ",
-    "2-0": "options",
-    "2-1": "Object",
-    "2-2": "**Optional  ** Controls the application of quotes to the attribute value. It must include a property named `quote`, whose value is a string containing either a single or double quote."
-  },
-  "cols": 3,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | The name is case insensitive.<br/>  If the name contains an illegal character, the function will throw a TypeError. |
+| value | String | The value of the attribute. If the string contains illegal characters, they will be escaped.  |
+| options | Object | **Optional  ** Controls the application of quotes to the attribute value. It must include a property named `quote`, whose value is a string containing either a single or double quote. |
 
 
 > 👍 A number of functions support an optional `TrailingOpt` argument. If the argument is present, the options object must include a property named `insert_implicit_close` with a boolean value. When the value is `true`, elements that are missing a close tag will have one inserted.

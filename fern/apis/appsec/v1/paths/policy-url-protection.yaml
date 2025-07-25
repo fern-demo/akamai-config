@@ -1,0 +1,41 @@
+x-akamai:
+  file-path: paths/policy-url-protection.yaml
+  path-info: /configs/{configId}/versions/{versionNumber}/security-policies/{policyId}/url-protections/{urlProtectionPolicyId}
+parameters:
+- $ref: ../parameters/config-id-path.yaml
+- $ref: ../parameters/version-number-path.yaml
+- $ref: ../parameters/policy-id-path.yaml
+- $ref: ../parameters/url-protection-policy-id-path.yaml
+put:
+  operationId: put-url-protection-policy-action
+  summary: Modify a URL protection policy action
+  tags:
+  - URL protection policy actions
+  description: |
+    Updates the actions in a URL protection policy. _Products:_ All.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        example:
+          $ref: ../examples/url-protection-policy-action-put.json
+        schema:
+          $ref: ../schemas/url-protection-policy-action-put.yaml
+  responses:
+    200:
+      description: |
+        Updated action.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/url-protection-policy-action-put.json
+          schema:
+            $ref: ../schemas/url-protection-policy-action-put.yaml
+    400:
+      $ref: ../errors/400.yaml
+    403:
+      $ref: ../errors/403.yaml
+    404:
+      description: |
+        [Not found](ref:404). The configuration wasn't found.
+      $ref: ../errors/404.yaml

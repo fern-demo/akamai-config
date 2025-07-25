@@ -10,7 +10,7 @@ You can configure Akamai's [DataStream 2](https://techdocs.akamai.com/datastream
 
 DataStream 2 metrics provide nearly real-time visibility into the performance of your EdgeWorkers functions. This information can help you design and refine the JavaScript code you execute at the edge.
 
-You can also create a Data Stream 2 stream to deliver JavaScript Logging for an EdgeWorkers function. To learn more, refer to the [Use DataStream 2 to deliver JavaScript logs](doc:ds2-javascript-logging) tutorial.
+You can also create a Data Stream 2 stream to deliver JavaScript Logging for an EdgeWorkers function. To learn more, refer to the [Use DataStream 2 to deliver JavaScript logs](ds2-javascript-logging.md) tutorial.
 
 # Configure a Delivery stream
 
@@ -24,7 +24,7 @@ To add EdgeWorkers data to DataStream logs, you need to create and configure a s
 
    If there are no properties in the list, you may need to create or activate one. See [Create a property](https://techdocs.akamai.com/property-mgr/docs/create-new-prop) in the Property Manager guide for more information.
 
-3. On the **Data sets** tab, choose the log format, either Structured or JSON, and the data fields that you want to include in the log files. Go to EdgeWorkers information, and check **EdgeWorkers usage** and **EdgeWorkers execution** to log EdgeWorkers data. Both fields require that the EdgeWorkers behavior is enabled in the property. You can view a list of the [data set parameters](doc:datastream2-reports) for both data set fields.
+3. On the **Data sets** tab, choose the log format, either Structured or JSON, and the data fields that you want to include in the log files. Go to EdgeWorkers information, and check **EdgeWorkers usage** and **EdgeWorkers execution** to log EdgeWorkers data. Both fields require that the EdgeWorkers behavior is enabled in the property. You can view a list of the [data set parameters](datastream2-reports.md) for both data set fields.
 
 4. On the **Destinations** tab, select the destination for your DataStream logs, and specify how often to deliver them. See [Stream logs to a destination](https://techdocs.akamai.com/datastream2/docs/stream-logs) for configuration details for each available destination.
 
@@ -34,4 +34,4 @@ To add EdgeWorkers data to DataStream logs, you need to create and configure a s
 
    The stream activates in about 60 minutes after you save the configuration.
 
-> 👍 After you start receiving data, see [DataStream 2 logs](doc:datastream2-reports) for details on how to interpret log lines with EdgeWorkers fields.
+> 👍 After you start receiving data, see [DataStream 2 logs](datastream2-reports.md) for details on how to interpret log lines with EdgeWorkers fields.

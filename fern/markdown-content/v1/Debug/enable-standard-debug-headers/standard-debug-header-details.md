@@ -53,9 +53,91 @@ AK_EIP_FORWARDER_IP:
 ```
 
 Standard debug headers contain EdgeWorkers details and the status type. 
+<div></div>
+<table>
 
-[block:html]
-{
-  "html": "<div></div>\n<table>\n\n<caption>\n\n</caption>\n\n<colgroup>\n\n<col>\n\n<col>\n\n<col>\n\n</colgroup>\n\n<thead>\n\n<tr>\n\n<th align=\"left\">Response Header fields</th>\n\n<th align=\"left\">Details</th>\n\n<th align=\"left\">Description</th>\n\n</tr>\n\n</thead>\n\n<tbody>\n\n<tr>\n\n<td rowspan=\"3\"; style=vertical-align:top>EdgeWorker details\n\n  ew=<code>&lt;id&gt;</code>:<code>&lt;version&gt;</code>:<code>&lt;name&gt;</code></td>\n\n<td><code>&lt;id&gt;</code> </td>\n\n<td>EdgeWorker ID</td>\n\n</tr>\n\n<tr>\n\n<td><code>&lt;version&gt;</code></td>\n\n<td> EdgeWorker version number</td>\n\n</tr>\n\n<tr>\n\n<td><code>&lt;name&gt;</code></td>\n\n<td>EdgeWorker name</td>\n\n</tr>\n\n<tr>\n\n<td style=vertical-align:top>Status type\n\nstatus=<code>&lt;status type&gt;</code></td>\n\n<td><code>&lt;status type&gt;</code></td>\n\n<td>Possible values include:\n  \n<li>Success - the EdgeWorker successfully executed.</li>\n<li>UnimplementedHandler - the requested event handler wasn't implemented by the EdgeWorker.\n<li>Failed - the EdgeWorker did not successfully execute.</li>\n\n</td>\n\n</tr>\n\n</tbody>\n\n</table>\n<style></style>"
-}
-[/block]
+<caption>
+
+</caption>
+
+<colgroup>
+
+<col/>
+
+<col/>
+
+<col/>
+
+</colgroup>
+
+<thead>
+
+<tr>
+
+<th align="left">Response Header fields</th>
+
+<th align="left">Details</th>
+
+<th align="left">Description</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td rowspan="3" style="vertical-align:top">
+EdgeWorker details
+ew=<code>&lt;id&gt;</code>:<code>&lt;version&gt;</code>:<code>&lt;name&gt;</code>
+
+</td>
+
+<td><code>&lt;id&gt;</code> </td>
+
+<td>EdgeWorker ID</td>
+
+</tr>
+
+<tr>
+
+<td><code>&lt;version&gt;</code></td>
+
+<td> EdgeWorker version number</td>
+
+</tr>
+
+<tr>
+
+<td><code>&lt;name&gt;</code></td>
+
+<td>EdgeWorker name</td>
+
+</tr>
+
+<tr>
+
+<td style="vertical-align:top">
+Status type
+
+status=<code>&lt;status type&gt;</code>
+</td>
+
+<td><code>&lt;status type&gt;</code></td>
+
+<td>
+Possible values include:
+  
+<li>Success - the EdgeWorker successfully executed.</li>
+<li>UnimplementedHandler - the requested event handler wasn't implemented by the EdgeWorker.</li>
+<li>Failed - the EdgeWorker did not successfully execute.</li>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+<style></style>

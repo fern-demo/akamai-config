@@ -1,10 +1,6 @@
 ---
 title: "Send analytic beacons without waiting for a response"
 slug: "fire-and-forget"
-excerpt: "Fire and forget - Send beacons on each request, without waiting for a beacon collector response"
-hidden: false
-createdAt: "Fri Oct 06 2023 15:24:59 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Thu Feb 08 2024 15:53:20 GMT+0000 (Coordinated Universal Time)"
 ---
 In this example you'll learn how to configure an EdgeWorkers function that sends a separate analytic beacon for each request. If the request is DENIED by the Web Application Firewall (WAF) or directed to a static resource, the beacon is not sent.
 
@@ -44,21 +40,9 @@ It enables the EdgeWorkers function only for a selected list of file extensions.
 
 > 📘 By default, the EdgeWorkers function is not executed on a DENIED request. There is no specific implementation for this requirement.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/fireAndForgetMatch-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/fireAndForgetMatch-v1.png" alt="Image"/>
+</Frame>
 
 
 # 3. Reporting and debugging

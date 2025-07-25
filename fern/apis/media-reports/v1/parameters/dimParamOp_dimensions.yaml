@@ -1,0 +1,8 @@
+description: |
+  Identifies dimensions with comma-separated IDs.
+in: query
+name: dimensions
+required: true
+schema:
+  type: string
+  example: 1,2,3

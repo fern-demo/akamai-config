@@ -9,31 +9,34 @@ metadata:
 createdAt: "Wed May 05 2021 19:04:01 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Tue Nov 07 2023 19:10:45 GMT+0000 (Coordinated Universal Time)"
 ---
-Use Property Manager to enable the behavior in your <<COMPANY_NICKNAME>> property configuration.
+Use Property Manager to enable the behavior in your {{COMPANY_NICKNAME}} property configuration.
 
-Before you begin, [Create an EdgeWorker ID](doc:create-an-edgeworker-id) so you can select it in EdgeWorkers behavior in Property Manager.
+Before you begin, [Create an EdgeWorker ID](create-an-edgeworker-id.md) so you can select it in EdgeWorkers behavior in Property Manager.
 
-1. Navigate to your property in <<PORTAL_NAME>>.
+1. Navigate to your property in {{PORTAL_NAME}}.
 
 2. Click **Edit**.
 
 3. Click **Add rule**.
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/addRule-v1.png",null,"Add new Rule"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/addRule-v1.png" alt="Image"/>
+</Frame>
 
 4. Enter a `name`.
 
 5. Choose a `match criteria` and `scope`.
 
    For more information about the available match criteria refer to the [Property Manager documentation](https://techdocs.akamai.com/property-mgr/docs/matches).
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/ewCriteria-v1.png",null,"Scope EdgeWorkers"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/ewCriteria-v1.png" alt="Image"/>
+</Frame>
 
 > 📘 Scope defines which requests should have EdgeWorkers functions applied. By limiting the scope you can avoid unnecessary serverless hits, which can improve performance and reduce cost.
 
 6. Search for `EdgeWorkers` in **available behaviors**.
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/addBehavior-v1.png",null,"Search for EdgeWorkers behavior"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/addBehavior-v1.png" alt="Image"/>
+</Frame>
 
 7. Change the setting to **On**.
 
@@ -51,4 +54,4 @@ Before you begin, [Create an EdgeWorker ID](doc:create-an-edgeworker-id) so you 
 
 12. Click the **Activate on Staging** or **Activate on Production** button.
 
-    Once you've added the EdgeWorkers behavior in Property Manager follow the steps in the [Hello World tutorial](doc:hello-world-edgeworkers-management-application). This section also includes details about how to Activate an EdgeWorker version on the staging or production network.
+    Once you've added the EdgeWorkers behavior in Property Manager follow the steps in the [Hello World tutorial](hello-world-edgeworkers-management-application.md). This section also includes details about how to Activate an EdgeWorker version on the staging or production network.

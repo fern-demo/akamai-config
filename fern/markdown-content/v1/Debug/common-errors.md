@@ -38,7 +38,7 @@ Connection: close
 
 To learn more, re-issue the request with the `Pragma: akamai-x-ew-debug` debug header. The results of the re-issued request include a header with information about the error for each callback.
 
-For more information refer to the [Enhanced debug header details](doc:enhanced-debug-header-details) section.
+For more information refer to the [Enhanced debug header details](enhanced-debug-header-details.md) section.
 
 # Upload error
 

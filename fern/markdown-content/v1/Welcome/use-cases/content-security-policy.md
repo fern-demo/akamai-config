@@ -1,10 +1,6 @@
 ---
 title: "Use a Content Security Policy to cut latency, not security"
 slug: "content-security-policy"
-excerpt: ""
-hidden: false
-createdAt: "Wed Oct 11 2023 12:19:55 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Mon Jan 20 2025 15:04:35 GMT+0000 (Coordinated Universal Time)"
 ---
 A Content Security Policy (CSP) is a security feature implemented in web browsers. It protects websites and web applications from attacks such as cross-site scripting (XSS) and data injection. To provide protection, CSP controls and limits the source of the various types of content loaded and executed on a web page. This content includes scripts, stylesheets, and images.
 
@@ -52,22 +48,9 @@ CSP headers are typically static and consistent for all requests to a particular
 
 Implementing the dynamic CSP nonce at the Edge with EdgeWorkers can provide significant advantages. Nonce generation and insertion server-side can be difficult to do and can impact performance. Let’s delve into some of the advantages that EdgeWorkers offers.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/cspEdgeWorkers-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "700px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cspEdgeWorkers-v2.jpg" alt="Image"/>
+</Frame>
 
 
 ## Reduced latency

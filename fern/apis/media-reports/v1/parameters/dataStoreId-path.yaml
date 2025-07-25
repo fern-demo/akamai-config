@@ -1,0 +1,8 @@
+description: |
+  The unique `dataStoreId` value for the data store.
+in: path
+name: dataStoreId
+required: true
+schema:
+  type: integer
+  example: 10021

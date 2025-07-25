@@ -1,10 +1,6 @@
 ---
 title: "Response content transformation"
 slug: "transform-response-content"
-excerpt: ""
-hidden: false
-createdAt: "Thu Feb 16 2023 17:24:37 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Fri Apr 12 2024 08:29:07 GMT+0000 (Coordinated Universal Time)"
 ---
 Many EdgeWorkers use cases transform the content of a response body. Although these use cases seek to achieve different goals, you can use similar implementation patterns to achieve them. For example, an EdgeWorkers function can modify the content body to:
 
@@ -22,13 +18,17 @@ Many EdgeWorkers use cases transform the content of a response body. Although th
 
 This configuration forwards requests to the origin without modifying the response or caching content.
 
-![](https://techdocs.akamai.com/edgeworkers/img/simpleResponseMod-v2.jpg)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/simpleResponseMod-v2.jpg" alt="Image"/>
+</Frame>
 
 To use an EdgeWorkers function to modify the response, you need to implement the `responseProvider()` function in your EdgeWorkers code. To find details about the code inside the EdgeWorkers function, see the [Response body processing](doc:process-response-bodies) tutorial in this guide.  The EdgeWorkers function replaces the origin. The`responseProvider()` code makes the HTTP request for the original content and modifies the content.  
 
 In effect, the code splits the request into two legs. The first leg travels from the user to Akamai, using `responseProvider()` as the origin.  The second leg of the request travels from the EdgeWorkers function back through the Akamai platform to fetch content from the origin. For simplicity, lets assume these two legs use different URLs, as shown below.
 
-![](https://techdocs.akamai.com/edgeworkers/img/step1TransformContentInPlace-v1.jpg)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/step1TransformContentInPlace-v1.jpg" alt="Image"/>
+</Frame>
 
 The code for this EdgeWorkers function looks similar to the example below. All content modification is performed within the implementation of the `MyCustomTransformStream` class. For brevity the example doesn't include all the details, but you can read about an example of implementing find/replace logic in the [Response body processing](doc:process-response-bodies) tutorial.
 
@@ -53,40 +53,18 @@ export async function responseProvider (request) {
 
 To add the EdgeWorkers function to the first leg of the request in Property Manager, add an EdgeWorkers behavior within a path-match condition.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/matchPath-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/matchPath-v1.png" alt="Image"/>
+</Frame>
 
 
-![](https://techdocs.akamai.com/edgeworkers/img/matchPathBehavior-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/matchPathBehavior-v1.png" alt="Image"/>
+</Frame>
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/matchPatchBehavior-v1.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/matchPatchBehavior-v1.png" alt="Image"/>
+</Frame>
 
 
 # 2. Transform content in-place
@@ -109,7 +87,9 @@ export async function responseProvider (request) {
 
 This diagram is similar to the previous one, except now both requests are made to the same URL.
 
-![](https://techdocs.akamai.com/edgeworkers/img/step2TransformContentInPlace-v1.jpg)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/step2TransformContentInPlace-v1.jpg" alt="Image"/>
+</Frame>
 
 # 3. Add Caching
 
@@ -117,7 +97,9 @@ This diagram is similar to the previous one, except now both requests are made t
 
 It's common to want to cache one or both pieces of the request. A naive attempt to cache content would be to simply add a behavior to enable caching on the specific path, caching both the original content from origin and the modified content from the EdgeWorkers execution. Let's diagram a request flow to see what happens if we simply turn on caching. As we follow this flow, note that the cache key by default, is based only on the URL. Since both legs use the same URL, they will share the same cache key. 
 
-![](https://techdocs.akamai.com/edgeworkers/img/cacheWrong.jpg)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cacheWrong.jpg" alt="Image"/>
+</Frame>
 
 The work flow for this example is as follows. 
 
@@ -153,7 +135,9 @@ After the request is complete, the cache of the parent server stores the origina
 
 To avoid the cache collision between original and EdgeWorkers-modified content, you need to ensure that the EdgeWorkers-modified content is stored and retrieved under a different cache key than the original content.
 
- ![response Body](https://techdocs.akamai.com/edgeworkers/img/cacheBoth-v1.jpg)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cacheBoth-v1.jpg" alt="response Body"/>
+</Frame>
 
 To separate the original content from the EdgeWorkers-modified content in cache, the cache keys need to differ. The easiest way to distinguish requests that originated from EdgeWorkers is to add a header or query parameter, and configure the cache keys accordingly.
 
@@ -174,7 +158,9 @@ export async function responseProvider (request) {
 
 You can configure Property Manager rules to include the `X-Subrequest` header in the cache ID.  Use caution to ensure that you include any required query parameters in the cache ID. You should integrate the `X-Subrequest` header carefully if there are pre-existing cache ID modifications.
 
-![](https://techdocs.akamai.com/edgeworkers/img/cacheIDMod-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/cacheIDMod-v1.png" alt="Image"/>
+</Frame>
 
 The EdgeWorkers behavior should also be bypassed when the header is received.
 
@@ -182,9 +168,13 @@ Even though the EdgeWorkers function won't be executed on a sub-request you stil
 
 Bypassing the EdgeWorkers execution when the header is present also gives a convenient mechanism to test the original content through the Akamai platform, without invoking the EdgeWorkers function.
 
-![](https://techdocs.akamai.com/edgeworkers/img/repsonseModPM-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/repsonseModPM-v1.png" alt="Image"/>
+</Frame>
 
-![](https://techdocs.akamai.com/edgeworkers/img/matchPathBehavior-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/matchPathBehavior-v1.png" alt="Image"/>
+</Frame>
 
 An alternative approach is to add a query parameter instead of a header. Each has their own advantages depending on existing configuration logic and origin behavior.
 

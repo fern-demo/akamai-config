@@ -1,10 +1,6 @@
 ---
 title: "Response body processing (COPY)"
 slug: "response-body-processing-copy"
-excerpt: ""
-hidden: true
-createdAt: "Fri Jan 26 2024 16:59:37 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Fri Jan 26 2024 17:13:59 GMT+0000 (Coordinated Universal Time)"
 ---
 You can use the EdgeWorkers `httpRequest()` function to make an HTTPS request and retrieve the response body. Use `httpRequest` in your EdgeWorkers code to:
 
@@ -83,7 +79,9 @@ The EdgeWorkers platform acts as a consumer when:
 
 The EdgeWorkers code below acts as a consumer and a producer. It makes an `httpRequest`, creating a stream. The stream is then passed to the `createResponse()` function, effectively passing the stream to the end-client.
 
- ![response Body](https://techdocs.akamai.com/edgeworkers/img/responseBody-v4.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/responseBody-v4.png" alt="response Body"/>
+</Frame>
 
 ```javascript
 import { httpRequest } from 'http-request';
@@ -101,7 +99,9 @@ export async function responseProvider(request) {
 
 To modify the content of a stream as it flows through the EdgeWorkers function, you can use a stream transformer. A transformer functions as a pair of streams, one writable stream and one readable stream. It consumes data that is written to the writable stream and produces data that can be consumed through the readable stream.
 
-![response Body](https://techdocs.akamai.com/edgeworkers/img/Transformers-v5.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/Transformers-v5.png" alt="response Body"/>
+</Frame>
 
 To demonstrate the transform stream, you can implement a find-replace within an EdgeWorkers function. This example uses a transform stream to find all instances of a specific substring and replaces them with a different string. However, EdgeWorkers `httpRequest()` and `createResponse()` don't work with streams of text, they work with streams of bytes. 
 
@@ -109,7 +109,9 @@ To make find and replace easier, you can use the `TextDecoderStream` to transfor
 
 The diagram below shows how content is piped through multiple transformers between `httpRequest()` and `createResponse()` to replace "red" with "green".
 
- ![response Body](https://techdocs.akamai.com/edgeworkers/img/transformationDiagram-v4.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/transformationDiagram-v4.png" alt="response Body"/>
+</Frame>
 
 > 🚧 Avoid bugs due to chunk boundaries and backpressure
 > 
@@ -177,11 +179,15 @@ Once you have implemented find-replace within an EdgeWorkers function review you
 
 You need to handle data spanning boundaries as expected. The `FindReplaceStream` code above performs a find and replace on each chunk of text as it flows through the EdgeWorkers function. This works correctly when the text chunks look like this.
 
- ![response Body](https://techdocs.akamai.com/edgeworkers/img/chunkBoundaries-v3.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/chunkBoundaries-v3.png" alt="response Body"/>
+</Frame>
 
 There is, however, no method to control how chunks are split, and there is no guarantee that splits will occur in ideal locations. If you split the exact same text slightly differently, the code above will fail to find "red" in the text. All instances of "red" split across chunk boundaries and we are only searching within individual chunks.
 
- ![response Body](https://techdocs.akamai.com/edgeworkers/img/chunkBoundariesSplit-v2.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/chunkBoundariesSplit-v2.png" alt="response Body"/>
+</Frame>
 
 ### Backpressure
 
@@ -248,7 +254,9 @@ To add a JavaScript tag to the end of the HTML tag.
 
 If the script is not already present in the content, the flow looks like this, inserting the script just prior to the tag.
 
-![response Body](https://techdocs.akamai.com/edgeworkers/img/findStream-v2.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/findStream-v2.png" alt="response Body"/>
+</Frame>
 
 If the script is present, the `FindStream` locates the script and signals the `InsertUntilStream` script through the `location` property of the object passed through the stream.
 

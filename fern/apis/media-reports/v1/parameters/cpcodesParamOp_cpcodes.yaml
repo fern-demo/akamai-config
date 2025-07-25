@@ -1,0 +1,7 @@
+description: |
+  Use to limit report data to specific CP codes. Comma-separate several values.
+in: query
+name: cpcodes
+schema:
+  type: string
+  example: '12345,67890'

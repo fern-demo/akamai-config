@@ -8,7 +8,6 @@ updatedAt: "Tue Dec 17 2024 13:11:54 GMT+0000 (Coordinated Universal Time)"
 ---
 The response object represents the HTTP response and includes key:value pairs for the status and headers. Response headers can only be modified during the `onClientResponse` and `onOriginResponse`events.
 
-<!--To prevent a 500 error response, limit the body string length to 2000 characters. If called multiple times, the event handler uses the most recent response....-->
 
 # Properties
 
@@ -30,11 +29,11 @@ The following methods are available for the EdgeWorkers response objects.
 
 | Methods                                            | onClient Request | onOrigin Request | onOrigin Response | onClient Response | response Provider |
 | :------------------------------------------------- | :--------------- | :--------------- | :---------------- | :---------------- | :---------------- |
-| [addHeader()](doc:response-object#addheader)       |                  |                  | ✓                 | ✓                 |                   |
-| [getHeader()](doc:response-object#getheader)       |                  |                  | ✓                 | ✓                 |                   |
-| [getHeaders()](doc:response-object#getheaders)     |                  |                  | ✓                 | ✓                 |                   |
-| [removeHeader()](doc:response-object#removeheader) |                  |                  | ✓                 | ✓                 |                   |
-| [setHeader()](doc:response-object#setheader)       |                  |                  | ✓                 | ✓                 |                   |
+| [addHeader()](response-object.md#addheader)       |                  |                  | ✓                 | ✓                 |                   |
+| [getHeader()](response-object.md#getheader)       |                  |                  | ✓                 | ✓                 |                   |
+| [getHeaders()](response-object.md#getheaders)     |                  |                  | ✓                 | ✓                 |                   |
+| [removeHeader()](response-object.md#removeheader) |                  |                  | ✓                 | ✓                 |                   |
+| [setHeader()](response-object.md#setheader)       |                  |                  | ✓                 | ✓                 |                   |
 
 ## addHeader()
 
@@ -47,29 +46,10 @@ addHeader(name, value)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of the header  \nShould conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names",
-    "1-0": "value",
-    "1-1": "String or Array",
-    "1-2": "Header value(s) to add  \nSupports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf)"
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of the header<br/>Should conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names |
+| value | String or Array | Header value(s) to add<br/>Supports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf) |
 
 
 ```javascript
@@ -155,29 +135,10 @@ setHeader(name, value)
 ```
 
 Review the table for information about the available parameters.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "name",
-    "0-1": "String",
-    "0-2": "Name of the header  \nShould conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names",
-    "1-0": "value",
-    "1-1": "String or Array",
-    "1-2": "Value of the new header(s)  \nSupports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf)"
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| name | String | Name of the header<br/>Should conform to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) character constraints for header names |
+| value | String or Array | Value of the new header(s)<br/>Supports UTF-8 encoded characters with the exception of [C0 controls](https://www.unicode.org/charts/PDF/U0000.pdf) |
 
 
 ```javascript

@@ -1,0 +1,54 @@
+{
+  "components": {},
+  "externalDocs": {
+    "description": "See documentation for Akamai's Swag-tool Test API",
+    "url": "https://techdocs.akamai.com/internal-ux-writing/reference"
+  },
+  "info": {
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title": "Limited availability Swagger Base Path",
+    "version": "v2"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/base-path": {
+      "get": {
+        "description": "__Limited availability__ Log Swagger base bath malformations.",
+        "externalDocs": {
+          "description": "See documentation for this operation in Akamai's Swag-tool Test API",
+          "url": "https://techdocs.akamai.com/internal-ux-writing/reference/get-base-path"
+        },
+        "operationId": "get-base-path",
+        "responses": {
+          "204": {
+            "content": {},
+            "description": "Empty response."
+          }
+        },
+        "summary": "Swagger base path tests",
+        "tags": [
+          "Service"
+        ]
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{host}/base-path/"
+    }
+  ],
+  "x-akamai": {
+    "file-path": "04-swagger-base-path.yaml",
+    "status": "LA"
+  },
+  "x-readme": {
+    "samples-languages": [
+      "curl",
+      "python",
+      "node"
+    ]
+  }
+}

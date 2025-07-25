@@ -1,0 +1,17 @@
+.fern-selection-item .fern-selection-item-icon img{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+.fern-product-selector {
+    /*transform: translateY(8px);*/
+    border-radius: 4px;
+    border: 10px solid var(--border);
+}
+
+.fern-version-selector {
+    /*transform: translateY(8px);*/
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }

@@ -1,0 +1,77 @@
+type: object
+description: |-
+  Contains Security Information Event Management (SIEM) integration settings.
+  
+x-akamai:
+  file-path: schemas/siem-settings.yaml
+additionalProperties: false
+required:
+- enableSiem
+properties:
+  enableForAllPolicies:
+    type: boolean
+    description: |
+      Whether you enabled SIEM for all the security policies in the configuration version.
+  enableSiem:
+    type: boolean
+    description: |
+      Whether you enabled SIEM in a security configuration version.
+  enabledBotmanSiemEvents:
+    type: boolean
+    description: |
+      "__Deprecated__ Whether you enabled SIEM for the Bot Manager events. Use `exceptions` parameter instead to set botman
+      siem events exception. \n"
+    x-akamai:
+      status: DEPRECATED
+  exceptions:
+    type: array
+    description: |
+      Describes all attack type exceptions that will be ignored in siem events.
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        actionTypes:
+          type: array
+          description: |
+            Describes actions to be excluded for a particular attack type. A `*` value means all actions.
+          items:
+            type: string
+            enum:
+            - '*'
+            - alert
+            - deny
+            - all_custom
+            - abort
+            - allow
+            - delay
+            - ignore
+            - monitor
+            - slow
+            - tarpit
+        protection:
+          type: string
+          description: |
+            Attack type to be added as an exception.
+          enum:
+          - ipgeo
+          - rate
+          - urlProtection
+          - slowpost
+          - customrules
+          - waf
+          - apirequestconstraints
+          - clientrep
+          - malwareprotection
+          - botmanagement
+          - aprProtection
+  firewallPolicyIds:
+    type: array
+    description: |
+      The list of security policy identifiers for which to enable the SIEM integration.
+    items:
+      type: string
+  siemDefinitionId:
+    type: integer
+    description: |
+      Uniquely identifies the SIEM settings.

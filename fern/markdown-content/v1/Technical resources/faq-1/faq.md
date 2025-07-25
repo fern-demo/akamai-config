@@ -23,13 +23,13 @@ Serverless computing:
 
 - Frees developers to focus on building and running applications and services without thinking about servers.
 
-### What's included in <<COMPANY_NICKNAME>>'s serverless offering?
+### What's included in {{COMPANY_NICKNAME}}'s serverless offering?
 
-<<COMPANY_NICKNAME>>'s Serverless product line includes EdgeWorkers, EdgeKV, and DevTools.
+{{COMPANY_NICKNAME}}'s Serverless product line includes EdgeWorkers, EdgeKV, and DevTools.
 
 - **EdgeWorkers** is the world's most distributed edge serverless platform offering:
 
-  - **Just Code**: Write JavaScript code and quickly deploy to all <<COMPANY_NICKNAME>>'s secure edge servers.
+  - **Just Code**: Write JavaScript code and quickly deploy to all {{COMPANY_NICKNAME}}'s secure edge servers.
 
   - **Every Edge Server as a Compute Node**: The Chrome V8 engine is deployed to every secure edge server, moving code execution closest to the end user and device.
 
@@ -37,15 +37,15 @@ Serverless computing:
 
 - **<a href="https://techdocs.akamai.com/edgekv/docs">EdgeKV</a>** is a globally distributed key/value store providing:
 
-  - **Read at Cache Speed**: Tight integration into <<COMPANY_NICKNAME>>'s global edge network to globally to support use cases that need to read data quickly and frequently.
+  - **Read at Cache Speed**: Tight integration into {{COMPANY_NICKNAME}}'s global edge network to globally to support use cases that need to read data quickly and frequently.
 
   - **High Availability**: Distributed edge nodes provide high resilience to failure, by storing data across a wide geographic area.
 
   - **Local Data Processing**: Bring data close to the business logic where it is created and used.
 
-- **[Developer Tools](doc:dev-environment-tutorial) ** that we've curated to increase developer velocity to enable:
+- **[Developer Tools](dev-environment-tutorial.md) ** that we've curated to increase developer velocity to enable:
 
-  - **Fast Iterative Development**: Use EdgeWorkers Typescript support, IDE, and <<COMPANY_NICKNAME>> Sandbox, to develop, test code locally, quickly, and iteratively.
+  - **Fast Iterative Development**: Use EdgeWorkers Typescript support, IDE, and {{COMPANY_NICKNAME}} Sandbox, to develop, test code locally, quickly, and iteratively.
 
   - **Automated CI/CD integration**: Integrate into test and deploy pipelines using the EdgeWorkers CLI or APIs.
 

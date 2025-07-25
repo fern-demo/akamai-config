@@ -1,0 +1,37 @@
+{
+  "block": "blockSpecificIPGeo",
+  "asnControls": {
+    "allowedIPNetworkLists": {
+      "networkList": [
+        "9876_ASNTEST"
+      ]
+    },
+    "blockedIPNetworkLists": {
+      "networkList": [
+        "567321_TESTASNLIST"
+      ]
+    }
+  },
+  "geoControls": {
+    "blockedIPNetworkLists": {
+      "networkList": [
+        "72138_TEST1"
+      ]
+    }
+  },
+  "ipControls": {
+    "allowedIPNetworkLists": {
+      "networkList": [
+        "56921_TEST"
+      ]
+    },
+    "blockedIPNetworkLists": {
+      "networkList": [
+        "53712_TESTLIST123"
+      ]
+    }
+  },
+  "ukraineGeoControl": {
+    "action": "deny"
+  }
+}

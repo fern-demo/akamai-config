@@ -16,14 +16,17 @@ Before you begin, refer to the [Log Delivery Service documentation](https://tech
 The Log Delivery Service allows up to 128 characters in the log output. Any text after 128 characters is truncated.
 
 1. Click **Add rule** to add a new Rule to your property.
-
-   [block:image]{"images":[{"image":["https://techdocs.akamai.com/edgeworkers/img/log-delivery-add-rule-v1.png",null,"Add new rule"],"align":"center","border":true}]}[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/log-delivery-add-rule-v1.png" alt="Image"/>
+</Frame>
 
 2. Enter a name for the rule and click **Insert Rule**.
 
 3. Click **Add Match** in the new rule and select **Metadata Stage** as the match criteria and **client-done** as the scope.
 
-   ![Add match](https://techdocs.akamai.com/edgeworkers/img/log-delivery-criteria-v1.png)
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/log-delivery-criteria-v1.png" alt="Add match"/>
+</Frame>
 
 4. Click **Add Behavior** to add the **Log Custom Details** behavior to the rule.
 

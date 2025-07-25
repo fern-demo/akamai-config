@@ -22,13 +22,13 @@ These limitations are unique for each resource tier. There are currently three r
 
 <colgroup>
 
-<col>
+<col/>
 
-<col>
+<col/>
 
-<col>
+<col/>
 
-<col>
+<col/>
 
 </colgroup>
 
@@ -54,7 +54,7 @@ These limitations are unique for each resource tier. There are currently three r
 
 <tr>
 
-<td rowspan="2"; style=vertical-align:top> all event handlers </td>
+<td rowspan="2" style= "vertical-align:top"> all event handlers </td>
 
 <td>Maximum CPU time during initialization</td>
 
@@ -80,7 +80,7 @@ These limitations are unique for each resource tier. There are currently three r
 
 <tr>
 
-<td rowspan="7"; style=vertical-align:top>
+<td rowspan="7" style="vertical-align:top">
 
 onClientRequest
 
@@ -88,7 +88,8 @@ onOriginRequest
 
 onOriginResponse
 
-onClientResponse </td>
+onClientResponse 
+</td>
 
 <td>Maximum memory usage per event handler</td>
 
@@ -126,14 +127,16 @@ onClientResponse </td>
 
 <tr>
 
-<td>Maximum number of HTTP sub-requests allowed from a parent request, per event handler<BR>
-<BR>
+<td>
+Maximum number of HTTP sub-requests allowed from a parent request, per event handler
+<br/>
 
-**Note:** You can use content fetched using the onClientRequest event handler to modify the original end-user request's cache key. For cache keys modified in this way, you need to use purge by CP Code and not by URL. For instructions on how to purge a CP code see [Purge Content by CP code](https://techdocs.akamai.com/purge-cache/docs/purge-content-cp-code). For instructions on how to create a CP code see [Create a CP code](https://techdocs.akamai.com/cp-codes/docs/welcome-cp-codes-rpt-grps).</td>
+**Note:** You can use content fetched using the onClientRequest event handler to modify the original end-user request's cache key. For cache keys modified in this way, you need to use purge by CP Code and not by URL. For instructions on how to purge a CP code see [Purge Content by CP code](https://techdocs.akamai.com/purge-cache/docs/purge-content-cp-code). For instructions on how to create a CP code see [Create a CP code](https://techdocs.akamai.com/cp-codes/docs/welcome-cp-codes-rpt-grps).
+</td>
 
-<td style=vertical-align:top>2</td>
+<td style="vertical-align:top">2</td>
 
-<td style=vertical-align:top>4</td>
+<td style="vertical-align:top">4</td>
 
 <td>10</td>
 
@@ -177,7 +180,7 @@ onClientResponse </td>
 
 <tr>
 
-<td rowspan="7"; style=vertical-align:top> responseProvider </td>
+<td rowspan="7" style="vertical-align:top"> responseProvider </td>
 
 <td>Maximum memory usage for responseProvider</td>
 
@@ -251,7 +254,8 @@ onClientResponse </td>
 
 <tr>
 
-<td>Maximum response size per HTTP sub-request during the execution of the responseProvider event handler
+<td>
+Maximum response size per HTTP sub-request during the execution of the responseProvider event handler
 </td>
 
 <td>5 MB</td>

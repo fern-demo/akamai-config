@@ -17,7 +17,7 @@ You can create, verify, and renew CAT tokens using HS256 (HMAC SHA256), ES256 (E
 > 
 > At this time, the module covers high level claims. You can extend it to other CAT claims in the spec as per your requirements.
 > 
-> The `enc` claim is currently only supported using the A256-GCM encryption algorithm. You can adopt new algorithms as they become available in EdgeWorkers [crypto](doc:crypto) module.
+> The `enc` claim is currently only supported using the A256-GCM encryption algorithm. You can adopt new algorithms as they become available in EdgeWorkers [crypto](crypto.md) module.
 
 # CAT
 
@@ -28,67 +28,16 @@ CAT(catOptions: CATOptions)
 ```
 
 # CATOptions Object
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "h-3": "Default Value",
-    "h-4": "Exceptions",
-    "0-0": "isCATTagAdded",
-    "0-1": "Boolean",
-    "0-2": "**(optional)** Enable if the CWT CBOR Tag (61) is added when the token is generated.  \n  \nRefer to the [CBOR Web Token Internet Standards](https://www.rfc-editor.org/rfc/rfc8392.html)  for more details on tags.",
-    "0-3": "false",
-    "0-4": "",
-    "1-0": "isCoseCborTagAdded",
-    "1-1": "Boolean",
-    "1-2": "**(optional)** Enable if the COSE CBOR Tag such as, `COSE_Mac0` is added when the token is generated.  \n  \nRefer to the [CBOR Object Signing and Encryption (COSE)](https://datatracker.ietf.org/wg/cose/about/) for more details on tags.  \n  \nCurrently only `Tag COSE_Mac0` and `COSE_Sign1` are supported.",
-    "1-3": "true",
-    "1-4": "Error(`Invalid catOptions: isCoseCborTagAdded must be boolean`)",
-    "2-0": "issuer",
-    "2-1": "String",
-    "2-2": "**(optional)** The issuer to check with an `iss` claim in the CAT payload.",
-    "2-3": "",
-    "2-4": "Error(`Invalid catOptions: issuer must be non empty string`)",
-    "3-0": "subject",
-    "3-1": "Array of Strings",
-    "3-2": "**(optional)** The subject to check with a `sub` claim in the CAT payload.",
-    "3-3": "",
-    "3-4": "Error(`Invalid catOptions: subject must be non empty string`)",
-    "4-0": "audience",
-    "4-1": "Array of Strings",
-    "4-2": "**(optional)** The audience to check with an `aud` claim in the CA T payload.",
-    "4-3": "",
-    "4-4": "Error(`Invalid catOptions: audience must be non empty string or array`)",
-    "5-0": "ignoreExpiration",
-    "5-1": "Boolean",
-    "5-2": "**(optional)** If false, validate the expiry of the token.",
-    "5-3": "true",
-    "5-4": "Error(`Invalid catOptions: ignoreExpiration must be boolean`)",
-    "6-0": "ignoreNotBefore",
-    "6-1": "Boolean",
-    "6-2": "**(optional)** If false, validate the `not before` claim of the token.",
-    "6-3": "true",
-    "6-4": "Error(`Invalid catOptions: ignoreNotBefore must be boolean`)",
-    "7-0": "clockTolerance",
-    "7-1": "Number",
-    "7-2": "**(optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims.",
-    "7-3": "60 seconds",
-    "7-4": "Error(`Invalid catOptions: clockTolerance must be number`)"
-  },
-  "cols": 5,
-  "rows": 8,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description | Default Value | Exceptions |
+| --- | --- | --- | --- | --- |
+| isCATTagAdded | Boolean | **(optional)** Enable if the CWT CBOR Tag (61) is added when the token is generated.<br/><br/>Refer to the [CBOR Web Token Internet Standards](https://www.rfc-editor.org/rfc/rfc8392.html)  for more details on tags. | false |  |
+| isCoseCborTagAdded | Boolean | **(optional)** Enable if the COSE CBOR Tag such as, `COSE_Mac0` is added when the token is generated.<br/><br/>Refer to the [CBOR Object Signing and Encryption (COSE)](https://datatracker.ietf.org/wg/cose/about/) for more details on tags.<br/><br/>Currently only `Tag COSE_Mac0` and `COSE_Sign1` are supported. | true | Error(`Invalid catOptions: isCoseCborTagAdded must be boolean`) |
+| issuer | String | **(optional)** The issuer to check with an `iss` claim in the CAT payload. |  | Error(`Invalid catOptions: issuer must be non empty string`) |
+| subject | Array of Strings | **(optional)** The subject to check with a `sub` claim in the CAT payload. |  | Error(`Invalid catOptions: subject must be non empty string`) |
+| audience | Array of Strings | **(optional)** The audience to check with an `aud` claim in the CA T payload. |  | Error(`Invalid catOptions: audience must be non empty string or array`) |
+| ignoreExpiration | Boolean | **(optional)** If false, validate the expiry of the token. | true | Error(`Invalid catOptions: ignoreExpiration must be boolean`) |
+| ignoreNotBefore | Boolean | **(optional)** If false, validate the `not before` claim of the token. | true | Error(`Invalid catOptions: ignoreNotBefore must be boolean`) |
+| clockTolerance | Number | **(optional)** Number of seconds to tolerate when checking the `nbf` and `exp` claims. | 60 seconds | Error(`Invalid catOptions: clockTolerance must be number`) |
 
 
 # CATJSON Object
@@ -156,7 +105,7 @@ If there is any claim present in the `crit` claim that are not supported by the 
 | Parameter     | Type                                 | Description                                                                     |
 | :------------ | :----------------------------------- | :------------------------------------------------------------------------------ |
 | payload       | Map                                  | CAT claims set where keys are integer or strings.                               |
-| request       | [Request Object](doc:request-object) | Incoming requests to EdgeWorker.                                                |
+| request       | [Request Object](request-object.md) | Incoming requests to EdgeWorker.                                                |
 | decryptionKey | CryptoKey                            | **(optional)**  Key to use for decrypting values from `enc` claim (if present). |
 
 # Examples
@@ -514,36 +463,24 @@ export async function onClientRequest (request) {
 
 ## Algorithm not provided externally
 
-The CAT token must include the `alg` field as a part of CWT protected or unprotected header field when generated by any service. The EdgeWorkers [cwt](doc:cwt) module relies on this field to determine which algorithm to use for token verification.
+The CAT token must include the `alg` field as a part of CWT protected or unprotected header field when generated by any service. The EdgeWorkers [cwt](cwt.md) module relies on this field to determine which algorithm to use for token verification.
 
 ## Missing client information in request object
 
-As of now, the EdgeWorkers [Request Object](doc:request-object) does not provide information such as network protocol or client IP. Review the examples below workarounds for this limitation.
+As of now, the EdgeWorkers [Request Object](request-object.md) does not provide information such as network protocol or client IP. Review the examples below workarounds for this limitation.
 
 ## Missing client information in request object
 
-As of now, the [Request Object](doc:request-object) does not provide information such as network protocol or client IP. However, you can copy the value from [Built-in variables](https://techdocs.akamai.com/property-mgr/docs/built-vars) to [User-defined variables](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars) using the [Set variable behavior](https://techdocs.akamai.com/property-mgr/docs/set-var-beh)  or [Advanced behavior](https://techdocs.akamai.com/property-mgr/docs/adv-beh).
+As of now, the [Request Object](request-object.md) does not provide information such as network protocol or client IP. However, you can copy the value from [Built-in variables](https://techdocs.akamai.com/property-mgr/docs/built-vars) to [User-defined variables](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars) using the [Set variable behavior](https://techdocs.akamai.com/property-mgr/docs/set-var-beh)  or [Advanced behavior](https://techdocs.akamai.com/property-mgr/docs/adv-beh).
 
 Review the examples below for workarounds for this limitation.
 
 ### catalpn
 
 To use the `catalpn` claim validation, you need to contact Akamai support. Ask your account representative to add the following [Advanced behavior](https://techdocs.akamai.com/property-mgr/docs/adv-beh) to your property configuration before the EdgeWorker behavior is executed.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/0b975c6-Screenshot_2024-05-30_at_3.40.10_PM.jpg",
-        null,
-        ""
-      ],
-      "align": "center"
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://files.readme.io/0b975c6-Screenshot_2024-05-30_at_3.40.10_PM.jpg" alt="Image"/>
+</Frame>
 
 
 Here is the XML for the Advanced behavior.
@@ -571,23 +508,9 @@ Here is the XML for the Advanced behavior.
 ### catnip claim
 
 To use the `catnip` claim, you can add the following  [Set variable behavior](https://techdocs.akamai.com/property-mgr/docs/set-var-beh) to your property configuration before the EdgeWorker is executed.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/catSetVariable-v1.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "700px",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/catSetVariable-v1.jpg" alt="Image"/>
+</Frame>
 
 
 ## Unsupported claims

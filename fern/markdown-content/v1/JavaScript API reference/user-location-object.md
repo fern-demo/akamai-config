@@ -6,13 +6,13 @@ hidden: false
 createdAt: "Tue May 04 2021 22:11:13 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Thu Feb 20 2025 16:39:54 GMT+0000 (Coordinated Universal Time)"
 ---
-The `userLocation` request object contains properties that specify the geographic location of the client that initiated a given [request](doc:request-object). The IP address of the requesting device determines the client's location. If the HTTP request contains an `X-Forwarded-For` header, this header will be used to provide the location. Otherwise the connecting IP address will be used. 
+The `userLocation` request object contains properties that specify the geographic location of the client that initiated a given [request](request-object.md). The IP address of the requesting device determines the client's location. If the HTTP request contains an `X-Forwarded-For` header, this header will be used to provide the location. Otherwise the connecting IP address will be used. 
 
 For more information, see the EdgeScape documentation available in the [Download Center](https://control.akamai.com/apps/download-center/).
 
 # areaCodes
 
-Returns a `userLocation` object that specifies the area codes of the incoming request. Multiple values are supported. This is a read-only Array<String>.
+Returns a `userLocation` object that specifies the area codes of the incoming request. Multiple values are supported. This is a read-only Array.
 
 ```javascript
 // Request originates in the city of Cambridge
@@ -72,7 +72,7 @@ request.userLocation.dma;
 
 # fips
 
-Returns a `userLocation` object that specifies a 5 digit numerical code for the incoming request. The FIPS code helps to map counties to states. Multiple values are supported. Refer to the [FIPS codes](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt) file for syntax. This is a read-only Array<String>.
+Returns a `userLocation` object that specifies a 5 digit numerical code for the incoming request. The FIPS code helps to map counties to states. Multiple values are supported. Refer to the [FIPS codes](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt) file for syntax. This is a read-only Array.
 
 ```javascript
 // Request originates in Massachuseetts
@@ -146,7 +146,7 @@ Returns a `userLocation` object that specifies the zip code of the incoming requ
 
  For country = US and country = PR, zip refers to the five digit zip code. For  
             country = CA, zip refers to the Forward Sortation Area (FSA). For more information on  
-            FSA, go to <http://www.canadapost.ca> and search for FSA. Refer to the [Zip Code](https://control.akamai.com/dl/edgescape/zipcodes.txt) list for syntax. This is a read-only string value.
+            FSA, go to [http://www.canadapost.ca](http://www.canadapost.ca) and search for FSA. Refer to the [Zip Code](https://control.akamai.com/dl/edgescape/zipcodes.txt) list for syntax. This is a read-only string value.
 
 ```javascript
 // Request originates in a Cambridge zipcode

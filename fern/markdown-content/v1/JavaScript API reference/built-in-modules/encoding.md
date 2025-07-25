@@ -112,29 +112,10 @@ Constructs a new `TextDecoder` object.
 ## decode()
 
 Returns a string containing the text decoded with the method of the specific `TextDecoder` object.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Description",
-    "h-2": "Type",
-    "0-0": "buffer",
-    "0-1": "ArrayBuffer,  \nTypedArray,  \nor DataView object",
-    "0-2": "**Optional** Contains the text to decode.",
-    "1-0": "options",
-    "1-1": "",
-    "1-2": "**Optional** An object with the property:  \n**stream**: A boolean flag indicating that additional data will follow in subsequent calls to `decode()`. Set to `true` to process the data in chunks. By default, set to `false` for the final chunk or if the data is not chunked."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Description | Type |
+| --- | --- | --- |
+| buffer | ArrayBuffer,<br/>TypedArray,<br/>or DataView object | **Optional** Contains the text to decode. |
+| options |  | **Optional** An object with the property:<br/>**stream**: A boolean flag indicating that additional data will follow in subsequent calls to `decode()`. Set to `true` to process the data in chunks. By default, set to `false` for the final chunk or if the data is not chunked. |
 
 
 # TextDecoder properties
@@ -164,26 +145,9 @@ import { atob } from "encoding";
 
 let decodedData = atob(encodedData)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "encodedData",
-    "0-1": "String",
-    "0-2": "A binary string containing the encoded data.  \n  \nReturns decodedData as a binary string. A binary string is an ASCII string containing decoded data from encodedData.  \n  \nAn InvalidCharactorError (DOMException) is thrown if the `encodedData` is not valid base64."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| encodedData | String | A binary string containing the encoded data.<br/><br/>Returns decodedData as a binary string. A binary string is an ASCII string containing decoded data from encodedData.<br/><br/>An InvalidCharactorError (DOMException) is thrown if the `encodedData` is not valid base64. |
 
 
 ## btoa()
@@ -195,26 +159,9 @@ import { btoa } from "encoding";
 
 let encodedData = btoa(stringToEncode)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "stringToEncode",
-    "0-1": "String",
-    "0-2": "The [binary string](https://developer.mozilla.org/en-US/docs/Web/API/btoa#unicode_strings) to encode.  \n  \nReturns encodedData as a binary string. A binary string is an ASCII string containing the base64 representation of the stringToEncode.  \n  \nAn InvalidCharactorError (DOMException) occurs if the string contains a character that did not fit in a single byte."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| stringToEncode | String | The [binary string](https://developer.mozilla.org/en-US/docs/Web/API/btoa#unicode_strings) to encode.<br/><br/>Returns encodedData as a binary string. A binary string is an ASCII string containing the base64 representation of the stringToEncode.<br/><br/>An InvalidCharactorError (DOMException) occurs if the string contains a character that did not fit in a single byte. |
 
 
 ## base64
@@ -230,29 +177,10 @@ let bytesBuffer = base64.decode(encodedData[, outputFormat])
 ```
 
 The return value depends on the outputFormat. If you specify bytesBuffer: Uint8Array - the decoded bytes are returned in an Uint8Array. If you specify string: A primitive string, containing the decoded bytes in each character.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "encodedData: String",
-    "0-1": "String",
-    "0-2": "A base64 encoded string.",
-    "1-0": "outputFormat",
-    "1-1": "String",
-    "1-2": "**(optional)** The output format.  \n  \nApplicable formats:  \n  \n\"Uint8Array\" - Uint8Array. This is the default format.  \n\"String\" - String."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| encodedData: String | String | A base64 encoded string. |
+| outputFormat | String | **(optional)** The output format.<br/><br/>Applicable formats:<br/><br/>"Uint8Array" - Uint8Array. This is the default format.<br/>"String" - String. |
 
 
 ### base64.encode()
@@ -264,26 +192,9 @@ let encodedString = base64.encode(dataToBeEncoded)
 ```
 
  The return value is a primitive string, containing the encoded bytes in each character.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "dataToBeEncoded",
-    "0-1": "Uint8Array",
-    "0-2": "Data to be encoded in bytes.  \n  \nAn exception will occur when more than one argument is provided or a v8 encoded string cannot be created."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| dataToBeEncoded | Uint8Array | Data to be encoded in bytes.<br/><br/>An exception will occur when more than one argument is provided or a v8 encoded string cannot be created. |
 
 
 ## base64url
@@ -305,29 +216,10 @@ string: A primitive string, containing the decoded bytes in each character.
 ```javascript
 let bytesBuffer =  base64url.decode(encodedData[, outputFormat])
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameters",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "encodedData",
-    "0-1": "String",
-    "0-2": "A base64url encoded string.  \n  \nAn InvalidCharactorError (DOMException) occurs when the str argument is not a valid base64url string. An `ExecutionError` is also thrown.",
-    "1-0": "outputFormat",
-    "1-1": "String",
-    "1-2": "(optional) String - the output format.  \n  \nApplicable formats:  \n  \n\"Uint8Array\" - Uint8Array. This is the default format.  \n\"String\" - String.  \n  \nAn InvalidCharactorError (DOMException) occurs when the str argument is not a valid base64url string. An `ExecutionError` is also thrown."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameters | Type | Description |
+| --- | --- | --- |
+| encodedData | String | A base64url encoded string.<br/><br/>An InvalidCharactorError (DOMException) occurs when the str argument is not a valid base64url string. An `ExecutionError` is also thrown. |
+| outputFormat | String | (optional) String - the output format.<br/><br/>Applicable formats:<br/><br/>"Uint8Array" - Uint8Array. This is the default format.<br/>"String" - String.<br/><br/>An InvalidCharactorError (DOMException) occurs when the str argument is not a valid base64url string. An `ExecutionError` is also thrown. |
 
 
 ### base64url.encode()
@@ -337,26 +229,9 @@ The `encode()` method takes a Uint8Array of bytes and returns an encoded base64u
 ```javascript
 let encodedString =  base64url.encode(dataToBeEncoded)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameters",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "dataToBeEncoded",
-    "0-1": "String",
-    "0-2": "A primitive string, containing the encoded bytes in each character.  \n  \nAn exception will occur when more than one argument is provided or a v8 encoded string cannot be created."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameters | Type | Description |
+| --- | --- | --- |
+| dataToBeEncoded | String | A primitive string, containing the encoded bytes in each character.<br/><br/>An exception will occur when more than one argument is provided or a v8 encoded string cannot be created. |
 
 
 ## base16
@@ -376,29 +251,10 @@ You can also specify the outputFormat to obtain the desired output type.
 ```javascript
 let bytesBuffer =  base16.decode(encodedData[, outputFormat])
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameter",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "encodedData",
-    "0-1": "String",
-    "0-2": "Base16 encoded string.  \n  \nAn InvalidCharactorError (DOMException) occurs when the str argument is not a valid base16 string. An `ExecutionError` is also thrown.",
-    "1-0": "outputFormat",
-    "1-1": "String",
-    "1-2": "(optional) The output format.  \nApplicable formats are:  \n**Uint8Array** - Uint8Array. This is the default format  \n**String** - String  \n  \nAn InvalidCharactorError (DOMException) occurs when the str argument is not a valid base16 string. An `ExecutionError` is also thrown."
-  },
-  "cols": 3,
-  "rows": 2,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameter | Type | Description |
+| --- | --- | --- |
+| encodedData | String | Base16 encoded string.<br/><br/>An InvalidCharactorError (DOMException) occurs when the str argument is not a valid base16 string. An `ExecutionError` is also thrown. |
+| outputFormat | String | (optional) The output format.<br/>Applicable formats are:<br/>**Uint8Array** - Uint8Array. This is the default format<br/>**String** - String<br/><br/>An InvalidCharactorError (DOMException) occurs when the str argument is not a valid base16 string. An `ExecutionError` is also thrown. |
 
 
 ### base16.encode()
@@ -408,23 +264,6 @@ The `base16.encode()` method takes an Uint8Array of bytes and returns an encoded
 ```javascript
 let encodedString = base16.encode(dataToBeEncoded)
 ```
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "Parameters",
-    "h-1": "Type",
-    "h-2": "Description",
-    "0-0": "dataToBeEncoded",
-    "0-1": "Uint8Array",
-    "0-2": "A primitive string, containing the encoded bytes in each character.  \n  \nAn exception will occur when more than one argument is provided or a v8 encoded string cannot be created."
-  },
-  "cols": 3,
-  "rows": 1,
-  "align": [
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+| Parameters | Type | Description |
+| --- | --- | --- |
+| dataToBeEncoded | Uint8Array | A primitive string, containing the encoded bytes in each character.<br/><br/>An exception will occur when more than one argument is provided or a v8 encoded string cannot be created. |

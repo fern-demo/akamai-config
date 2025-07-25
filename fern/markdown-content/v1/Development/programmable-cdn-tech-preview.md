@@ -77,12 +77,12 @@ For more information see [Test your configuration](https://techdocs.akamai.com/p
 # Get started
 
 You can watch this video to learn how to install and initialize the Programmable CDN tool.
-
-[block:html]
-{
-  "html": "<video width=\"600\" height=\"400\" controls>\n  <source src=\"https://techdocs.akamai.com/edgeworkers/videos/pcdnInstallInitialization-v1.mp4\" type=\"video/mp4\">\n  <strong>Error</strong>: The video's URL was inaccessible.\n</video>\n</div>\n<br />"
-}
-[/block]
+<video width="600" height="400" controls>
+  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnInstallInitialization-v1.mp4"" type="video/mp4">
+  <strong>Error</strong>: The video's URL was inaccessible.
+</video>
+</div>
+<br />
 
 
 ## Create a code directory
@@ -105,7 +105,7 @@ Run this command to add the [Programmable CDN project](https://www.npmjs.com/pac
 
 You only need to perform this setup task once. There are two options when setting up the tool, you can either use an existing property and EdgeWorker or you can create them as part of the initialization task.
 
-> 📘 You need privileges to create an EdgeWorker and a property. For more information see, [Manage access to EdgeWorkers](doc:manage-access-to-edgeworkers).
+> 📘 You need privileges to create an EdgeWorker and a property. For more information see, [Manage access to EdgeWorkers](manage-access-to-edgeworkers.md).
 
 1. To initialize the Programmable CDN tool run this command to generate the source files for your project in the `src` directory.  
    `npx akj init`
@@ -139,33 +139,14 @@ When you run the `akj init` command it creates the following files if you aren�
   You can use `-s` to specify the section of the ~/.edgerc file to use, and `-a` to specify the account switch key.
 
 You only need to initialize the directory once to use the tool. After you perform the setup task you'll have a Node package that includes the following files.
-
-[block:parameters]
-{
-  "data": {
-    "h-0": "File",
-    "h-1": "Description",
-    "0-0": "/package.json",
-    "0-1": "This is the standard [npm package file](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) . Only the dependencies are specific to Programmable CDN.",
-    "1-0": "/property.json",
-    "1-1": "Contains all the information you specified during installation:  \n`property ID`  \n`contractID`  \n`groupID`  \n`edgeworkerID`  \n`accountSwitchKey`",
-    "2-0": "/src/",
-    "2-1": "Directory containing the EdgeWorker that will be uploaded and activated by the tool.",
-    "3-0": "/src/config.js",
-    "3-1": "The Programmable CDN tool uses this file to configure the property. It contains the `onConfig()` function that runs automatically.  \nYou can edit this file to change the property configuration. Once you make and verify your changes, using local unit tests, you can activate the property and the EdgeWorker.",
-    "4-0": "/src/bundle.json",
-    "4-1": "The EdgeWorkers [manifest file](doc:code-bundle-format) that includes necessary meta information.  When you run the Programmable CDN tool it uploads this file.",
-    "5-0": "/src/main.js",
-    "5-1": "The EdgeWorkers source code associated with the project that contains the event handler functions. When you run the Programmable CDN tool it uploads and activates this file."
-  },
-  "cols": 2,
-  "rows": 6,
-  "align": [
-    "left",
-    "left"
-  ]
-}
-[/block]
+| File | Description |
+| --- | --- |
+| /package.json | This is the standard [npm package file](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) . Only the dependencies are specific to Programmable CDN. |
+| /property.json | Contains all the information you specified during installation:<br/>`property ID`<br/>`contractID`<br/>`groupID`<br/>`edgeworkerID`<br/>`accountSwitchKey` |
+| /src/ | Directory containing the EdgeWorker that will be uploaded and activated by the tool. |
+| /src/config.js | The Programmable CDN tool uses this file to configure the property. It contains the `onConfig()` function that runs automatically.<br/>You can edit this file to change the property configuration. Once you make and verify your changes, using local unit tests, you can activate the property and the EdgeWorker. |
+| /src/bundle.json | The EdgeWorkers [manifest file](code-bundle-format.md) that includes necessary meta information.  When you run the Programmable CDN tool it uploads this file. |
+| /src/main.js | The EdgeWorkers source code associated with the project that contains the event handler functions. When you run the Programmable CDN tool it uploads and activates this file. |
 
 
 If you choose to use an existing property and EdgeWorker, the current state of those items is not included in the `config.js` or EdgeWorker. If you run `npx akj init`  on an existing directory, it will overwrite files that already exist. You should only run it once.
@@ -173,12 +154,12 @@ If you choose to use an existing property and EdgeWorker, the current state of t
 # Modify your property and EdgeWorker
 
 You can watch this video to learn more about how to run the Programmable CDN tool and use it to modify your property and/or EdgeWorker.
-
-[block:html]
-{
-  "html": "<video width=\"600\" height=\"400\" controls>\n  <source src=\"https://techdocs.akamai.com/edgeworkers/videos/pcdnIdeIntegrationUsage-v1.mp4\" type=\"video/mp4\">\n  <strong>Error</strong>: The video's URL was inaccessible.\n</video>\n</div>\n<br />"
-}
-[/block]
+<video width="600" height="400" controls>
+  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnIdeIntegrationUsage-v1.mp4"" type="video/mp4">
+  <strong>Error</strong>: The video's URL was inaccessible.
+</video>
+</div>
+<br />
 
 
 Once you’ve set up your Programmable CDN environment, you can modify:
@@ -358,12 +339,12 @@ You don't need to manually declare Property Manager variables. Instead, Property
 # To learn more
 
 You can watch this video to preview the examples available in the [Programmable CDN tool GitHub repo](https://github.com/akamai/akj-tech-preview/).
-
-[block:html]
-{
-  "html": "<video width=\"600\" height=\"400\" controls>\n  <source src=\"https://techdocs.akamai.com/edgeworkers/videos/pcdnTechPreviewExamples.mp4\" type=\"video/mp4\">\n  <strong>Error</strong>: The video's URL was inaccessible.\n</video>\n</div>\n<br />"
-}
-[/block]
+<video width="600" height="400" controls>
+  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnTechPreviewExamples.mp4"" type="video/mp4">
+  <strong>Error</strong>: The video's URL was inaccessible.
+</video>
+</div>
+<br />
 
 
 # Known issues
@@ -378,7 +359,7 @@ Please review the known issues for the Programmable CDN tech preview.
 
 ## EdgeWorkers validation error
 
-A [validation error](doc:error-codes) will occur if you attempt to activate a previously activated version for the selected EdgeWorker ID.
+A [validation error](error-codes.md) will occur if you attempt to activate a previously activated version for the selected EdgeWorker ID.
 
 Every new EdgeWorkers code bundle that you upload needs to have a unique version number in the `bundle.json` file. The following message indicates that EdgeWorker version 0.2 is already registered. 
 
@@ -398,7 +379,7 @@ To resolve the error,  change the version number in the `src/bundle.json` file a
 
 ## Node and NPM version
 
-If you see the following NPM output you need to upgrade to the [current version of Node and NPM](doc:programmable-cdn-tech-preview#before-you-start) .
+If you see the following NPM output you need to upgrade to the [current version of Node and NPM](programmable-cdn-tech-preview.md#before-you-start) .
 
 ```
 npm WARN EBADENGINE Unsupported engine {

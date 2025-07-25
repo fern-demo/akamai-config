@@ -1,0 +1,13 @@
+description: |
+  Limits data to the type of traffic: `non-secure` for non-secure traffic, `secure-shared` for secure shared-certificate traffic, `secure-standard` for standard secure customer-certificate traffic, `secure-premium` for premium secure customer-certificate traffic, or the default `all`.
+in: query
+name: deliveryOption
+schema:
+  default: all
+  enum:
+    - non-secure
+    - secure-shared
+    - secure-premium
+    - all
+  type: string
+  example: all

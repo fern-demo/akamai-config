@@ -12,7 +12,7 @@ When you include the `responseProvider` debug Pragma header, `akamai-x-ew-debug-
 
 - Returns an inaccurate status. 
 - Indicates success, even on a failure. 
-- Prevents the [Site Failover](doc:site-failover) behavior from responding to an EdgeWorkers failover accurately.
+- Prevents the [Site Failover](site-failover.md) behavior from responding to an EdgeWorkers failover accurately.
 
 To resolve this issue you need to remove the `akamai-x-ew-debug-rp` Pragma header when testing Site Failover. 
 
@@ -28,7 +28,7 @@ Cache hierarchy categorizes the bytes served to the client by the forward server
 
 ### cacheKey modifications and Phased Release Cloudlet
 
-When the [Phased Release Cloudlet](https://techdocs.akamai.com/cloudlets/docs/what-is-phased-release) is included in a request, [cacheKey modifications](doc:cachekey-object) are not applied.
+When the [Phased Release Cloudlet](https://techdocs.akamai.com/cloudlets/docs/what-is-phased-release) is included in a request, [cacheKey modifications](cachekey-object.md) are not applied.
 
 If both Phased Release and EdgeWorkers are working on the same request the last behavior in the property (from a top-to-bottom perspective) controls the forward path and forward origin routing. This is expected behavior.
 
@@ -36,7 +36,7 @@ If both Phased Release and EdgeWorkers are working on the same request the last 
 
 The EdgeWorkers behavior must be placed before Conditional Origin behaviors in Property Manager rules.
 
-> 📘 An EdgeWorkers function can be used to select a [Conditional Origin](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins) using [`request.route()`](doc:request-object#route) within the `onClientRequest` event handler.
+> 📘 An EdgeWorkers function can be used to select a [Conditional Origin](https://techdocs.akamai.com/cloudlets/docs/about-conditional-origins) using [`request.route()`](request-object.md#route) within the `onClientRequest` event handler.
 
 ## Set the EdgeWorkers behavior to off to stop EdgeWorkers from executing if it was set to on in an earlier rule
 

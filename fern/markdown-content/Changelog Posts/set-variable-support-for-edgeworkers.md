@@ -1,9 +1,0 @@
----
-title: "Apr 29, 2020 — setVariable support"
-slug: "set-variable-support-for-edgeworkers"
-type: ""
-createdAt: "Wed Apr 29 2020 15:59:00 GMT+0000 (Coordinated Universal Time)"
-hidden: false
----
-- EdgeWorkers now supports user-defined variables via the [setVariable()](doc:request-object#setvariable) request method.
-- You can use `setVariable` to interact with Property Manager or to maintain a state where EdgeWorkers can pass information between callbacks.

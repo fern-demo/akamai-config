@@ -1,0 +1,37 @@
+x-akamai:
+  file-path: paths/config-protect-eval-hostnames.yaml
+  path-info: /configs/{configId}/versions/{versionNumber}/protect-eval-hostnames
+parameters:
+- $ref: ../parameters/config-id-path.yaml
+- $ref: ../parameters/version-number-path.yaml
+put:
+  operationId: put-protect-eval-hostnames
+  summary: Protect evaluation hostnames
+  tags:
+  - 'Configuration: Evaluation hostnames'
+  description: |
+    Move hostnames you're evaluating to active protection. When you move a hostname from the evaluation hostnames list, it's added to your security policy as a protected hostname. You'll see that hostname in the response object the next time you run [List selected hostnames](ref:get-selected-hostnames). _Products:_ Web Application Protector, App & API Protector.
+  requestBody:
+    required: true
+    content:
+      application/json:
+        example:
+          $ref: ../examples/eval-hostnames-200.json
+        schema:
+          $ref: ../schemas/eval-hostnames.yaml
+  responses:
+    200:
+      description: |
+        Successful response.
+      content:
+        application/json:
+          example:
+            $ref: ../examples/eval-hostnames-200.json
+          schema:
+            $ref: ../schemas/eval-hostnames.yaml
+    400:
+      $ref: ../errors/400.yaml
+    403:
+      description: |
+        [Forbidden](ref:403). You don't have access to the resource.
+      $ref: ../errors/403.yaml

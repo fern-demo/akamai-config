@@ -1,13 +1,6 @@
 ---
 title: "Manifest and Playlist Manipulation"
 slug: "manifest-and-playlist-personalization"
-excerpt: ""
-hidden: false
-metadata: 
-  image: []
-  robots: "index"
-createdAt: "Thu Apr 06 2023 16:05:06 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Tue Aug 01 2023 16:30:34 GMT+0000 (Coordinated Universal Time)"
 ---
 Learn how to use an EdgeWorkers function to dynamically create personalized Video on Demand (VOD) or live manifest and playlist files. You can implement these use cases without incurring additional compute costs or making changes to the origin.
 

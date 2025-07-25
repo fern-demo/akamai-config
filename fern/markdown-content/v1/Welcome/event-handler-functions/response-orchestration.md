@@ -1,10 +1,6 @@
 ---
 title: "Response orchestration"
 slug: "response-orchestration"
-excerpt: ""
-hidden: false
-createdAt: "Wed May 05 2021 19:39:51 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Fri Jan 05 2024 21:17:48 GMT+0000 (Coordinated Universal Time)"
 ---
 Response Orchestration, also known as Dynamic Content Assembly, is the ability to create on-the-fly response data and content.
 
@@ -21,7 +17,9 @@ Use the `responseProvider` event handler to generate and manipulate response bod
 
 The diagram below illustrates how the `responseProvider` function generates a response, acting as a surrogate origin.
 
- ![responseProvider event handler](https://techdocs.akamai.com/edgeworkers/img/responseprovider-event-handler-v1.png)
+ <Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/responseprovider-event-handler-v1.png" alt="responseProvider event handler"/>
+</Frame>
 
 If the `responseProvider` event fails, for example as a result of an error, the request is forwarded to the origin.
 

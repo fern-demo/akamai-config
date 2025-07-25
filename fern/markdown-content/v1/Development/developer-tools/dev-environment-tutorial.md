@@ -11,21 +11,21 @@ updatedAt: "Tue Jan 17 2023 13:21:55 GMT+0000 (Coordinated Universal Time)"
 ---
 Follow the steps in this detailed tutorial to learn how to create, test, and deploy your EdgeWorkers.
 
-In this tutorial we'll use a secure Ion delivery property named `we.makeedgeworkerscoding.fun`.  It includes a rule matching the URL path `/getpremium`. If the rule matches inbound traffic, then the EdgeWorkers code bundle for "WeMakeEdgeWorkersCodingFun - Premium Check" (EdgeWorker ID: 3686) is enabled. We can then confirm that we successfully migrated the "Go Premium" logic from the origin to the <<COMPANY_NICKNAME>> Edge.
+In this tutorial we'll use a secure Ion delivery property named `we.makeedgeworkerscoding.fun`.  It includes a rule matching the URL path `/getpremium`. If the rule matches inbound traffic, then the EdgeWorkers code bundle for "WeMakeEdgeWorkersCodingFun - Premium Check" (EdgeWorker ID: 3686) is enabled. We can then confirm that we successfully migrated the "Go Premium" logic from the origin to the {{COMPANY_NICKNAME}} Edge.
 
 > 👍 The `we.makeedgeworkerscoding.fun` property is for example purposes only. If you'd like to use this tutorial as a hands on exercise you'll need to create your own property.
 
 # Prerequisites
 
-Please work with your <<COMPANY_NICKNAME>> administrator to help complete these prerequisite tasks:
+Please work with your {{COMPANY_NICKNAME}} administrator to help complete these prerequisite tasks:
 
-- Ensure you have entitlement to EdgeWorkers on your contract and if necessary, [add EdgeWorkers to your contract](doc:add-edgeworkers-to-contract).
+- Ensure you have entitlement to EdgeWorkers on your contract and if necessary, [add EdgeWorkers to your contract](add-edgeworkers-to-contract.md).
 
-- Provision credentials for <<COMPANY_NICKNAME>>'s APIs with access to Property Manager (PAPI), <<COMPANY_NICKNAME>> Sandbox, and EdgeWorkers. Follow the instructions in [Get Started with APIs](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) to create credentials that allow you to interact with <<COMPANY_NICKNAME>> APIs and CLIs.
+- Provision credentials for {{COMPANY_NICKNAME}}'s APIs with access to Property Manager (PAPI), {{COMPANY_NICKNAME}} Sandbox, and EdgeWorkers. Follow the instructions in [Get Started with APIs](https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials) to create credentials that allow you to interact with {{COMPANY_NICKNAME}} APIs and CLIs.
 
-- Install the [Akamai CLI for EdgeWorkers](https://github.com/akamai/cli-edgeworkers) and [Sandbox CLI](doc:akamai-cli#sandbox-cli) packages into your local development environment.
+- Install the [Akamai CLI for EdgeWorkers](https://github.com/akamai/cli-edgeworkers) and [Sandbox CLI](akamai-cli.md#sandbox-cli) packages into your local development environment.
 
-- Ensure that a [supported delivery product](doc:limitations) for your website already exists. You also need to include a rule to enable the EdgeWorkers behavior. For instructions see [Add the EdgeWorkers behavior](doc:add-the-edgeworkers-behavior).
+- Ensure that a [supported delivery product](limitations.md) for your website already exists. You also need to include a rule to enable the EdgeWorkers behavior. For instructions see [Add the EdgeWorkers behavior](add-the-edgeworkers-behavior.md).
 
 # Create a Sandbox
 
@@ -33,7 +33,7 @@ Create a sandbox instance that you can use to test configuration changes in a lo
 
 To create the sandbox you need to provide the delivery property name, a version to clone from, and an optional name for the sandbox instance.
 
-> 📘 This <<COMPANY_NICKNAME>> Sandbox instance clones the Ion delivery property configuration for the website.
+> 📘 This {{COMPANY_NICKNAME}} Sandbox instance clones the Ion delivery property configuration for the website.
 
 1. Run this command to create the `CODING_SANDBOX` instance by cloning from Version 10 of the delivery property `we.makeedgeworkerscoding.fun`.
 
@@ -52,11 +52,11 @@ current  name                sandbox_id
 YES      CODING_SANDBOX        5007551b-92ed-42d4-94b2-2d181db6aa45
 ```
 
-3. Run the `start` command to start the sandbox instance. You can also verify everything is working on the website when it's delivered through <<COMPANY_NICKNAME>> Sandbox.
+3. Run the `start` command to start the sandbox instance. You can also verify everything is working on the website when it's delivered through {{COMPANY_NICKNAME}} Sandbox.
 
    You should see various information lines ending with a success message and the port the sandbox client is listening on.
 
-> 📘 If this is your first time using <<COMPANY_NICKNAME>> Sandbox, it will also download and install the sandbox client. This command also creates a connection to the isolated edge machines and services.
+> 📘 If this is your first time using {{COMPANY_NICKNAME}} Sandbox, it will also download and install the sandbox client. This command also creates a connection to the isolated edge machines and services.
 
 ```shell
 $ akamai sandbox start
@@ -84,7 +84,7 @@ Before you start coding, you should organize the files into a package to take ad
 
 > 📘 You can also add TypeScript definitions directly into your IDE as a plug-in, such as [Visual Studio Code](https://www.typescriptlang.org/docs/tutorial.html).
 
-The next step replicates the business logic for the "Go Premium" feature within EdgeWorkers events. Now you'll build all of the files necessary and package them so you can pass the resulting archive to <<COMPANY_NICKNAME>> Sandbox.
+The next step replicates the business logic for the "Go Premium" feature within EdgeWorkers events. Now you'll build all of the files necessary and package them so you can pass the resulting archive to {{COMPANY_NICKNAME}} Sandbox.
 
 There are two required files within each EdgeWorkers code bundle:
 
@@ -139,7 +139,7 @@ Is this OK? (yes) yes
 
 After you create the package.json file, you need to install a couple of development dependencies for TypeScript and the EdgeWorkers TypeScript definitions.
 
-EdgeWorkers TypeScript definitions help us understand syntax and data types for the EdgeWorkers JavaScript API. See the [TypeScript](doc:typescript) section in this guide for more information about the features TypeScript supports to help write, maintain, and refactor your JavaScript code.
+EdgeWorkers TypeScript definitions help us understand syntax and data types for the EdgeWorkers JavaScript API. See the [TypeScript](typescript.md) section in this guide for more information about the features TypeScript supports to help write, maintain, and refactor your JavaScript code.
 
 1. You can use npm to install these development dependencies too:
 
@@ -237,7 +237,7 @@ export function onClientResponse(request : EW.ImmutableRequest, response : EW.Re
 
 # Define the build tasks
 
-At this point, you have a syntactically correct `main.ts` file representing the "Go Premium" business logic that you want to pull forward from the content origin to the <<COMPANY_NICKNAME>> Edge. Next, you need to define the build tasks. This requires one last update to `package.json`. To do this you need to remove the dummy test script placeholder that `npm init` added, add a package config variable to hold the EdgeWorker ID (3686 for this example), and define the build steps.
+At this point, you have a syntactically correct `main.ts` file representing the "Go Premium" business logic that you want to pull forward from the content origin to the {{COMPANY_NICKNAME}} Edge. Next, you need to define the build tasks. This requires one last update to `package.json`. To do this you need to remove the dummy test script placeholder that `npm init` added, add a package config variable to hold the EdgeWorker ID (3686 for this example), and define the build steps.
 
 The build steps must:
 
@@ -245,7 +245,7 @@ The build steps must:
 
 - Build `bundle.json`, the required EdgeWorkers manifest file, based on information in `package.json`.
 
-- Create an EdgeWorkers code bundle (tgz) that can be tested via <<COMPANY_NICKNAME>> Sandbox. The tgz file, once confirmed can be deployed to <<COMPANY_NICKNAME>> delivery networks.
+- Create an EdgeWorkers code bundle (tgz) that can be tested via {{COMPANY_NICKNAME}} Sandbox. The tgz file, once confirmed can be deployed to {{COMPANY_NICKNAME}} delivery networks.
 
 Here's an example `package.json` that accomplishes these build steps:
 
@@ -280,9 +280,9 @@ Finally, you're ready to build the EdgeWorkers code bundle.
 
 When building the EdgeWorkers code bundle you can also include optional JavaScript files for helper functions or local data dictionaries.
 
-For more information on how to create code bundles see [Create a code bundle](doc:create-a-code-bundle).
+For more information on how to create code bundles see [Create a code bundle](create-a-code-bundle.md).
 
-> 📘 There are [code size limits](doc:limitations) enforced on upload, so minification and code reduction techniques are recommended.
+> 📘 There are [code size limits](limitations.md) enforced on upload, so minification and code reduction techniques are recommended.
 
 1. Run the following within the working directory for this package:
 
@@ -336,7 +336,7 @@ $ akamai sandbox start
 ... INFO  c.a.devpops.connector.ConnectorMain - Sandbox Client running on port: 9550
 ```
 
-2. Validate that the new business logic is applied for the "Go Premium" AJAX call. If it is correct, the new EdgeWorkers code bundle is ready for upload and activation to the <<COMPANY_NICKNAME>> delivery networks. For example: `http://we.makeedgeworkerscoding.fun:9550/getpremium`
+2. Validate that the new business logic is applied for the "Go Premium" AJAX call. If it is correct, the new EdgeWorkers code bundle is ready for upload and activation to the {{COMPANY_NICKNAME}} delivery networks. For example: `http://we.makeedgeworkerscoding.fun:9550/getpremium`
 
 3. This yields a JSON payload from the EdgeWorker instead of the content origin:
 
@@ -347,11 +347,11 @@ $ akamai sandbox start
 }
 ```
 
-This proves that the business logic will work as desired when deployed to the <<COMPANY_NICKNAME>> delivery networks.
+This proves that the business logic will work as desired when deployed to the {{COMPANY_NICKNAME}} delivery networks.
 
 # Deploy your EdgeWorkers code bundle
 
-This examples shows you how to use EdgeWorkers CLI commands to upload the code bundle, activate it on the <<COMPANY_NICKNAME>> staging network, and check the activation status.
+This examples shows you how to use EdgeWorkers CLI commands to upload the code bundle, activate it on the {{COMPANY_NICKNAME}} staging network, and check the activation status.
 
 1. Upload your EdgeWorkers code bundle:
 
@@ -366,7 +366,7 @@ edgeWorkerId  version  checksum  createdBy  createdTime
 3686          2.0.0    < hash >  dtheobal   2020-01-30T23:19:46Z
 ```
 
-2. Activate EdgeWorkers version 2.0.0 on the <<COMPANY_NICKNAME>> staging network:
+2. Activate EdgeWorkers version 2.0.0 on the {{COMPANY_NICKNAME}} staging network:
 
 ```shell
 $ akamai edgeworkers activate 3686 STAGING 2.0.0

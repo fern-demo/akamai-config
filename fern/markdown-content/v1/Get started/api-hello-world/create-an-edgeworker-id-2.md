@@ -17,7 +17,7 @@ Before you begin make sure you have an authentication token for the EdgeWorkers 
 http --timeout=30 --auth-type edgegrid -a <section-name>: GET :/edgeworkers/v1/groups
 ```
 
-> 📘 If you don't see the `groupId` you want to use or if you received an error the likely cause is that your access token does not have the proper permissions. For more information on Groups and Permissions see <a href="https://techdocs.akamai.com/iam/docs">Identity and Access Management help</a> or contact your <<COMPANY_NICKNAME>> Administrator.
+> 📘 If you don't see the `groupId` you want to use or if you received an error the likely cause is that your access token does not have the proper permissions. For more information on Groups and Permissions see <a href="https://techdocs.akamai.com/iam/docs">Identity and Access Management help</a> or contact your {{COMPANY_NICKNAME}} Administrator.
 
 2. Create a new EdgeWorker ID:
 
@@ -41,4 +41,4 @@ http --timeout=30 --auth-type edgegrid -a <section-name>: GET :/edgeworkers/v1/i
 
 - Replace `<groupId>`  with the `groupId` for your Access Group.    
 
-3. Next, follow these instructions to [add the EdgeWorkers behavior](doc:add-the-edgeworkers-behavior-2).
+3. Next, follow these instructions to [add the EdgeWorkers behavior](add-the-edgeworkers-behavior-2.md).

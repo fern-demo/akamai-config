@@ -8,28 +8,15 @@ updatedAt: "Fri Apr 26 2024 11:19:33 GMT+0000 (Coordinated Universal Time)"
 ---
 In this tutorial you'll learn how to use subWorkers to create a simple e-commerce website. There are various teams in this organization and each is responsible for creating their own EdgeWorker. This lets them divide the responsibility and workload while being able to release on their own schedule and use their preferred tools. Each EdgeWorker performs a different task such as authentication, personalization, and adding static content to the site.
 
-To learn more, refer to [Create a subWorker](doc:create-a-subworker) in this guide.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/subWorkersFragmentGeneration-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "700px"
-    }
-  ]
-}
-[/block]
+To learn more, refer to [Create a subWorker](create-a-subworker.md) in this guide.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/subWorkersFragmentGeneration-v2.jpg" alt="Image"/>
+</Frame>
 
 
 # Create the subWorkers
 
-To get started, you can create the fragment subWorkers pages that will be called by the main page. Each of these subWorkers pages need to be enabled as subWorkers in its `bundle.json` file. You need to [create a code bundle](doc:create-a-code-bundle) and [deploy](doc:deploy-hello-world-1) each subWorker separately.
+To get started, you can create the fragment subWorkers pages that will be called by the main page. Each of these subWorkers pages need to be enabled as subWorkers in its `bundle.json` file. You need to [create a code bundle](create-a-code-bundle.md) and [deploy](deploy-hello-world-1.md) each subWorker separately.
 
 ## Enable subWorkers in the bundle.json files
 
@@ -219,7 +206,7 @@ export function onClientRequest(request) {
           msg = `Welcome Guest!`;
   }
 
-  let out = `<html><head></head><body style='font-size: x-large'>${msg}<br>\n`
+  let out = `<html><head></head><body style='font-size: x-large'>${msg}<br/>\n`
   request.respondWith(200, {}, out);
   
   return;
@@ -339,42 +326,16 @@ To see this page, load `https://<hostname>/?user=Alex` in your browser, where th
 
  You can also use a curl request, `https://<hostname>/?user=Alex` to load the page.
 
-The main EdgeWorkers page uses the [Authentication subWorker](doc:subworkers-tutorial#authentication-subworker) to retrieve information about the logged in user and adds a list of products to the page from the [Sales subWorker](doc:subworkers-tutorial#sales-subworker) that fit the interests of the authenticated user.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/loggedInUser-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+The main EdgeWorkers page uses the [Authentication subWorker](subworkers-tutorial.md#authentication-subworker) to retrieve information about the logged in user and adds a list of products to the page from the [Sales subWorker](subworkers-tutorial.md#sales-subworker) that fit the interests of the authenticated user.
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/loggedInUser-v2.jpg" alt="Image"/>
+</Frame>
 
 
 When, on the other hand, a user makes a request to the main page and  is not logged in, the page only displays generic products.
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://techdocs.akamai.com/edgeworkers/img/genericUser-v2.jpg",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Frame>
+  <img src="https://techdocs.akamai.com/edgeworkers/img/genericUser-v2.jpg" alt="Image"/>
+</Frame>
 
 
-<br>
+<br/>

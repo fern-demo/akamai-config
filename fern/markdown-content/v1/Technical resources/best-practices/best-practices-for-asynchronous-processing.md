@@ -15,7 +15,7 @@ JavaScript is inherently a single-threaded execution environment. The EdgeWorker
 
 Only one of these environments can serve a specific request at a time. You might, however, want to write code that executes in an asynchronous manner.  When making an HTTPS request from EdgeWorkers, you should avoid tying up the thread while waiting for a response. Instead, the code should continue to execute, either for the current request or a different request, while waiting for the HTTPS response.  
 
-To accomplish this, EdgeWorkers JavaScript code passes the job of making an HTTPS request to the underlying platform. EdgeWorkers does this by providing a callback function for the platform to invoke when the HTTPS response is available. You can also use callbacks to write more efficient code with techniques such as making multiple HTTPS requests in [parallel](doc:best-practices-for-performance#parallelise-sub-requests).
+To accomplish this, EdgeWorkers JavaScript code passes the job of making an HTTPS request to the underlying platform. EdgeWorkers does this by providing a callback function for the platform to invoke when the HTTPS response is available. You can also use callbacks to write more efficient code with techniques such as making multiple HTTPS requests in [parallel](best-practices-for-performance.md#parallelise-sub-requests).
 
 ## About promises
 
@@ -39,7 +39,7 @@ export function onClientRequest(request) {
 
 Since the `httpRequestCompleted` function will not be called until the promise, created by `httpRequest` is resolved, the "continuing processing" log line will be generated first, followed later by the "response completed..." log statement. However, the `onClientRequest` function would already have completed prior to "response completed..." being logged.  Thus you would not see this log statement in your debug output.
 
-How can we force EdgeWorkers to wait for the log line to generate before completing? We can return our own promise from the `onClientRequest` function. The EdgeWorkers platform can consume a promise from an event handler. The platform will wait for the promise to resolve before considering the event handler to be complete. A wall timeout error will occur if the promise is not resolved prior to the 4 second EdgeWorkers wall time [limit](doc:resource-tier-limitations).
+How can we force EdgeWorkers to wait for the log line to generate before completing? We can return our own promise from the `onClientRequest` function. The EdgeWorkers platform can consume a promise from an event handler. The platform will wait for the promise to resolve before considering the event handler to be complete. A wall timeout error will occur if the promise is not resolved prior to the 4 second EdgeWorkers wall time [limit](resource-tier-limitations.md).
 
 Luckily, you don't need to create our own promise in this case. The object returned from `.then()` is another promise that resolves after the callback method has completed processing.  Therefore, you can return the promise created by the `.then()` function as shown in the code sample below.
 
