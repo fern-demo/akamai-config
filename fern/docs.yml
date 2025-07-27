@@ -10,9 +10,9 @@ layout:
   page-width: full
   tabs-placement: header
 
-# roles:
-#   - everyone
-#   - akamai-admins
+roles:
+  - everyone
+  - akamai-admins
 
 products:
   - display-name: Home
@@ -211,6 +211,8 @@ products:
     path: ./products/reporting-api/reporting-api.yml
     subtitle: "Powerful API integration"
   - display-name: Sample Spec
+    viewers:
+      - akamai-admins
     path: ./products/sample-spec/sample-spec.yml
     subtitle: "Powerful API integration"
   - display-name: Sandbox Api
@@ -263,7 +265,7 @@ colors:
 css: ./assets/styles/main.css
 js:
   - filter.js
-  # - rbac-demo.js
+  - rbac-demo.js
 
 
 typography:
