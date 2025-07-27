@@ -263,7 +263,7 @@ colors:
 css: ./assets/styles/main.css
 js:
   - filter.js
-  - rbac-demo.js
+  # - rbac-demo.js
 
 
 typography:
