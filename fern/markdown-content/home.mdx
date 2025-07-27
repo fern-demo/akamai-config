@@ -13,8 +13,325 @@ layout: overview
   .fern-button{
     margin: 0.25rem 0.5rem 0.25rem 0;
   }
-  .fern-card{
-    
+  
+  /* Base Card Styling */
+  .featured-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    background-blend-mode: color, normal, normal !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06)) !important;
+  }
+  
+  /* Cloud Computing Card - Green Theme */
+  .light .cloud-computing-card, :root .cloud-computing-card {
+    --accent: rgba(113, 175, 118, 1);
+    --theme-color: #71AF76;
+    background: linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 50%, #B7DFBA80 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(183, 223, 186, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), 
+                linear-gradient(240deg, rgba(255, 255, 255, 0.00) -19.21%, #FFF 90.9%) !important;
+    border-color: #D7E5D9 !important;
+  }
+  
+  .dark .cloud-computing-card {
+    --accent: rgba(183, 223, 186, 1);
+    --theme-color: #B7DFBA;
+    background: linear-gradient(45deg, #1a1a1a 0%, #1a1a1a 50%, #B7DFBA30 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(183, 223, 186, 0.20) 0%, rgba(26, 26, 26, 0.00) 100%), 
+                linear-gradient(240deg, rgba(26, 26, 26, 0.00) -19.21%, #1a1a1a 90.9%) !important;
+    border-color: #2a3a2b !important;
+  }
+  
+  /* Security Card - Blue Theme */  
+  .light .security-card, :root .security-card {
+    --accent: rgba(119, 169, 199, 1);
+    --theme-color: #77A9C7;
+    background: linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 50%, #A7C7E780 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(167, 199, 231, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), 
+                linear-gradient(240deg, rgba(255, 255, 255, 0.00) -19.21%, #FFF 90.9%) !important;
+    border-color: #C1D4E8 !important;
+  }
+  
+  .dark .security-card {
+    --accent: rgba(167, 199, 231, 1);
+    --theme-color: #A7C7E7;
+    background: linear-gradient(45deg, #1a1a1a 0%, #1a1a1a 50%, #A7C7E730 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(167, 199, 231, 0.20) 0%, rgba(26, 26, 26, 0.00) 100%), 
+                linear-gradient(240deg, rgba(26, 26, 26, 0.00) -19.21%, #1a1a1a 90.9%) !important;
+    border-color: #2a3d4a !important;
+  }
+  
+  /* Security Blue Card - Orange Theme */
+  .light .security-blue-card, :root .security-blue-card {
+    --accent: rgba(230, 149, 77, 1);
+    --theme-color: #E6954D;
+    background: linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 50%, #FFB36680 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(255, 179, 102, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), 
+                linear-gradient(240deg, rgba(255, 255, 255, 0.00) -19.21%, #FFF 90.9%) !important;
+    border-color: #FFD4B3 !important;
+  }
+  
+  .dark .security-blue-card {
+    --accent: rgba(255, 179, 102, 1);
+    --theme-color: #FFB366;
+    background: linear-gradient(45deg, #1a1a1a 0%, #1a1a1a 50%, #FFB36630 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(255, 179, 102, 0.20) 0%, rgba(26, 26, 26, 0.00) 100%), 
+                linear-gradient(240deg, rgba(26, 26, 26, 0.00) -19.21%, #1a1a1a 90.9%) !important;
+    border-color: #4a3a2a !important;
+  }
+  
+  /* Security Yellow Card - Purple Theme */
+  .light .security-yellow-card, :root .security-yellow-card {
+    --accent: rgba(183, 135, 199, 1);
+    --theme-color: #B787C7;
+    background: linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 50%, #D4A7E780 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(212, 167, 231, 0.50) 0%, rgba(255, 255, 255, 0.00) 100%), 
+                linear-gradient(240deg, rgba(255, 255, 255, 0.00) -19.21%, #FFF 90.9%) !important;
+    border-color: #E6C7F0 !important;
+  }
+  
+  .dark .security-yellow-card {
+    --accent: rgba(212, 167, 231, 1);
+    --theme-color: #D4A7E7;
+    background: linear-gradient(45deg, #1a1a1a 0%, #1a1a1a 50%, #D4A7E730 100%), 
+                radial-gradient(131.54% 107.07% at 66.88% -9.43%, rgba(212, 167, 231, 0.20) 0%, rgba(26, 26, 26, 0.00) 100%), 
+                linear-gradient(240deg, rgba(26, 26, 26, 0.00) -19.21%, #1a1a1a 90.9%) !important;
+    border-color: #3a2a4a !important;
+  }
+  
+  /* Custom Hover States */
+  /* Cloud Computing Card Hover - Green */
+  .light .cloud-computing-card button[data-intent="primary"]:hover,
+  .light .cloud-computing-card .fern-button[data-intent="primary"]:hover,
+  .light .cloud-computing-card a[href*="edge-workers"]:hover:not([data-outlined]):not(.outlined),
+  :root .cloud-computing-card button[data-intent="primary"]:hover,
+  :root .cloud-computing-card .fern-button[data-intent="primary"]:hover,
+  :root .cloud-computing-card a[href*="edge-workers"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #5a8f5f !important;
+    background: #5a8f5f !important;
+    border-color: #5a8f5f !important;
+  }
+  
+  .dark .cloud-computing-card button[data-intent="primary"]:hover,
+  .dark .cloud-computing-card .fern-button[data-intent="primary"]:hover,
+  .dark .cloud-computing-card a[href*="edge-workers"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #9bc49e !important;
+    background: #9bc49e !important;
+    border-color: #9bc49e !important;
+  }
+  
+  /* Security Card Hover - Blue */
+  .light .security-card button[data-intent="primary"]:hover,
+  .light .security-card .fern-button[data-intent="primary"]:hover,
+  .light .security-card button:hover:not([data-outlined]):not(.outlined),
+  .light .security-card a:hover:not([data-outlined]):not(.outlined),
+  .light .security-card [role="button"]:hover:not([data-outlined]):not(.outlined),
+  :root .security-card button[data-intent="primary"]:hover,
+  :root .security-card .fern-button[data-intent="primary"]:hover,
+  :root .security-card button:hover:not([data-outlined]):not(.outlined),
+  :root .security-card a:hover:not([data-outlined]):not(.outlined),
+  :root .security-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #6289b3 !important;
+    background: #6289b3 !important;
+    border-color: #6289b3 !important;
+  }
+  
+  .dark .security-card button[data-intent="primary"]:hover,
+  .dark .security-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-card a:hover:not([data-outlined]):not(.outlined),
+  .dark .security-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #8bb4d1 !important;
+    background: #8bb4d1 !important;
+    border-color: #8bb4d1 !important;
+  }
+  
+  /* Security Blue Card Hover - Orange */
+  .light .security-blue-card button[data-intent="primary"]:hover,
+  .light .security-blue-card .fern-button[data-intent="primary"]:hover,
+  .light .security-blue-card button:hover:not([data-outlined]):not(.outlined),
+  .light .security-blue-card a:hover:not([data-outlined]):not(.outlined),
+  .light .security-blue-card [role="button"]:hover:not([data-outlined]):not(.outlined),
+  :root .security-blue-card button[data-intent="primary"]:hover,
+  :root .security-blue-card .fern-button[data-intent="primary"]:hover,
+  :root .security-blue-card button:hover:not([data-outlined]):not(.outlined),
+  :root .security-blue-card a:hover:not([data-outlined]):not(.outlined),
+  :root .security-blue-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #cc7a3d !important;
+    background: #cc7a3d !important;
+    border-color: #cc7a3d !important;
+  }
+  
+  .dark .security-blue-card button[data-intent="primary"]:hover,
+  .dark .security-blue-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-blue-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-blue-card a:hover:not([data-outlined]):not(.outlined),
+  .dark .security-blue-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #e09852 !important;
+    background: #e09852 !important;
+    border-color: #e09852 !important;
+  }
+  
+  /* Security Yellow Card Hover - Purple */
+  .light .security-yellow-card button[data-intent="primary"]:hover,
+  .light .security-yellow-card .fern-button[data-intent="primary"]:hover,
+  .light .security-yellow-card button:hover:not([data-outlined]):not(.outlined),
+  .light .security-yellow-card a:hover:not([data-outlined]):not(.outlined),
+  .light .security-yellow-card [role="button"]:hover:not([data-outlined]):not(.outlined),
+  :root .security-yellow-card button[data-intent="primary"]:hover,
+  :root .security-yellow-card .fern-button[data-intent="primary"]:hover,
+  :root .security-yellow-card button:hover:not([data-outlined]):not(.outlined),
+  :root .security-yellow-card a:hover:not([data-outlined]):not(.outlined),
+  :root .security-yellow-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #9b6bb3 !important;
+    background: #9b6bb3 !important;
+    border-color: #9b6bb3 !important;
+  }
+  
+  .dark .security-yellow-card button[data-intent="primary"]:hover,
+  .dark .security-yellow-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-yellow-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-yellow-card a:hover:not([data-outlined]):not(.outlined),
+  .dark .security-yellow-card [role="button"]:hover:not([data-outlined]):not(.outlined) {
+    background-color: #c091d1 !important;
+    background: #c091d1 !important;
+    border-color: #c091d1 !important;
+  }
+  
+  /* Dark Mode Primary Button Text Colors */
+  .dark .cloud-computing-card button[data-intent="primary"],
+  .dark .cloud-computing-card .fern-button[data-intent="primary"],
+  .dark .cloud-computing-card a[href*="edge-workers"]:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-card button[data-intent="primary"],
+  .dark .security-card .fern-button[data-intent="primary"],
+  .dark .security-card button:not([data-outlined]):not(.outlined),
+  .dark .security-card a:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-blue-card button[data-intent="primary"],
+  .dark .security-blue-card .fern-button[data-intent="primary"],
+  .dark .security-blue-card button:not([data-outlined]):not(.outlined),
+  .dark .security-blue-card a:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-yellow-card button[data-intent="primary"],
+  .dark .security-yellow-card .fern-button[data-intent="primary"],
+  .dark .security-yellow-card button:not([data-outlined]):not(.outlined),
+  .dark .security-yellow-card a:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  /* Dark Mode Primary Button Text Colors on Hover */
+  .dark .cloud-computing-card button[data-intent="primary"]:hover,
+  .dark .cloud-computing-card .fern-button[data-intent="primary"]:hover,
+  .dark .cloud-computing-card a[href*="edge-workers"]:hover:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-card button[data-intent="primary"]:hover,
+  .dark .security-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-card a:hover:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-blue-card button[data-intent="primary"]:hover,
+  .dark .security-blue-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-blue-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-blue-card a:hover:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  .dark .security-yellow-card button[data-intent="primary"]:hover,
+  .dark .security-yellow-card .fern-button[data-intent="primary"]:hover,
+  .dark .security-yellow-card button:hover:not([data-outlined]):not(.outlined),
+  .dark .security-yellow-card a:hover:not([data-outlined]):not(.outlined) {
+    color: #000000 !important;
+  }
+  
+  /* SVG Icon Inversion for Dark Mode */
+  .dark .featured-card img[src*=".svg"] {
+    filter: invert(1) brightness(1) !important;
+  }
+  
+  /* Filter Section Dark Mode Styling */
+  .dark .td-filter {
+    color: #ffffff !important;
+  }
+  
+  .dark .td-filter .td-main-hdr {
+    color: #ffffff !important;
+  }
+  
+  .dark .td-filter .td-sidebar-item {
+    color: #e0e0e0 !important;
+  }
+  
+  .dark .td-filter .td-sidebar-item.td-active {
+    color: #007ac5 !important;
+    background-color: rgba(0, 122, 197, 0.1) !important;
+  }
+  
+  .dark .td-filter #main-search {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #444444 !important;
+  }
+  
+  .dark .td-filter #main-search::placeholder {
+    color: #a0a0a0 !important;
+    font-style: italic !important;
+  }
+  
+  /* Light mode placeholder styling */
+  .td-filter #main-search::placeholder {
+    font-style: italic !important;
+  }
+  
+  .dark .td-filter #mx-filter-dropdown {
+    background-color: #2a2a2a !important;
+    color: #ffffff !important;
+    border-color: #444444 !important;
+  }
+  
+  /* Filter Sidebar Hover States for Dark Mode */
+  .dark .td-filter .td-sidebar-item:hover {
+    background-color: rgba(0, 122, 197, 0.15) !important;
+    color: #ffffff !important;
+  }
+  
+  .dark .td-filter .td-sidebar-item:hover .td-icon {
+    color: #007ac5 !important;
+  }
+  
+  /* Card dividers and borders in dark mode should remain subtle */
+  .dark .filter-card {
+    border-color: #444444 !important;
+  }
+  
+  /* Card hover states for dark mode */
+  .dark .filter-card:hover {
+    border-color: #666666 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Show More Button Styling - simple and clean */
+  .show-more-button:hover {
+    border-color: #bbb !important;
+    background-color: rgba(0, 0, 0, 0.02) !important;
+  }
+  
+  .dark .show-more-button {
+    border-color: #555 !important;
+  }
+  
+  .dark .show-more-button:hover {
+    border-color: #777 !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
   }
 `}
 
@@ -25,66 +342,66 @@ layout: overview
 <CardGroup cols={2}>
   <Card
     title="Cloud Computing"
-    href="/cloud-computing"
-    icon="cloud"
+    icon={<img src="../assets/cloud_computing.svg"/>}
+    className="featured-card cloud-computing-card"
   >
     Build, deploy, and scale your modern apps.
     <br/>
-    <Button intent="primary">Akamai Cloud</Button>
+    <Button intent="primary" href="../edge-workers" >Akamai Cloud</Button>
     <br/>
-    <Button outlined>Get started with Akamai Cloud</Button>
+    <Button outlined href="../edge-workers">Get started with Akamai Cloud</Button>
     <br/>
-    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <Button outlined href="../edge-workers">Build on the cloud</Button> <Button outlined href="../edge-workers">Linode API</Button>
     <br/>
-    <Button outlined>Linode CLI</Button>
+    <Button outlined href="../edge-workers">Linode CLI</Button>
   </Card>
   
   <Card
     title="Security"
-    href="/security"
-    icon="shield"
+    icon={<img src="../assets/security.svg"/>}
+    className="featured-card security-card"
   >
     Learn how to integrate ElevenLabs
     <br/>
-    <Button intent="primary">Akamai Cloud</Button>
+    <Button intent="primary" href="../edge-workers">Akamai Guardicore Segmentation</Button>
     <br/>
-    <Button outlined>Get started with Akamai Cloud</Button>
+    <Button outlined href="../edge-workers">Zero Trust Network Access</Button>
     <br/>
-    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <Button outlined href="../edge-workers">Web application security</Button> <Button outlined href="../edge-workers">API Security</Button>
     <br/>
-    <Button outlined>Linode CLI</Button>
+    <Button outlined href="../edge-workers">Edge DNS</Button>
   </Card>
   
   <Card
-    title="Security"
-    href="/security-blue"
-    icon="dollar-sign"
+    title="Content Delivery"
+    icon={<img src="../assets/content-delivery.svg"/>}
+    className="featured-card security-blue-card"
   >
     Learn how to integrate ElevenLabs
     <br/>
-    <Button intent="primary">Akamai Cloud</Button>
+    <Button intent="primary" href="../edge-workers">EdgeWorkers</Button>
     <br/>
-    <Button outlined>Get started with Akamai Cloud</Button>
+    <Button outlined href="../edge-workers">API Definitions</Button>
     <br/>
-    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <Button outlined href="../edge-workers">Adaptive Media Delivery</Button> <Button outlined href="../edge-workers">Property Manager</Button>
     <br/>
-    <Button outlined>Linode CLI</Button>
+    <Button outlined href="../edge-workers">Purge Cache</Button>
   </Card>
   
   <Card
-    title="Security"
-    href="/security-yellow"
-    icon="lightbulb"
+    title="Tools & Delivery"
+    icon={<img src="../assets/tools&delivery.svg"/>} 
+    className="featured-card security-yellow-card"
   >
     Learn how to integrate ElevenLabs
     <br/>
-    <Button intent="primary">Akamai Cloud</Button>
+    <Button intent="primary" href="../edge-workers">Akamai Developer Center</Button>
     <br/>
-    <Button outlined>Get started with Akamai Cloud</Button>
+    <Button outlined href="../edge-workers">All APIs</Button>
     <br/>
-    <Button outlined>Build on the cloud</Button> <Button outlined>Linode API</Button>
+    <Button outlined href="../edge-workers">All release notes</Button> <Button outlined href="../edge-workers">Terraform</Button>
     <br/>
-    <Button outlined>Linode CLI</Button>
+    <Button outlined href="../edge-workers">Postman</Button>
   </Card>
 </CardGroup>
 
@@ -137,7 +454,7 @@ layout: overview
           <input 
             id="main-search" 
             type="search" 
-            placeholder="Filter by product or doc type" 
+            placeholder="Filter by product (for example, &quot;edgeworkers&quot; or &quot;API&quot;)" 
             autoComplete="off"
           />
         </div>
@@ -148,121 +465,6 @@ layout: overview
         <CardGroup cols={2} className="td-filter-cards">
           
           <Card 
-            title="Akamai Cloud" 
-            href="/cloud-computing"
-            className="filter-card"
-          >
-            Build, deploy, and scale your modern apps.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-              <Button minimal href="/terraform">Terraform</Button>
-            </div>
-            <div className="filter-data" data-category="compute" data-tags="cloud api cli terraform" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Akamai Guardcore Segmentation" 
-            href="/guardcore"
-            className="filter-card"
-          >
-            Advanced security solutions for network segmentation and threat protection.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-            </div>
-            <div className="filter-data" data-category="security" data-tags="security guardcore api" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Zero Trust Network Access" 
-            href="/zero-trust"
-            className="filter-card"
-          >
-            Secure your network with zero trust principles and comprehensive access controls.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/guide">Guide</Button>
-            </div>
-            <div className="filter-data" data-category="security" data-tags="security zero-trust network api" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Akamai Developer Center" 
-            href="/developer-center"
-            className="filter-card"
-          >
-            Find developer tools, resources, and sample code, and connect with the Akamai community.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-              <Button minimal href="/terraform">Terraform</Button>
-            </div>
-            <div className="filter-data" data-category="tools" data-tags="developer api cli terraform tools" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Terraform" 
-            href="/terraform"
-            className="filter-card"
-          >
-            Manage and provision your Akamai configurations in Terraform.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/terraform">Terraform</Button>
-            </div>
-            <div className="filter-data" data-category="tools" data-tags="terraform infrastructure api" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Control Center" 
-            href="/control-center"
-            className="filter-card"
-          >
-            Use this portal to manage your Akamai security and delivery products and services.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-              <Button minimal href="/terraform">Terraform</Button>
-            </div>
-            <div className="filter-data" data-category="tools" data-tags="control center portal management" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="Cloud Networking" 
-            href="/cloud-networking"
-            className="filter-card"
-          >
-            Connect and secure your cloud infrastructure with advanced networking solutions.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-            </div>
-            <div className="filter-data" data-category="networking" data-tags="networking cloud infrastructure api" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
-            title="PowerShell" 
-            href="/powershell"
-            className="filter-card"
-          >
-            Make calls to many of our APIs with a consistent interface using our PowerShell module.
-            
-            <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
-            </div>
-            <div className="filter-data" data-category="tools" data-tags="powershell api automation" style={{display: 'none'}}></div>
-          </Card>
-
-          <Card 
             title="Application Security" 
             href="/appsec"
             className="filter-card"
@@ -270,52 +472,835 @@ layout: overview
             Protect your applications from threats with comprehensive security solutions.
             
             <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/guide">Guide</Button>
+              <Button outlined href="/appsec/api">API</Button>
+              <Button outlined href="/appsec">Guide</Button>
             </div>
             <div className="filter-data" data-category="security" data-tags="security application appsec firewall" style={{display: 'none'}}></div>
           </Card>
 
           <Card 
             title="EdgeWorkers" 
-            href="/edgeworkers"
+            href="/edge-workers"
             className="filter-card"
           >
             Execute JavaScript at the edge to customize and optimize your applications.
             
             <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/guide">Guide</Button>
+              <Button outlined href="/edge-workers/api">API</Button>
+              <Button outlined href="/edge-workers">Guide</Button>
             </div>
             <div className="filter-data" data-category="compute" data-tags="edge javascript workers compute" style={{display: 'none'}}></div>
           </Card>
-
           <Card 
-            title="CDN & Web Performance" 
-            href="/cdn"
+            title="Adaptive Acceleration" 
+            href="/adaptive-acceleration"
             className="filter-card"
           >
-            Accelerate your content delivery and optimize web performance globally.
+            Adaptive Acceleration documentation and API reference.
             
             <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/cli">CLI</Button>
+              <Button outlined href="/adaptive-acceleration/api">API</Button>
+              <Button outlined href="/adaptive-acceleration">Guide</Button>
             </div>
-            <div className="filter-data" data-category="networking" data-tags="cdn performance delivery cache" style={{display: 'none'}}></div>
+            <div className="filter-data" data-category="compute" data-tags="compute api" style={{display: 'none'}}></div>
           </Card>
 
           <Card 
-            title="Bot Manager" 
-            href="/bot-manager"
+            title="Alerts" 
+            href="/alerts"
             className="filter-card"
           >
-            Detect and mitigate malicious bot traffic while allowing good bots through.
+            Alerts documentation and API reference.
             
             <div className="card-footer-tags">
-              <Button minimal href="/api">API</Button>
-              <Button minimal href="/guide">Guide</Button>
+              <Button outlined href="/alerts/api">API</Button>
+              <Button outlined href="/alerts">Guide</Button>
             </div>
-            <div className="filter-data" data-category="security" data-tags="security bot management protection" style={{display: 'none'}}></div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Adaptive Media Delivery" 
+            href="/amfa"
+            className="filter-card"
+          >
+            Adaptive Media Delivery documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/amfa/api">API</Button>
+              <Button outlined href="/amfa">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api media" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="API Definitions" 
+            href="/api-definitions"
+            className="filter-card"
+          >
+            API Definitions documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/api-definitions/api">API</Button>
+              <Button outlined href="/api-definitions">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="API Key Manager API" 
+            href="/apikey-manager-api"
+            className="filter-card"
+          >
+            API Key Manager API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/apikey-manager-api/api">API</Button>
+              <Button outlined href="/apikey-manager-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Appsec" 
+            href="/appsec"
+            className="filter-card"
+          >
+            Appsec documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/appsec/api">API</Button>
+              <Button outlined href="/appsec">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Client Access Management" 
+            href="/cam"
+            className="filter-card"
+          >
+            Client Access Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/cam/api">API</Button>
+              <Button outlined href="/cam">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api cli" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Case Management" 
+            href="/case-management"
+            className="filter-card"
+          >
+            Case Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/case-management/api">API</Button>
+              <Button outlined href="/case-management">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Content Control Utility (CCU)" 
+            href="/ccu"
+            className="filter-card"
+          >
+            Content Control Utility (CCU) documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/ccu/api">API</Button>
+              <Button outlined href="/ccu">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="China CDN" 
+            href="/chinacdn"
+            className="filter-card"
+          >
+            China CDN documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/chinacdn/api">API</Button>
+              <Button outlined href="/chinacdn">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Client Access Control" 
+            href="/client-access-control"
+            className="filter-card"
+          >
+            Client Access Control documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/client-access-control/api">API</Button>
+              <Button outlined href="/client-access-control">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api cli" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Cloud Wrapper" 
+            href="/cloud-wrapper"
+            className="filter-card"
+          >
+            Cloud Wrapper documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/cloud-wrapper/api">API</Button>
+              <Button outlined href="/cloud-wrapper">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Cloudlets" 
+            href="/cloudlets"
+            className="filter-card"
+          >
+            Cloudlets documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/cloudlets/api">API</Button>
+              <Button outlined href="/cloudlets">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Edge DNS" 
+            href="/config-dns"
+            className="filter-card"
+          >
+            Edge DNS documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/config-dns/api">API</Button>
+              <Button outlined href="/config-dns">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api configuration edge dns" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Global Traffic Management" 
+            href="/config-gtm"
+            className="filter-card"
+          >
+            Global Traffic Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/config-gtm/api">API</Button>
+              <Button outlined href="/config-gtm">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api configuration" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Media Live Config" 
+            href="/config-media-live"
+            className="filter-card"
+          >
+            Media Live Config documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/config-media-live/api">API</Button>
+              <Button outlined href="/config-media-live">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api configuration media" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Contract API" 
+            href="/contract-api"
+            className="filter-card"
+          >
+            Contract API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/contract-api/api">API</Button>
+              <Button outlined href="/contract-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Client Performance and Reliability" 
+            href="/cprg"
+            className="filter-card"
+          >
+            Client Performance and Reliability documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/cprg/api">API</Button>
+              <Button outlined href="/cprg">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api cli" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Certificate Provisioning System" 
+            href="/cps"
+            className="filter-card"
+          >
+            Certificate Provisioning System documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/cps/api">API</Button>
+              <Button outlined href="/cps">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Crux Analytics" 
+            href="/crux"
+            className="filter-card"
+          >
+            Crux Analytics documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/crux/api">API</Button>
+              <Button outlined href="/crux">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api reporting" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Datastore" 
+            href="/datastore"
+            className="filter-card"
+          >
+            Datastore documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/datastore/api">API</Button>
+              <Button outlined href="/datastore">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="DataStream Config API" 
+            href="/datastream-config-api"
+            className="filter-card"
+          >
+            DataStream Config API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/datastream-config-api/api">API</Button>
+              <Button outlined href="/datastream-config-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api configuration media rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Device Characterization API" 
+            href="/dcp-api"
+            className="filter-card"
+          >
+            Device Characterization API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/dcp-api/api">API</Button>
+              <Button outlined href="/dcp-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Enhanced Content Control Utility API" 
+            href="/eccu-api"
+            className="filter-card"
+          >
+            Enhanced Content Control Utility API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/eccu-api/api">API</Button>
+              <Button outlined href="/eccu-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Edge Data Stream" 
+            href="/edge-data-stream"
+            className="filter-card"
+          >
+            Edge Data Stream documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/edge-data-stream/api">API</Button>
+              <Button outlined href="/edge-data-stream">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api edge media" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Edge Diagnostics" 
+            href="/edge-diagnostics"
+            className="filter-card"
+          >
+            Edge Diagnostics documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/edge-diagnostics/api">API</Button>
+              <Button outlined href="/edge-diagnostics">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api edge" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="EdgeKV" 
+            href="/edgekv"
+            className="filter-card"
+          >
+            EdgeKV documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/edgekv/api">API</Button>
+              <Button outlined href="/edgekv">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="compute api edge" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Enterprise Threat Protector Config" 
+            href="/etp-config"
+            className="filter-card"
+          >
+            Enterprise Threat Protector Config documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/etp-config/api">API</Button>
+              <Button outlined href="/etp-config">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api configuration" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Enterprise Threat Protector Reports" 
+            href="/etp-report"
+            className="filter-card"
+          >
+            Enterprise Threat Protector Reports documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/etp-report/api">API</Button>
+              <Button outlined href="/etp-report">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api reporting" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Event Viewer" 
+            href="/event-viewer"
+            className="filter-card"
+          >
+            Event Viewer documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/event-viewer/api">API</Button>
+              <Button outlined href="/event-viewer">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Events" 
+            href="/events"
+            className="filter-card"
+          >
+            Events documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/events/api">API</Button>
+              <Button outlined href="/events">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Firewall Rules Manager" 
+            href="/firewall-rules-manager"
+            className="filter-card"
+          >
+            Firewall Rules Manager documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/firewall-rules-manager/api">API</Button>
+              <Button outlined href="/firewall-rules-manager">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Global Traffic Management API" 
+            href="/gtm-api"
+            className="filter-card"
+          >
+            Global Traffic Management API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/gtm-api/api">API</Button>
+              <Button outlined href="/gtm-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="GTM Load Data" 
+            href="/gtm-load-data"
+            className="filter-card"
+          >
+            GTM Load Data documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/gtm-load-data/api">API</Button>
+              <Button outlined href="/gtm-load-data">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Identity Management" 
+            href="/identity-management"
+            className="filter-card"
+          >
+            Identity Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/identity-management/api">API</Button>
+              <Button outlined href="/identity-management">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Imaging" 
+            href="/imaging"
+            className="filter-card"
+          >
+            Imaging documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/imaging/api">API</Button>
+              <Button outlined href="/imaging">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Invoicing" 
+            href="/invoicing"
+            className="filter-card"
+          >
+            Invoicing documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/invoicing/api">API</Button>
+              <Button outlined href="/invoicing">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="IP Protection" 
+            href="/ip-protect"
+            className="filter-card"
+          >
+            IP Protection documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/ip-protect/api">API</Button>
+              <Button outlined href="/ip-protect">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="JWT API" 
+            href="/jwt-api"
+            className="filter-card"
+          >
+            JWT API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/jwt-api/api">API</Button>
+              <Button outlined href="/jwt-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Live Archive" 
+            href="/live-archive"
+            className="filter-card"
+          >
+            Live Archive documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/live-archive/api">API</Button>
+              <Button outlined href="/live-archive">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Media Delivery Reports" 
+            href="/media-delivery-reports"
+            className="filter-card"
+          >
+            Media Delivery Reports documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/media-delivery-reports/api">API</Button>
+              <Button outlined href="/media-delivery-reports">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api reporting media" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Media Reports" 
+            href="/media-reports"
+            className="filter-card"
+          >
+            Media Reports documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/media-reports/api">API</Button>
+              <Button outlined href="/media-reports">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api reporting media" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="NetStorage Usage API" 
+            href="/netstorage-usage-api"
+            className="filter-card"
+          >
+            NetStorage Usage API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/netstorage-usage-api/api">API</Button>
+              <Button outlined href="/netstorage-usage-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Network Lists" 
+            href="/network-lists"
+            className="filter-card"
+          >
+            Network Lists documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/network-lists/api">API</Button>
+              <Button outlined href="/network-lists">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="networking" data-tags="networking api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Over The Air Updates" 
+            href="/ota"
+            className="filter-card"
+          >
+            Over The Air Updates documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/ota/api">API</Button>
+              <Button outlined href="/ota">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Property Manager API (PAPI)" 
+            href="/papi"
+            className="filter-card"
+          >
+            Property Manager API (PAPI) documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/papi/api">API</Button>
+              <Button outlined href="/papi">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Prolexic Analytics" 
+            href="/prolexic-analytics"
+            className="filter-card"
+          >
+            Prolexic Analytics documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/prolexic-analytics/api">API</Button>
+              <Button outlined href="/prolexic-analytics">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api reporting" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Reporting API" 
+            href="/reporting-api"
+            className="filter-card"
+          >
+            Reporting API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/reporting-api/api">API</Button>
+              <Button outlined href="/reporting-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api reporting rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Sample Spec" 
+            href="/sample-spec"
+            className="filter-card"
+          >
+            Sample Spec documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/sample-spec/api">API</Button>
+              <Button outlined href="/sample-spec">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Sandbox API" 
+            href="/sandbox-api"
+            className="filter-card"
+          >
+            Sandbox API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/sandbox-api/api">API</Button>
+              <Button outlined href="/sandbox-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Script Management" 
+            href="/script-management"
+            className="filter-card"
+          >
+            Script Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/script-management/api">API</Button>
+              <Button outlined href="/script-management">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Security Information and Event Management" 
+            href="/siem"
+            className="filter-card"
+          >
+            Security Information and Event Management documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/siem/api">API</Button>
+              <Button outlined href="/siem">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="security" data-tags="security api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Siteshield" 
+            href="/siteshield"
+            className="filter-card"
+          >
+            Siteshield documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/siteshield/api">API</Button>
+              <Button outlined href="/siteshield">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Service Level Agreement API" 
+            href="/sla-api"
+            className="filter-card"
+          >
+            Service Level Agreement API documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/sla-api/api">API</Button>
+              <Button outlined href="/sla-api">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Storage" 
+            href="/storage"
+            className="filter-card"
+          >
+            Storage documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/storage/api">API</Button>
+              <Button outlined href="/storage">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Testing as a Service" 
+            href="/taas"
+            className="filter-card"
+          >
+            Testing as a Service documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/taas/api">API</Button>
+              <Button outlined href="/taas">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Demo APIs" 
+            href="/demo-apis"
+            className="filter-card"
+          >
+            Collection of demo APIs showcasing different features, specifications, and implementation examples.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/demo-apis/api">API</Button>
+              <Button outlined href="/demo-apis">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="tools" data-tags="tools api demo examples rest-api" style={{display: 'none'}}></div>
+          </Card>
+
+          <Card 
+            title="Edge Workers" 
+            href="/edge-workers"
+            className="filter-card"
+          >
+            Edge Workers documentation and API reference.
+            
+            <div className="card-footer-tags">
+              <Button outlined href="/edge-workers/api">API</Button>
+              <Button outlined href="/edge-workers">Guide</Button>
+            </div>
+            <div className="filter-data" data-category="compute" data-tags="api compute edge" style={{display: 'none'}}></div>
           </Card>
 
         </CardGroup>

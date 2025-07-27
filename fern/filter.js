@@ -3,10 +3,15 @@ console.log('🔍 Filter system initialized');
 
 // Pagination settings
 const CARDS_PER_PAGE = 8;
-let currentPage = 1;
+let currentCardsShown = CARDS_PER_PAGE;
 
 // Define filterCards function first
-function filterCards(category, searchTerm, showAll = false) {
+function filterCards(category, searchTerm, reset = false) {
+  // Reset pagination when filter changes
+  if (reset) {
+    currentCardsShown = CARDS_PER_PAGE;
+  }
+  
   // Re-get cards in case DOM changed
   const currentCards = document.querySelectorAll('.filter-card');
   
@@ -36,7 +41,7 @@ function filterCards(category, searchTerm, showAll = false) {
   });
   
   // Second pass: show/hide based on pagination
-  const cardsToShow = showAll ? matchingCards.length : Math.min(CARDS_PER_PAGE, matchingCards.length);
+  const cardsToShow = Math.min(currentCardsShown, matchingCards.length);
   
   currentCards.forEach((card, index) => {
     const matchIndex = matchingCards.findIndex(match => match.card === card);
@@ -72,18 +77,20 @@ function updateShowMoreButton(totalMatching, currentlyShowing) {
       showMoreBtn = document.createElement('div');
       showMoreBtn.className = 'show-more-btn';
       showMoreBtn.innerHTML = `
-        <button style="
+        <button class="show-more-button" style="
           margin: 2rem auto;
           display: block;
           padding: 0.75rem 1.5rem;
-          background: #007AC5;
-          color: white;
-          border: none;
+          background: transparent;
+          border: 1px solid #ddd;
           border-radius: 6px;
           cursor: pointer;
           font-size: 1rem;
+          transition: all 0.2s ease;
+          font-family: inherit;
+          color: inherit;
         ">
-          Show More Products (${totalMatching - currentlyShowing} remaining)
+          Load more
         </button>
       `;
       cardContainer.appendChild(showMoreBtn);
@@ -92,11 +99,12 @@ function updateShowMoreButton(totalMatching, currentlyShowing) {
       showMoreBtn.querySelector('button').addEventListener('click', function() {
         const currentCategory = document.querySelector('.td-sidebar-item.td-active')?.dataset.category || 'all';
         const currentSearch = document.getElementById('main-search').value;
-        filterCards(currentCategory, currentSearch, true);
+        currentCardsShown += CARDS_PER_PAGE;
+        filterCards(currentCategory, currentSearch, false);
       });
     } else {
       showMoreBtn.style.display = 'block';
-      showMoreBtn.querySelector('button').textContent = `Show More Products (${totalMatching - currentlyShowing} remaining)`;
+      showMoreBtn.querySelector('button').textContent = 'Load more';
     }
   } else {
     if (showMoreBtn) {
@@ -151,9 +159,8 @@ function initializeFilter() {
         }
         
         // Reset pagination and filter cards
-        currentPage = 1;
         const currentSearch = searchInput ? searchInput.value : '';
-        filterCards(category, currentSearch);
+        filterCards(category, currentSearch, true);
       });
     });
     
@@ -177,9 +184,8 @@ function initializeFilter() {
         }
         
         // Reset pagination and filter cards
-        currentPage = 1;
         const currentSearch = searchInput ? searchInput.value : '';
-        filterCards(category, currentSearch);
+        filterCards(category, currentSearch, true);
       });
     }
     
@@ -188,8 +194,7 @@ function initializeFilter() {
       searchInput.addEventListener('input', function() {
         const currentCategory = document.querySelector('.td-sidebar-item.td-active')?.dataset.category || 'all';
         // Reset pagination when searching
-        currentPage = 1;
-        filterCards(currentCategory, this.value);
+        filterCards(currentCategory, this.value, true);
       });
       
       console.log('🔍 Search and filter system ready');
@@ -198,5 +203,5 @@ function initializeFilter() {
     }
     
     // Initialize with pagination - show only first 8 cards
-    filterCards('all', '');
+    filterCards('all', '', true);
 }

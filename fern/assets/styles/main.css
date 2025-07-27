@@ -8,6 +8,32 @@
     transform: translateY(8px);
     border-radius: 4px;
     border: 10px solid var(--border);
+    pointer-events: none; /* Disable clicking */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Hide the dropdown arrow/icon */
+.fern-product-selector svg,
+.fern-product-selector .fern-dropdown-arrow,
+.fern-product-selector [data-testid="dropdown-arrow"],
+.fern-product-selector button svg {
+    display: none !important;
+}
+
+/* Disable dropdown functionality */
+.fern-product-selector button {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* Hide the dropdown menu */
+.fern-product-selector-radio-group {
+    display: none !important;
+}
+
+
+#fern-announcement a {
+    text-decoration: underline !important;
 }
 
 /* Filter container */
