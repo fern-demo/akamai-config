@@ -10,6 +10,10 @@ layout:
   page-width: full
   tabs-placement: header
 
+roles:
+  - everyone
+  - akamai-admins
+
 products:
   - display-name: Home
     path: ./products/home/home.yml
@@ -257,7 +261,10 @@ colors:
 
 
 css: ./assets/styles/main.css
-js: filter.js
+js:
+  - filter.js
+  - rbac-demo.js
+
 
 typography:
   headingsFont:
