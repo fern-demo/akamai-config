@@ -16,10 +16,10 @@ roles:
 
 products:
   - display-name: Home
-    viewers:
-      - everyone
     path: ./products/home/home.yml
     subtitle: "Akamai Developer Platform"
+    viewers:
+      - everyone
   - display-name: EdgeWorkers
     path: ./products/edge-workers/versions/edge-workers.yml
     image: ./assets/content-delivery.svg
@@ -213,8 +213,6 @@ products:
     path: ./products/reporting-api/reporting-api.yml
     subtitle: "Powerful API integration"
   - display-name: Sample Spec
-    viewers:
-      - akamai-admins
     path: ./products/sample-spec/sample-spec.yml
     subtitle: "Powerful API integration"
   - display-name: Sandbox Api
