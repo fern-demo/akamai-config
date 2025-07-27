@@ -266,8 +266,9 @@ colors:
 
 css: ./assets/styles/main.css
 js:
-  - filter.js
-  - rbac-demo.js
+  - path: filter.js
+  - path: rbac-demo.js
+    strategy: beforeInteractive
 
 
 typography:
