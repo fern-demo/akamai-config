@@ -1,0 +1,37 @@
+tabs:
+  guide:
+    display-name: Guide
+    icon: fa-solid fa-book
+  recipes:
+    display-name: Recipes
+    icon: fa-solid fa-flask
+  api:
+    display-name: API
+    icon: fa-solid fa-code
+  changelog:
+    display-name: Release notes
+    icon: fa-solid fa-clock
+    changelog: ../../../markdown-content/changelog
+  cli:
+    display-name: CLI
+    icon: fa-solid fa-terminal
+  control-center:
+    display-name: Control Center
+    icon: fa-solid fa-gear
+navigation:
+- tab: guide
+  layout:
+  - page: Introduction
+    path: ../../markdown-content/sample.mdx
+  - page: Authentication
+    path: ../../markdown-content/sample.mdx
+- tab: recipes
+  layout:
+  - page: recipe 1
+    path: ../../markdown-content/sample.mdx
+  - page: recipe 2
+    path: ../../markdown-content/sample.mdx
+- tab: api
+  layout:
+  - api: Demo Exclude Components And Custom Syntax API
+    api-name: demo-exclude-components-and-custom-syntax
