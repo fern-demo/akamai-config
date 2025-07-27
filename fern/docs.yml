@@ -10,9 +10,9 @@ layout:
   page-width: full
   tabs-placement: header
 
-roles:
-  - everyone
-  - akamai-admins
+# roles:
+#   - everyone
+#   - akamai-admins
 
 products:
   - display-name: Home
