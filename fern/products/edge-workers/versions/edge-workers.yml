@@ -20,6 +20,8 @@ tabs:
   control-center:
     display-name: Control Center
     icon: fa-solid fa-gear
+    viewers:
+      - akamai-admins
 
 navigation:
   - tab: guide
@@ -393,9 +395,13 @@ navigation:
             path: ../../../markdown-content/sample.mdx
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - akamai-admins
   - tab: terraform
     layout:
       - section: Welcome
+        viewers:
+          - akamai-admins
         contents:
           - page: Introduction
             path: ../../../markdown-content/sample.mdx
