@@ -6,7 +6,7 @@
   
   <br/>
 
-# Frame.io Docs Configuration
+# Akamai Docs Configuration
 
 https://akamai.docs.buildwithfern.com/
 
