@@ -16,6 +16,8 @@ roles:
 
 products:
   - display-name: Home
+    viewers:
+      - everyone
     path: ./products/home/home.yml
     subtitle: "Akamai Developer Platform"
   - display-name: EdgeWorkers
