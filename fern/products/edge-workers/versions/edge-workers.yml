@@ -2,21 +2,33 @@ tabs:
   guide:
     display-name: Guide
     icon: fa-solid fa-book
+    viewers:
+      - everyone
   recipes:
     display-name: Recipes
     icon: fa-solid fa-flask
+    viewers:
+      - everyone
   api:
     display-name: API
     icon: fa-solid fa-code
+    viewers:
+      - everyone
   changelog:
     display-name: Release notes
     icon: fa-solid fa-clock
     changelog: ../../../markdown-content/changelog
+    viewers:
+      - everyone
   cli:
     display-name: CLI
     icon: fa-solid fa-terminal
+    viewers:
+      - everyone
   terraform:
     display-name: Terraform
+    viewers:
+      - everyone
   control-center:
     display-name: Control Center
     icon: fa-solid fa-gear
