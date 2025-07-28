@@ -676,10 +676,10 @@ navigation:
       - section: Welcome
         contents:
           - page: Introduction
-            path: ../../../markdown-content/sample.mdx
+            path: ../../../markdown-content/auth.mdx
             viewers:
               - akamai-admins
           - page: Authentication
-            path: ../../../markdown-content/sample.mdx
+            path: ../../../markdown-content/auth.mdx
             viewers:
               - akamai-admins
