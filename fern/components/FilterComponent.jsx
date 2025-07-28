@@ -1,240 +1,298 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const FilterComponent = () => {
   // Pagination settings
   const CARDS_PER_PAGE = 8;
   
+  // Product data - this replaces the DOM scraping approach
+  const productData = [
+    {
+      id: 'edgeworkers',
+      title: 'EdgeWorkers',
+      description: 'Execute JavaScript at the edge to customize and optimize your applications.',
+      href: '/edge-workers',
+      category: 'compute',
+      tags: 'edge javascript workers compute',
+      buttons: [
+        { text: 'API', href: '/edge-workers/api', outlined: true },
+        { text: 'Guide', href: '/edge-workers', outlined: true }
+      ]
+    },
+    {
+      id: 'sample-spec',
+      title: 'Sample Spec',
+      description: 'Sample Spec documentation and API reference.',
+      href: '/sample-spec',
+      category: 'tools',
+      tags: 'tools api',
+      buttons: [
+        { text: 'API', href: '/sample-spec/api', outlined: true },
+        { text: 'Guide', href: '/sample-spec', outlined: true }
+      ]
+    },
+    {
+      id: 'demo-apis',
+      title: 'Demo APIs',
+      description: 'Collection of demo APIs showcasing different features, specifications, and implementation examples.',
+      href: '/demo-apis',
+      category: 'tools',
+      tags: 'tools api demo examples rest-api',
+      buttons: [
+        { text: 'API', href: '/demo-apis/api', outlined: true },
+        { text: 'Guide', href: '/demo-apis', outlined: true }
+      ]
+    }
+    // Add more products here as needed
+  ];
+
+  // Categories for the sidebar
+  const categories = [
+    { id: 'all', name: 'All products & services', icon: '›' },
+    { id: 'compute', name: 'Cloud Computing', icon: '›' },
+    { id: 'security', name: 'Security', icon: '›' },
+    { id: 'networking', name: 'Cloud networking', icon: '›' },
+    { id: 'tools', name: 'Cross-product tools', icon: '›' }
+  ];
+  
   // State management
-  const [currentCardsShown, setCurrentCardsShown] = useState(CARDS_PER_PAGE);
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [cards, setCards] = useState([]);
-  const [filteredCards, setFilteredCards] = useState([]);
-  const [visibleCards, setVisibleCards] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Get cards from DOM
-  const getCardsFromDOM = useCallback(() => {
-    const cardElements = document.querySelectorAll('.filter-card');
-    const cardsData = Array.from(cardElements).map((card, index) => {
-      const filterDataEl = card.querySelector('.filter-data');
-      return {
-        element: card,
-        index,
-        category: filterDataEl ? filterDataEl.dataset.category : '',
-        tags: filterDataEl ? filterDataEl.dataset.tags || '' : '',
-        text: card.textContent.toLowerCase(),
-      };
-    });
-    return cardsData;
-  }, []);
-
-  // Initialize cards on mount
-  useEffect(() => {
-    const cardsData = getCardsFromDOM();
-    setCards(cardsData);
-  }, [getCardsFromDOM]);
-
-  // Filter cards based on category and search
-  const filterCards = useCallback((category, search, resetPagination = false) => {
-    console.log(`🔍 Filtering: category=${category}, search="${search}"`);
-    
-    if (resetPagination) {
-      setCurrentCardsShown(CARDS_PER_PAGE);
-    }
-
-    // Re-get cards in case DOM changed
-    const currentCards = getCardsFromDOM();
-    setCards(currentCards);
-
-    // Filter matching cards
-    const matchingCards = currentCards.filter(card => {
-      const categoryMatch = category === 'all' || card.category === category;
-      const searchMatch = !search || 
-        card.text.includes(search.toLowerCase()) ||
-        card.tags.toLowerCase().includes(search.toLowerCase());
+  // Filtered products based on category and search
+  const filteredProducts = useMemo(() => {
+    return productData.filter(product => {
+      const categoryMatch = activeCategory === 'all' || product.category === activeCategory;
+      const searchMatch = !searchTerm || 
+        product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.tags.toLowerCase().includes(searchTerm.toLowerCase());
       
       return categoryMatch && searchMatch;
     });
+  }, [activeCategory, searchTerm]);
 
-    setFilteredCards(matchingCards);
-    
-    // Update visible cards based on pagination
-    const cardsToShow = Math.min(resetPagination ? CARDS_PER_PAGE : currentCardsShown, matchingCards.length);
-    const cardsToDisplay = matchingCards.slice(0, cardsToShow);
-    setVisibleCards(cardsToDisplay);
+  // Paginated products
+  const paginatedProducts = useMemo(() => {
+    const startIndex = 0;
+    const endIndex = currentPage * CARDS_PER_PAGE;
+    return filteredProducts.slice(startIndex, endIndex);
+  }, [filteredProducts, currentPage]);
 
-    // Update DOM visibility
-    currentCards.forEach(card => {
-      const shouldShow = cardsToDisplay.some(visibleCard => visibleCard.element === card.element);
-      if (shouldShow) {
-        card.element.classList.remove('hidden');
-        card.element.style.display = '';
-      } else {
-        card.element.classList.add('hidden');
-        card.element.style.display = 'none';
-      }
-    });
-
-    console.log(`🔍 Showing ${cardsToDisplay.length} of ${matchingCards.length} matching products`);
-  }, [currentCardsShown, getCardsFromDOM]);
-
-  // Handle category change
-  const handleCategoryChange = useCallback((category, categoryText) => {
-    setActiveCategory(category);
-    
-    // Update sidebar active state
-    const sidebarItems = document.querySelectorAll('.td-sidebar-item');
-    sidebarItems.forEach(item => {
-      item.classList.remove('td-active');
-      if (item.dataset.category === category) {
-        item.classList.add('td-active');
-      }
-    });
-    
-    // Update header
-    const mainHeader = document.querySelector('.td-main-hdr');
-    if (mainHeader) {
-      mainHeader.textContent = categoryText;
-    }
-    
-    // Update mobile dropdown
-    const mobileDropdown = document.getElementById('mx-filter-dropdown');
-    if (mobileDropdown) {
-      mobileDropdown.value = category;
-    }
-    
-    filterCards(category, searchTerm, true);
-  }, [searchTerm, filterCards]);
-
-  // Handle search change
-  const handleSearchChange = useCallback((search) => {
-    setSearchTerm(search);
-    filterCards(activeCategory, search, true);
-  }, [activeCategory, filterCards]);
-
-  // Handle load more
-  const handleLoadMore = useCallback(() => {
-    const newCardsShown = currentCardsShown + CARDS_PER_PAGE;
-    setCurrentCardsShown(newCardsShown);
-    
-    const cardsToDisplay = filteredCards.slice(0, newCardsShown);
-    setVisibleCards(cardsToDisplay);
-    
-    // Update DOM visibility
-    cards.forEach(card => {
-      const shouldShow = cardsToDisplay.some(visibleCard => visibleCard.element === card.element);
-      if (shouldShow) {
-        card.element.classList.remove('hidden');
-        card.element.style.display = '';
-      } else {
-        card.element.classList.add('hidden');
-        card.element.style.display = 'none';
-      }
-    });
-  }, [currentCardsShown, filteredCards, cards]);
-
-  // Initialize event listeners
+  // Reset pagination when filters change
   useEffect(() => {
-    console.log('🔍 Initializing React filter system');
-    
-    // Sidebar event listeners
-    const sidebarItems = document.querySelectorAll('.td-sidebar-item');
-    const handleSidebarClick = (event) => {
-      const category = event.currentTarget.dataset.category;
-      const categoryText = event.currentTarget.querySelector('span').textContent;
-      handleCategoryChange(category, categoryText);
-    };
+    setCurrentPage(1);
+  }, [activeCategory, searchTerm]);
 
-    sidebarItems.forEach(item => {
-      item.addEventListener('click', handleSidebarClick);
-    });
-    
-    // Mobile dropdown event listener
-    const mobileDropdown = document.getElementById('mx-filter-dropdown');
-    const handleDropdownChange = (event) => {
-      const category = event.target.value;
-      const selectedText = event.target.options[event.target.selectedIndex].text;
-      handleCategoryChange(category, selectedText);
-    };
-
-    if (mobileDropdown) {
-      mobileDropdown.addEventListener('change', handleDropdownChange);
-    }
-    
-    // Search input event listener
-    const searchInput = document.getElementById('main-search');
-    const handleSearchInput = (event) => {
-      handleSearchChange(event.target.value);
-    };
-
-    if (searchInput) {
-      searchInput.addEventListener('input', handleSearchInput);
-      console.log('🔍 React search and filter system ready');
-    } else {
-      console.log('❌ Search input not found');
-    }
-    
-    // Initialize with default filter
-    filterCards('all', '', true);
-    
-    // Cleanup event listeners
-    return () => {
-      sidebarItems.forEach(item => {
-        item.removeEventListener('click', handleSidebarClick);
-      });
-      if (mobileDropdown) {
-        mobileDropdown.removeEventListener('change', handleDropdownChange);
-      }
-      if (searchInput) {
-        searchInput.removeEventListener('input', handleSearchInput);
-      }
-    };
-  }, [handleCategoryChange, handleSearchChange, filterCards]);
-
-  // Show More Button Component
-  const ShowMoreButton = () => {
-    const shouldShow = filteredCards.length > CARDS_PER_PAGE && visibleCards.length < filteredCards.length;
-    
-    if (!shouldShow) return null;
-
-    return (
-      <div className="show-more-btn" style={{ textAlign: 'center', margin: '2rem 0' }}>
-        <button
-          onClick={handleLoadMore}
-          className="show-more-button"
-          style={{
-            margin: '2rem auto',
-            display: 'block',
-            padding: '0.75rem 1.5rem',
-            background: 'transparent',
-            border: '1px solid #ddd',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            fontSize: '1rem',
-            transition: 'all 0.2s ease',
-            fontFamily: 'inherit',
-            color: 'inherit',
-          }}
-        >
-          Load more
-        </button>
-      </div>
-    );
+  // Handlers
+  const handleCategoryChange = (categoryId) => {
+    setActiveCategory(categoryId);
   };
 
-  // Results Counter Component
-  const ResultsCounter = () => {
-    useEffect(() => {
-      console.log('🔍 Results count:', `${visibleCards.length} of ${cards.length} products visible`);
-    }, [visibleCards.length, cards.length]);
-
-    return null; // This is just for logging, no visual component needed
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
   };
+
+  const handleLoadMore = () => {
+    setCurrentPage(prev => prev + 1);
+  };
+
+  // Get current category name for header
+  const currentCategoryName = categories.find(cat => cat.id === activeCategory)?.name || 'All products & services';
+
+  // Show load more button
+  const showLoadMore = paginatedProducts.length < filteredProducts.length;
 
   return (
-    <div className="react-filter-component">
-      <ResultsCounter />
-      <ShowMoreButton />
+    <div className="td-filter">
+      <div className="td-filter-body">
+        {/* Sidebar */}
+        <div className="td-filter-sidebar">
+          {categories.map(category => (
+            <div
+              key={category.id}
+              className={`td-sidebar-item ${category.id === activeCategory ? 'td-active' : ''}`}
+              onClick={() => handleCategoryChange(category.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleCategoryChange(category.id);
+                }
+              }}
+            >
+              <span>{category.name}</span>
+              <span className="td-icon td-icon-right">{category.icon}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Main content */}
+        <div className="td-filter-main">
+          <div className="td-fltr-hdr">
+            <div className="td-main-hdr">{currentCategoryName}</div>
+            
+            {/* Mobile dropdown */}
+            <div className="td-mx-filter">
+              <select 
+                value={activeCategory} 
+                onChange={(e) => handleCategoryChange(e.target.value)}
+              >
+                {categories.map(category => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            {/* Search */}
+            <div className="td-main-search">
+              <input 
+                type="search" 
+                placeholder='Filter by product (for example, "edgeworkers" or "API")' 
+                value={searchTerm}
+                onChange={handleSearchChange}
+                autoComplete="off"
+                className="search-input-with-italic-placeholder"
+              />
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="td-main-body">
+            <div className="td-filter-cards" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '1.5rem'
+            }}>
+              {paginatedProducts.map(product => (
+                <div key={product.id} className="filter-card fern-card" style={{
+                  padding: '2rem',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '0.5rem',
+                  transition: 'all 0.2s ease',
+                  minHeight: '180px'
+                }}>
+                  <h3 style={{ 
+                    fontSize: '1.125rem', 
+                    fontWeight: '600', 
+                    marginBottom: '0.75rem',
+                    color: 'inherit',
+                    lineHeight: '1.4'
+                  }}>
+                    <a href={product.href} style={{ 
+                      textDecoration: 'none', 
+                      color: 'inherit'
+                    }}>
+                      {product.title}
+                    </a>
+                  </h3>
+                  
+                  <p style={{ 
+                    color: '#6b7280', 
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.5'
+                  }}>
+                    {product.description}
+                  </p>
+                  
+                  <div className="card-footer-tags">
+                                         {product.buttons.map((button, index) => (
+                       <a
+                         key={index}
+                         href={button.href}
+                         className="fern-button"
+                         data-outlined={button.outlined}
+                         style={{
+                           display: 'inline-flex',
+                           alignItems: 'center',
+                           justifyContent: 'center',
+                           padding: '0.375rem 0.875rem',
+                           backgroundColor: '#f3f4f6',
+                           color: '#374151',
+                           fontSize: '0.75rem',
+                           fontWeight: '500',
+                           borderRadius: '9999px',
+                           border: 'none',
+                           textDecoration: 'none',
+                           transition: 'background-color 0.2s ease',
+                           margin: '0 0.5rem 0.5rem 0',
+                           lineHeight: '1.2',
+                           textAlign: 'center',
+                           minHeight: '32px'
+                         }}
+                       >
+                         {button.text}
+                       </a>
+                     ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Load More Button */}
+            {showLoadMore && (
+              <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+                <button
+                  onClick={handleLoadMore}
+                  className="show-more-button"
+                  style={{
+                    padding: '0.75rem 1.5rem',
+                    background: 'transparent',
+                    border: '1px solid #ddd',
+                    borderRadius: '6px',
+                    cursor: 'pointer',
+                    fontSize: '1rem',
+                    transition: 'all 0.2s ease',
+                    fontFamily: 'inherit',
+                    color: 'inherit'
+                  }}
+                >
+                  Load more ({filteredProducts.length - paginatedProducts.length} remaining)
+                </button>
+              </div>
+            )}
+
+            {/* No results message */}
+            {filteredProducts.length === 0 && (
+              <div style={{ 
+                textAlign: 'center', 
+                padding: '3rem', 
+                color: '#6b7280' 
+              }}>
+                <p>No products found matching your criteria.</p>
+                {searchTerm && (
+                  <button
+                    onClick={() => setSearchTerm('')}
+                    style={{
+                      marginTop: '1rem',
+                      padding: '0.5rem 1rem',
+                      background: 'transparent',
+                      border: '1px solid #ddd',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      color: 'inherit'
+                    }}
+                  >
+                    Clear search
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Results counter for debugging */}
+            <div style={{ 
+              fontSize: '0.875rem', 
+              color: '#6b7280', 
+              textAlign: 'center',
+              marginTop: '1rem'
+            }}>
+              Showing {paginatedProducts.length} of {filteredProducts.length} products
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

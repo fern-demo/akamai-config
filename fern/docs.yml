@@ -19,20 +19,24 @@ roles:
 products:
   - display-name: Home
     path: ./products/home/home.yml
+    icon: fa-solid fa-house
     subtitle: "Akamai Developer Platform"
     viewers:
       - everyone
   - display-name: EdgeWorkers
     path: ./products/edge-workers/versions/edge-workers.yml
-    image: ./assets/content-delivery.svg
+    icon: fa-solid fa-code-merge
+    #image: ./assets/content-delivery.svg
     subtitle: "Deliver content to your users"
   - display-name: Demo APIs
     slug: demo-apis
     path: ./products/demo-apis/demo-apis.yml
-    image: ./assets/cloud_computing.svg
+    icon: fa-solid fa-cloud
+    #image: ./assets/cloud_computing.svg
     subtitle: "Build powerful integrations"
   - display-name: Sample Spec
     path: ./products/sample-spec/sample-spec.yml
+    icon: fa-solid fa-vial
     subtitle: "Powerful API integration"
   # - display-name: Adaptive Acceleration
   #   path: ./products/adaptive-acceleration/adaptive-acceleration.yml
