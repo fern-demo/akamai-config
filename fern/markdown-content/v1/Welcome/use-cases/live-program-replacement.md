@@ -6,7 +6,7 @@ This example demonstrates how to use an EdgeWorkers function to dynamically repl
 
 # Before you begin
 
-We recommend that you select the [Dynamic Compute resource tier](doc:select-a-resource-tier) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary to perform program replacement.
+We recommend that you select the [Dynamic Compute resource tier](select-a-resource-tier.md) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary to perform program replacement.
 
 > 👍 The complete code sample for this example is available in the [GitHub repo](https://github.com/akamai/edgeworkers-examples/tree/master/delivery/media).
 
@@ -14,7 +14,7 @@ We recommend that you select the [Dynamic Compute resource tier](doc:select-a-re
 
 ## About blackout slates
 
-For more detailed information about blackout slates refer to the [HLS parser](doc:hls-parser) section in this guide. A blackout slate has its own child playlists and segments that adhere to the parent stream's encoding profile such as bitrates, resolutions, and segment duration as the original content. There should be one policy per live stream that contains a list of blackout events coded as tuples such as geo, interval, and url. 
+For more detailed information about blackout slates refer to the [HLS parser](hls-parser.md) section in this guide. A blackout slate has its own child playlists and segments that adhere to the parent stream's encoding profile such as bitrates, resolutions, and segment duration as the original content. There should be one policy per live stream that contains a list of blackout events coded as tuples such as geo, interval, and url. 
 
 - The origin needs to contain the blackout slate playlists.
 - The blackout child playlists must be less than 128 KB.
@@ -26,18 +26,18 @@ For more detailed information about blackout slates refer to the [HLS parser](do
 [EdgeKV](https://techdocs.akamai.com/edgekv/docs) is not currently supported. Development efforts are underway to let you use an EdgeKV database to:
 
 - Store policies that contain lists of blackout events. 
-- Filter the applicable policies based on [User Location Object](doc:user-location-object) properties. 
+- Filter the applicable policies based on [User Location Object](user-location-object.md) properties. 
 - Use the stream URL as the key in the EdgeKV data model. 
 
 > 📘 EdgeWorkers is supported on both the [Enhanced TLS  and Standard TLS](https://techdocs.akamai.com/property-mgr/docs/prepare-your-edge-certificates#understand-the-levels-of-security) delivery methods.
 
 # 1. Import the HLS parser
 
-1. To configure live program replacement, import the [HLS parser](doc:hls-parser) module into your `main.js` file.
+1. To configure live program replacement, import the [HLS parser](hls-parser.md) module into your `main.js` file.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-   The HLS parser module includes the [`LiveManifestTransformer`](doc:hls-parser#livemanifesttransformer) helper class. You can use it to insert data such as start-time, end-time, and alternative content or a URL.
+   The HLS parser module includes the [`LiveManifestTransformer`](hls-parser.md#livemanifesttransformer) helper class. You can use it to insert data such as start-time, end-time, and alternative content or a URL.
 
 # 2. Specify the blackout slate
 
@@ -46,7 +46,7 @@ For more detailed information about blackout slates refer to the [HLS parser](do
 - **startDate** in ISO 8601 format, representing the start date of the replacement window. 
 - **endDate** in ISO 8601 format, representing the end date of the replacement window.
 - **content** is the blackout playlist that is used to replace the media segment URI. If a URL is passed, the HLS parser makes a sub-request to fetch the blackout slate content.
-- Additionally, you can also specify a geolocation using the [User Location](doc:user-location-object) properties. The media playlist request from the player contains the User Location properties. You can configure the EdgeWorkers function to filter the applicable policy data based on a user's location.
+- Additionally, you can also specify a geolocation using the [User Location](user-location-object.md) properties. The media playlist request from the player contains the User Location properties. You can configure the EdgeWorkers function to filter the applicable policy data based on a user's location.
 
 > 📘 All media segments that occur during the specified time replacement window are replaced with blackout segments.
 
@@ -59,7 +59,7 @@ For more detailed information about blackout slates refer to the [HLS parser](do
 
 3. The above logic executes whenever the player reloads a live media playlist.
 
-4. This code sample demonstrates the usage of the `LiveManifestTransformer` class from the [HLS parser](doc:hls-parser). 
+4. This code sample demonstrates the usage of the `LiveManifestTransformer` class from the [HLS parser](hls-parser.md). 
 
 > 📘 In the below example, the video and audio policies are hardcoded. You can, however, load the policies from Property Manager using a user defined variable. 
 > 

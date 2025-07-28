@@ -16,7 +16,7 @@ You can use the EdgeWorkers Management application to perform the administrative
 
 1. Log in to Control Center.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 # Create an EdgeWorker version
 
@@ -116,7 +116,7 @@ Use the EdgeWorkers Management application to view the activation and deactivati
 | Activating   | The version is currently activating.                                                                                                                                                                                                                          |
 | Deactivating | The current version is currently deactivating.                                                                                                                                                                                                                |
 | Active       | The version is active. Only one version can be active at a time.                                                                                                                                                                                              |
-| Blocked      | {{COMPANY_NICKNAME}} cannot determine if the EdgeWorker code bundle was successfully deployed to the edge server. When this occurs, {{COMPANY_NICKNAME}} prevents the activation from completing. The previously activated EdgeWorker version remains active. |
+| Blocked      | <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> cannot determine if the EdgeWorker code bundle was successfully deployed to the edge server. When this occurs, <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> prevents the activation from completing. The previously activated EdgeWorker version remains active. |
 | Error        | An error is detected during the activation or deactivation process.                                                                                                                                                                                           |
 | Deactivated  | The EdgeWorker version is deactivated. This status can also appear if the EdgeWorkers code bundle is deactivated due to a possible network issue. Contact support for more information.                                                                       |
 | Inactive     | The version is currently inactive. This status appears when an EdgeWorker version has not yet been activated or when a deactivation is complete.                                                                                                              |
@@ -134,7 +134,7 @@ Use the EdgeWorkers Management application to view the resource tier selected fo
 
 > 📘 By default, all EdgeWorker IDs created before resource tiers were introduced, execute using the Dynamic Compute resource tier.
 
-You can contact your {{COMPANY_NICKNAME}} account representative for more information about billing. For instructions on how to change the resource tier assigned to an EdgeWorkers function see Clone an EdgeWorker ID below.
+You can contact your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> account representative for more information about billing. For instructions on how to change the resource tier assigned to an EdgeWorkers function see Clone an EdgeWorker ID below.
 
 # Clone an EdgeWorker ID
 

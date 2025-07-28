@@ -11,13 +11,13 @@ updatedAt: "Wed Aug 24 2022 14:14:48 GMT+0000 (Coordinated Universal Time)"
 ---
 You can use the EdgeWorkers Management application to create a unique identifier, name, and select a resource tier for your EdgeWorkers code.
 
-An EdgeWorker ID is required to enable the EdgeWorkers behavior in your {{COMPANY_NICKNAME}} property configuration.
+An EdgeWorker ID is required to enable the EdgeWorkers behavior in your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> property configuration.
 
 > 📘 You can also use the [EdgeWorkers API](https://techdocs.akamai.com/edgeworkers/reference/api) to create an EdgeWorker ID.
 
 1. Log in to Control Center.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 

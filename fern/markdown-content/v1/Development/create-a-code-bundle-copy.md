@@ -25,11 +25,11 @@ For example, a package called `mybundle.tgz` includes two files:
 > 👍 You cannot re-use a version that you deleted from an EdgeWorker ID. You need to use a new unique version in the `bundle.json` and re-package it and any other files with your `main.js` file.
 | Name | Type | Required | Description |
 | --- | --- | :---: | --- |
-| `edgeworker-version` | String | {{CHAR_CHECK}} | Unique identifier for the version<br/>If you delete a version from an EdgeWorker ID you cannot re-use it. Follow the steps below to create a new code bundle that you can use to create a version. |
-| `bundle-version` | Integer | {{CHAR_CROSS}} | Bundle format version |
-| `api-version` | String | {{CHAR_CROSS}} | Version of JavaScript API that the functions are coded against |
-| `description` | String | {{CHAR_CROSS}} | Descriptive phrase for the code function |
-| `misc` | Object | {{CHAR_CROSS}} | Miscellaneous data you can include in the manifest to identify the function |
+| `edgeworker-version` | String | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | Unique identifier for the version<br/>If you delete a version from an EdgeWorker ID you cannot re-use it. Follow the steps below to create a new code bundle that you can use to create a version. |
+| `bundle-version` | Integer | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Bundle format version |
+| `api-version` | String | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Version of JavaScript API that the functions are coded against |
+| `description` | String | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Descriptive phrase for the code function |
+| `misc` | Object | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Miscellaneous data you can include in the manifest to identify the function |
 
 
 # Create a code bundle
@@ -75,8 +75,8 @@ To enable subWorkers you need to add the `invoke-for-edgeworker-clients` config 
 
 | Name                          | Required       | Description                                                                                                  |
 | :---------------------------- | :------------- | :----------------------------------------------------------------------------------------------------------- |
-| subrequest                    | {{CHAR_CROSS}} | Includes config settings for sub-requests. Currently it only includes  “invoke-for-edgeworkers-client”.      |
-| invoke-for-edgeworkers-client | {{CHAR_CROSS}} | When set to true, it enables support for subWorkers. By default, this configuration setting is set to false. |
+| subrequest                    | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Includes config settings for sub-requests. Currently it only includes  “invoke-for-edgeworkers-client”.      |
+| invoke-for-edgeworkers-client | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | When set to true, it enables support for subWorkers. By default, this configuration setting is set to false. |
 
 ```json
 {  
@@ -101,9 +101,9 @@ You can set the [JavaScript logging](enable-javascript-logging.md) in the code b
 To change the default JavaScript log level you need to add the `logging` config setting to the `bundle.json` file.
 | Name | Required | Description |
 | --- | --- | --- |
-| level | {{CHAR_CROSS}} | The log level applied to the EdgeWorkers code bundle. You can use this parameter to override the default log level, ERROR.<br/>The log levels are **trace**, **debug**, **info**, **warn**, and **error**. |
-| schema | {{CHAR_CROSS}} | Not currently in use. Use `v1` as a placeholder. |
-| ds2id | {{CHAR_CHECK}} | The DataStream2 stream id to associate with the log data.<br/>The stream needs to be active before you include it in the EdgeWorkers code bundle.<br/>When you add the `logging` config setting to the `bundle.json` file, the `ds2id` is required. |
+| level | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | The log level applied to the EdgeWorkers code bundle. You can use this parameter to override the default log level, ERROR.<br/>The log levels are **trace**, **debug**, **info**, **warn**, and **error**. |
+| schema | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Not currently in use. Use `v1` as a placeholder. |
+| ds2id | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | The DataStream2 stream id to associate with the log data.<br/>The stream needs to be active before you include it in the EdgeWorkers code bundle.<br/>When you add the `logging` config setting to the `bundle.json` file, the `ds2id` is required. |
 
 
 You can change the `ds2id` using the [EdgeWorkers CLI](https://github.com/akamai/cli-edgeworkers).

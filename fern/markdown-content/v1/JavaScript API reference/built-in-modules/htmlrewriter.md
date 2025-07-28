@@ -106,17 +106,17 @@ export async function responseProvider(request) {
 If the `index.html` file contains the following details the hero image remains unchanged. Lazy load only applies to the other images. 
 
 ```javascript HTML
-<img id='hero' src='protagonist.jpg'>
-<img id='unrelated' src='raven.jpg'>
-<img src='rife.jpg'>
+<img id='hero' src="'protagonist.jpg'">
+<img id='unrelated' src="'raven.jpg'">
+<img src="'rife.jpg'">
 ```
 
 The EdgeWorkers output will contain the following images.
 
 ```Text HTML
-<img id='hero' src='protagonist.jpg'>
-<img id='unrelated' src='raven.jpg' loading='lazy'>
-<img src='rife.jpg' loading='lazy'>
+<img id='hero' src="'protagonist.jpg'">
+<img id='unrelated' src="'raven.jpg'" loading='lazy'>
+<img src="'rife.jpg'" loading='lazy'>
 ```
 
 # Methods
@@ -199,20 +199,20 @@ If the original document doesn't include a close tag for the element, you can us
 ```javascript
 rewriter.onElement('a[external]', el => {
   const external = el.removeAttribute('external');
-  el.after(` <a href='https://original/${external}'>(Original)</a>`, {insert_implicit_close: true});
+  el.after(` <a href="'https://original/${external}'">(Original)</a>`, {insert_implicit_close: true});
 });
 ```
 
 This lets you to gracefully handle malformed HTML with missing end tags.
 
 ```javascript
-<div>Link <a href='/local/123.html' external='567.html'>Defrobulator</div>
+<div>Link <a href="'/local/123.html'" external='567.html'>Defrobulator</div>
 ```
 
 The example below is rewritten so that the original `<a>` element now has an end tag. 
 
 ```javascript
-<div>Link <a href='/local/123.html'>Defrobulator</a> <a href='https://original/567.html'>(Original)</a></div>
+<div>Link <a href="'/local/123.html'">Defrobulator</a> <a href="'https://original/567.html'">(Original)</a></div>
 ```
 
 | Parameter | Type   | Description                                                                                                                                                                           |
@@ -285,13 +285,13 @@ rewriter.onElement('head script[type=module]', el => {
 It uses the following input.
 
 ```javascript
-<head><script type='module' src='/v1/mine.js'></script>
+<head><script type='module' src="'/v1/mine.js'"></script>
 ```
 
 The rewriter changed the `v1` in the path to `v2`.
 
 ```javascript
-<head><script type='module' src='/v2/mine.js'></script>
+<head><script type='module' src="'/v2/mine.js'"></script>
 ```
 
 | Parameter | Type   | Description                                            |
@@ -306,14 +306,14 @@ This example adds an `onElement` element to preload directives to a `<head>` ele
 
 ```javascript
 rewriter.onElement('head', el => {
-  el.prepend("<link rel='preload' href='main.js' as='script'/>");
+  el.prepend("<link rel='preload' href="'main.js'" as='script'/>");
 });
 ```
 
 The rewriter changed `<head></head>` to the following.
 
 ```javascript
-<head><link rel='preload' href='main.js' as='script'/></head>
+<head><link rel='preload' href="'main.js'" as='script'/></head>
 ```
 | Parameter | Type | Description |
 | --- | --- | --- |
@@ -352,7 +352,7 @@ rewriter.onElement('script', el => {
 Running on an input of `<script>window.alert('hi')</script>`, produces the following output.
 
 ```javascript
-<script src='cached.js'></script>
+<script src="'cached.js'"></script>
 ```
 | Parameter | Type | Description |
 | --- | --- | --- |

@@ -4,7 +4,7 @@ slug: "fire-and-forget"
 ---
 In this example you'll learn how to configure an EdgeWorkers function that sends a separate analytic beacon for each request. If the request is DENIED by the Web Application Firewall (WAF) or directed to a static resource, the beacon is not sent.
 
-You can send a beacon from an EdgeWorkers function without waiting for the response to avoid impact to the Time to first byte (TTFB). When an event handler is exited any uncompleted promises are left behind. The EdgeWorkers service then attempts to complete the promise within the [sub-request timeout limits](doc:resource-tier-limitations). You can invoke multiple sub-requests in parallel. Sub-requests made in parallel are also subject to these limits.
+You can send a beacon from an EdgeWorkers function without waiting for the response to avoid impact to the Time to first byte (TTFB). When an event handler is exited any uncompleted promises are left behind. The EdgeWorkers service then attempts to complete the promise within the [sub-request timeout limits](resource-tier-limitations.md). You can invoke multiple sub-requests in parallel. Sub-requests made in parallel are also subject to these limits.
 
 # 1. EdgeWorkers code example
 
@@ -47,9 +47,9 @@ It enables the EdgeWorkers function only for a selected list of file extensions.
 
 # 3. Reporting and debugging
 
-If you integrate [DataStream 2 logs](doc:datastream-2-integration) you'll see the sub-request status in the `r` line of the `Akamai edge server flow` field of the [DataStream 2 execution details](doc:datastream2-reports#edgeworkers-execution). 
+If you integrate [DataStream 2 logs](datastream-2-integration.md) you'll see the sub-request status in the `r` line of the `Akamai edge server flow` field of the [DataStream 2 execution details](datastream2-reports.md#edgeworkers-execution). 
 
-If you're using [enhanced debug headers](doc:enable-enhanced-debug-headers) for debugging, you might not see sub-request errors. The response can occur before the sub-request errors. This is likely timing dependent behavior related to whether the sub-request error occurs before or after the main request completes.
+If you're using [enhanced debug headers](enable-enhanced-debug-headers.md) for debugging, you might not see sub-request errors. The response can occur before the sub-request errors. This is likely timing dependent behavior related to whether the sub-request error occurs before or after the main request completes.
 
 When an error occurs on a non-observed promise, the execution continues and the EdgeWorkers reports do no generate an error.
 

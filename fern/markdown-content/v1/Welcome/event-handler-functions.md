@@ -2,13 +2,13 @@
 title: "EdgeWorkers event model"
 slug: "event-handler-functions"
 ---
-Understand when EdgeWorker scripts are executed. The EdgeWorkers code is invoked based on specific HTTP events. To create a function for any of these events, implement the callbacks as explained in the [JavaScript API reference](doc:about-the-javascript-api).
+Understand when EdgeWorker scripts are executed. The EdgeWorkers code is invoked based on specific HTTP events. To create a function for any of these events, implement the callbacks as explained in the [JavaScript API reference](about-the-javascript-api.md).
 
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/eventModel-v1.jpg" alt="event handlers"/>
 </Frame>
 
-The responseProvider event handler acts as a surrogate origin to execute EdgeWorkers code. To learn more, go to the [Response Orchestration](doc:response-orchestration) section.
+The responseProvider event handler acts as a surrogate origin to execute EdgeWorkers code. To learn more, go to the [Response Orchestration](response-orchestration.md) section.
 
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/responseProviderEvent-v1.jpg" alt="responseProvider event handler"/>
@@ -33,11 +33,11 @@ Review the table for information about the available parameters.
 
 | Parameter | Type                           | Description                                                                                                               |
 | :-------- | :----------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
-| request   | [Request ](doc:request-object) | An object representing the current request. Modifications to this request object are visible in all other event handlers. |
+| request   | [Request ](request-object.md) | An object representing the current request. Modifications to this request object are visible in all other event handlers. |
 
 ## onOriginRequest
 
- The `onOriginRequest` event happens just before sending the request to the origin. This event only happens if the response is not served from cache and not constructed on the edge. Use this event if you want to affect the response coming back from the origin. Changes to the [Request Object](doc:request-object) made during `onOriginRequest` update the outgoing request to the origin. The changes are not visible in later event handlers.
+ The `onOriginRequest` event happens just before sending the request to the origin. This event only happens if the response is not served from cache and not constructed on the edge. Use this event if you want to affect the response coming back from the origin. Changes to the [Request Object](request-object.md) made during `onOriginRequest` update the outgoing request to the origin. The changes are not visible in later event handlers.
 
 This function adds a device type header to the origin request:
 
@@ -61,7 +61,7 @@ Review the table for information about the available parameters.
 
 | Parameter | Type                          | Description                                                                                                                                                             |
 | :-------- | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| request   | [Request](doc:request-object) | An object representing the outgoing current request. Modifications to this request object are visible to the origin but not visible to any of the other event handlers. |
+| request   | [Request](request-object.md) | An object representing the outgoing current request. Modifications to this request object are visible to the origin but not visible to any of the other event handlers. |
 
 ## onOriginResponse
 
@@ -79,8 +79,8 @@ Review the table for information about the available parameters.
 
 | Parameter | Type                            | Description                                                                                                                                |
 | :-------- | :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| request   | [Request](doc:request-object)   | An object representing the current request after modifications by the `onClientRequest` event handler.                                     |
-| response  | [Response](doc:response-object) | An object representing the current response. Modifications to the Response object are only visible in the `onClientRequest` event handler. |
+| request   | [Request](request-object.md)   | An object representing the current request after modifications by the `onClientRequest` event handler.                                     |
+| response  | [Response](response-object.md) | An object representing the current response. Modifications to the Response object are only visible in the `onClientRequest` event handler. |
 
 ## onClientResponse
 
@@ -100,8 +100,8 @@ Review the table for information about the available parameters.
 
 | Parameter | Type                            | Description                                                                                             |
 | :-------- | :------------------------------ | :------------------------------------------------------------------------------------------------------ |
-| request   | [Request](doc:request-object)   | An object representing the current request, after modifications by the `onClientRequest` event handler. |
-| response  | [Response](doc:response-object) | An object representing the current response.                                                            |
+| request   | [Request](request-object.md)   | An object representing the current request, after modifications by the `onClientRequest` event handler. |
+| response  | [Response](response-object.md) | An object representing the current response.                                                            |
 
 ## responseProvider
 
@@ -115,13 +115,13 @@ return Promise.resolve(createResponse(200, {}, "<html><head></head><body><p>Hell
 }
 ```
 
-> 📘 To find more information about how EdgeWorker scripts are executed during the `responseProvider` event see [Response Orchestration](doc:response-orchestration).
+> 📘 To find more information about how EdgeWorker scripts are executed during the `responseProvider` event see [Response Orchestration](response-orchestration.md).
 
 Review the table for information about the available parameters.
 
 | Parameter | Type                          | Description                                                                                                                            |
 | :-------- | :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| request   | [Request](doc:request-object) | An object representing the incoming request. Modifications to this request object are visible in the `onClientResponse` event handler. |
+| request   | [Request](request-object.md) | An object representing the incoming request. Modifications to this request object are visible in the `onClientResponse` event handler. |
 
 ## 
 
@@ -135,7 +135,7 @@ View the supported HTTP methods for the EdgeWorkers event handlers.
 
 > 📘 To use the OPTIONS HTTP method you need to add the `PMUSER_EW_ENABLE_OPTIONS` [variable](https://techdocs.akamai.com/property-mgr/docs/user-defined-vars)  to your rule and set the value to `true`. The name of the variable must be UPPERCASE.
 
-> 👍 [Sub-requests](doc:http-request#httprequest)  support the `GET`, `HEAD`, `POST`, `PUT`, and `DELETE` methods.
+> 👍 [Sub-requests](http-request.md#httprequest)  support the `GET`, `HEAD`, `POST`, `PUT`, and `DELETE` methods.
 
 # Bypass event handlers
 

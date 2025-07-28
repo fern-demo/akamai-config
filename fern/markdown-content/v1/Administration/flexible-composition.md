@@ -52,6 +52,4 @@ By default, the security access model grants any parent EdgeWorkers access to ch
 
 > 📘 For more information refer the to [Manage access to EdgeWorkers](manage-access-to-edgeworkers.md) section in this guide.
 
-<br/>
-
 > 📘 Refer to the [Terminology](terminology.md) section in this guide to learn more about the concepts and terms used for flexible composition.

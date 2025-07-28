@@ -25,7 +25,7 @@ If the `responseProvider` event fails, for example as a result of an error, the 
 
 # respondWith
 
-The [respondWith](doc:request-object#respondwith) JavaScript method, implemented by the [Request Object](doc:request-object), provides similar functionality to the construct-response behavior in metadata. It constructs a response for the given request, rather than fetching the response from cache or the origin.   The `respondWith` method is available from `onClientRequest`, `onClientResponse`,  `onOriginRequest`, and `onOriginResponse` event handlers.  Whereas, the JavaScript module [create-response](doc:create-response)  is available only from `responseProvider`.
+The [respondWith](request-object.md#respondwith) JavaScript method, implemented by the [Request Object](request-object.md), provides similar functionality to the construct-response behavior in metadata. It constructs a response for the given request, rather than fetching the response from cache or the origin.   The `respondWith` method is available from `onClientRequest`, `onClientResponse`,  `onOriginRequest`, and `onOriginResponse` event handlers.  Whereas, the JavaScript module [create-response](create-response.md)  is available only from `responseProvider`.
 
 The `respondWith` event is typically used to prevent a request from going to origin, and to return a response, such as a redirect, from the edge. 
 

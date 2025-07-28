@@ -103,13 +103,13 @@ There are three properties on three accounts with trace headers EW-Trace-1, EW-T
     - As the request enters account 3, it removes trace headers for other accounts, leaving no trace headers.
   - Additional sub-requests to other grand-child properties which belong to account 2 will keep their EW-Trace-2 token.
 
-<br>
+<br/>
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/multiAccoutDebugsubWorkers-v4.jpg" alt="Image"/>
 </Frame>
 
 
-<br>
+<br/>
 
 > 📘 An `Akamai-EW-Trace` token can only be used in one other account. If, however, all properties belong to the same account, then the JWT tokens can propagate through the entire sub-request chain.
 
@@ -149,4 +149,4 @@ x-akamai-edgeworker-onclientrequest-info-10e2a.10e29: ew=1281938257 v2:swchild; 
 x-akamai-edgeworker-onclientrequest-log-10e2a.10e29: D:main.js:6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat vestibulum metus, quis aliquet ex vestibulu........eu orci facilisi$
 ```
 
-<br>
+<br/>

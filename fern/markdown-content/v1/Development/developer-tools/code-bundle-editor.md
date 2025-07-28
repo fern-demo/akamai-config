@@ -15,7 +15,7 @@ This tool is useful as a quick editor so you can view, validate, and edit the fi
 
 1. Log in to Control Center.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 3. Select the EdgeWorker ID you want to edit.
 

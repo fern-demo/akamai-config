@@ -24,7 +24,9 @@ See the API's various operations for details on their request parameters and res
 
 You can also run this API with a Postman collection.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/13085889-10b6ffa0-b947-4232-b70a-60bff7ef4d8e)
+[<Frame>
+  <img src="https://run.pstmn.io/button.svg" alt="Run in Postman"/>
+</Frame>](https://god.gw.postman.com/run-collection/13085889-10b6ffa0-b947-4232-b70a-60bff7ef4d8e)
 
 | Operation                                                                                           | Method   | Endpoint                                                 |
 | :-------------------------------------------------------------------------------------------------- | :------- | :------------------------------------------------------- |

@@ -14,15 +14,15 @@ Before you can configure your EdgeWorkers function, you need to do a few things:
 
 - Get access to the EdgeWorkers interface in ​Akamai Control Center​. This interface lets you perform the administrative tasks required to execute EdgeWorkers functions. You need to have a ​Control Center​ account that's been granted access to the EdgeWorkers Management application. If you're not sure, talk to your local ​Akamai​ admin, or contact your ​Akamai​ account team.
 
-- [Add EdgeWorkers to your contract](doc:add-edgeworkers-to-contract). If you have an active ​Akamai​ contract and login credentials for ​Akamai Control Center​ you can sign up for the EdgeWorkers Evaluation tier. The Evaluation tier lets you try EdgeWorkers for free and without a time limit. If you're not already an ​Akamai​ customer or you don't have access to ​Akamai Control Center​ you can sign up for an EdgeWorkers free trial.
+- [Add EdgeWorkers to your contract](add-edgeworkers-to-contract.md). If you have an active ​Akamai​ contract and login credentials for ​Akamai Control Center​ you can sign up for the EdgeWorkers Evaluation tier. The Evaluation tier lets you try EdgeWorkers for free and without a time limit. If you're not already an ​Akamai​ customer or you don't have access to ​Akamai Control Center​ you can sign up for an EdgeWorkers free trial.
 
 # 1. Create an EdgeWorker ID
 
 An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control Center. It's also a unique identifier for your EdgeWorkers code.
 
-1. Log in to {{PORTAL_NICKNAME}}.
+1. Log in to <Markdown src="../../../snippets/PORTAL_NICKNAME.mdx" />.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 
@@ -48,7 +48,7 @@ An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control C
 
    EdgeWorkers resource tiers currently include  and **Dynamic Compute**, **Enterprise Compute**, and **Basic Compute**. 
 
-   The limits for each resource tier are different. You can view the limits for the selected resource tier in the details section or you can view the [Resource tier limitations](doc:resource-tier-limitations) section.
+   The limits for each resource tier are different. You can view the limits for the selected resource tier in the details section or you can view the [Resource tier limitations](resource-tier-limitations.md) section.
 
 8. Click **Create EdgeWorker ID**.
 
@@ -56,7 +56,7 @@ An EdgeWorker ID lets you enable the EdgeWorkers behavior in Akamai​ Control C
 
 When you add the EdgeWorkers behavior in Property Manager you can also define which requests apply EdgeWorkers functions. By limiting the scope you can avoid unnecessary serverless hits to improve performance and reduce cost.
 
-1. Navigate to your property in {{PORTAL_NICKNAME}}.
+1. Navigate to your property in <Markdown src="../../../snippets/PORTAL_NICKNAME.mdx" />.
 
 2. Click **Edit**.
 
@@ -169,7 +169,7 @@ tar -czvf filename.tgz main.js bundle.json
 
 To deploy the code bundle you need to create an EdgeWorker version.
 
-1. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+1. Go to <Markdown src="../../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 2. From the EdgeWorkers IDs page, select the EdgeWorker ID that you just created.
 

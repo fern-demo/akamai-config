@@ -35,7 +35,7 @@ This report lets you view the execution statuses in a list that shows:
 
 You can filter the report to display the results for a specific status. Review the following table for a description of each of the available statuses.
 
-<br />
+<br/>
 | Error | Description |
 | --- | --- |
 | Success | EdgeWorkers function executed successfully. |

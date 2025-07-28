@@ -28,7 +28,7 @@ To change the resource tier, you need to clone the EdgeWorker ID.
 
 1. Log in to Control Center.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 3. Click on the EdgeWorker ID that you want to update.
 
@@ -41,9 +41,9 @@ The details page will appear. It displays information about the EdgeWorker inclu
 </Frame>
 
 
-<br />
+<br/>
 
-<br />
+<br/>
 
 5. Click the **edit** link to edit the resource tier.
 

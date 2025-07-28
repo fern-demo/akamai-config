@@ -14,7 +14,7 @@ A **buffered** response reads the entire response body into a single JavaScript 
 
 A **streamed** response flows through the EdgeWorkers function reading individual parts of the response, one chunk at a time. An example of streaming in another context is when you watch live video content, the video is delivered to your device a small section of content at a time.
 
-> 📘 EdgeWorkers provides an [html-rewriter](doc:htmlrewriter) module to use in your EdgeWorkers functions to consume and rewrite HTML documents. The html-rewriter module includes a built-in parser that emulates standard HTML parsing and DOM-construction.
+> 📘 EdgeWorkers provides an [html-rewriter](htmlrewriter.md) module to use in your EdgeWorkers functions to consume and rewrite HTML documents. The html-rewriter module includes a built-in parser that emulates standard HTML parsing and DOM-construction.
 
 # 1. Buffered responses
 
@@ -105,7 +105,7 @@ To modify the content of a stream as it flows through the EdgeWorkers function, 
 
 To demonstrate the transform stream, you can implement a find-replace within an EdgeWorkers function. This example uses a transform stream to find all instances of a specific substring and replaces them with a different string. However, EdgeWorkers `httpRequest()` and `createResponse()` don't work with streams of text, they work with streams of bytes. 
 
-To make find and replace easier, you can use the `TextDecoderStream` to transform the byte stream to a text stream and `TextEncoderStream` to transform a text stream to a byte stream. The EdgeWorkers [text-encode-transform module](doc:text-encode-transform) includes both of these transformers.  You can then create a new transformer, `FindReplaceStream`, that operates on text. 
+To make find and replace easier, you can use the `TextDecoderStream` to transform the byte stream to a text stream and `TextEncoderStream` to transform a text stream to a byte stream. The EdgeWorkers [text-encode-transform module](text-encode-transform.md) includes both of these transformers.  You can then create a new transformer, `FindReplaceStream`, that operates on text. 
 
 The diagram below shows how content is piped through multiple transformers between `httpRequest()` and `createResponse()` to replace "red" with "green".
 
@@ -117,7 +117,7 @@ The diagram below shows how content is piped through multiple transformers betwe
 > 
 > As you can see, writing code to process data with streams is more challenging than processing buffered data. 
 > 
-> Even in a simple example that finds and replaces text, you need to insert additional code to manage streams. Make sure you review the guidance in the [Challenges with streams](doc:process-response-bodies#challenges-with-streams) section to avoid introducing bugs related to chunk boundaries and backpressure.
+> Even in a simple example that finds and replaces text, you need to insert additional code to manage streams. Make sure you review the guidance in the [Challenges with streams](process-response-bodies.md#challenges-with-streams) section to avoid introducing bugs related to chunk boundaries and backpressure.
 
 ```javascript
 import { ReadableStream, WritableStream } from 'streams';
@@ -262,7 +262,7 @@ If the script is present, the `FindStream` locates the script and signals the `I
 
 # Exceed the request. json() size limit
 
-The code sample below demonstrates how you can use the [streams](doc:streams) built-in module to exceed the `request.json()` size limit of 16KB.
+The code sample below demonstrates how you can use the [streams](streams.md) built-in module to exceed the `request.json()` size limit of 16KB.
 
 ```javascript
 const httpResponse = await httpRequest(`https://origin.com`);

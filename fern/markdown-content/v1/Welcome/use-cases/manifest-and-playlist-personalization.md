@@ -6,15 +6,15 @@ Learn how to use an EdgeWorkers function to dynamically create personalized Vide
 
 # Before you begin
 
-We recommend that you select the [Dynamic Compute resource tier](doc:select-a-resource-tier) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary for the playlist or manifest file.
+We recommend that you select the [Dynamic Compute resource tier](select-a-resource-tier.md) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary for the playlist or manifest file.
 
 > 👍 The complete code sample for this tutorial is available in the [GitHub repo](https://github.com/akamai/edgeworkers-examples/tree/master/delivery/media).
 
 EdgeWorkers supports HTTP Live Streaming (HLS) playlist and Dynamic Adaptive Streaming over HTTP (DASH) manifest files. You can configure personalization based on parameters such as:
 
-- [Device type](doc:device-object)
-- [User geography](doc:user-location-object)
-- [Request headers](doc:request-object)
+- [Device type](device-object.md)
+- [User geography](user-location-object.md)
+- [Request headers](request-object.md)
 - Query strings specified in each use case
 
 > 📘 These examples use the HLS Parser module. You can also use the DASH Parser module to configure video streaming examples.
@@ -31,11 +31,11 @@ You can use the `br_in` parameter to filter-in a list of bitrates.
 
    Bitrate Filtering uses a default tolerance of ±100,000 bps for comparisons. A parameter value of 2200000 bps will match any bitrate value within [2100000, 2300000] such as, 2185000.
 
-1. Import the [HLS parser](doc:hls-parser)  module into your EdgeWorkers code.
+1. Import the [HLS parser](hls-parser.md)  module into your EdgeWorkers code.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-   The HLS parser module exports the [`Manifest Parsing` ](doc:hls-parser#manifest-parsing) helper functions.
+   The HLS parser module exports the [`Manifest Parsing` ](hls-parser.md#manifest-parsing) helper functions.
 
 2. Refer to the EdgeWorkers `main.js` file below for details on how to configure bit-rate filtering.
 
@@ -126,11 +126,11 @@ A tolerance of ±100,000 bps does not apply to `br_in_range`. Thus, a value with
 > - `br_in_range=1800000-` is inferred as `br_in_range=1800000-Number.MAX_VALUE`.
 > - `br_in_range=-4200000` is inferred as `br_in_range=0-4200000`.
 
-1. Import the [HLS parser](doc:hls-parser) module into your EdgeWorkers code.
+1. Import the [HLS parser](hls-parser.md) module into your EdgeWorkers code.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-   The HLS parser module exports the [`Manifest Parsing` ](doc:hls-parser#manifest-parsing) helper functions.
+   The HLS parser module exports the [`Manifest Parsing` ](hls-parser.md#manifest-parsing) helper functions.
 
 2. Refer to the EdgeWorkers `main.js` file below for details on how to configure bit-rate range filtering.
 
@@ -212,17 +212,17 @@ http://example.com/hi_mid/index.m3u8
 
 # 2. Filter resolutions
 
-You can use the [Device Object](doc:device-object) properties to filter the list of resolutions in the playlist. This example removes all resolutions higher than the maximum supported resolution of the requesting device.
+You can use the [Device Object](device-object.md) properties to filter the list of resolutions in the playlist. This example removes all resolutions higher than the maximum supported resolution of the requesting device.
 
-1. Get the device resolution using the [Device Object](doc:device-object) properties.
+1. Get the device resolution using the [Device Object](device-object.md) properties.
 
    You can find the maximum supported resolution of a device in the `request.device.resolutionWidth` x `request.device.resolutionHeight` attributes of the `request.device Object`.
 
-2. Import the [HLS parser](doc:hls-parser) module into your EdgeWorkers code.
+2. Import the [HLS parser](hls-parser.md) module into your EdgeWorkers code.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-   The HLS parser module exports the [`Manifest Parsing`](doc:hls-parser#manifest-parsing) helper functions.
+   The HLS parser module exports the [`Manifest Parsing`](hls-parser.md#manifest-parsing) helper functions.
 
 3. Refer to the EdgeWorkers `main.js` file below for details on how to configure resolution filtering.
 
@@ -309,11 +309,11 @@ You can use the `rs_order` parameter to prioritize the preferred resolutions by 
 
 > 📘 Resolution re-ordering is only supported for HLS playlist files.
 
-1. Import the [HLS parser](doc:hls-parser) module into your EdgeWorkers code.
+1. Import the [HLS parser](hls-parser.md) module into your EdgeWorkers code.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-    The HLS parser module exports the [`Manifest Parsing`](doc:hls-parser#manifest-parsing) helper functions.
+    The HLS parser module exports the [`Manifest Parsing`](hls-parser.md#manifest-parsing) helper functions.
 
 2. Refer to the EdgeWorkers `main.js` file below for details on how to configure resolution re-ordering.
 
@@ -399,17 +399,17 @@ http://example.com/high/index.m3u8
 
 # 4. Localize language
 
-Language localization lets you use [User Location](doc:user-location-object) properties to filter subtitles and audio tracks in the playlist or manifest file based on language. The User Location properties provide information about the geographic location of the requesting device and includes the:
+Language localization lets you use [User Location](user-location-object.md) properties to filter subtitles and audio tracks in the playlist or manifest file based on language. The User Location properties provide information about the geographic location of the requesting device and includes the:
 
-- [city](doc:user-location-object#city)
-- [continent](doc:user-location-object#continent)
-- [country](doc:user-location-object#country)
-- [region](doc:user-location-object#region)
-- [zipCode](doc:user-location-object#zipcode) 
+- [city](user-location-object.md#city)
+- [continent](user-location-object.md#continent)
+- [country](user-location-object.md#country)
+- [region](user-location-object.md#region)
+- [zipCode](user-location-object.md#zipcode) 
 
 > 📘 Closed captions are not currently supported for language localization.
 
-1. Get the [user location](doc:user-location-object) of the request.  
+1. Get the [user location](user-location-object.md) of the request.  
    In this example, the request originates from a device in Paris, France. The following details are part of the request's User Location properties. 
 
    ```
@@ -421,11 +421,11 @@ Language localization lets you use [User Location](doc:user-location-object) pro
  To remove all audio and subtitle details from the playlist except for French you can use the  
 `lo_geo=[fr]` parameter.
 
-2. Import the [HLS parser](doc:hls-parser) module into your EdgeWorkers code.
+2. Import the [HLS parser](hls-parser.md) module into your EdgeWorkers code.
 
-   Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+   Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-   The HLS parser module exports the [`Manifest Parsing`](doc:hls-parser#manifest-parsing) helper functions.
+   The HLS parser module exports the [`Manifest Parsing`](hls-parser.md#manifest-parsing) helper functions.
 
 3. Refer to the EdgeWorkers `main.js` file below for details on how to configure language localization.
 

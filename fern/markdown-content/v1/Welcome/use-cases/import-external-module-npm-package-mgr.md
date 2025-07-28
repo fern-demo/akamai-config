@@ -2,7 +2,7 @@
 title: "Use npm package manager to import external modules"
 slug: "import-external-module-npm-package-mgr"
 ---
-EdgeWorkers lets you run custom JavaScript code on Akamai's edge network. While Akamai provides a variety of [built-in modules](doc:built-in-modules), there are use cases that may require custom modules from other developers or organizations. In this tutorial, you'll learn how to import a Node.js module into your EdgeWorkers functions. This process also applies to other package registries such as Yarn and GitHub.
+EdgeWorkers lets you run custom JavaScript code on Akamai's edge network. While Akamai provides a variety of [built-in modules](built-in-modules.md), there are use cases that may require custom modules from other developers or organizations. In this tutorial, you'll learn how to import a Node.js module into your EdgeWorkers functions. This process also applies to other package registries such as Yarn and GitHub.
 
 ## EdgeWorkers specifications
 
@@ -27,7 +27,7 @@ Before you start, review the source code of the module you intend to use. This e
 
 2. Examine the source code, looking for native `Node.js` modules, browser APIs, or any code that might not be compatible with Akamai EdgeWorkers' runtime. In this case, the `murmurhash3js` module appears to be compatible.
 
-> 📘 When assessing the source code refer to the [EdgeWorkers specifications](doc:specifications) for more information.
+> 📘 When assessing the source code refer to the [EdgeWorkers specifications](specifications.md) for more information.
 
 ## 2. Convert the CJS module to ESM
 

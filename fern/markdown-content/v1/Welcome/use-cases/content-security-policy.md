@@ -94,7 +94,7 @@ Here's the HTML snippet.
 
 ## Generate the nonce
 
-A **nonce** is a cryptographic value that changes with each request. It's a critical component in preventing certain types of attacks, such as cross-site scripting (XSS). The generated nonce should be a cryptographically secure random number that is supported through the [crypto](doc:crypto) module and [getRandomValues()](doc:crypto#getrandomvalues) function. As a best practice the prefix, `nonce-` is appended  to the value. This nonce will allow only trusted scripts to execute on the page.
+A **nonce** is a cryptographic value that changes with each request. It's a critical component in preventing certain types of attacks, such as cross-site scripting (XSS). The generated nonce should be a cryptographically secure random number that is supported through the [crypto](crypto.md) module and [getRandomValues()](crypto.md#getrandomvalues) function. As a best practice the prefix, `nonce-` is appended  to the value. This nonce will allow only trusted scripts to execute on the page.
 
 ### Generate a  random number
 
@@ -107,7 +107,7 @@ crypto.getRandomValues(array);
 
 ### Base64 encoding
 
-The string representation of the random number is encoded using Base64 encoding via the [btoa](doc:encoding#btoa) function exported by the [encoding](doc:encoding) module. [Base64](doc:encoding#base64) encoding is a common way to convert binary data into a string of ASCII characters. These character are suitable for use in HTTP Headers and HTML. Here it ensures that the nonce value contains characters that are safe to include in both HTML attributes and HTTP headers.
+The string representation of the random number is encoded using Base64 encoding via the [btoa](encoding.md#btoa) function exported by the [encoding](encoding.md) module. [Base64](encoding.md#base64) encoding is a common way to convert binary data into a string of ASCII characters. These character are suitable for use in HTTP Headers and HTML. Here it ensures that the nonce value contains characters that are safe to include in both HTML attributes and HTTP headers.
 
 ```javascript
 let encodedData = btoa(stringToEncode);
@@ -119,7 +119,7 @@ The CSP header defines which sources of content are safe for loading and executi
 
 By replacing the original script sources with the generated nonce, the code only executes scripts with this specific nonce. This effectively prevents unauthorized scripts from running.
 
-- **Get the origin response** - The code uses the [http-request](doc:http-request) EdgeWorkers module to asynchronously fetch content from the origin.
+- **Get the origin response** - The code uses the [http-request](http-request.md) EdgeWorkers module to asynchronously fetch content from the origin.
   ```javascript
   let htmlResponse = await httpRequest(“/”);
   ```
@@ -146,7 +146,7 @@ By replacing the original script sources with the generated nonce, the code only
 
 ## Rewrite the HTML with the nonce
 
-The code utilizes the [html-rewriter](doc:htmlrewriter) EdgeWorkers module to manipulate the HTML content of the response. It dynamically injects the generated nonce into the HTML. Any existing script elements that possess the original origin nonce are updated to use the new dynamically generated nonce.
+The code utilizes the [html-rewriter](htmlrewriter.md) EdgeWorkers module to manipulate the HTML content of the response. It dynamically injects the generated nonce into the HTML. Any existing script elements that possess the original origin nonce are updated to use the new dynamically generated nonce.
 
 - `rewriter.onElement()` Registers a handler to run when a CSS selector matches. The callback function allows us to write code to modify the html content.
 - `rewriter.onElement()` Matches on the origin nonce selector. The callback uses the `setAttribute()` method to modify the value of the nonce attribute for the matched element. The new value is set to the dynamically generated nonce.
