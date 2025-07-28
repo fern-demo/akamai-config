@@ -22,4 +22,4 @@ For details on information contained in the error responses, refer to [Error res
 
 > 📘 EdgeWorker bundle errors
 > 
-> For information on error-handling in your JavaScript-based EdgeWorker bundles, see [Error codes](doc:error-codes).
+> For information on error-handling in your JavaScript-based EdgeWorker bundles, see [Error codes](error-codes.md).

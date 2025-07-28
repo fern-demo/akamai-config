@@ -68,21 +68,21 @@ In this tutorial we'll profile the [trace-headers](https://github.com/akamai/edg
 Construct entire response body to include request and response headers
 */
 function constructResponseBody(request, response) {
- let responseBody = "<html><body><h2>Request Headers:</h2><br>";
+ let responseBody = "<html><body><h2>Request Headers:</h2><br/>";
  
  // Get Request headers and append to response body
  Object.keys(request.getHeaders()).forEach((key) => {
    request.getHeaders()[key].forEach((headerval) => {
-     responseBody += key + ": " + headerval + " <br>";
+     responseBody += key + ": " + headerval + " <br/>";
    });
  });
  
- responseBody += "<br><h2>Response Headers:</h2><br>";
+ responseBody += "<br/><h2>Response Headers:</h2><br/>";
  
  // Get Response headers and append to response body
  Object.keys(response.getHeaders()).forEach((key) => {
    response.getHeaders()[key].forEach((headerval) => {
-     responseBody += key + ": " + headerval + " <br>";
+     responseBody += key + ": " + headerval + " <br/>";
    });
  });
  
@@ -98,21 +98,21 @@ function constructResponseBody(request, response) {
 Construct entire response body to include request and response headers
 */
 function constructResponseBody(request, response) {
- let responseBody = "<html><body><h2>Request Headers:</h2><br>";
+ let responseBody = "<html><body><h2>Request Headers:</h2><br/>";
  
  // Get Request headers and append to response body
  for (const [key, values] of Object.entries(request.getHeaders())) {
    values.forEach((headerval) => {
-     responseBody += key + ": " + headerval + " <br>";
+     responseBody += key + ": " + headerval + " <br/>";
    });
  }
  
- responseBody += "<br><h2>Response Headers:</h2><br>";
+ responseBody += "<br/><h2>Response Headers:</h2><br/>";
  
  // Get Response headers and append to response body
  for (const [key, values] of Object.entries(response.getHeaders())) {
    values.forEach((headerval) => {
-     responseBody += key + ": " + headerval + " <br>";
+     responseBody += key + ": " + headerval + " <br/>";
    });
  }
  

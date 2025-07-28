@@ -6,15 +6,15 @@ hidden: false
 createdAt: "Wed May 05 2021 18:25:21 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Wed Dec 18 2024 19:27:33 GMT+0000 (Coordinated Universal Time)"
 ---
-If you have an active {{COMPANY_NICKNAME}} contract and login credentials for {{PORTAL_NAME}} you can use these instructions to sign up for the EdgeWorkers Evaluation tier. The Evaluation tier lets you try EdgeWorkers for free and without a time limit. 
+If you have an active <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> contract and login credentials for <Markdown src="../../snippets/PORTAL_NAME.mdx" /> you can use these instructions to sign up for the EdgeWorkers Evaluation tier. The Evaluation tier lets you try EdgeWorkers for free and without a time limit. 
 
-If you're not already an {{COMPANY_NICKNAME}} customer or you don't have access to {{PORTAL_NAME}} you can sign up for an [EdgeWorkers free trial](edgeworkers-free-trial.md).
+If you're not already an <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> customer or you don't have access to <Markdown src="../../snippets/PORTAL_NAME.mdx" /> you can sign up for an [EdgeWorkers free trial](edgeworkers-free-trial.md).
 
-When you're ready to purchase EdgeWorkers you can also use [Marketplace](https://www.akamai.com/us/en/what-we-do/intelligent-platform/control-center/akamai-marketplace-faq.jsp). If you need help signing up or would like more information, contact an {{COMPANY_NICKNAME}} account representative. 
+When you're ready to purchase EdgeWorkers you can also use [Marketplace](https://www.akamai.com/us/en/what-we-do/intelligent-platform/control-center/akamai-marketplace-faq.jsp). If you need help signing up or would like more information, contact an <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> account representative. 
 
-> 👍 To check to see if you already have entitlement for EdgeWorkers login to {{PORTAL_NAME}}, go to  {{CHAR_MENU_DELIMITER}} **ACCOUNT ADMIN** {{CHAR_MENU_DELIMITER}} **Contracts**. Click on a Contract ID and search for EdgeWorkers in the list of products.
+> 👍 To check to see if you already have entitlement for EdgeWorkers login to <Markdown src="../../snippets/PORTAL_NAME.mdx" />, go to  <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **ACCOUNT ADMIN** <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **Contracts**. Click on a Contract ID and search for EdgeWorkers in the list of products.
 
-1. Log in to {{PORTAL_NICKNAME}}.
+1. Log in to <Markdown src="../../snippets/PORTAL_NICKNAME.mdx" />.
 
 2. Navigate to Marketplace by clicking on the shopping cart  icon:
 
@@ -52,7 +52,7 @@ When you're ready to purchase EdgeWorkers you can also use [Marketplace](https:/
 
 9. To finish, click the **Add** button to add the EdgeWorkers Evaluation Tier product to your contract.
 
-10. To get started, go to **{{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} CDN {{CHAR_MENU_DELIMITER}} EdgeWorkers**.
+10. To get started, go to **<Markdown src="../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> CDN <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> EdgeWorkers**.
 
 11. Now you’re ready to start using the EdgeWorkers Management application to create your very first EdgeWorkers function.  
 

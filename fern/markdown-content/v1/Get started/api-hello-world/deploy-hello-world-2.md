@@ -9,7 +9,7 @@ metadata:
 createdAt: "Mon Jul 05 2021 12:42:58 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Mon Nov 22 2021 20:32:09 GMT+0000 (Coordinated Universal Time)"
 ---
-Now that you've created the code bundle in the previous step, you can use HTTPie and httpie-edgegrid to access the {{COMPANY_NICKNAME}} APIs. 
+Now that you've created the code bundle in the previous step, you can use HTTPie and httpie-edgegrid to access the <Markdown src="../../../snippets/COMPANY_NICKNAME.mdx" /> APIs. 
 
 # Add an EdgeWorker version
 
@@ -37,7 +37,7 @@ http --timeout=30 --auth-type edgegrid -a <API credentials section>: POST :/edge
 
 # Activate the EdgeWorker version
 
-1. Activate the EdgeWorker version on the {{COMPANY_NICKNAME}} network. Note the `activationId`. You'll need it to monitor the activation status.
+1. Activate the EdgeWorker version on the <Markdown src="../../../snippets/COMPANY_NICKNAME.mdx" /> network. Note the `activationId`. You'll need it to monitor the activation status.
 
 ```shell
 http --timeout=30 --auth-type edgegrid -a <API credentials section>: POST :/edgeworkers/v1/ids/<edgeWorkerId>/activations network=<network> version=<version>

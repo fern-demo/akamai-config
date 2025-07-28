@@ -18,9 +18,9 @@ Follow these steps to view the EdgeWorkers Management application and the built-
 
 > 📘 The EdgeWorkers option is only available under **CDN** if EdgeWorkers is part of your contract.
 
-1. Log in to {{PORTAL_NICKNAME}}.
+1. Log in to <Markdown src="../../snippets/PORTAL_NICKNAME.mdx" />.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/reportsOption2-v1.png" alt="Image"/>
 </Frame>

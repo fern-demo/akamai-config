@@ -78,11 +78,11 @@ For more information see [Test your configuration](https://techdocs.akamai.com/p
 
 You can watch this video to learn how to install and initialize the Programmable CDN tool.
 <video width="600" height="400" controls>
-  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnInstallInitialization-v1.mp4"" type="video/mp4">
+  <source src="https://techdocs.akamai.com/edgeworkers/videos/pcdnInstallInitialization-v1.mp4" type="video/mp4">
   <strong>Error</strong>: The video's URL was inaccessible.
 </video>
 </div>
-<br />
+<br/>
 
 
 ## Create a code directory
@@ -155,11 +155,11 @@ If you choose to use an existing property and EdgeWorker, the current state of t
 
 You can watch this video to learn more about how to run the Programmable CDN tool and use it to modify your property and/or EdgeWorker.
 <video width="600" height="400" controls>
-  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnIdeIntegrationUsage-v1.mp4"" type="video/mp4">
+  <source src="https://techdocs.akamai.com/edgeworkers/videos/pcdnIdeIntegrationUsage-v1.mp4" type="video/mp4">
   <strong>Error</strong>: The video's URL was inaccessible.
 </video>
 </div>
-<br />
+<br/>
 
 
 Once you’ve set up your Programmable CDN environment, you can modify:
@@ -324,11 +324,11 @@ You don't need to manually declare Property Manager variables. Instead, Property
 
 You can watch this video to preview the examples available in the [Programmable CDN tool GitHub repo](https://github.com/akamai/akj-tech-preview/).
 <video width="600" height="400" controls>
-  <source src=""https://techdocs.akamai.com/edgeworkers/videos/pcdnTechPreviewExamples.mp4"" type="video/mp4">
+  <source src="https://techdocs.akamai.com/edgeworkers/videos/pcdnTechPreviewExamples.mp4" type="video/mp4">
   <strong>Error</strong>: The video's URL was inaccessible.
 </video>
 </div>
-<br />
+<br/>
 
 
 # Known issues

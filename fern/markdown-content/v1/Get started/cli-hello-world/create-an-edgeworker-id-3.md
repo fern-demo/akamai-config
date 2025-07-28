@@ -21,7 +21,7 @@ Go to [Akamai CLI for EdgeWorkers](https://github.com/akamai/cli-edgeworkers) fo
 akamai edgeworkers list-groups [options] [group-identifier]
 ```
 
-> 📘 If you don't see the groupId you want to use or if you received an error the likely cause is that your access token does not have the proper permissions. For more information on Groups and Permissions see [Identity and Access Management documentation](https://techdocs.akamai.com/iam/docs) or your {{COMPANY_NICKNAME}} Administrator.
+> 📘 If you don't see the groupId you want to use or if you received an error the likely cause is that your access token does not have the proper permissions. For more information on Groups and Permissions see [Identity and Access Management documentation](https://techdocs.akamai.com/iam/docs) or your <Markdown src="../../../snippets/COMPANY_NICKNAME.mdx" /> Administrator.
 
 2. Use this command to create a new EdgeWorker ID.
 

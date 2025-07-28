@@ -8,7 +8,7 @@ To do this, you'll create an EdgeWorkers bundle that contains a JSON key-value s
 
 Follow these steps to implement a serverless function, written in JavaScript, that accelerates autocomplete at the Edge.
 
-1. [Create an EdgeWorker ID](doc:create-an-edgeworker-id-1).
+1. [Create an EdgeWorker ID](create-an-edgeworker-id-1.md).
 
 2. Create a key value store with labels and values in a file called `searchterms.js`.  
    Format the file as shown. You can download a complete example from [GitHub](https://github.com/akamai/edgeworkers-examples/blob/master/edgeworkers/examples/respond-from-edgeworkers/respondwith/fast-autocomplete/searchterms.js)
@@ -41,9 +41,9 @@ Follow these steps to implement a serverless function, written in JavaScript, th
    }
    ```
 
-5. [Create a code bundle](doc:create-a-code-bundle) to compress the `.main.js` and `bundle.json` files into a `.tgz` file.  
+5. [Create a code bundle](create-a-code-bundle.md) to compress the `.main.js` and `bundle.json` files into a `.tgz` file.  
    `tar -czvf filename.tgz main.js bundle.json`
 
-6. Activate the version, see [Manage EdgeWorkers](doc:manage-edgeworkers).
+6. Activate the version, see [Manage EdgeWorkers](manage-edgeworkers.md).
 
 7. Use the [EdgeWorkers CLI](https://github.com/akamai/cli-edgeworkers) to update the results for the most popular search terms via a scheduled task.

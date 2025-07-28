@@ -27,11 +27,11 @@ For example, a package called `mybundle.tgz` includes two files:
 > 👍 You cannot re-use a version that you deleted from an EdgeWorker ID. You need to use a new unique version in the `bundle.json` and re-package it and any other files with your `main.js` file.
 | Name | Type | Required | Description |
 | --- | --- | :---: | --- |
-| `edgeworker-version` | String | {{CHAR_CHECK}} | Unique identifier for the version<br/>If you delete a version from an EdgeWorker ID you cannot re-use it. Follow the steps below to create a new code bundle that you can use to create a version. |
-| `bundle-version` | Integer | {{CHAR_CROSS}} | Bundle format version |
-| `api-version` | String | {{CHAR_CROSS}} | Version of JavaScript API that the functions are coded against |
-| `description` | String | {{CHAR_CROSS}} | Descriptive phrase for the code function |
-| `misc` | Object | {{CHAR_CROSS}} | Miscellaneous data you can include in the manifest to identify the function |
+| `edgeworker-version` | String | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | Unique identifier for the version<br/>If you delete a version from an EdgeWorker ID you cannot re-use it. Follow the steps below to create a new code bundle that you can use to create a version. |
+| `bundle-version` | Integer | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Bundle format version |
+| `api-version` | String | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Version of JavaScript API that the functions are coded against |
+| `description` | String | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Descriptive phrase for the code function |
+| `misc` | Object | <Markdown src="../../snippets/CHAR_CROSS.mdx" /> | Miscellaneous data you can include in the manifest to identify the function |
 
 
 Follow these steps to create the bundle.

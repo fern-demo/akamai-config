@@ -9,11 +9,11 @@ metadata:
 createdAt: "Wed May 05 2021 19:04:01 GMT+0000 (Coordinated Universal Time)"
 updatedAt: "Tue Nov 07 2023 19:10:45 GMT+0000 (Coordinated Universal Time)"
 ---
-Use Property Manager to enable the behavior in your {{COMPANY_NICKNAME}} property configuration.
+Use Property Manager to enable the behavior in your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> property configuration.
 
 Before you begin, [Create an EdgeWorker ID](create-an-edgeworker-id.md) so you can select it in EdgeWorkers behavior in Property Manager.
 
-1. Navigate to your property in {{PORTAL_NAME}}.
+1. Navigate to your property in <Markdown src="../../snippets/PORTAL_NAME.mdx" />.
 
 2. Click **Edit**.
 

@@ -28,7 +28,7 @@ Before you start coding, you should organize the files into a package to take ad
 
 > 📘 You can also add TypeScript definitions directly into your IDE as a plug-in, such as [Visual Studio Code](https://www.typescriptlang.org/docs/tutorial.html).
 
-The next step replicates the business logic for the "Go Premium" feature within EdgeWorkers events. Now you'll build all of the files necessary and package them so you can pass the resulting archive to <<COMPANY_NICKNAME>> Sandbox.
+The next step replicates the business logic for the "Go Premium" feature within EdgeWorkers events. Now you'll build all of the files necessary and package them so you can pass the resulting archive to <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> Sandbox.
 
 There are two required files within each EdgeWorkers code bundle:
 

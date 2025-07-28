@@ -6,7 +6,7 @@ Learn how to create an EdgeWorkers function that dynamically adds auxiliary medi
 
 # Before you begin
 
-We recommend that you select the [Dynamic Compute resource tier](doc:select-a-resource-tier) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary to add auxiliary media content to an existing VOD asset.
+We recommend that you select the [Dynamic Compute resource tier](select-a-resource-tier.md) when creating the EdgeWorker ID for this tutorial. Dynamic Compute provides higher consumption limits that may be necessary to add auxiliary media content to an existing VOD asset.
 
 > 👍 The complete code sample for this example is available in the [GitHub repo](https://github.com/akamai/edgeworkers-examples/tree/master/delivery/media).
 
@@ -18,11 +18,11 @@ EdgeKV is not currently supported. Development is underway so that auxiliary med
 
 # 1. Import the HLS parser
 
-To configure  content insertion import the [HLS parser](doc:hls-parser) module into your `main.js` file.
+To configure  content insertion import the [HLS parser](hls-parser.md) module into your `main.js` file.
 
-Refer to the instructions in [Import a JavaScript module](doc:import-a-javascript-module) for more information.
+Refer to the instructions in [Import a JavaScript module](import-a-javascript-module.md) for more information.
 
-The HLS parser module exports the [`insertAuxiliaryContent`](doc:hls-parser#insertauxiliarycontent) function. You can use it to insert segments from the auxiliary content to the primary media playlist at the specified duration.
+The HLS parser module exports the [`insertAuxiliaryContent`](hls-parser.md#insertauxiliarycontent) function. You can use it to insert segments from the auxiliary content to the primary media playlist at the specified duration.
 
 # 2. Place the auxiliary content in the timeline
 
@@ -34,7 +34,7 @@ The HLS parser module exports the [`insertAuxiliaryContent`](doc:hls-parser#inse
 
 > 📘 Auxiliary content is considered a discontinuity in the playlist. Each discontinuity is enclosed inside the `EXT-X-DISCONTINUITY` HLS tag.
 
-2. This code sample demonstrates how to use the `insertAuxiliaryContent` function from the [HLS parser](doc:hls-parser) to perform content insertion.
+2. This code sample demonstrates how to use the `insertAuxiliaryContent` function from the [HLS parser](hls-parser.md) to perform content insertion.
 
 ```javascript main.js
 import { hls } from './hls.js';

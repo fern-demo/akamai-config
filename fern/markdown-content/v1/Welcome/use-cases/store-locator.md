@@ -366,4 +366,4 @@ a bundle.json
 a main.js
 ```
 
-Once you've created the `.tgz`, you can upload and deploy it. Learn more about how to [Manage EdgeWorkers](doc:manage-edgeworkers).
+Once you've created the `.tgz`, you can upload and deploy it. Learn more about how to [Manage EdgeWorkers](manage-edgeworkers.md).

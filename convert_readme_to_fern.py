@@ -100,19 +100,72 @@ def convert_block_parameters(content: str) -> str:
     return re.sub(pattern, replace_with_proper_indentation, content, flags=re.DOTALL | re.MULTILINE)
 
 
-def convert_readme_variables(content: str) -> str:
-    """Convert ReadMe variables from <<VAR>> to {{VAR}}."""
+def convert_readme_variables(content: str, file_path: Path) -> str:
+    """Convert ReadMe variables to Fern snippet references."""
     
-    # TODO: Eventually replace ReadMe variables with actual values
-    # Current variables found include:
-    # - {{COMPANY_NICKNAME}} -> should become "Akamai" 
-    # - {{PORTAL_NAME}} -> should become "Akamai Control Center"
-    # - {{CHAR_CHECK}} -> should become "✓" or checkmark symbol
-    # - {{CHAR_MENU_DELIMITER}} -> should become ">" or appropriate delimiter
-    # - {{PORTAL_ICON_ROOT}} -> should be removed or replaced with appropriate text
-    # For now, we just convert the syntax from << >> to {{ }}
+    # Define the ReadMe variables that should be converted to snippets
+    variables = {
+        'COMPANY_NICKNAME',
+        'PORTAL_NAME', 
+        'PORTAL_NICKNAME',
+        'PORTAL_ICON_ROOT',
+        'PORTAL_ICON_HELP',
+        'PORTAL_ICON_CLOSE',
+        'CHAR_CHECK',
+        'CHAR_COPYRIGHT', 
+        'CHAR_CROSS',
+        'CHAR_DASH_LONG',
+        'CHAR_DASH_SHORT',
+        'CHAR_MENU_DELIMITER',
+        'CHAR_REG',
+        'CHAR_TRADEMARK',
+        'CHAR_MATH_PLUS_MINUS',
+        'CHAR_MATH_TIMES',
+        'LB',
+        'PRODUCT_NAME',
+        'API_NAME'
+    }
     
-    return re.sub(r'<<([^>]+)>>', r'{{\1}}', content)
+    def calculate_relative_path(file_path: Path) -> str:
+        """Calculate the relative path to snippets directory based on file location."""
+        # Convert to string and find the v1 directory
+        path_str = str(file_path)
+        
+        # Find the position of v1/ in the path
+        v1_index = path_str.find('/v1/')
+        if v1_index == -1:
+            # Fallback if not in v1 directory
+            return "../snippets/"
+        
+        # Get the part after v1/
+        after_v1 = path_str[v1_index + 4:]  # +4 to skip '/v1/'
+        
+        # Count directory separators to determine nesting level
+        dir_count = after_v1.count('/')
+        
+        # Create the relative path: one ../ for each directory level, plus one to get out of v1
+        relative_parts = ['..'] * (dir_count + 1)
+        relative_parts.append('snippets')
+        
+        return '/'.join(relative_parts) + '/'
+    
+    snippets_path = calculate_relative_path(file_path)
+    
+    def replace_variable(match) -> str:
+        var_name = match.group(1)
+        if var_name in variables:
+            return f'<Markdown src="{snippets_path}{var_name}.mdx" />'
+        else:
+            # Keep unknown variables as-is in case they need manual handling
+            return match.group(0)
+    
+    # First convert old << >> format to new {{ }} format 
+    content = re.sub(r'<<([^>]+)>>', r'{{\1}}', content)
+    
+    # Then convert {{ }} variables to Fern snippet references
+    content = re.sub(r'\{\{([^}]+)\}\}', replace_variable, content)
+    
+    return content
 
 
 def convert_doc_links(content: str) -> str:
@@ -296,7 +349,7 @@ def process_file(file_path: Path, dry_run: bool = False) -> bool:
         content = convert_block_parameters(content)
         content = convert_block_html(content)
         content = convert_block_images(content)
-        content = convert_readme_variables(content)
+        content = convert_readme_variables(content, file_path)
         content = convert_doc_links(content)
         content = convert_images_to_frames(content)
         

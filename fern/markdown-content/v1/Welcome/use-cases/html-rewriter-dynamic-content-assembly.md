@@ -8,7 +8,7 @@ The template, JSON data, and rendered content can all be efficiently cached at t
 
 # How the html-rewriter works
 
-The [html-rewriter](doc:htmlrewriter) module modifies HTML content programmatically at the Akamai Edge. It intercepts the HTML response from the origin and processes it before delivering it to the client. The main purpose of an HTML rewriter is to make these real-time changes to the HTML code without altering the original code on the origin server. 
+The [html-rewriter](htmlrewriter.md) module modifies HTML content programmatically at the Akamai Edge. It intercepts the HTML response from the origin and processes it before delivering it to the client. The main purpose of an HTML rewriter is to make these real-time changes to the HTML code without altering the original code on the origin server. 
 
 The html-rewriter operates on an HTTP response stream and solves the challenges of matching selectors across chunk boundaries as we read from the stream. It supports CSS selectors to define patterns used to match or select elements that you want to rewrite with the html-rewriter. It also exposes the `onElement()` method which lets you register a handler to run when a CSS selector matches. This handler can insert new content, modify the selected element, or even remove it from the document.
 
@@ -248,4 +248,4 @@ Caching the content created by the html-rewriter requires a little extra care. T
 </Frame>
 
 
-> 📘 For a deep dive into caching considerations and transformed content refer to the [Response content transformation](doc:transform-response-content) use case.
+> 📘 For a deep dive into caching considerations and transformed content refer to the [Response content transformation](transform-response-content.md) use case.

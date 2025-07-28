@@ -78,13 +78,13 @@ Let's take a brief tour of the file:
 
 **Line 1** references the EdgeWorkers package. It pulls the EdgeWorkers types into the environment, but doesn't generate import statements in the transpiled JavaScript. That's exactly what we need, because those types are defined by the EdgeWorkers runtime and don't need explicit inclusion. 
 
-**Line 3** defines the client request callback that fires when {{COMPANY_NICKNAME}} first receives a browser request. The single argument is a modifiable representation of the request (the EW.IngressClientRequest). Any changes you make to the request will propagate to your origin server.
+**Line 3** defines the client request callback that fires when <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> first receives a browser request. The single argument is a modifiable representation of the request (the EW.IngressClientRequest). Any changes you make to the request will propagate to your origin server.
 
-**Line 4** defines the onOriginRequest() callback, which fires before {{COMPANY_NICKNAME}} makes a request to your origin server. You can use the request object to modify what is sent to the origin. 
+**Line 4** defines the onOriginRequest() callback, which fires before <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> makes a request to your origin server. You can use the request object to modify what is sent to the origin. 
 
 The `onOriginResponse()` callback on line 5 is called after a response has been received from your origin. At this point, it's too late to change anything on the request, but the response can be modified. Changes made to the response object will be sent to the client. 
 
-`onClientResponse()` on line 6 is the final callback in request processing. It fires before the request leaves the {{COMPANY_NICKNAME}} edge. As with the previous callback, you can modify the response. 
+`onClientResponse()` on line 6 is the final callback in request processing. It fires before the request leaves the <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> edge. As with the previous callback, you can modify the response. 
 
 Update the EdgeWorker so it terminates processing during `onClientRequest`:
 
@@ -120,7 +120,7 @@ You can create a package tarball out of the file and publish the EdgeWorker norm
 
 # Built-in Modules
 
-{{COMPANY_NICKNAME}} provides a number of built-in modules, including parameter parsing and cookie management. The module APIs are defined in the same akamai-edgeworkers package listed above and can be referenced with imports.
+<Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> provides a number of built-in modules, including parameter parsing and cookie management. The module APIs are defined in the same akamai-edgeworkers package listed above and can be referenced with imports.
 
 Here we use the query parameter module to personalize the hello world:
 

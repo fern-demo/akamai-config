@@ -8,9 +8,9 @@ updatedAt: "Wed Dec 18 2024 19:29:15 GMT+0000 (Coordinated Universal Time)"
 ---
 Use the EdgeWorkers Management application to generate a unique identifier, enter a name, and select a resource tier for your EdgeWorkers code.
 
-1. Log in to {{PORTAL_NICKNAME}}.
+1. Log in to <Markdown src="../../../snippets/PORTAL_NICKNAME.mdx" />.
 
-2. Go to {{PORTAL_ICON_ROOT}} {{CHAR_MENU_DELIMITER}} **CDN** {{CHAR_MENU_DELIMITER}} **EdgeWorkers**.
+2. Go to <Markdown src="../../../snippets/PORTAL_ICON_ROOT.mdx" /> <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **CDN** <Markdown src="../../../snippets/CHAR_MENU_DELIMITER.mdx" /> **EdgeWorkers**.
 
 3. Click **Create EdgeWorker ID**.
 

@@ -10,9 +10,9 @@ Many EdgeWorkers use cases transform the content of a response body. Although th
 
 > 📘 Learn more
 > 
-> Refer to the EdgeWorkers [FAQ](doc:content-transformation) for answers to common questions about content transformation.
+> Refer to the EdgeWorkers [FAQ](content-transformation.md) for answers to common questions about content transformation.
 > 
-> EdgeWorkers provides an [html-rewriter](doc:htmlrewriter) module to use in your EdgeWorkers functions to consume and rewrite HTML documents. The html-rewriter module includes a built-in parser that emulates standard HTML parsing and DOM-construction.
+> EdgeWorkers provides an [html-rewriter](htmlrewriter.md) module to use in your EdgeWorkers functions to consume and rewrite HTML documents. The html-rewriter module includes a built-in parser that emulates standard HTML parsing and DOM-construction.
 
 # 1. Basic response modification
 
@@ -22,7 +22,7 @@ This configuration forwards requests to the origin without modifying the respons
   <img src="https://techdocs.akamai.com/edgeworkers/img/simpleResponseMod-v2.jpg" alt="Image"/>
 </Frame>
 
-To use an EdgeWorkers function to modify the response, you need to implement the `responseProvider()` function in your EdgeWorkers code. To find details about the code inside the EdgeWorkers function, see the [Response body processing](doc:process-response-bodies) tutorial in this guide.  The EdgeWorkers function replaces the origin. The`responseProvider()` code makes the HTTP request for the original content and modifies the content.  
+To use an EdgeWorkers function to modify the response, you need to implement the `responseProvider()` function in your EdgeWorkers code. To find details about the code inside the EdgeWorkers function, see the [Response body processing](process-response-bodies.md) tutorial in this guide.  The EdgeWorkers function replaces the origin. The`responseProvider()` code makes the HTTP request for the original content and modifies the content.  
 
 In effect, the code splits the request into two legs. The first leg travels from the user to Akamai, using `responseProvider()` as the origin.  The second leg of the request travels from the EdgeWorkers function back through the Akamai platform to fetch content from the origin. For simplicity, lets assume these two legs use different URLs, as shown below.
 
@@ -30,7 +30,7 @@ In effect, the code splits the request into two legs. The first leg travels from
   <img src="https://techdocs.akamai.com/edgeworkers/img/step1TransformContentInPlace-v1.jpg" alt="Image"/>
 </Frame>
 
-The code for this EdgeWorkers function looks similar to the example below. All content modification is performed within the implementation of the `MyCustomTransformStream` class. For brevity the example doesn't include all the details, but you can read about an example of implementing find/replace logic in the [Response body processing](doc:process-response-bodies) tutorial.
+The code for this EdgeWorkers function looks similar to the example below. All content modification is performed within the implementation of the `MyCustomTransformStream` class. For brevity the example doesn't include all the details, but you can read about an example of implementing find/replace logic in the [Response body processing](process-response-bodies.md) tutorial.
 
 ```javascript
 export async function responseProvider (request) {

@@ -12,7 +12,7 @@ There are currently three resource tiers available, **Basic Compute**, **Dynamic
 
 > 👍 By default, all EdgeWorker IDs created before resource tiers were introduced execute using the **Dynamic Compute** resource tier. The limitations applied by this resource tier are the same as when the EdgeWorker ID was created.
 
-You can, however, change an EdgeWorkers function to Basic Compute, a less costly tier with lower limits. For instructions on how to change the resource tier assigned to an EdgeWorkers function see [How to change to a different EdgeWorkers tier](change-resource-tier.md). The billing rate for each of these resource tiers is different. For information about billing you can contact your {{COMPANY_NICKNAME}} account representative.
+You can, however, change an EdgeWorkers function to Basic Compute, a less costly tier with lower limits. For instructions on how to change the resource tier assigned to an EdgeWorkers function see [How to change to a different EdgeWorkers tier](change-resource-tier.md). The billing rate for each of these resource tiers is different. For information about billing you can contact your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> account representative.
 
 See the [Resource tier limitations](resource-tier-limitations.md) section to review the consumption limits for each resource tier. Review the table below for the supported use cases for each resource tier. Dynamic Compute allows you to implement any currently available EdgeWorkers use case.
 
@@ -24,25 +24,25 @@ Review the table below to see which use cases are supported
 
 | Use Case                                                 | Basic Compute  | Dynamic Compute | Enterprise Compute |
 | :------------------------------------------------------- | :------------- | :-------------- | :----------------- |
-| Cache Key Manipulation                                   | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Forwarding / Conditionally Route Traffic                 | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Redirect Management                                      | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Header Management                                        | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Cookie Management                                        | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Simple regex / hashing / crypto                          | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| HTTP sub-request                                         | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Fetches that GET JSON data and enable personalization    | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Data POSTing for metrics beaconing and error logging     | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Response Body modification                               |                | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Integration with EdgeKV                                  | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| Complex crypto during the responseProvider event handler |                | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
-| JavaScript logging via a DataStream 2 stream             | {{CHAR_CHECK}} | {{CHAR_CHECK}}  | {{CHAR_CHECK}}     |
+| Cache Key Manipulation                                   | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Forwarding / Conditionally Route Traffic                 | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Redirect Management                                      | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Header Management                                        | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Cookie Management                                        | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Simple regex / hashing / crypto                          | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| HTTP sub-request                                         | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Fetches that GET JSON data and enable personalization    | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Data POSTing for metrics beaconing and error logging     | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Response Body modification                               |                | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Integration with EdgeKV                                  | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| Complex crypto during the responseProvider event handler |                | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
+| JavaScript logging via a DataStream 2 stream             | <Markdown src="../../snippets/CHAR_CHECK.mdx" /> | <Markdown src="../../snippets/CHAR_CHECK.mdx" />  | <Markdown src="../../snippets/CHAR_CHECK.mdx" />     |
 
 # Resource tiers and billing terminology
 
 Familiarize yourself with these common terms associated with EdgeWorkers resource tiers and billing.
 
-Contact your {{COMPANY_NICKNAME}} account representative for complete details related to billing.
+Contact your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> account representative for complete details related to billing.
 
 | Term                   | Definition                                                                                                                                                                                                                                                                                                                                                                      |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

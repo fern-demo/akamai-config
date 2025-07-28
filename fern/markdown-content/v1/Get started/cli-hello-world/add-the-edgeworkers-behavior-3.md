@@ -11,11 +11,11 @@ updatedAt: "Tue Nov 07 2023 19:09:02 GMT+0000 (Coordinated Universal Time)"
 ---
 This section describes how to enable the EdgeWorkers behavior in Property Manager. When you add the EdgeWorkers behavior you can also define which requests apply EdgeWorkers functions. By limiting the scope you can avoid unnecessary serverless hits to improve performance and reduce cost.
 
-Before you begin, make sure you've reviewed the prerequisites. To complete these steps you need access to {{PORTAL_NAME}}.
+Before you begin, make sure you've reviewed the prerequisites. To complete these steps you need access to <Markdown src="../../../snippets/PORTAL_NAME.mdx" />.
 
 > 👍 To specify and configure an action to take in the event that an EdgeWorkers function fails, add the [Site Failover](site-failover.md) behavior to your property.
 
-1. Navigate to your property in {{PORTAL_NICKNAME}}.
+1. Navigate to your property in <Markdown src="../../../snippets/PORTAL_NICKNAME.mdx" />.
 
 2. Click **Edit**.
 
