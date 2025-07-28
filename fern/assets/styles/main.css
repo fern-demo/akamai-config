@@ -47,11 +47,17 @@
     min-height: 600px;
   }
   
-  /* Sidebar styling (same as before) */
   .td-filter-sidebar {
     width: 280px;
     flex-shrink: 0;
     border-right: 1px solid #e5e7eb;
+    padding-right: 1rem;
+  }
+  
+  .dark .td-filter-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid #282c2f;
     padding-right: 1rem;
   }
   
@@ -92,6 +98,11 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #e5e7eb;
+  }
+  .dark .td-fltr-hdr {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #282c2f;
   }
   
   .td-main-hdr {

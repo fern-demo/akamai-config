@@ -437,6 +437,71 @@ layout: overview
     border-color: #777 !important;
     background-color: rgba(255, 255, 255, 0.03) !important;
   }
+  
+  /* Dark Mode Outlined Button Styling for Cards */
+  .dark .filter-card button[data-outlined],
+  .dark .filter-card .fern-button[data-outlined],
+  .dark .filter-card button.outlined,
+  .dark .filter-card .fern-button.outlined {
+    background-color: var(--grayscale-a3) !important;
+    border-color: var(--grayscale-a6) !important;
+    color: var(--grayscale-a11) !important;
+  }
+  
+  .dark .filter-card button[data-outlined]:hover,
+  .dark .filter-card .fern-button[data-outlined]:hover,
+  .dark .filter-card button.outlined:hover,
+  .dark .filter-card .fern-button.outlined:hover {
+    background-color: var(--grayscale-a4) !important;
+    border-color: var(--grayscale-a7) !important;
+    color: var(--grayscale-a12) !important;
+  }
+  
+  /* Dark Mode Outlined Button Styling for Featured Cards */
+  .dark .featured-card button[data-outlined],
+  .dark .featured-card .fern-button[data-outlined],
+  .dark .featured-card button.outlined,
+  .dark .featured-card .fern-button.outlined {
+    background-color: var(--grayscale-a3) !important;
+    border-color: var(--grayscale-a6) !important;
+    color: var(--grayscale-a11) !important;
+  }
+  
+  .dark .featured-card button[data-outlined]:hover,
+  .dark .featured-card .fern-button[data-outlined]:hover,
+  .dark .featured-card button.outlined:hover,
+  .dark .featured-card .fern-button.outlined:hover {
+    background-color: var(--grayscale-a4) !important;
+    border-color: var(--grayscale-a7) !important;
+    color: var(--grayscale-a12) !important;
+  }
+  
+  /* Dark Mode Card Footer Divider Lines */
+  .dark .card-footer-tags {
+    border-top-color: #e5e7eb !important;
+  }
+  
+  
+  /* Dark Mode - Comprehensive border color override */
+  .dark .filter-card *,
+  .dark .fern-card *,
+  .dark .td-filter-cards * {
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Dark Mode - Target specific white/light borders */
+  .dark .filter-card *[style*="border"],
+  .dark .fern-card *[style*="border"] {
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Dark Mode - Use grayscale variables for borders */
+  .dark .filter-card,
+  .dark .filter-card *,
+  .dark .fern-card,
+  .dark .fern-card * {
+    border-color: var(--grayscale-a6) !important;
+  }
 `}
 
 </style>
@@ -568,7 +633,7 @@ layout: overview
       <div className="td-main-body">
         <CardGroup cols={2} className="td-filter-cards">
           
-          <Card 
+          {/* <Card 
             title="Application Security" 
             href="/appsec"
             className="filter-card"
@@ -580,7 +645,7 @@ layout: overview
               <Button outlined href="/appsec">Guide</Button>
             </div>
             <div className="filter-data" data-category="security" data-tags="security application appsec firewall" style={{display: 'none'}}></div>
-          </Card>
+          </Card> */}
 
           <Card 
             title="EdgeWorkers" 
@@ -595,7 +660,7 @@ layout: overview
             </div>
             <div className="filter-data" data-category="compute" data-tags="edge javascript workers compute" style={{display: 'none'}}></div>
           </Card>
-          <Card 
+          {/* <Card 
             title="Adaptive Acceleration" 
             href="/adaptive-acceleration"
             className="filter-card"
@@ -607,9 +672,9 @@ layout: overview
               <Button outlined href="/adaptive-acceleration">Guide</Button>
             </div>
             <div className="filter-data" data-category="compute" data-tags="compute api" style={{display: 'none'}}></div>
-          </Card>
+          </Card> */}
 
-          <Card 
+          {/* <Card 
             title="Alerts" 
             href="/alerts"
             className="filter-card"
@@ -1265,7 +1330,7 @@ layout: overview
               <Button outlined href="/reporting-api">Guide</Button>
             </div>
             <div className="filter-data" data-category="tools" data-tags="tools api reporting rest-api" style={{display: 'none'}}></div>
-          </Card>
+          </Card> */}
 
           <Card 
             title="Sample Spec" 
@@ -1281,7 +1346,7 @@ layout: overview
             <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
           </Card>
 
-          <Card 
+          {/* <Card 
             title="Sandbox API" 
             href="/sandbox-api"
             className="filter-card"
@@ -1377,7 +1442,7 @@ layout: overview
               <Button outlined href="/taas">Guide</Button>
             </div>
             <div className="filter-data" data-category="tools" data-tags="tools api" style={{display: 'none'}}></div>
-          </Card>
+          </Card> */}
 
           <Card 
             title="Demo APIs" 
@@ -1393,7 +1458,7 @@ layout: overview
             <div className="filter-data" data-category="tools" data-tags="tools api demo examples rest-api" style={{display: 'none'}}></div>
           </Card>
 
-          <Card 
+          {/* <Card 
             title="Edge Workers" 
             href="/edge-workers"
             className="filter-card"
@@ -1405,7 +1470,7 @@ layout: overview
               <Button outlined href="/edge-workers">Guide</Button>
             </div>
             <div className="filter-data" data-category="compute" data-tags="api compute edge" style={{display: 'none'}}></div>
-          </Card>
+          </Card> */}
 
         </CardGroup>
       </div>
