@@ -3,6 +3,7 @@ instances:
   - url: akamai.docs.buildwithfern.com # update this to {yourorg}.docs.buildwithfern.com
     custom-domain: akamai.ferndocs.com
     # custom-domain: plantstore.dev # specify your custom domain when you are ready to go live
+  - url: akamai-staging.docs.buildwithfern.com
 
 title: Akamai TechDocs
 
