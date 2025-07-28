@@ -81,6 +81,12 @@ To learn about Fern's built-in component library you can use within MDX files:
 
 - See the [Component Library](https://buildwithfern.com/learn/docs/content/components/overview?utm_source=github&utm_medium=readme&utm_campaign=docs-starter-openapi&utm_content=step7).
 
+### Custom React Filter Component
+
+This project includes a custom React-based filter component for enhanced product catalog filtering. For development instructions, customization options, and troubleshooting:
+
+- See [React Filter Component Documentation](fern/components/README.md)
+
 ### Set up a custom domain
 
 If you wish to use a custom subdomain like `https://docs.YOUR_ORGANIZATION.com` or a subpath like `https://YOUR_ORGANIZATION.com/docs`, you can subscribe to the [Starter plan](https://buildwithfern.com/pricing?utm_source=github&utm_medium=readme&utm_campaign=docs-starter-openapi&utm_content=step8). Once subscribed, update `docs.yml` with the custom domain configuration:

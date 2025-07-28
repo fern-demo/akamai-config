@@ -1,0 +1,18 @@
+{
+  "name": "fern-filter-components",
+  "version": "1.0.0",
+  "description": "React components for Fern docs filtering",
+  "main": "dist/filter.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.0.0"
+  }
+} 

@@ -31,213 +31,213 @@ products:
     path: ./products/demo-apis/demo-apis.yml
     image: ./assets/cloud_computing.svg
     subtitle: "Build powerful integrations"
-  - display-name: Adaptive Acceleration
-    path: ./products/adaptive-acceleration/adaptive-acceleration.yml
-    subtitle: "Powerful API integration"
-  - display-name: Alerts
-    path: ./products/alerts/alerts.yml
-    subtitle: "Monitoring and alerting system"
-  - display-name: Amfa
-    path: ./products/amfa/amfa.yml
-    subtitle: "Powerful API integration"
-  - display-name: Api Definitions
-    path: ./products/api-definitions/api-definitions.yml
-    subtitle: "Powerful API integration"
-  - display-name: Apikey Manager Api
-    path: ./products/apikey-manager-api/apikey-manager-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Appsec
-    path: ./products/appsec/appsec.yml
-    subtitle: "Application security services"
-  - display-name: Cam
-    path: ./products/cam/cam.yml
-    subtitle: "Powerful API integration"
-  - display-name: Case Management
-    path: ./products/case-management/case-management.yml
-    subtitle: "Powerful API integration"
-  - display-name: Ccu
-    path: ./products/ccu/ccu.yml
-    subtitle: "Content cache utilities"
-  - display-name: Chinacdn
-    path: ./products/chinacdn/chinacdn.yml
-    subtitle: "Powerful API integration"
-  - display-name: Client Access Control
-    path: ./products/client-access-control/client-access-control.yml
-    subtitle: "Powerful API integration"
-  - display-name: Cloud Wrapper
-    path: ./products/cloud-wrapper/cloud-wrapper.yml
-    subtitle: "Powerful API integration"
-  - display-name: Cloudlets
-    path: ./products/cloudlets/cloudlets.yml
-    subtitle: "Edge computing capabilities"
-  - display-name: Config Dns
-    path: ./products/config-dns/config-dns.yml
-    subtitle: "DNS configuration management"
-  - display-name: Config Gtm
-    path: ./products/config-gtm/config-gtm.yml
-    subtitle: "Powerful API integration"
-  - display-name: Config Media Live
-    path: ./products/config-media-live/config-media-live.yml
-    subtitle: "Powerful API integration"
-  - display-name: Contract Api
-    path: ./products/contract-api/contract-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Cprg
-    path: ./products/cprg/cprg.yml
-    subtitle: "Powerful API integration"
-  - display-name: Cps
-    path: ./products/cps/cps.yml
-    subtitle: "Powerful API integration"
-  - display-name: Crux
-    path: ./products/crux/crux.yml
-    subtitle: "Powerful API integration"
-  - display-name: Datastore
-    path: ./products/datastore/datastore.yml
-    subtitle: "Powerful API integration"
-  - display-name: Datastream Config Api
-    path: ./products/datastream-config-api/datastream-config-api.yml
-    subtitle: "Real-time log streaming"
-  - display-name: Dcp Api
-    path: ./products/dcp-api/dcp-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Beta Swagger Spec
-    path: ./products/demo-beta-swagger-spec/demo-beta-swagger-spec.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Data
-    path: ./products/demo-data/demo-data.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Deprecated Swagger Spec
-    path: ./products/demo-deprecated-swagger-spec/demo-deprecated-swagger-spec.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Exclude Components And Custom Syntax
-    path: ./products/demo-exclude-components-and-custom-syntax/demo-exclude-components-and-custom-syntax.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Internal Openapi 31 Support
-    path: ./products/demo-internal-openapi-31-support/demo-internal-openapi-31-support.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Language
-    path: ./products/demo-language/demo-language.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Limited Availability Swagger Base Path
-    path: ./products/demo-limited-availability-swagger-base-path/demo-limited-availability-swagger-base-path.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Operation
-    path: ./products/demo-operation/demo-operation.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Parameters
-    path: ./products/demo-parameters/demo-parameters.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Sample Data
-    path: ./products/demo-sample-data/demo-sample-data.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Service
-    path: ./products/demo-service/demo-service.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo Service Svc
-    path: ./products/demo-service-svc/demo-service-svc.yml
-    subtitle: "Powerful API integration"
-  - display-name: Demo The Response Api
-    path: ./products/demo-the-response-api/demo-the-response-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Eccu Api
-    path: ./products/eccu-api/eccu-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Edge Data Stream
-    path: ./products/edge-data-stream/edge-data-stream.yml
-    subtitle: "Powerful API integration"
-  - display-name: Edge Diagnostics
-    path: ./products/edge-diagnostics/edge-diagnostics.yml
-    subtitle: "Powerful API integration"
-  - display-name: Edgekv
-    path: ./products/edgekv/edgekv.yml
-    subtitle: "Edge-based key-value storage"
-  - display-name: Etp Config
-    path: ./products/etp-config/etp-config.yml
-    subtitle: "Enterprise threat protection"
-  - display-name: Etp Report
-    path: ./products/etp-report/etp-report.yml
-    subtitle: "Powerful API integration"
-  - display-name: Event Viewer
-    path: ./products/event-viewer/event-viewer.yml
-    subtitle: "Powerful API integration"
-  - display-name: Events
-    path: ./products/events/events.yml
-    subtitle: "Powerful API integration"
-  - display-name: Firewall Rules Manager
-    path: ./products/firewall-rules-manager/firewall-rules-manager.yml
-    subtitle: "Security rule management"
-  - display-name: Gtm Api
-    path: ./products/gtm-api/gtm-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Gtm Load Data
-    path: ./products/gtm-load-data/gtm-load-data.yml
-    subtitle: "Powerful API integration"
-  - display-name: Identity Management
-    path: ./products/identity-management/identity-management.yml
-    subtitle: "User access and authentication"
-  - display-name: Imaging
-    path: ./products/imaging/imaging.yml
-    subtitle: "Image optimization and processing"
-  - display-name: Invoicing
-    path: ./products/invoicing/invoicing.yml
-    subtitle: "Powerful API integration"
-  - display-name: Ip Protect
-    path: ./products/ip-protect/ip-protect.yml
-    subtitle: "Powerful API integration"
-  - display-name: Jwt Api
-    path: ./products/jwt-api/jwt-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Live Archive
-    path: ./products/live-archive/live-archive.yml
-    subtitle: "Powerful API integration"
-  - display-name: Media Delivery Reports
-    path: ./products/media-delivery-reports/media-delivery-reports.yml
-    subtitle: "Media streaming analytics"
-  - display-name: Media Reports
-    path: ./products/media-reports/media-reports.yml
-    subtitle: "Powerful API integration"
-  - display-name: Netstorage Usage Api
-    path: ./products/netstorage-usage-api/netstorage-usage-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Network Lists
-    path: ./products/network-lists/network-lists.yml
-    subtitle: "IP and network management"
-  - display-name: Ota
-    path: ./products/ota/ota.yml
-    subtitle: "Powerful API integration"
-  - display-name: Papi
-    path: ./products/papi/papi.yml
-    subtitle: "Property and configuration management"
-  - display-name: Prolexic Analytics
-    path: ./products/prolexic-analytics/prolexic-analytics.yml
-    subtitle: "Powerful API integration"
-  - display-name: Reporting Api
-    path: ./products/reporting-api/reporting-api.yml
-    subtitle: "Powerful API integration"
   - display-name: Sample Spec
     path: ./products/sample-spec/sample-spec.yml
     subtitle: "Powerful API integration"
-  - display-name: Sandbox Api
-    path: ./products/sandbox-api/sandbox-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Script Management
-    path: ./products/script-management/script-management.yml
-    subtitle: "Powerful API integration"
-  - display-name: Siem
-    path: ./products/siem/siem.yml
-    subtitle: "Powerful API integration"
-  - display-name: Siteshield
-    path: ./products/siteshield/siteshield.yml
-    subtitle: "Origin server protection"
-  - display-name: Sla Api
-    path: ./products/sla-api/sla-api.yml
-    subtitle: "Powerful API integration"
-  - display-name: Storage
-    path: ./products/storage/storage.yml
-    subtitle: "Powerful API integration"
-  - display-name: Taas
-    path: ./products/taas/taas.yml
-    subtitle: "Powerful API integration"
+  # - display-name: Adaptive Acceleration
+  #   path: ./products/adaptive-acceleration/adaptive-acceleration.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Alerts
+  #   path: ./products/alerts/alerts.yml
+  #   subtitle: "Monitoring and alerting system"
+  # - display-name: Amfa
+  #   path: ./products/amfa/amfa.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Api Definitions
+  #   path: ./products/api-definitions/api-definitions.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Apikey Manager Api
+  #   path: ./products/apikey-manager-api/apikey-manager-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Appsec
+  #   path: ./products/appsec/appsec.yml
+  #   subtitle: "Application security services"
+  # - display-name: Cam
+  #   path: ./products/cam/cam.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Case Management
+  #   path: ./products/case-management/case-management.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Ccu
+  #   path: ./products/ccu/ccu.yml
+  #   subtitle: "Content cache utilities"
+  # - display-name: Chinacdn
+  #   path: ./products/chinacdn/chinacdn.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Client Access Control
+  #   path: ./products/client-access-control/client-access-control.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Cloud Wrapper
+  #   path: ./products/cloud-wrapper/cloud-wrapper.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Cloudlets
+  #   path: ./products/cloudlets/cloudlets.yml
+  #   subtitle: "Edge computing capabilities"
+  # - display-name: Config Dns
+  #   path: ./products/config-dns/config-dns.yml
+  #   subtitle: "DNS configuration management"
+  # - display-name: Config Gtm
+  #   path: ./products/config-gtm/config-gtm.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Config Media Live
+  #   path: ./products/config-media-live/config-media-live.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Contract Api
+  #   path: ./products/contract-api/contract-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Cprg
+  #   path: ./products/cprg/cprg.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Cps
+  #   path: ./products/cps/cps.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Crux
+  #   path: ./products/crux/crux.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Datastore
+  #   path: ./products/datastore/datastore.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Datastream Config Api
+  #   path: ./products/datastream-config-api/datastream-config-api.yml
+  #   subtitle: "Real-time log streaming"
+  # - display-name: Dcp Api
+  #   path: ./products/dcp-api/dcp-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Beta Swagger Spec
+  #   path: ./products/demo-beta-swagger-spec/demo-beta-swagger-spec.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Data
+  #   path: ./products/demo-data/demo-data.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Deprecated Swagger Spec
+  #   path: ./products/demo-deprecated-swagger-spec/demo-deprecated-swagger-spec.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Exclude Components And Custom Syntax
+  #   path: ./products/demo-exclude-components-and-custom-syntax/demo-exclude-components-and-custom-syntax.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Internal Openapi 31 Support
+  #   path: ./products/demo-internal-openapi-31-support/demo-internal-openapi-31-support.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Language
+  #   path: ./products/demo-language/demo-language.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Limited Availability Swagger Base Path
+  #   path: ./products/demo-limited-availability-swagger-base-path/demo-limited-availability-swagger-base-path.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Operation
+  #   path: ./products/demo-operation/demo-operation.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Parameters
+  #   path: ./products/demo-parameters/demo-parameters.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Sample Data
+  #   path: ./products/demo-sample-data/demo-sample-data.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Service
+  #   path: ./products/demo-service/demo-service.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo Service Svc
+  #   path: ./products/demo-service-svc/demo-service-svc.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Demo The Response Api
+  #   path: ./products/demo-the-response-api/demo-the-response-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Eccu Api
+  #   path: ./products/eccu-api/eccu-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Edge Data Stream
+  #   path: ./products/edge-data-stream/edge-data-stream.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Edge Diagnostics
+  #   path: ./products/edge-diagnostics/edge-diagnostics.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Edgekv
+  #   path: ./products/edgekv/edgekv.yml
+  #   subtitle: "Edge-based key-value storage"
+  # - display-name: Etp Config
+  #   path: ./products/etp-config/etp-config.yml
+  #   subtitle: "Enterprise threat protection"
+  # - display-name: Etp Report
+  #   path: ./products/etp-report/etp-report.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Event Viewer
+  #   path: ./products/event-viewer/event-viewer.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Events
+  #   path: ./products/events/events.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Firewall Rules Manager
+  #   path: ./products/firewall-rules-manager/firewall-rules-manager.yml
+  #   subtitle: "Security rule management"
+  # - display-name: Gtm Api
+  #   path: ./products/gtm-api/gtm-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Gtm Load Data
+  #   path: ./products/gtm-load-data/gtm-load-data.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Identity Management
+  #   path: ./products/identity-management/identity-management.yml
+  #   subtitle: "User access and authentication"
+  # - display-name: Imaging
+  #   path: ./products/imaging/imaging.yml
+  #   subtitle: "Image optimization and processing"
+  # - display-name: Invoicing
+  #   path: ./products/invoicing/invoicing.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Ip Protect
+  #   path: ./products/ip-protect/ip-protect.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Jwt Api
+  #   path: ./products/jwt-api/jwt-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Live Archive
+  #   path: ./products/live-archive/live-archive.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Media Delivery Reports
+  #   path: ./products/media-delivery-reports/media-delivery-reports.yml
+  #   subtitle: "Media streaming analytics"
+  # - display-name: Media Reports
+  #   path: ./products/media-reports/media-reports.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Netstorage Usage Api
+  #   path: ./products/netstorage-usage-api/netstorage-usage-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Network Lists
+  #   path: ./products/network-lists/network-lists.yml
+  #   subtitle: "IP and network management"
+  # - display-name: Ota
+  #   path: ./products/ota/ota.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Papi
+  #   path: ./products/papi/papi.yml
+  #   subtitle: "Property and configuration management"
+  # - display-name: Prolexic Analytics
+  #   path: ./products/prolexic-analytics/prolexic-analytics.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Reporting Api
+  #   path: ./products/reporting-api/reporting-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Sandbox Api
+  #   path: ./products/sandbox-api/sandbox-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Script Management
+  #   path: ./products/script-management/script-management.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Siem
+  #   path: ./products/siem/siem.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Siteshield
+  #   path: ./products/siteshield/siteshield.yml
+  #   subtitle: "Origin server protection"
+  # - display-name: Sla Api
+  #   path: ./products/sla-api/sla-api.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Storage
+  #   path: ./products/storage/storage.yml
+  #   subtitle: "Powerful API integration"
+  # - display-name: Taas
+  #   path: ./products/taas/taas.yml
+  #   subtitle: "Powerful API integration"
 
 navbar-links:
   - type: minimal
@@ -264,9 +264,11 @@ colors:
     light: "#ffffff"
 
 
-css: ./assets/styles/main.css
+css: 
+  - ./assets/styles/main.css
+  - dist/filter.css
 js:
-  - path: filter.js
+  - path: dist/filter.js  # React-based filter component
   - path: rbac-demo.js
     strategy: beforeInteractive
   - path: rbac-demo-2.js
