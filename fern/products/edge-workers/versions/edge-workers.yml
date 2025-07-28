@@ -42,44 +42,78 @@ navigation:
         contents:
           - page: Welcome to EdgeWorkers
             path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
+            viewers:
+              - everyone
           - section: EdgeWorkers event model
             path: ../../../markdown-content/v1/Welcome/event-handler-functions.md
             contents:
               - page: Response orchestration
                 path: ../../../markdown-content/v1/Welcome/event-handler-functions/response-orchestration.md
+                viewers:
+                  - everyone
           - page: Administrator and developer roles
             path: ../../../markdown-content/v1/Welcome/administrator-and-developer-roles.md
+            viewers:
+              - everyone
           - page: Specifications
             path: ../../../markdown-content/v1/Welcome/specifications.md
+            viewers:
+              - everyone
           - section: Tutorials
             path: ../../../markdown-content/v1/Welcome/use-cases.md
             contents:
               - page: Transform response content
                 path: ../../../markdown-content/v1/Welcome/use-cases/transform-response-content.md
+                viewers:
+                  - everyone
               - page: Boost autocomplete performance
                 path: ../../../markdown-content/v1/Welcome/use-cases/boost-autocomplete-performance.md
+                viewers:
+                  - everyone
               - page: Content insertion
                 path: ../../../markdown-content/v1/Welcome/use-cases/content-insertion.md
+                viewers:
+                  - everyone
               - page: Content security policy
                 path: ../../../markdown-content/v1/Welcome/use-cases/content-security-policy.md
+                viewers:
+                  - everyone
               - page: Fire and forget
                 path: ../../../markdown-content/v1/Welcome/use-cases/fire-and-forget.md
+                viewers:
+                  - everyone
               - page: HTML rewriter dynamic content assembly
                 path: ../../../markdown-content/v1/Welcome/use-cases/html-rewriter-dynamic-content-assembly.md
+                viewers:
+                  - everyone
               - page: Import external module npm package manager
                 path: ../../../markdown-content/v1/Welcome/use-cases/import-external-module-npm-package-mgr.md
+                viewers:
+                  - everyone
               - page: Live program replacement
                 path: ../../../markdown-content/v1/Welcome/use-cases/live-program-replacement.md
+                viewers:
+                  - everyone
               - page: Manifest and playlist personalization
                 path: ../../../markdown-content/v1/Welcome/use-cases/manifest-and-playlist-personalization.md
+                viewers:
+                  - everyone
               - page: Process response bodies
                 path: ../../../markdown-content/v1/Welcome/use-cases/process-response-bodies.md
+                viewers:
+                  - everyone
               - page: Redirect pages based on location
                 path: ../../../markdown-content/v1/Welcome/use-cases/redirect-pages-based-on-location.md
+                viewers:
+                  - everyone
               - page: Response body processing copy
                 path: ../../../markdown-content/v1/Welcome/use-cases/response-body-processing-copy.md
+                viewers:
+                  - everyone
               - page: Store locator
                 path: ../../../markdown-content/v1/Welcome/use-cases/store-locator.md
+                viewers:
+                  - everyone
       - section: Prerequisites
         contents:
           - section: Add EdgeWorkers to your contract
@@ -87,101 +121,171 @@ navigation:
             contents:
               - page: EdgeWorkers free trial
                 path: ../../../markdown-content/v1/Prerequisites/add-edgeworkers-to-contract/edgeworkers-free-trial.md
+                viewers:
+                  - everyone
           - page: Manage access to EdgeWorkers
             path: ../../../markdown-content/v1/Prerequisites/manage-access-to-edgeworkers.md
+            viewers:
+              - everyone
           - section: Select a resource tier
             path: ../../../markdown-content/v1/Prerequisites/select-a-resource-tier.md
             contents:
               - page: Change resource tier
                 path: ../../../markdown-content/v1/Prerequisites/select-a-resource-tier/change-resource-tier.md
 
+                viewers:
+                  - everyone
       - section: Get started
         contents:
           - page: Hello World tutorials
             path: ../../../markdown-content/v1/Get started/hello-world.md
+            viewers:
+              - everyone
           - section: EdgeWorkers Management Application Hello World
             path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application.md
             contents:
               - page: Create an EdgeWorker ID
                 path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/create-an-edgeworker-id-1.md
+                viewers:
+                  - everyone
               - page: Create the Hello World code bundle
                 path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/create-the-hello-world-code-bundle-1.md
+                viewers:
+                  - everyone
               - page: Add the EdgeWorker behavior
                 path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/add-the-edgeworker-behavior-1.md
+                viewers:
+                  - everyone
               - page: Deploy Hello World
                 path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/deploy-hello-world-1.md
+                viewers:
+                  - everyone
               - page: Test Hello World
                 path: ../../../markdown-content/v1/Get started/hello-world-edgeworkers-management-application/test-hello-world-1.md
+                viewers:
+                  - everyone
           - section: API Hello World
             path: ../../../markdown-content/v1/Get started/api-hello-world.md
             contents:
               - page: Create an EdgeWorker ID
                 path: ../../../markdown-content/v1/Get started/api-hello-world/create-an-edgeworker-id-2.md
+                viewers:
+                  - everyone
               - page: Create the Hello World code bundle
                 path: ../../../markdown-content/v1/Get started/api-hello-world/create-the-hello-world-code-bundle-2.md
+                viewers:
+                  - everyone
               - page: Add the EdgeWorkers behavior
                 path: ../../../markdown-content/v1/Get started/api-hello-world/add-the-edgeworkers-behavior-2.md
+                viewers:
+                  - everyone
               - page: Deploy Hello World
                 path: ../../../markdown-content/v1/Get started/api-hello-world/deploy-hello-world-2.md
+                viewers:
+                  - everyone
               - page: Test Hello World
                 path: ../../../markdown-content/v1/Get started/api-hello-world/test-hello-world-2.md
+                viewers:
+                  - everyone
           - section: CLI Hello World
             path: ../../../markdown-content/v1/Get started/cli-hello-world.md
             contents:
               - page: Create an EdgeWorker ID
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/create-an-edgeworker-id-3.md
+                viewers:
+                  - everyone
               - page: Create the Hello World code bundle
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/create-the-hello-world-code-bundle-3.md
+                viewers:
+                  - everyone
               - page: Add the EdgeWorkers behavior
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/add-the-edgeworkers-behavior-3.md
+                viewers:
+                  - everyone
               - page: Deploy Hello World
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/deploy-hello-world-3.md
+                viewers:
+                  - everyone
               - page: Test Hello World
                 path: ../../../markdown-content/v1/Get started/cli-hello-world/test-hello-world-3.md
+                viewers:
+                  - everyone
       - section: Administration
         contents:
           - page: Set up the EdgeWorkers service
             path: ../../../markdown-content/v1/Administration/set-up-the-edgeworkers-service.md
+            viewers:
+              - everyone
           - page: Create an EdgeWorker ID
             path: ../../../markdown-content/v1/Administration/create-an-edgeworker-id.md
+            viewers:
+              - everyone
           - page: Add the EdgeWorkers behavior
             path: ../../../markdown-content/v1/Administration/add-the-edgeworkers-behavior.md
+            viewers:
+              - everyone
           - page: Manage EdgeWorkers
             path: ../../../markdown-content/v1/Administration/manage-edgeworkers.md
+            viewers:
+              - everyone
           - section: Site Failover
             path: ../../../markdown-content/v1/Administration/site-failover.md
             contents:
               - page: Test site failover
                 path: ../../../markdown-content/v1/Administration/site-failover/test-site-failover.md
+                viewers:
+                  - everyone
           - page: Akamai CLI
             path: ../../../markdown-content/v1/Administration/akamai-cli.md
+            viewers:
+              - everyone
           - page: EdgeWorkers API
             path: ../../../markdown-content/v1/Administration/edgeworkers-api.md
+            viewers:
+              - everyone
           - section: Create a subWorker
             path: ../../../markdown-content/v1/Administration/create-a-subworker.md
             contents:
               - page: Debug subWorkers
                 path: ../../../markdown-content/v1/Administration/create-a-subworker/debug-subworkers.md
+                viewers:
+                  - everyone
               - page: SubWorkers tutorial
                 path: ../../../markdown-content/v1/Administration/create-a-subworker/subworkers-tutorial.md
+                viewers:
+                  - everyone
           - section: Flexible composition
             path: ../../../markdown-content/v1/Administration/flexible-composition.md
             contents:
               - page: Terminology
                 path: ../../../markdown-content/v1/Administration/flexible-composition/terminology.md
+                viewers:
+                  - everyone
               - page: Create a parent EdgeWorker
                 path: ../../../markdown-content/v1/Administration/flexible-composition/create-a-parent-edgeworker.md
+                viewers:
+                  - everyone
               - page: Add child EdgeWorkers
                 path: ../../../markdown-content/v1/Administration/flexible-composition/add-child-edgeworkers.md
+                viewers:
+                  - everyone
               - page: Pin a revision
                 path: ../../../markdown-content/v1/Administration/flexible-composition/pin-a-revision.md
+                viewers:
+                  - everyone
               - page: Review a static activation
                 path: ../../../markdown-content/v1/Administration/flexible-composition/review-a-static-activation.md
+                viewers:
+                  - everyone
               - page: Dynamic reactivation
                 path: ../../../markdown-content/v1/Administration/flexible-composition/dynamic-reactivation.md
+                viewers:
+                  - everyone
               - page: Debug flexible composition
                 path: ../../../markdown-content/v1/Administration/flexible-composition/debug-flexible-composition.md
 
+                viewers:
+                  - everyone
       - section: Development
         contents:
           - section: Write your JavaScript code
@@ -189,92 +293,164 @@ navigation:
             contents:
               - page: JavaScript error handling
                 path: ../../../markdown-content/v1/Development/write-your-javascript-code/javascript-error-handling.md
+                viewers:
+                  - everyone
           - section: Create a code bundle
             path: ../../../markdown-content/v1/Development/create-a-code-bundle.md
             contents:
               - page: Code bundle format
                 path: ../../../markdown-content/v1/Development/create-a-code-bundle/code-bundle-format.md
+                viewers:
+                  - everyone
           - page: Import a JavaScript module
             path: ../../../markdown-content/v1/Development/import-a-javascript-module.md
+            viewers:
+              - everyone
           - page: Execution environment
             path: ../../../markdown-content/v1/Development/execution-environment.md
+            viewers:
+              - everyone
           - page: TypeScript
             path: ../../../markdown-content/v1/Development/typescript-1.md
+            viewers:
+              - everyone
           - section: Developer tools
             path: ../../../markdown-content/v1/Development/developer-tools.md
             contents:
               - page: Code bundle editor
                 path: ../../../markdown-content/v1/Development/developer-tools/code-bundle-editor.md
+                viewers:
+                  - everyone
               - page: EdgeWorkers code profiler
                 path: ../../../markdown-content/v1/Development/developer-tools/edgeworkers-code-profiler.md
+                viewers:
+                  - everyone
               - page: Code profiler tutorial
                 path: ../../../markdown-content/v1/Development/developer-tools/code-profiler-tutorial.md
+                viewers:
+                  - everyone
               - page: Dev environment tutorial
                 path: ../../../markdown-content/v1/Development/developer-tools/dev-environment-tutorial.md
+                viewers:
+                  - everyone
               - page: IDE extensions
                 path: ../../../markdown-content/v1/Development/developer-tools/ide-extensions.md
+                viewers:
+                  - everyone
               - page: Sandbox
                 path: ../../../markdown-content/v1/Development/developer-tools/sandbox.md
+                viewers:
+                  - everyone
               - page: TypeScript
                 path: ../../../markdown-content/v1/Development/developer-tools/typescript.md
+                viewers:
+                  - everyone
               - page: Unit testing for EdgeWorkers
                 path: ../../../markdown-content/v1/Development/developer-tools/unit-testing-for-edgeworkers.md
 
+                viewers:
+                  - everyone
       - section: JavaScript API reference
         contents:
           - page: About the JavaScript API
             path: ../../../markdown-content/v1/JavaScript API reference/about-the-javascript-api.md
+            viewers:
+              - everyone
           - page: Request Object
             path: ../../../markdown-content/v1/JavaScript API reference/request-object.md
+            viewers:
+              - everyone
           - page: Response Object
             path: ../../../markdown-content/v1/JavaScript API reference/response-object.md
+            viewers:
+              - everyone
           - page: User Location Object
             path: ../../../markdown-content/v1/JavaScript API reference/user-location-object.md
+            viewers:
+              - everyone
           - page: Device Object
             path: ../../../markdown-content/v1/JavaScript API reference/device-object.md
+            viewers:
+              - everyone
           - page: CacheKey Object
             path: ../../../markdown-content/v1/JavaScript API reference/cachekey-object.md
+            viewers:
+              - everyone
           - section: Built-in modules
             path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules.md
             contents:
               - page: Cookies
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/cookies.md
+                viewers:
+                  - everyone
               - page: Create Response
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/create-response.md
+                viewers:
+                  - everyone
               - page: Crypto
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/crypto.md
+                viewers:
+                  - everyone
               - page: Encoding
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/encoding.md
+                viewers:
+                  - everyone
               - page: HTML Rewriter
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/htmlrewriter.md
+                viewers:
+                  - everyone
               - page: HTTP Request
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/http-request.md
+                viewers:
+                  - everyone
               - page: Log
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/log.md
+                viewers:
+                  - everyone
               - page: Streams
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/streams.md
+                viewers:
+                  - everyone
               - page: Text Encode Transform
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/text-encode-transform.md
+                viewers:
+                  - everyone
               - page: URL Search Params
                 path: ../../../markdown-content/v1/JavaScript API reference/built-in-modules/url-search-params.md
+                viewers:
+                  - everyone
           - section: External modules
             path: ../../../markdown-content/v1/JavaScript API reference/external-modules.md
             contents:
               - page: CAT
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/cat.md
+                viewers:
+                  - everyone
               - page: CWT
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/cwt.md
+                viewers:
+                  - everyone
               - page: DASH parser
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/dash-parser.md
+                viewers:
+                  - everyone
               - page: EdgeKV
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/edgekv.md
+                viewers:
+                  - everyone
               - page: HLS parser
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/hls-parser.md
+                viewers:
+                  - everyone
               - page: JWT
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/jwt.md
+                viewers:
+                  - everyone
               - page: Watermarking
                 path: ../../../markdown-content/v1/JavaScript API reference/external-modules/watermarking.md
 
+                viewers:
+                  - everyone
       - section: Technical resources
         contents:
           - section: Best practices
@@ -282,27 +458,47 @@ navigation:
             contents:
               - page: Best practices for performance
                 path: ../../../markdown-content/v1/Technical resources/best-practices/best-practices-for-performance.md
+                viewers:
+                  - everyone
               - page: Best practices for asynchronous processing
                 path: ../../../markdown-content/v1/Technical resources/best-practices/best-practices-for-asynchronous-processing.md
+                viewers:
+                  - everyone
           - section: FAQ
             path: ../../../markdown-content/v1/Technical resources/faq-1.md
             contents:
               - page: FAQ
                 path: ../../../markdown-content/v1/Technical resources/faq-1/faq.md
+                viewers:
+                  - everyone
               - page: EdgeWorkers JavaScript code
                 path: ../../../markdown-content/v1/Technical resources/faq-1/edgeworkers-javascript-code.md
+                viewers:
+                  - everyone
               - page: Content transformation
                 path: ../../../markdown-content/v1/Technical resources/faq-1/content-transformation.md
+                viewers:
+                  - everyone
               - page: Technical
                 path: ../../../markdown-content/v1/Technical resources/faq-1/technical.md
+                viewers:
+                  - everyone
               - page: Prerequisites and limitations
                 path: ../../../markdown-content/v1/Technical resources/faq-1/prerequisites-and-limitations.md
+                viewers:
+                  - everyone
               - page: Product interoperability
                 path: ../../../markdown-content/v1/Technical resources/faq-1/product-interoperability.md
+                viewers:
+                  - everyone
               - page: Reporting and billing
                 path: ../../../markdown-content/v1/Technical resources/faq-1/reporting-and-billing.md
+                viewers:
+                  - everyone
               - page: Troubleshooting
                 path: ../../../markdown-content/v1/Technical resources/faq-1/troubleshooting.md
+                viewers:
+                  - everyone
           - link: Release notes
             href: ../../../markdown-content/changelog
           - link: EdgeKV documentation
@@ -314,79 +510,129 @@ navigation:
         contents:
           - page: About JavaScript troubleshooting
             path: ../../../markdown-content/v1/Debug/about-javacript-troubleshooting.md
+            viewers:
+              - everyone
           - section: Standard debug headers
             path: ../../../markdown-content/v1/Debug/enable-standard-debug-headers.md
             contents:
               - page: Standard debug header details
                 path: ../../../markdown-content/v1/Debug/enable-standard-debug-headers/standard-debug-header-details.md
+                viewers:
+                  - everyone
           - section: Enhanced debug headers
             path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers.md
             contents:
               - page: Enhanced debug header details for ResponseProvider
                 path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enable-enhanced-debug-headers-for-responseprovider.md
+                viewers:
+                  - everyone
               - page: Enhanced debug header details for HTTP sub-requests
                 path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enhanced-debug-header-details-for-http-sub-requests.md
+                viewers:
+                  - everyone
               - page: Enhanced debug header details for HTTP subWorkers
                 path: ../../../markdown-content/v1/Debug/enable-enhanced-debug-headers/enhanced-debug-header-details-for-http-subworkers.md
+                viewers:
+                  - everyone
           - page: Error codes - EdgeWorkers Management Application
             path: ../../../markdown-content/v1/Debug/error-codes.md
+            viewers:
+              - everyone
           - page: Common errors
             path: ../../../markdown-content/v1/Debug/common-errors.md
+            viewers:
+              - everyone
           - page: Continue on error
             path: ../../../markdown-content/v1/Debug/continue-on-error.md
 
+            viewers:
+              - everyone
       - section: Monitor
         contents:
           - page: About monitoring
             path: ../../../markdown-content/v1/Monitor/about-monitoring.md
+            viewers:
+              - everyone
           - section: EdgeWorkers reports
             path: ../../../markdown-content/v1/Monitor/manage-report-data.md
             contents:
               - page: Overview report
                 path: ../../../markdown-content/v1/Monitor/manage-report-data/overview-report.md
+                viewers:
+                  - everyone
               - page: Execution status report
                 path: ../../../markdown-content/v1/Monitor/manage-report-data/execution-status-report.md
+                viewers:
+                  - everyone
               - page: Execution time report
                 path: ../../../markdown-content/v1/Monitor/manage-report-data/execution-time-report.md
+                viewers:
+                  - everyone
               - page: Memory usage report
                 path: ../../../markdown-content/v1/Monitor/manage-report-data/memory-usage-report.md
+                viewers:
+                  - everyone
           - page: mPulse reports
             path: ../../../markdown-content/v1/Monitor/mpulse.md
+            viewers:
+              - everyone
           - section: JavaScript logging
             path: ../../../markdown-content/v1/Monitor/enable-javascript-logging.md
             contents:
               - page: Use DataStream 2 to deliver JavaScript logs
                 path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/ds2-javascript-logging.md
+                viewers:
+                  - everyone
               - page: Integrate DataStream 2 logs
                 path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/integrate-datastream-2-logs.md
+                viewers:
+                  - everyone
               - page: JavaScript logging details
                 path: ../../../markdown-content/v1/Monitor/enable-javascript-logging/javascript-logging-details.md
+                viewers:
+                  - everyone
           - section: DataStream 2 logs
             path: ../../../markdown-content/v1/Monitor/datastream-2-integration.md
             contents:
               - page: DataStream 2 reports
                 path: ../../../markdown-content/v1/Monitor/datastream-2-integration/datastream2-reports.md
+                viewers:
+                  - everyone
               - page: DataStream 2 delivery log details
                 path: ../../../markdown-content/v1/Monitor/datastream-2-integration/datastream-2-delivery-log-details-copy.md
+                viewers:
+                  - everyone
           - page: Log Delivery Service
             path: ../../../markdown-content/v1/Monitor/enable-log-delivery-for-edgeworkers.md
 
+            viewers:
+              - everyone
       - section: Limitations
         contents:
           - page: Product limits
             path: ../../../markdown-content/v1/Limitations/limitations.md
+            viewers:
+              - everyone
           - page: Resource tier limitations
             path: ../../../markdown-content/v1/Limitations/resource-tier-limitations.md
+            viewers:
+              - everyone
           - page: Known issues
             path: ../../../markdown-content/v1/Limitations/known-issues.md
+            viewers:
+              - everyone
   - tab: recipes
     layout:
       - section: Welcome
         contents:
           - page: Introduction
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - everyone
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - everyone
   - tab: api
     layout:
       - api: EdgeWorkers API
@@ -405,6 +651,8 @@ navigation:
         contents:
           - page: Introduction
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - everyone
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
             viewers:
@@ -417,13 +665,21 @@ navigation:
         contents:
           - page: Introduction
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - everyone
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - everyone
   - tab: control-center
     layout:
       - section: Welcome
         contents:
           - page: Introduction
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - akamai-admins
           - page: Authentication
             path: ../../../markdown-content/sample.mdx
+            viewers:
+              - akamai-admins

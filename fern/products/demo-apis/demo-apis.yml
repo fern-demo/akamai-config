@@ -25,14 +25,22 @@ navigation:
     layout:
       - page: Introduction
         path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
       - page: Authentication
         path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
   - tab: recipes
     layout:
       - page: recipe 1
         path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
       - page: recipe 2
         path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
   - tab: api
     layout:
       - api: Beta Swagger Spec
@@ -61,4 +69,3 @@ navigation:
         api-name: demo-service-svc
       - api: The Response API
         api-name: demo-the-response-api
-        
