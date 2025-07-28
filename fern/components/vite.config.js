@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: '../dist',
     lib: {
-      entry: './filter-init.js',
+      entry: './index.js',
       name: 'FernFilter',
       formats: ['iife'],
       fileName: () => 'filter.js'
