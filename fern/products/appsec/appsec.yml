@@ -19,19 +19,27 @@ tabs:
     display-name: Control Center
     icon: fa-solid fa-gear
 navigation:
-- tab: guide
-  layout:
-  - page: Introduction
-    path: ../../markdown-content/sample.mdx
-  - page: Authentication
-    path: ../../markdown-content/sample.mdx
-- tab: recipes
-  layout:
-  - page: recipe 1
-    path: ../../markdown-content/sample.mdx
-  - page: recipe 2
-    path: ../../markdown-content/sample.mdx
-- tab: api
-  layout:
-  - api: Appsec API
-    api-name: appsec
+  - tab: guide
+    layout:
+      - page: Introduction
+        path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
+      - page: Authentication
+        path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
+  - tab: recipes
+    layout:
+      - page: recipe 1
+        path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
+      - page: recipe 2
+        path: ../../markdown-content/sample.mdx
+        viewers:
+          - everyone
+  - tab: api
+    layout:
+      - api: Appsec API
+        api-name: appsec
