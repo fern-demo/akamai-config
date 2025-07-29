@@ -272,11 +272,11 @@ css:
   - ./assets/styles/main.css
   - dist/filter.css
 js:
-  - path: dist/filter.js  # React-based filter component
-  - path: rbac-demo.js
-    strategy: beforeInteractive
-  - path: rbac-demo-2.js
-    strategy: beforeInteractive
+  - path: dist/filter.js 
+  # - path: rbac-demo.js
+  #   strategy: beforeInteractive
+  # - path: rbac-demo-2.js
+  #   strategy: beforeInteractive
 
 
 typography:
