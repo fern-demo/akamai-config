@@ -11,6 +11,8 @@ updatedAt: "Tue Nov 07 2023 19:10:45 GMT+0000 (Coordinated Universal Time)"
 ---
 Use Property Manager to enable the behavior in your <Markdown src="../../snippets/COMPANY_NICKNAME.mdx" /> property configuration.
 
+Adding this text in Github.
+
 Before you begin, [Create an EdgeWorker ID](create-an-edgeworker-id.md) so you can select it in EdgeWorkers behavior in Property Manager.
 
 1. Navigate to your property in <Markdown src="../../snippets/PORTAL_NAME.mdx" />.
