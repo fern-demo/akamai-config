@@ -1,9 +1,18 @@
 ---
-title: "Welcome to EdgeWorkers"
-slug: "welcome-to-edgeworkers"
-description: "Use Akamai's EdgeWorkers service to deploy JavaScript functions at the edge and create customized experiences for your website visitors."
+title: Welcome to EdgeWorkers
+slug: welcome-to-edgeworkers
+description: Use Akamai's EdgeWorkers service to deploy JavaScript functions at the edge and create customized experiences for your website visitors.
 ---
-Use the EdgeWorkers service to deploy JavaScript functions at the edge to create customized experiences for your website visitors.
+
+The quick brown fox jumped...
+
+> It is what it is.
+
+1. Step 1
+
+2. Step 2
+
+3. Use the EdgeWorkers service to deploy JavaScript functions at the edge to create customized experiences for your website visitors.
 
 > 📘 To see live examples in action and to view the underlying code, go to the [Akamai Edge Compute demo site](https://www.edgecompute.live/).
 
@@ -11,14 +20,19 @@ Use the EdgeWorkers service to deploy JavaScript functions at the edge to create
 
 EdgeWorkers, the world's most distributed serverless edge platform, offers these benefits:
 
-- **Just code**. Write JavaScript code and deploy it via API, CLI, or GUI. 
-- **Scalable architecture**. Let automatic scaling manage your infrastructure through continued growth or massive traffic spikes.  
-- **Increased productivity**. Use curated EdgeWorkers developer tools to help you create, test, and debug your EdgeWorkers functions.  
-- **Closest Proximity**. Execute code in close proximity to end users on the world's largest edge platform for serverless compute.  
-- **Run code on demand**. Execute request-driven code on Akamai edge servers. The cold start time for first execution is currently less than five milliseconds.  
+- **Just code**. Write JavaScript code and deploy it via API, CLI, or GUI.
+
+- **Scalable architecture**. Let automatic scaling manage your infrastructure through continued growth or massive traffic spikes.
+
+- **Increased productivity**. Use curated EdgeWorkers developer tools to help you create, test, and debug your EdgeWorkers functions.
+
+- **Closest Proximity**. Execute code in close proximity to end users on the world's largest edge platform for serverless compute.
+
+- **Run code on demand**. Execute request-driven code on Akamai edge servers. The cold start time for first execution is currently less than five milliseconds.
+
 - **Build data-driven applications**. Include [EdgeKV](https://techdocs.akamai.com/edgekv/docs), Akamai's distributed key-value store in your EdgeWorkers function to access data locally and enable fast, frequent reads.
 
-This diagram shows how EdgeWorkers requests and responses are executed. You can invoke EdgeWorkers code based on specific events in a request or response cycle. For more information, refer to the [EdgeWorkers event model](event-handler-functions.md).
+This diagram shows how EdgeWorkers requests and responses are executed. You can invoke EdgeWorkers code based on specific events in a request or response cycle. For more information, refer to the [EdgeWorkers event model](/edge-workers/event-handler-functions).
 
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/edgeWorkersEventModel-v1.png" alt="EdgeWorkers Event Model"/>
@@ -26,10 +40,10 @@ This diagram shows how EdgeWorkers requests and responses are executed. You can 
 
 # Where to start
 
-To get started, you need entitlement for EdgeWorkers on [contract](add-edgeworkers-to-contract.md). To make sure EdgeWorkers is present, go to Akamai Control Center and from the services menu find **Account Admin **> **Contracts**. In the list of products, search for EdgeWorkers.
+To get started, you need entitlement for EdgeWorkers on [contract](add-edgeworkers-to-contract.md). To make sure EdgeWorkers is present, go to Akamai Control Center and from the services menu find \*\*Account Admin \*\*> **Contracts**. In the list of products, search for EdgeWorkers.
 
 > 📘 Select a delivery product
-> 
+>
 > You can find a list of the supported delivery products for EdgeWorkers in the [Product limits](limitations.md) section. A delivery product is a prerequisite to use EdgeWorkers. It's the base layer used to manage your property (domain) on top of which you can stack different ​Akamai​ services.
 
 Once you've confirmed that you have the necessary contract requirements and delivery product, review these tips and prerequisites that will help you design and create an EdgeWorkers function.
@@ -45,7 +59,7 @@ Once you've confirmed that you have the necessary contract requirements and deli
 </td>
 <td>
 
-**Event model**. Learn how EdgeWorkers' [granular event model](event-handler-functions.md) lets you control when to execute code. Each event has specific features and capabilities that allow it to transform and modify the request and response as it flows through the Intelligent Edge Platform. 
+**Event model**. Learn how EdgeWorkers' [granular event model](/edge-workers/event-handler-functions) lets you control when to execute code. Each event has specific features and capabilities that allow it to transform and modify the request and response as it flows through the Intelligent Edge Platform. 
 
 </td>
 </tr>
