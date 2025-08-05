@@ -17,6 +17,8 @@ Adding text here in the Editor.
 
 - Test
 
+- Another item.
+
 <Frame>
   <img src="https://techdocs.akamai.com/edgeworkers/img/eventModel-v1.jpg" alt="event handlers"/>
 </Frame>
