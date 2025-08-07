@@ -38,7 +38,7 @@ tabs:
 navigation:
   - tab: guide
     layout:
-      - section: Welcome
+      - section: Welcome section
         contents:
           - page: Welcome to EdgeWorkers
             path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
