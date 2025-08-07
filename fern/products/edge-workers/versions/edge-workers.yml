@@ -38,6 +38,11 @@ tabs:
 navigation:
   - tab: guide
     layout:
+      - section: Rhonda category
+          - page: Welcome to EdgeWorkers
+            path: ../../../markdown-content/v1/Welcome/rhonda-new-topic.md
+            viewers:
+              - everyone
       - section: Welcome
         contents:
           - page: Welcome to EdgeWorkers
