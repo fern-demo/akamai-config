@@ -44,6 +44,10 @@ navigation:
             path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
             viewers:
               - everyone
+          - page: Rhonda new topic
+            path: ../../../markdown-content/v1/Welcome/rhonda-new-topic.md
+            viewers:
+              - everyone
           - section: EdgeWorkers event model
             path: ../../../markdown-content/v1/Welcome/event-handler-functions.md
             contents:
