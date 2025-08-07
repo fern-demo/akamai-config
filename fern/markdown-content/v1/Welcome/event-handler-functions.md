@@ -3,6 +3,8 @@ title: EdgeWorkers event model
 slug: event-handler-functions
 ---
 
+Adding new text here.
+
 Understand when EdgeWorker scripts are executed. The EdgeWorkers code is invoked based on specific HTTP events. To create a function for any of these events, implement the callbacks as explained in the [JavaScript API reference](about-the-javascript-api.md).
 
 Adding text here in the Editor.
