@@ -4,6 +4,8 @@ slug: welcome-to-edgeworkers
 description: Use Akamai's EdgeWorkers service to deploy JavaScript functions at the edge and create customized experiences for your website visitors.
 ---
 
+Adding new text here.
+
 The quick brown fox jumped... editing raw mode
 
 > It is what it is.
