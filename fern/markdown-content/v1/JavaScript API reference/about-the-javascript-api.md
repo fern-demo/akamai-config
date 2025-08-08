@@ -1,19 +1,20 @@
 ---
-title: "About the JavaScript API"
-slug: "about-the-javascript-api"
-excerpt: ""
+title: About the JavaScript API
+slug: about-the-javascript-api
+excerpt: ''
 hidden: false
-metadata: 
+metadata:
   image: []
-  robots: "index"
-createdAt: "Mon May 24 2021 00:13:25 GMT+0000 (Coordinated Universal Time)"
-updatedAt: "Thu Feb 09 2023 18:37:54 GMT+0000 (Coordinated Universal Time)"
+  robots: index
+createdAt: Mon May 24 2021 00:13:25 GMT+0000 (Coordinated Universal Time)
+updatedAt: Thu Feb 09 2023 18:37:54 GMT+0000 (Coordinated Universal Time)
 ---
+
 Review these details when designing EdgeWorkers functions. To learn more about the specific HTTP events that can execute an EdgeWorkers script, see [EdgeWorkers event model](event-handler-functions.md).
 
 > 👍 For information about the supported HTTP methods see, [Event handler methods](event-handler-functions.md#event-handler-methods).
 
-**Use case support matrix**  
+**Use case support matrix**\
 View the event handler and JavaScript method you can use to achieve an EdgeWorkers use case.
 
 ##
@@ -38,7 +39,7 @@ View the event handler and JavaScript method you can use to achieve an EdgeWorke
 
 <tr>
 
-<th>Event Handler</th>
+<th>Event Handler x</th>
 
 <th>Use Cases</th>
 
