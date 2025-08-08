@@ -46,6 +46,26 @@ Simple markdown table added in Dev mode.
 
 \[Google]\(https://www.google.com)
 
-[https://www.google.com](https://www.google.com)
+# Use case support by resource tier
 
-\[Response orchestration]\(response-orchestration.md)
+Review the table below to see which use cases are supported
+
+The use case functionality is the same on both the basic and dynamic resource tiers. Only the product limits change.
+
+| Use Case | Basic Compute | Dynamic Compute | Enterprise Compute |
+| :------------------------------------------------------- | :------------- | :-------------- | :----------------- |
+| Cache Key Manipulation | ✓ | ✓ | ✓ |
+| Forwarding / Conditionally Route Traffic | ✓ | ✓ | ✓ |
+| Redirect Management | ✓ | ✓ | ✓ |
+| Header Management | ✓ | ✓ | ✓ |
+| Cookie Management | ✓ | ✓ | ✓ |
+| Simple regex / hashing / crypto | ✓ | ✓ | ✓ |
+| HTTP sub-request | ✓ | ✓ | ✓ |
+| Fetches that GET JSON data and enable personalization | ✓ | ✓ | ✓ |
+| Data POSTing for metrics beaconing and error logging | ✓ | ✓ | ✓ |
+| Response Body modification | | ✓ | ✓ |
+| Integration with EdgeKV | ✓ | ✓ | ✓ |
+| Complex crypto during the responseProvider event handler | | ✓ | ✓ |
+| JavaScript logging via a DataStream 2 stream | ✓ | ✓ | ✓ |
+
+## Table
