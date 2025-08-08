@@ -6,6 +6,8 @@ description: Here is a description.
 
 Here is text.
 
+1\. Log in to \<Markdown src="../../../snippets/PORTAL\_NICKNAME.mdx" />.
+
 ## Heading 2
 
 - List
