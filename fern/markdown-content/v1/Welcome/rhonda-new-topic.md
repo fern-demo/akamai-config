@@ -47,3 +47,5 @@ Simple markdown table added in Dev mode.
 \[Google]\(https://www.google.com)
 
 [https://www.google.com](https://www.google.com)
+
+\[Response orchestration]\(response-orchestration.md)
