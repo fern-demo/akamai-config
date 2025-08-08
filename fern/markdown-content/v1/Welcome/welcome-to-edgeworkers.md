@@ -10,7 +10,8 @@ The quick brown fox jumped... editing raw mode
 
 > It is what it is.
 
-1. Step 1
+
+1. Log in to <Markdown src="../../../snippets/PORTAL_NICKNAME.mdx" />.
 
 2. Step 2
 
