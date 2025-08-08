@@ -42,96 +42,77 @@ Simple markdown table added in Dev mode.
 
 | Option | Description | | :----- | :---------- | | Test | Test | | Test | Test |
 
-## Links
-
-\[Google]\(https://www.google.com)
-
-hello hello
-
-Adding more text here.
-
 ## HTML table
 
 <table>
 <thead>
 <tr>
-<th style="text-align:left">What is it?</th>
+<th style="text-align:left">Item</th>
 <th style="text-align:center">Quantity</th>
-<th style="text-align:left">Example</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-**List example**
+`item1`
 
 </td>
 <td style="text-align:center">
 
-37
+16
 
 </td>
 <td>
 
-Here are the options you'll see when you click the **Additional features** button:
-
-- **I want emojis**. Enable this to support [emojis](https://en.wikipedia.org/wiki/Emoji).
-
-- **Enable YouTube**. Click this to enable support for [YouTube](#https://www.youtube.com).
-
-- **Add Images**. Enable this to add [images](doc:c-images) to your document.
-
-- Do variables work?  ​Akamai Control Center​
+Keep the most substantial descriptive text in the right-most column.
 
 </td>
 </tr>
 <tr>
 <td>
 
-**Code snippet**
+`item2`
 
 </td>
 <td style="text-align:center">
 
-12
+42
 
 </td>
 <td>
 
-```
-{
-    "name": "http2",
-    "options": {
-       "enabled": ""
-    }
-},
-```
+Keep the most substantial descriptive text in the right-most column. See [Get Started with APIs](https://akamai-docs.readme.io/devops/docs/get-started) for details.
+
 </td>
-  
 </tr>
 <tr>
-  
+<td colspan="3"><strong>Straddled column header</strong></td>
+</tr>
+<tr>
 <td>
 
-This is a test
+`item3`
+
+</td>
+<td style="text-align:center">
+
+8
 
 </td>
 <td>
 
-This is a test
+**Additional requirement**. To properly include bulleted lists in a table cell, you need to use a detailed table.
+
 
 </td>
-<td>
-
-> 📘 Adding a callout
-> 
-> You can also insert a callout into an HTML table cell by typing `/callout` .
-
-</td>
-  
 </tr>
 </tbody>
 </table>
 
-##
+## Links
+
+\[Google]\(https://www.google.com)
+
+hello
