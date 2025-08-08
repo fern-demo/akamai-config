@@ -48,6 +48,8 @@ Simple markdown table added in Dev mode.
 
 hello hello
 
+Adding more text here.
+
 ## HTML table
 
 <table>
