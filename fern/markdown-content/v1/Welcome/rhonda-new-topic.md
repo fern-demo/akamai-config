@@ -41,3 +41,7 @@ Here is text.
 Simple markdown table added in Dev mode.
 
 | Option | Description | | :----- | :---------- | | Test | Test | | Test | Test |
+
+## Links
+
+\[Google]\(https://www.google.com)
