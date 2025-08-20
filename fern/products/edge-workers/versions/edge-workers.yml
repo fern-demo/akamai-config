@@ -49,7 +49,7 @@ navigation:
             viewers:
               - everyone
           - page: Another new topic
-            path: ../../../markdown-content/v1/Welcome/another-new-topic.mdx
+            path: ../../../edge-workers/guide/welcome-section/another-new-topic.mdx
             viewers:
               - everyone
           - section: EdgeWorkers event model
