@@ -44,7 +44,7 @@ navigation:
             path: ../../../markdown-content/v1/Welcome/welcome-to-edgeworkers.md
             viewers:
               - everyone
-          - page: Rhonda new topic
+          - page: Rhonda new topic new
             path: ../../../markdown-content/v1/Welcome/rhonda-new-topic.md
             viewers:
               - everyone
