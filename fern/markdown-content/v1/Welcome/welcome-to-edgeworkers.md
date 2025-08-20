@@ -4,7 +4,7 @@ slug: welcome-to-edgeworkers
 description: Use Akamai's EdgeWorkers service to deploy JavaScript functions at the edge and create customized experiences for your website visitors.
 ---
 
-Adding new text here.
+Adding new text here. Test
 
 ## heading 2
 
@@ -20,8 +20,7 @@ The quick brown fox jumped... editing raw mode
 
 > It is what it is.
 
-
-1. Log in to <Markdown src="PORTAL_NICKNAME.mdx" />.
+1. Log in to Control Center .
 
 2. Step 2
 
