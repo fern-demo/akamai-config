@@ -4,7 +4,7 @@ slug: rhonda-new-topic
 description: Here is a description.
 ---
 
-Here is text.
+Here is text!
 
 ## Heading 2
 
