@@ -4,8 +4,6 @@ slug: welcome-to-edgeworkers
 description: Use Akamai's EdgeWorkers service to deploy JavaScript functions at the edge and create customized experiences for your website visitors.
 ---
 
-[New Link](/edge-workers/transform-response-content)
-
 Adding new text here. Test
 
 ## heading 2
